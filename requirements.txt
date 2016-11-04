@@ -1,0 +1,9 @@
+sqlalchemy
+pandas
+numpy
+json
+re
+csv
+matplotlib
+scipy
+seaborn
