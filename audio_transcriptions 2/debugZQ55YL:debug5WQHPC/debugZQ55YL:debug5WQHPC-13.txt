@@ -1,0 +1,4 @@
+blouse
+chimney
+jacket
+lobby

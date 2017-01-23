@@ -1,0 +1,10 @@
+cow
+refrigerator
+hall
+kiwi
+guava
+tangelo
+glass
+mouse
+giraffe
+strawberry

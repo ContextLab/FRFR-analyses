@@ -1,0 +1,13 @@
+guava
+tangelo
+spatula
+pot
+glass
+door
+giraffe
+mouse
+cow
+corridor
+hall
+strawberry
+pot

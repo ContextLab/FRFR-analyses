@@ -1,0 +1,16 @@
+furnace
+lobby
+chimney
+closet
+artichoke
+garlic
+spinach
+potato
+suit
+jacket
+camisole
+blouse
+egypt
+cuba
+iran
+germany

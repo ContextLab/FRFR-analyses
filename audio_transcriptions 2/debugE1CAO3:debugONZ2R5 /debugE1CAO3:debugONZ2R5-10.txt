@@ -1,0 +1,12 @@
+glue
+washer
+ruler
+banana
+nectarine
+nut
+mango
+tokyo
+philadelphia
+jerusalem
+wisconsin
+vancouver

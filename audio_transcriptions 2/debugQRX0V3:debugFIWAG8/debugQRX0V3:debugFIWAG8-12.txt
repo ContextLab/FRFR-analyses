@@ -1,0 +1,9 @@
+saucer
+onion
+spinach
+log
+floor
+carpet
+pan
+dish
+artichoke

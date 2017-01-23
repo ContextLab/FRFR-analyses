@@ -1,0 +1,12 @@
+blouse
+camisole
+jacket
+suit
+lobby
+kitchen
+furnace
+egypt
+iran
+germany
+spinach
+potato

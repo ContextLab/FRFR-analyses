@@ -1,0 +1,10 @@
+dahlia
+floor
+broccoli
+dish
+onion
+saucer
+buttercup
+strainer
+carpet
+foundation

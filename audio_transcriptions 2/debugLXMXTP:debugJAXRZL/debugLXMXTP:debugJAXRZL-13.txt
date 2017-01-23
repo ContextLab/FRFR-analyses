@@ -1,0 +1,12 @@
+dahlia
+saucer
+onion
+pickle
+cauliflower
+buttercup
+floor
+foundation
+elevator
+carpet
+dish
+griddle

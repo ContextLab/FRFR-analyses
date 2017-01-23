@@ -1,0 +1,8 @@
+evergreen
+blender
+cottonwood
+mixer
+cup
+jumper
+oak
+ukelele

@@ -1,0 +1,7 @@
+glue
+nuts
+california
+tokyo
+wisconsin
+kumquat
+hawaii

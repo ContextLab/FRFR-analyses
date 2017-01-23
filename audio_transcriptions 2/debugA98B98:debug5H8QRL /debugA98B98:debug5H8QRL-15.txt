@@ -1,0 +1,9 @@
+pot
+door
+window
+glass
+corridor
+kiwi
+guava
+giraffe
+cow

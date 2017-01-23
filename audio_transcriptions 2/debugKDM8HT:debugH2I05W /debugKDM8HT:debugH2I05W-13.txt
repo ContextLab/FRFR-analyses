@@ -1,0 +1,14 @@
+stockholm
+montreal
+bombay
+miami
+aubergine
+squash
+zucchini
+goat
+sheep
+panther
+foot
+elbow
+shoulder
+kidney

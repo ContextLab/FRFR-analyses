@@ -1,0 +1,15 @@
+saucer
+griddle
+dish
+dahlia
+azalea
+buttercup
+log
+cauliflower
+broccoli
+pickle
+onion
+foundation
+floor
+elevator
+string

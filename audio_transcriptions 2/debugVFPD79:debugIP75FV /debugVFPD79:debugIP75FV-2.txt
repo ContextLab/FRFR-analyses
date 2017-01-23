@@ -1,0 +1,12 @@
+pelvis
+hip
+stomach
+dallas
+rome
+montreal
+paris
+trombone
+boilers
+trumpet
+thermometer
+mug

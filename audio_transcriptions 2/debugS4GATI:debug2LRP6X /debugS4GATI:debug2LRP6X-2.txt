@@ -1,0 +1,10 @@
+hand
+finger
+bongos
+guitar
+xylophone
+poplar
+scorpion
+pear
+ash
+willow

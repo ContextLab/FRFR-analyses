@@ -1,0 +1,12 @@
+finger
+hand
+ankle
+eucalyptus
+ash
+poplar
+accordion
+bongos
+guitar
+worm
+scorpion
+larva
