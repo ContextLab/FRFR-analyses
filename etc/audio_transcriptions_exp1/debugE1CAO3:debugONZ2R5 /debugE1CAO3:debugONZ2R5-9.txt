@@ -1,0 +1,13 @@
+rose
+petunia
+tulip
+carnation
+knuckle
+heart
+ear
+donkey
+dog
+tiger
+kitchen
+gazebo
+barn

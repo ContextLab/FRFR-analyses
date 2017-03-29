@@ -1,0 +1,9 @@
+hip
+pelvis
+arm
+stomach
+paris
+mug
+thermometer
+montreal
+trumpet

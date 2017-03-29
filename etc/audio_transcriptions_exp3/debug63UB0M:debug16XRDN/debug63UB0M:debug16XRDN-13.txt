@@ -1,0 +1,9 @@
+thermometer
+dallas
+hip
+broiler
+tambourine
+pelvis
+dallas
+piccolo
+arms

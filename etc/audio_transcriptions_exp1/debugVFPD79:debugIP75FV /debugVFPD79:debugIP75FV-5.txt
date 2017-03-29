@@ -1,0 +1,16 @@
+refrigerator
+glass
+door
+hall
+horse
+cow
+strawberry
+guava
+kiwi
+glass
+door
+hall
+refrigerator
+kiwi
+guava
+strawberry

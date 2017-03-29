@@ -1,0 +1,11 @@
+palm
+teak
+cedar
+chicago
+sydney
+reno
+bra
+gloves
+sweater
+millipede
+scorpion

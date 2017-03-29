@@ -1,0 +1,14 @@
+door
+refrigerator
+glass
+window
+hall
+corridor
+pan
+mouse
+giraffe
+strawberry
+kiwi
+skillet
+spatula
+door

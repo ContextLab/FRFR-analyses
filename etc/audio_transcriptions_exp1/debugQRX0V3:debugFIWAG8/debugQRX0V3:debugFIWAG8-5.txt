@@ -1,0 +1,10 @@
+sycamore
+cedar
+palm
+glove
+sweater
+trousers
+sydney
+berlin
+reno
+mosquito

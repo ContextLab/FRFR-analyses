@@ -1,0 +1,12 @@
+kiwi
+guava
+tangelo
+mouse
+hall
+corridor
+window
+door
+refrigerator
+cow
+zebra
+pot

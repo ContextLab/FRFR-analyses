@@ -1,0 +1,9 @@
+foundation
+floor
+carpet
+dish
+strainer
+buttercup
+azalea
+delilah
+onion

@@ -1,0 +1,7 @@
+jumper
+spruce
+oak
+mixer
+blender
+robe
+shirt

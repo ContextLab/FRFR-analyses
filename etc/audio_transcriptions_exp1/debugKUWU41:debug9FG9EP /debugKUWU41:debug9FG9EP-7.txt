@@ -1,0 +1,12 @@
+hip
+pelvis
+arm
+rome
+paris
+montreal
+tuba
+tambourine
+broiler
+thermometer
+oven
+stomach

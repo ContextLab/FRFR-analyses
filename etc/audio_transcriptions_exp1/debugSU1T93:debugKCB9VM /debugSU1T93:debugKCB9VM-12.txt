@@ -1,0 +1,11 @@
+evergreen
+oak
+spruce
+cottonwood
+belt
+shirt
+robe
+cup
+banjo
+ukelele
+harmonica

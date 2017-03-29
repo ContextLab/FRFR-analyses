@@ -1,0 +1,7 @@
+face
+tulip
+dog
+heart
+tiger
+donkey
+egypt

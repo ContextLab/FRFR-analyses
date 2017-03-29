@@ -1,0 +1,9 @@
+moose
+window
+cow
+kiwi
+giraffe
+refrigerator
+moose
+window
+giraffe

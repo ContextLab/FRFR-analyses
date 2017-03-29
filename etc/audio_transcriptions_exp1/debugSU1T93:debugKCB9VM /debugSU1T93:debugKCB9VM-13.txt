@@ -1,0 +1,12 @@
+france
+switzerland
+england
+japan
+protractor
+piano
+chisel
+hammer
+bolt
+squirrel
+leopard
+saw

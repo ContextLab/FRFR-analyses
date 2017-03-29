@@ -1,0 +1,10 @@
+rose
+tulip
+face
+heart
+knuckle
+kitchen
+tiger
+dog
+sheep
+barn

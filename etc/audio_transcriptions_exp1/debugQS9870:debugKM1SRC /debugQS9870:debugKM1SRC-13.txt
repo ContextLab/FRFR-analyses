@@ -1,0 +1,6 @@
+foundation
+floor
+griddle
+pickle
+azalea
+log

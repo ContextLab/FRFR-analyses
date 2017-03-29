@@ -1,0 +1,6 @@
+guava
+giraffe
+kiwi
+window
+door
+glass

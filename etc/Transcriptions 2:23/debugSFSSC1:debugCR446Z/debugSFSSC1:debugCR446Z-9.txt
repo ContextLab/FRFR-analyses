@@ -1,0 +1,12 @@
+buttercup
+dahlia
+broccoli
+pickles
+onion
+saucer
+strainer
+pan
+log
+floor
+carpet
+elevator

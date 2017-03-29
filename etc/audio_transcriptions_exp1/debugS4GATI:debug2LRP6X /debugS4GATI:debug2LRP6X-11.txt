@@ -1,0 +1,8 @@
+log
+azalea
+cauliflower
+broccoli
+floor
+rug
+carpet
+dahlia

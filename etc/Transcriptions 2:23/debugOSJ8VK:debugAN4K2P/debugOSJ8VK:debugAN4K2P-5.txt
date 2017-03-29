@@ -1,0 +1,13 @@
+glue
+nuts
+washer
+ruler
+kumquat
+nectarine
+banana
+hawaii
+california
+wisconsin
+vermont
+vancouver
+tokyo

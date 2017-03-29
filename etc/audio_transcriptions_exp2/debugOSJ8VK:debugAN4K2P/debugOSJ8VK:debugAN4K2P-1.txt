@@ -1,0 +1,15 @@
+kiwi
+guava
+tangelo
+strawberry
+window
+hall
+corridor
+door
+cow
+horse
+giraffe
+pot
+glass
+refrigerator
+mouse

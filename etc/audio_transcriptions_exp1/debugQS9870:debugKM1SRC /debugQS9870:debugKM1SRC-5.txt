@@ -1,0 +1,10 @@
+ear
+face
+heart
+petunia
+rose
+gazebo
+kitchen
+alcove
+tiger
+wolf

@@ -1,0 +1,9 @@
+kiwi
+guava
+refrigerator
+door
+hall
+corridor
+window
+giraffe
+horse

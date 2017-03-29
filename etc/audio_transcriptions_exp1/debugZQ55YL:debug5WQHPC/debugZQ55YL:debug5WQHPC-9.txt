@@ -1,0 +1,10 @@
+mouse
+giraffe
+window
+hall
+pot
+cow
+refrigerator
+corridor
+guava
+kiwi
