@@ -1,0 +1,10 @@
+lobby
+closet
+chimney
+camisole
+jacket
+blouse
+cuba
+iran
+egypt
+germany

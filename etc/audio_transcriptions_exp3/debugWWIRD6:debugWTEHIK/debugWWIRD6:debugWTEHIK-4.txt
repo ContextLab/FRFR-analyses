@@ -1,0 +1,8 @@
+finger
+hand
+lip
+accordion
+bongos
+guitar
+scorpion
+worm

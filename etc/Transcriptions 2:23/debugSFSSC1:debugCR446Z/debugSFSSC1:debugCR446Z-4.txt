@@ -1,0 +1,9 @@
+shoulder
+elbow
+foot
+wolf
+zucchini
+aubergine
+squash
+bombay
+poland

@@ -1,0 +1,14 @@
+thermometer
+broiler
+mug
+stomach
+hip
+pelvis
+arms
+montreal
+paris
+rome
+piccolo
+trumpet
+trombone
+tambourine

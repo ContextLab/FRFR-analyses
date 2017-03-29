@@ -1,0 +1,7 @@
+guava
+strawberry
+spatula
+door
+glass
+horse
+hall

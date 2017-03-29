@@ -1,0 +1,12 @@
+face
+ear
+knuckle
+heart
+petunia
+tulip
+carnation
+alcove
+kitchen
+tiger
+donkey
+dog

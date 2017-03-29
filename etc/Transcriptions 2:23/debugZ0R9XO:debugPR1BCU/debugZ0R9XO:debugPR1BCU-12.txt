@@ -1,0 +1,7 @@
+guava
+strawberry
+hall
+corridor
+glass
+horse
+window

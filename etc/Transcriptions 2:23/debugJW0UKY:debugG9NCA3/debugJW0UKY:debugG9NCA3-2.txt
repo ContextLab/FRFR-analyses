@@ -1,0 +1,12 @@
+glue
+nuts
+ruler
+washer
+vermont
+wisconsin
+california
+hawaii
+philadelphia
+jerusalem
+vancouver
+tokyo

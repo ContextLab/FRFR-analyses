@@ -1,0 +1,15 @@
+pants
+underwear
+dress
+girdle
+skillet
+toaster
+knife
+fork
+arizona
+utah
+montana
+daisy
+lily
+sunflower
+narcissus

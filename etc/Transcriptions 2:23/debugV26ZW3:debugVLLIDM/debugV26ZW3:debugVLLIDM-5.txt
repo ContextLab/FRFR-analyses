@@ -1,0 +1,8 @@
+lobby
+jacket
+blouse
+egypt
+suit
+iran
+germany
+chimney

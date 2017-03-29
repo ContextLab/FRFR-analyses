@@ -1,0 +1,15 @@
+cedar
+teak
+sycamore
+mantis
+mosquito
+hornet
+reno
+chicago
+berlin
+trousers
+sweater
+bra
+palm
+gloves
+sydney

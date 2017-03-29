@@ -1,0 +1,10 @@
+petunia
+carnation
+tulip
+rose
+ear
+hippopotamus
+dog
+heart
+tiger
+gazebo

@@ -1,0 +1,11 @@
+pot
+mouse
+spatula
+horse
+kiwi
+strawberry
+refrigerator
+window
+wall
+giraffe
+tangelo

@@ -1,0 +1,11 @@
+tulip
+rose
+carnation
+hippopotamus
+dog
+kitchen
+gazebo
+alcove
+ear
+heart
+knuckle
