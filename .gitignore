@@ -1,6 +1,5 @@
 .ipynb_checkpoints/
 *.wav
 *.flac
-.DS_Store
-data/.DS_Store
-data/eggs/exp1.egg
+* .DS_Store
+*.egg
