@@ -1,5 +1,6 @@
 .ipynb_checkpoints/
 *.wav
 *.flac
-* .DS_Store
+*.DS_Store
 *.egg
+
