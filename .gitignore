@@ -3,4 +3,4 @@
 *.flac
 *.DS_Store
 *.egg
-
+*.pyc

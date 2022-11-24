@@ -9,6 +9,8 @@ import os
 import warnings
 
 from tqdm import tqdm
+from multiprocessing import cpu_count
+from pathos.multiprocessing import ProcessingPool as Pool
 from matplotlib import pyplot as plt
 from matplotlib.ticker import MaxNLocator
 
@@ -28,6 +30,9 @@ def apply(egg, analysis, listgroup=None):
         kwargs = {}
     else:
         analysis, kwargs = analysis
+
+    if analysis == 'fingerprint':
+        listgroup = list(range(16))
     
     return egg.analyze(analysis, listgroup=listgroup, parallel=False, **kwargs)
 
@@ -36,12 +41,23 @@ def apply(egg, analysis, listgroup=None):
 def analyze_data(data, analyses):
     results = {}
 
+    def apply_wrapper(args):
+        a, x, d, kwargs = args
+        print(f'starting {a} analysis for condition {x}...')
+        results[a][x] = apply(d, [a, kwargs])
+        print(f'finished {a} analysis for condition {x}')
+
     print('basic analyses...')
     for a in tqdm(analyses):
         kwargs = {}
+        results[a] = {}
         if a == 'fingerprint':
             kwargs['permute'] = True
             kwargs['n_perms'] = 1000
+
+        with Pool(min([cpu_count(), len(data)])) as p:
+            p.map(apply_wrapper, [[a, x, d, kwargs] for x, d in data.items()])
+
         results[a] = {x: apply(d, [a, kwargs]) for x, d in data.items()}
     
     print('pnr analyses...')
