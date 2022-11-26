@@ -1,18 +1,12 @@
-import pandas as pd
-import numpy as np
 import dill as pickle
-import seaborn as sns
 
-import quail
-import requests
 import os
 import warnings
 
-from tqdm import tqdm
-from multiprocessing import cpu_count
+# noinspection PyProtectedMember
 from pathos.multiprocessing import ProcessingPool as Pool
-from matplotlib import pyplot as plt
-from matplotlib.ticker import MaxNLocator
+from multiprocessing import cpu_count
+from tqdm import tqdm
 
 from dataloader import fetch_data, get_listgroups, datadir
 
@@ -36,16 +30,16 @@ def apply(egg, analysis, listgroup=None):
     
     return egg.analyze(analysis, listgroup=listgroup, parallel=False, **kwargs)
 
-    
 
+# noinspection PyShadowingNames
 def analyze_data(data, analyses):
     results = {}
 
     def apply_wrapper(args):
-        a, x, d, kwargs = args
-        print(f'starting {a} analysis for condition {x}...')
-        results[a][x] = apply(d, [a, kwargs])
-        print(f'finished {a} analysis for condition {x}')
+        ax, x, d, ax_kwargs = args
+        print(f'starting {ax} analysis for condition {x}...')
+        results[ax][x] = apply(d, [ax, ax_kwargs])
+        print(f'finished {ax} analysis for condition {x}')
 
     print('basic analyses...')
     for a in tqdm(analyses):
@@ -63,7 +57,7 @@ def analyze_data(data, analyses):
     print('pnr analyses...')
     pnr_results = {}
     for i in tqdm(range(16)):
-       pnr_results[i] = {x: apply(d, ['pnr', {'position': i}]) for x, d in data.items()}
+        pnr_results[i] = {x: apply(d, ['pnr', {'position': i}]) for x, d in data.items()}
 
     results['pnr'] = pnr_results
 
