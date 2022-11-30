@@ -7,6 +7,8 @@ import os
 import warnings
 
 from tqdm import tqdm
+from pathos.multiprocessing import ProcessingPool as Pool
+from multiprocessing import cpu_count
 
 
 # set up labels and directories
@@ -80,7 +82,7 @@ def grouping(feature):
 
 
 # (down)load the data from each experimental condition
-def load_egg(fname, url=None):    
+def load_egg(fname, url=None):
     fname = os.path.join(datadir, fname)
     if os.path.exists(fname):
         print('.', end='')
@@ -110,3 +112,14 @@ def get_listgroups(data):
         else:
             listgroups[k] = egg.meta['listgroup']
     return listgroups
+
+
+def sort_by_grouping(vals, groupings):
+    sorted_vals = []
+    for category, exemplars in groupings.items():
+        sorted_vals.extend([x for x in exemplars if x in vals])
+    
+    missing = [v for v in vals if v not in sorted_vals]
+    sorted_vals.extend(missing)
+    
+    return sorted_vals
