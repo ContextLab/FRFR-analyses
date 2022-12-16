@@ -13,6 +13,7 @@ from multiprocessing import cpu_count
 
 # set up labels and directories
 datadir = os.path.join(os.path.split(os.getcwd())[0], 'data', 'eggs')
+
 if not os.path.exists(datadir):
     os.makedirs(datadir)
 

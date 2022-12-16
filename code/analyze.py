@@ -10,46 +10,9 @@ from tqdm import tqdm
 
 from dataloader import fetch_data, get_listgroups, datadir
 
-
-def apply(egg, analysis, listgroup=None):
+def apply(egg, analysis, listgroup=None, **kwargs):
     warnings.simplefilter('ignore')
-
-    if listgroup is None and not (analysis == 'fingerprint'):
-        if 'listgroup' not in egg.meta:
-            listgroup = ['Early' if i < 8 else 'Late' for i in range(16)]
-        else:
-            listgroup = egg.meta['listgroup']
-
-    if type(analysis) is str:
-        kwargs = {}
-    else:
-        analysis, kwargs = analysis
-
-    if analysis == 'fingerprint':
-        listgroup = list(range(16))
-    
-    return egg.analyze(analysis, listgroup=listgroup, parallel=False, **kwargs)
-
-
-# noinspection PyShadowingNames
-def apply(egg, analysis, listgroup=None):
-    warnings.simplefilter('ignore')
-
-    if listgroup is None and not (analysis == 'fingerprint'):
-        if 'listgroup' not in egg.meta:
-            listgroup = ['Early' if i < 8 else 'Late' for i in range(16)]
-        else:
-            listgroup = egg.meta['listgroup']
-
-    if type(analysis) is str:
-        kwargs = {}
-    else:
-        analysis, kwargs = analysis
-
-    if analysis == 'fingerprint':
-        listgroup = list(range(16))
-
-    return egg.analyze(analysis, listgroup=listgroup, parallel=False, **kwargs)
+    return egg.analyze(analysis, listgroup=list(range(16)), parallel=False, **kwargs)
 
 
 def analyze_data(analyses=['fingerprint', 'pfr', 'lagcrp', 'spc', 'accuracy'], data=None, listgroups=None, savefile=None):
@@ -82,7 +45,7 @@ def analyze_data(analyses=['fingerprint', 'pfr', 'lagcrp', 'spc', 'accuracy'], d
             with open(os.path.join(scratch_dir, tmpfile), 'rb') as f:
                 r = pickle.load(f)
         else:
-            r = apply(d, [a, kwargs])
+            r = apply(d, a, **kwargs)
             with open(os.path.join(scratch_dir, tmpfile), 'wb') as f:
                 pickle.dump(r, f)
 
@@ -119,13 +82,9 @@ def analyze_data(analyses=['fingerprint', 'pfr', 'lagcrp', 'spc', 'accuracy'], d
     print('pnr analyses...')
     pnr_results = {}
     for i in tqdm(range(16)):
-        pnr_results[i] = {x: apply(d, ['pnr', {'position': i}]) for x, d in data.items()}
+        pnr_results[i] = {x: apply(d, 'pnr', position=i) for x, d in data.items()}
 
     results['pnr'] = pnr_results
-
-    print('accuracy by list...')
-    listgroup = list(range(16))
-    results['accuracy by list'] = {k: apply(egg, 'accuracy', listgroup) for k, egg in data.items()}
 
     if savefile is not None:
         with open(savefile, 'wb') as f:
