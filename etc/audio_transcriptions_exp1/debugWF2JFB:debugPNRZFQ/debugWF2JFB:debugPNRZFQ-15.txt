@@ -1,6 +1,0 @@
-reno
-mantis
-millipede
-cedar
-sycamore
-bra

@@ -1,6 +1,0 @@
-broccoli
-buttercup
-strainer
-floor
-carpet
-pickle

@@ -1,5 +1,0 @@
-log
-broccoli
-cauliflower
-griddle
-foundation

@@ -1,5 +1,0 @@
-lobby
-suit
-germany
-potato
-egypt

@@ -1,5 +1,0 @@
-hall
-corridor
-window
-glass
-refrigerator

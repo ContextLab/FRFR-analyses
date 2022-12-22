@@ -1,7 +1,0 @@
-stockholm
-toronto
-panther
-shoulder
-elbow
-sheep
-goat

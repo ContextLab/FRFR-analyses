@@ -1,7 +1,0 @@
-mixer
-blender
-ukelele
-banjo
-spruce
-cottonwood
-evergreen

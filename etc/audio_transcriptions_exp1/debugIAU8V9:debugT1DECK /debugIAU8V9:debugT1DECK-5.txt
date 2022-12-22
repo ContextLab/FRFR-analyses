@@ -1,8 +1,0 @@
-window
-corridor
-glass
-pot
-mouse
-refrigerator
-tangelo
-kiwi

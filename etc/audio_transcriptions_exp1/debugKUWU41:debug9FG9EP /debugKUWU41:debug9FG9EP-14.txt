@@ -1,5 +1,0 @@
-broccoli
-cauliflower
-griddle
-saucer
-floor

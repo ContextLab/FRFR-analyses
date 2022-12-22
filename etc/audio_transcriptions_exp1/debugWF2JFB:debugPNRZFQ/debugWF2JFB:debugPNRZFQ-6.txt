@@ -1,6 +1,0 @@
-buttercup
-foundation
-broccoli
-floor
-carpet
-azalea

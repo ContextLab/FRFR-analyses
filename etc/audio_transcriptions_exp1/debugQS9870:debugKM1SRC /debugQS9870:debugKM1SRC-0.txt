@@ -1,9 +1,0 @@
-mixer
-belt
-cup
-rope
-evergreen
-spruce
-oak
-shirt
-blender
