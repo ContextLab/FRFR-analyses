@@ -1,7 +1,0 @@
-door
-corridor
-hallway
-window
-guava
-vanilla
-pot

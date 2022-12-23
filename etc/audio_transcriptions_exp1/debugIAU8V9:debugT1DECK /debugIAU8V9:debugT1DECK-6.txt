@@ -1,6 +1,0 @@
-protractor
-chisel
-saw
-france
-japan
-piano

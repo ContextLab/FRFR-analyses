@@ -1,6 +1,0 @@
-zebra
-elephant
-lion
-australia
-italy
-poland

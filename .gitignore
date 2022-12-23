@@ -1,3 +1,10 @@
 .ipynb_checkpoints/
 *.wav
 *.flac
+*.DS_Store
+*.egg
+*.pyc
+code/__pycache__/dataloader.cpython-310.pyc
+*.idea
+*.vscode
+*.pyc

@@ -1,5 +1,0 @@
-pickle
-onion
-azalea
-cauliflower
-elevator

@@ -1,7 +1,0 @@
-bra
-chicago
-sydney
-berlin
-mosquito
-sycamore
-sweater

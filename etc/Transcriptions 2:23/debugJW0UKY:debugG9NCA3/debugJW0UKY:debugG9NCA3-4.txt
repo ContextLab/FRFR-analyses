@@ -1,7 +1,0 @@
-elevator
-carpet
-foundation
-pickle
-dahlia
-cauliflower
-onion

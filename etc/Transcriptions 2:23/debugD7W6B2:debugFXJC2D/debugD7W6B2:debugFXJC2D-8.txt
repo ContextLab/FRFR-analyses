@@ -1,4 +1,0 @@
-arms
-hip
-pelvis
-montreal

@@ -1,7 +1,0 @@
-buttercup
-pickle
-elevator
-floor
-carpet
-foundation
-saucer
