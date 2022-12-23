@@ -10,3 +10,8 @@ code/__pycache__/dataloader.cpython-310.pyc
 *.pyc
 *.fdb_latexmk
 *.fls
+*.aux
+*.blg
+*.log
+*.out
+*.synctex.gz
