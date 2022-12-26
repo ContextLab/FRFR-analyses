@@ -29,6 +29,12 @@ Mas\'{i}s-Obando, R., Norman, K.~A., and Baldassano, C. (2022).
   memory during encoding and retrieval.
 \newblock {\em {eLife}}, 11:e70445.
 
+\bibitem[\protect\astroncite{Nastase et~al.}{2020}]{NastEtal20}
+Nastase, S.~A., Goldstein, A., and Hasson, U. (2020).
+\newblock Keep it real: rethinking the primacy of experimental control in
+  cognitive neuroscience.
+\newblock {\em {NeuroImage}}, 15(222):117254--117261.
+
 \bibitem[\protect\astroncite{Ranganath and Ritchey}{2012}]{RangRitc12}
 Ranganath, C. and Ritchey, M. (2012).
 \newblock Two cortical systems for memory-guided behavior.
@@ -40,5 +46,16 @@ Yeshurun, Y., Swanson, S., Simony, E., Chen, J., Lazaridi, C., Honey, C.~J.,
 \newblock Same story, different story: the neural representation of
   interpretive frameworks.
 \newblock {\em Psychological Science}, 28(3):307--319.
+
+\bibitem[\protect\astroncite{Zwaan et~al.}{1995}]{ZwaaEtal95}
+Zwaan, R.~A., Langston, M.~C., and Graesser, A.~C. (1995).
+\newblock The construction of situation models in narrative comprehension: an
+  event-indexing model.
+\newblock {\em Psychological Science}, 6(5):292--297.
+
+\bibitem[\protect\astroncite{Zwaan and Radvansky}{1998}]{ZwaaRadv98}
+Zwaan, R.~A. and Radvansky, G.~A. (1998).
+\newblock Situation models in language comprehension and memory.
+\newblock {\em Psychological Bulletin}, 123(2):162--185.
 
 \end{thebibliography}
