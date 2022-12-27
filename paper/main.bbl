@@ -1,21 +1,74 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\astroncite{Anderson and Bower}{1972}]{AndeBowe72}
+Anderson, J.~R. and Bower, G.~H. (1972).
+\newblock Recognition and retrieval processes in free recall.
+\newblock {\em Psychological Review}, 79(2):97--123.
+
 \bibitem[\protect\astroncite{Baldassano et~al.}{2018}]{BaldEtal18}
 Baldassano, C., Hasson, U., and Norman, K.~A. (2018).
 \newblock Representation of real-world event schemas during narrative
   perception.
 \newblock {\em The Journal of Neuroscience}, 38(45):9689--9699.
 
+\bibitem[\protect\astroncite{Bousfield}{1953}]{Bous53}
+Bousfield, W.~A. (1953).
+\newblock The occurrence of clustering in the recall of randomly arranged
+  associates.
+\newblock {\em Journal of General Psychology}, 49:229--240.
+
+\bibitem[\protect\astroncite{Bousfield et~al.}{1954}]{BousEtal54}
+Bousfield, W.~A., Sedgewick, C.~H., and Cohen, B.~H. (1954).
+\newblock Certain temporal characteristics of the recall of verbal associates.
+\newblock {\em {American} Journal of Psychology}, 67:111--118.
+
+\bibitem[\protect\astroncite{Estes}{1955}]{Este55a}
+Estes, W.~K. (1955).
+\newblock Statistical theory of spontaneous recovery and regression.
+\newblock {\em Psychological Review}, 62:145--154.
+
+\bibitem[\protect\astroncite{Glenberg et~al.}{1983}]{GlenEtal83}
+Glenberg, A.~M., Bradley, M.~M., Kraus, T.~A., and Renzaglia, G.~J. (1983).
+\newblock Studies of the long-term recency effect: support for a contextually
+  guided retrieval theory.
+\newblock {\em Journal of Experimental Psychology: Learning, Memory, and
+  Cognition}, 12:413--418.
+
+\bibitem[\protect\astroncite{Howard and Kahana}{2002}]{HowaKaha02a}
+Howard, M.~W. and Kahana, M.~J. (2002).
+\newblock A distributed representation of temporal context.
+\newblock {\em Journal of Mathematical Psychology}, 46:269--299.
+
+\bibitem[\protect\astroncite{Jenkins and Russell}{1952}]{JenkRuss52}
+Jenkins, J.~J. and Russell, W.~A. (1952).
+\newblock Associative clustering during recall.
+\newblock {\em Journal of Abnormal and Social Psychology}, 47:818--821.
+
+\bibitem[\protect\astroncite{Kahana}{1996}]{Kaha96}
+Kahana, M.~J. (1996).
+\newblock Associative retrieval processes in free recall.
+\newblock {\em Memory and Cognition}, 24:103--109.
+
 \bibitem[\protect\astroncite{Kahana}{2012}]{Kaha12}
 Kahana, M.~J. (2012).
 \newblock {\em Foundations of human memory}.
 \newblock {Oxford} {University} Press, New York, {NY}.
+
+\bibitem[\protect\astroncite{Kimball et~al.}{2007}]{KimbEtal07}
+Kimball, D.~R., Smith, T.~A., and Kahana, M.~J. (2007).
+\newblock The f{SAM} model of false recall.
+\newblock {\em Psychological Review}, 114(4):954--993.
 
 \bibitem[\protect\astroncite{Manning}{2020}]{Mann20}
 Manning, J.~R. (2020).
 \newblock Context reinstatement.
 \newblock In Kahana, M.~J. and Wagner, A.~D., editors, {\em Handbook of Human
   Memory}. {Oxford} {University} Press.
+
+\bibitem[\protect\astroncite{Manning and Kahana}{2012}]{MannKaha12}
+Manning, J.~R. and Kahana, M.~J. (2012).
+\newblock Interpreting semantic clustering effects in free recall.
+\newblock {\em Memory}, 20(5):511--517.
 
 \bibitem[\protect\astroncite{Manning et~al.}{2015}]{MannEtal15}
 Manning, J.~R., Norman, K.~A., and Kahana, M.~J. (2015).
@@ -35,10 +88,53 @@ Nastase, S.~A., Goldstein, A., and Hasson, U. (2020).
   cognitive neuroscience.
 \newblock {\em {NeuroImage}}, 15(222):117254--117261.
 
+\bibitem[\protect\astroncite{Polyn and Kahana}{2008}]{PolyKaha08}
+Polyn, S.~M. and Kahana, M.~J. (2008).
+\newblock Memory search and the neural representation of context.
+\newblock {\em Trends in Cognitive Sciences}, 12:24--30.
+
+\bibitem[\protect\astroncite{Polyn et~al.}{2009}]{PolyEtal09}
+Polyn, S.~M., Norman, K.~A., and Kahana, M.~J. (2009).
+\newblock Task context and organization in free recall.
+\newblock {\em Neuropsychologia}, 47:2158--2163.
+
+\bibitem[\protect\astroncite{Raaijmakers and Shiffrin}{1980}]{RaaiShif80}
+Raaijmakers, J. G.~W. and Shiffrin, R.~M. (1980).
+\newblock {SAM: A} theory of probabilistic search of associative memory.
+\newblock In Bower, G.~H., editor, {\em The Psychology of Learning and
+  Motivation: Advances in Research and Theory}, volume~14, pages 207--262.
+  Academic Press, New York, {NY}.
+
 \bibitem[\protect\astroncite{Ranganath and Ritchey}{2012}]{RangRitc12}
 Ranganath, C. and Ritchey, M. (2012).
 \newblock Two cortical systems for memory-guided behavior.
 \newblock {\em Nature Reviews Neuroscience}, 13:713--726.
+
+\bibitem[\protect\astroncite{Romney et~al.}{1993}]{RomnEtal93}
+Romney, A.~K., Brewer, D.~D., and Batchelder, W.~H. (1993).
+\newblock Predicting clustering from semantic structure.
+\newblock {\em Psychological Science}, 4:28--34.
+
+\bibitem[\protect\astroncite{Sederberg et~al.}{2008}]{SedeEtal08}
+Sederberg, P.~B., Howard, M.~W., and Kahana, M.~J. (2008).
+\newblock A context-based theory of recency and contiguity in free recall.
+\newblock {\em Psychological Review}, 115(4):893--912.
+
+\bibitem[\protect\astroncite{Shankar and Howard}{2012}]{ShanHowa12}
+Shankar, K.~H. and Howard, M.~W. (2012).
+\newblock A scale-invariant internal representation of time.
+\newblock {\em Neural Computation}, 24:134--193.
+
+\bibitem[\protect\astroncite{Sirotin et~al.}{2005}]{SiroEtal05}
+Sirotin, Y.~B., Kimball, D.~R., and Kahana, M.~J. (2005).
+\newblock Going beyond a single list: modeling the effects of prior experience
+  on episodic free recall.
+\newblock {\em Psychonomic Bulletin and Review}, 12(5):787--805.
+
+\bibitem[\protect\astroncite{Smith and Vela}{2001}]{SmitVela01}
+Smith, S.~M. and Vela, E. (2001).
+\newblock Environmental context-dependent memory: a review and meta-analysis.
+\newblock {\em Psychonomic Bulletin and Review}, 8(2):203--220.
 
 \bibitem[\protect\astroncite{Yeshurun et~al.}{2017}]{YeshEtal17}
 Yeshurun, Y., Swanson, S., Simony, E., Chen, J., Lazaridi, C., Honey, C.~J.,
