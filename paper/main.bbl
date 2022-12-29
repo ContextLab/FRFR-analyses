@@ -22,6 +22,11 @@ Bousfield, W.~A., Sedgewick, C.~H., and Cohen, B.~H. (1954).
 \newblock Certain temporal characteristics of the recall of verbal associates.
 \newblock {\em {American} Journal of Psychology}, 67:111--118.
 
+\bibitem[\protect\astroncite{Bower et~al.}{1979}]{BoweEtal79}
+Bower, G.~H., Black, J.~B., and Turner, T.~J. (1979).
+\newblock Scripts in memory for text.
+\newblock {\em Cognitive Psychology}, 11(2):177--220.
+
 \bibitem[\protect\astroncite{Estes}{1955}]{Este55a}
 Estes, W.~K. (1955).
 \newblock Statistical theory of spontaneous recovery and regression.
@@ -76,11 +81,31 @@ Manning, J.~R., Norman, K.~A., and Kahana, M.~J. (2015).
 \newblock In Gazzaniga, M., editor, {\em The Cognitive Neurosciences}, pages
   557--566. {MIT} Press.
 
+\bibitem[\protect\astroncite{Manning et~al.}{2011}]{MannEtal11}
+Manning, J.~R., Polyn, S.~M., Baltuch, G., Litt, B., and Kahana, M.~J. (2011).
+\newblock Oscillatory patterns in temporal lobe reveal context reinstatement
+  during memory search.
+\newblock {\em Proceedings of the National Academy of Sciences, {USA}},
+  108(31):12893--12897.
+
+\bibitem[\protect\astroncite{Manning et~al.}{2012}]{MannEtal12}
+Manning, J.~R., Sperling, M.~R., Sharan, A., Rosenberg, E.~A., and Kahana,
+  M.~J. (2012).
+\newblock Spontaneously reactivated patterns in frontal and temporal lobe
+  predict semantic clustering during memory search.
+\newblock {\em The Journal of Neuroscience}, 32(26):8871--8878.
+
 \bibitem[\protect\astroncite{Mas\'{i}s-Obando et~al.}{2022}]{MasiEtal22}
 Mas\'{i}s-Obando, R., Norman, K.~A., and Baldassano, C. (2022).
 \newblock Scheme representations in distinct brain networks support narrative
   memory during encoding and retrieval.
 \newblock {\em {eLife}}, 11:e70445.
+
+\bibitem[\protect\astroncite{Momennejad et~al.}{2017}]{MomeEtal17}
+Momennejad, I., Russek, E.~M., Cheong, J.~H., Botvinick, M.~M., Daw, N.~D., and
+  Gershman, S.~J. (2017).
+\newblock The successor representation in human reinforcement learning.
+\newblock {\em Nature Human Behavior}, 1:680--692.
 
 \bibitem[\protect\astroncite{Nastase et~al.}{2020}]{NastEtal20}
 Nastase, S.~A., Goldstein, A., and Hasson, U. (2020).
@@ -115,6 +140,11 @@ Romney, A.~K., Brewer, D.~D., and Batchelder, W.~H. (1993).
 \newblock Predicting clustering from semantic structure.
 \newblock {\em Psychological Science}, 4:28--34.
 
+\bibitem[\protect\astroncite{Schapiro and Turk-Browne}{2015}]{SchaTurk15}
+Schapiro, A. and Turk-Browne, N. (2015).
+\newblock Statistical learning.
+\newblock {\em Brain Mapping: An Encyclopedic Refernce}, 3:501--506.
+
 \bibitem[\protect\astroncite{Sederberg et~al.}{2008}]{SedeEtal08}
 Sederberg, P.~B., Howard, M.~W., and Kahana, M.~J. (2008).
 \newblock A context-based theory of recency and contiguity in free recall.
@@ -135,6 +165,12 @@ Sirotin, Y.~B., Kimball, D.~R., and Kahana, M.~J. (2005).
 Smith, S.~M. and Vela, E. (2001).
 \newblock Environmental context-dependent memory: a review and meta-analysis.
 \newblock {\em Psychonomic Bulletin and Review}, 8(2):203--220.
+
+\bibitem[\protect\astroncite{Xu et~al.}{2022}]{XuEtal22}
+Xu, X., Zhu, Z., and Manning, J.~R. (2022).
+\newblock The psychological arrow of time drives temporal asymmetries in
+  retrodicting versus predicting narrative events.
+\newblock {\em {PsyArXiv}}, page doi.org/10.31234/osf.io/yp2qu.
 
 \bibitem[\protect\astroncite{Yeshurun et~al.}{2017}]{YeshEtal17}
 Yeshurun, Y., Swanson, S., Simony, E., Chen, J., Lazaridi, C., Honey, C.~J.,
