@@ -75,6 +75,28 @@ panels display the recall dynamics for late (randomly ordered) lists.}
         \label{fig:recall-dynamics-adaptive}
     \end{figure}
 
+
+\begin{figure}[tp] \centering
+    \includegraphics[width=0.75\textwidth]{figures/accuracy_by_list}
+    
+    \caption{\textbf{Recall accuracy by study list number.}  Each panel displays the average recall accuracy (across participants) as a function of the number of studied lists for the
+    random (control) conditions (\textbf{A.}), order manipulation conditions (\textbf{B.}), and adaptive conditions (\textbf{C.}.  The conditions are denoted by color.  Note that the first four
+    lists in all of the ``adaptive'' conditions were ordered randomly to compute a baseline fingerprint for each participant prior to initiating the adaptive ordering procedure.  All error
+    ribbons denote bootstrap-estimated 95\% confidence intervals, calculated across participants.}
+        \label{fig:accuracy-by-list}
+\end{figure}
+
+
+\begin{figure}[tp] \centering
+    \includegraphics[width=\textwidth]{figures/clustering_correlations}
+    
+    \caption{\textbf{Correlations between feature clustering scores (order manipulation conditions).}  Each column reflects one experimental condition.  The matrices in the top and middle
+    rows display across-participant correlations between clustering scores for each feature dimension (top: order manipulation lists; middle: randomly ordered lists).  The matrices
+    in the bottom rows display the differences between the top and middle rows.}
+        \label{fig:clustering-correlations}
+\end{figure}
+
+
 \begin{figure}[tp] \centering
     \includegraphics[width=\textwidth]{figures/fingerprints_random}
     
@@ -95,16 +117,6 @@ panels display the recall dynamics for late (randomly ordered) lists.}
         \label{fig:fingerprints-adaptive}
 \end{figure}
 
-\begin{figure}[tp] \centering
-    \includegraphics[width=\textwidth]{figures/fingerprints_adaptive}
-    
-    \caption{\textbf{Memory ``fingerprints.'' (adaptive conditions).}
-    The across-participant distributions of clustering scores for each feature
-    type ($x$-coordinate) are displayed for each experimental condition
-    (color), separately for order manipulation (early, top) and randomly
-    ordered (late, bottom) lists.}
-        \label{fig:fingerprints-adaptive}
-\end{figure}
 
 \begin{sidewaysfigure}
     \includegraphics[width=\textwidth]{figures/pnr_matrices}
@@ -122,10 +134,34 @@ panels display the recall dynamics for late (randomly ordered) lists.}
     \label{fig:pnr}
 \end{sidewaysfigure}
 
-\newpage
-\renewcommand{\refname}{Supplementary references}
-\bibliographystyle{apa}
-\bibliography{CDL-bibliography/cdl}
+\begin{figure}[tp] \centering
+    \includegraphics[width=\textwidth]{figures/fingerprint_trajectories_random}
+    
+    \caption{\textbf{Memory fingerprint dynamics (random conditions).}
+    \textbf{A.} Each column (and color) reflects an experimental condition. In
+    the top panels, each marker displays a 2D projection of the
+    (across-participant) average memory fingerprint for one list. Early lists
+    are denoted by circles and late lists are denoted by stars. All of the
+    fingerprints (across all conditions and lists) are projected into a common
+    space. The bar plots in the bottom panels display the Euclidean distances
+    of the per-list memory fingerprints to the list 0 fingerprint, for each
+    condition. Error bars denote bootstrap-estimated 95\% confidence intervals.
+    The dotted vertical lines denote the boundaries between early and late
+    lists. \textbf{B.} In this panel, the fingerprints for early (circle) and
+    late (star) lists are averaged across lists and participants before
+    projecting the fingerprints into a (new) 2D space.} \label{fig:fingerprint-trajectories-random}
+    
+    \end{figure}
+
+% accuracy by list (list order effects)
+
+
+% correlations between different types of clustering
+
+%\newpage
+%\renewcommand{\refname}{Supplementary references}
+%\bibliographystyle{apa}
+%\bibliography{CDL-bibliography/cdl}
 
 
 

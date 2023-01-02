@@ -14,9 +14,12 @@
 
 \newcommand{\dynamicsRandom}{S1}
 \newcommand{\dynamicsAdaptive}{S2}
-\newcommand{\fingerprintsRandom}{S3}
-\newcommand{\fingerprintsAdaptive}{S4}
-\newcommand{\recallInit}{S5}
+\newcommand{\accuracyByList}{S3}
+\newcommand{\clusterCorrs}{S4}
+\newcommand{\fingerprintsRandom}{S5}
+\newcommand{\fingerprintsAdaptive}{S6}
+\newcommand{\recallInit}{S7}
+\newcommand{\fingerprintTrajectoryRandom}{S8}
 
 \doublespacing
 \linenumbers
@@ -208,6 +211,12 @@ Figures~\dynamicsRandom~and~\dynamicsAdaptive~for analogous plots for the random
     \label{fig:recall-dynamics}
 \end{figure}
 
+% figure: accuracy by list
+Figure~\accuracyByList.
+
+% figure: recall initiation
+Figure~\recallInit.
+
 % figure: clustering effects
 \begin{figure}[tp] \centering
     \includegraphics[width=\textwidth]{figures/fingerprints}
@@ -222,9 +231,12 @@ Figures~\dynamicsRandom~and~\dynamicsAdaptive~for analogous plots for the random
         \label{fig:fingerprints}
     \end{figure}
 
+% figure: correlations between clustering scores
+Figure~\clusterCorrs.
 
-% figure: recall initiation
-Figure~\recallInit.
+
+
+
 
 % figure: feature clustering vs. accuracy, feature clustering vs. temporal clustering
 \begin{figure}[tp] \centering
@@ -252,12 +264,46 @@ confidence intervals.} \label{fig:clustering-scatterplots}
 
 
 % figure: fingerprint trajectories
+\begin{figure}[tp] \centering
+    \includegraphics[width=\textwidth]{figures/fingerprint_trajectories}
+    
+    \caption{\textbf{Memory fingerprint dynamics (order manipulation
+    conditions).} \textbf{A.} Each column (and color) reflects an experimental
+    condition. In the top panels, each marker displays a 2D projection of the
+    (across-participant) average memory fingerprint for one list. Order
+    manipulation (early) lists are denoted by circles and randomly ordered
+    (late) lists are denoted by stars. All of the fingerprints (across all
+    conditions and lists) are projected into a common space. The bar plots in
+    the bottom panels display the Euclidean distances of the per-list memory
+    fingerprints to the list 0 fingerprint, for each condition. Error bars
+    denote bootstrap-estimated 95\% confidence intervals. The dotted vertical
+    lines denote the boundaries between early and late lists. \textbf{B.} In
+    this panel, the fingerprints for early (circle) and late (star) lists are
+    averaged across lists and participants before projecting the fingerprints
+    into a (new) 2D space. See Figure~\fingerprintTrajectoryRandom~for
+    analogous plots for the random (control) conditions. }
+    \label{fig:fingerprint-trajectories}
+    
+    \end{figure}
 
-% figure: carryover effects: clustering early vs. clustering late
+% figure: carryover effects: 
+%  - clustering early vs. clustering late
+%  - clustering carryover vs. accuracy difference
+%  - clustering carryover vs. temporal clustering differences
+\begin{figure}[tp] \centering
+    \includegraphics[width=\textwidth]{figures/clustering_carryover}
+    
+    \caption{\textbf{Feature clustering carryover effects.} \textbf{A.} Feature clustering scores for ordder manipulation (early) versus randomly ordered (late) lists.
+    \textbf{B.}  Accuracy differences (on early versus late lists) versus feature clustering ``carryover'' (defined as the differences between the average clustering scores on early and late lists).
+    \textbf{C.}  Temporal clustering differences (on early versus late lists) versus feature clustering carryover.  \textbf{All panels.} Each dot in the main scatterplots denotes the
+    average scores for one participant. The colored regression lines are computed
+    across participants. The inset displays condition-averaged results, where each
+    dot reflects a single condition and the regression line is computed across
+    experimental conditions. All error ribbons denote bootstrap-estimated 95\%
+    confidence intervals.} \label{fig:clustering-carryover}
+    \end{figure}
 
-% figure: clustering carryover vs. accuracy difference
 
-% figure: clustering carryover vs. temporal clustering differences
 
 \section*{Discussion}
 
