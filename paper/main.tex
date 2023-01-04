@@ -330,14 +330,107 @@ confidence intervals.} \label{fig:clustering-scatterplots}
 % implications for adaptive learning, education and training
 
 
-\section*{Materials and methods}
-
+\section*{Materials and methods} 
 
 \subsection*{Participants}
 
+We enrolled a total of 491 Dartmouth undergraduate students across 11
+experimental conditions. The conditions included two primary controls (feature
+rich, reduced), two secondary controls (reduced (early), reduced (late)), six
+order manipulation conditions (category, size, length, first letter, color, and
+locaiton), and a final adaptive condition. Each of these conditions are
+described in the \textit{Experimental design} subsection below.
+
+Participants received course credit for enrolling in our study. We asked each
+participant to fill out a demographic survey that included information about
+their self-reported age, gender, ethnicity, race, education, vision, reading
+impairments, medications or recent injuries, coffee consumption on the day of
+testing, and level of alertness at the time of testing. All components of the
+demographics survey were optional. One participant elected not to fill out any
+part of the demographic survey, and all other participants report some or all
+of their requested demographic information.
+
+We aimed to run (to completion) at least 60 participants in each of the two
+primary control conditions and in the adaptive condition. In all other
+conditions we set a target enrollment of at least 30 participants. Because our
+data collection efforts were coordinated 12 researchers and multiple testing
+rooms and computers, it was not feasible for individual experimenters to know
+how many participants had been run in each experimental condition until the
+relevant databases were synchronized at the end of each working day. We also
+over-enrolled participants for each condition to help ensure that we met our
+minimum enrollment targets even if some participants dropped out of the study
+prematurely or did not show up for their testing session. This led us to exceed
+our target enrollments for several conditions.
+
+Participants were assigned to experimental conditions based loosely on their
+date of participation. (This aspect of our procedure helped us to more easily
+synchronize the experiment databases across multiple testing computers.)
+A complete report... %STOPPED HERE
+
+
+
+
+
 \subsection*{Experimental design}
 
+Our experiment is a variant of the classic free recall paradigm that we term
+\textit{feature-rich free recall}. In feature-rich free recall, participants
+study 16 lists, each comprised of 16 words that vary along a number of stimulus
+dimensions: semantic category, object size, text color, text location, word
+length, and starting letter (Fig.~\ref{fig:exp1}). Each list contains four
+words from each of four different semantic categories; all other stimulus
+features are randomized. After studying each list, the participant attempts to
+recall as many words as they can from that list, in any order they choose.
+Because each individual word is associated with several well-defined (and
+quantifiable) features, and because each list incorporates a diverse mix of
+feature values along each dimension, this allows us to evaluate participants'
+memory fingerprints in rich detail.
+
+Our experimental paradigm incorporates the Annyang and Google Cloud Speech API
+speech-to-text engines to automatically transcribe participants' verbal recalls
+into text. This allows recalls to be transcribed in real time-- a
+distinguishing feature of the experiment; in typical verbal recall experiments
+the audio data must be parsed manually. (We have run a pilot experiment to
+verify that the automatically transcribed recalls are sufficiently close to
+human-transcribed recalls to yield reliable data.) This real-time speech
+processing component of the paradigm plays an important role in Experiments
+3--5.
+
+\subsubsection*{Stimuli}
+
+\subsubsection*{Real-time speech-to-text processing}
+
+\subsubsection*{Order manipulation conditions}
+
+\paragraph{Feature dimensions.}
+
+\paragraph{Constructing feature-sorted lists.}
+
+\subsubsection*{Random conditions}
+
+\subsubsection*{Adaptive conditions}
+
+\paragraph{Online ``fingerprint'' analysis.}
+
+\paragraph{Ordering ``stabilize'' lists by an estimated fingerprint.}
+
+\paragraph{Ordering ``destabilize'' lists by an estimated fingerprint.}
+
 \subsection*{Analysis}
+
+\subsubsection*{Probability of first recall and probability of $n$\textsuperscript{th} recall}
+
+\subsubsection*{Lag conditional response probability}
+
+\subsubsection*{Computing clustering scores and memory fingerprints}
+
+\subsubsection*{Identifying event boundaries}
+
+\subsubsection*{Serial position curves and recall accuracy}
+
+\subsubsection*{Computing low-dimensional embeddings of memory fingerprints}
+
+
 
 \bibliographystyle{apa}
 \bibliography{CDL-bibliography/cdl}
