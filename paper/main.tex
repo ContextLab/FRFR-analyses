@@ -190,6 +190,131 @@ verbally recall words in any order (microphone icon).}
 
 
 
+
+
+
+\section*{Materials and methods} 
+
+% need a summary statement...
+
+\subsection*{Participants}
+
+We enrolled a total of 491 Dartmouth undergraduate students across 11
+experimental conditions. The conditions included two primary controls (feature
+rich, reduced), two secondary controls (reduced (early), reduced (late)), six
+order manipulation conditions (category, size, length, first letter, color, and
+location), and a final adaptive condition. Each of these conditions are
+described in the \textit{Experimental design} subsection below.
+
+Participants received course credit for enrolling in our study. We asked each
+participant to fill out a demographic survey that included information about
+their self-reported age, gender, ethnicity, race, education, vision, reading
+impairments, medications or recent injuries, coffee consumption on the day of
+testing, and level of alertness at the time of testing. All components of the
+demographics survey were optional. One participant elected not to fill out any
+part of the demographic survey, and all other participants report some or all
+of their requested demographic information.
+
+We aimed to run (to completion) at least 60 participants in each of the two
+primary control conditions and in the adaptive condition. In all other
+conditions we set a target enrollment of at least 30 participants. Because our
+data collection efforts were coordinated 12 researchers and multiple testing
+rooms and computers, it was not feasible for individual experimenters to know
+how many participants had been run in each experimental condition until the
+relevant databases were synchronized at the end of each working day. We also
+over-enrolled participants for each condition to help ensure that we met our
+minimum enrollment targets even if some participants dropped out of the study
+prematurely or did not show up for their testing session. This led us to exceed
+our target enrollments for several conditions.
+
+Participants were assigned to experimental conditions based loosely on their
+date of participation. (This aspect of our procedure helped us to more easily
+synchronize the experiment databases across multiple testing computers.)  Of the 490 participants
+who opted to fill out the demographics survey, reported ages ranged from 17 to 31 years (mean: 19.1; standard deviation: 1.356).
+A total of 318 participants reported their gender as female, 170 as male, and 2 participants declined to report their gender.
+A total of 442 participants reported their ethnicity as ``not Hispanic or Latino,'' 39 as ``Hispanic or Latino,'' and 9 declined
+to report their ethnicity.  Participants reported their races as White (345 participants), Asian (120 participants), Black or African American (31 participants),
+American Indian or Alaska Native (11 particiapnts), Native Hawaiian or Other Pacific Islander (4 participants), Mixed race (3 participants), Middle Eastern (1 participant), and
+Arab (1 participant).  A total of 5 participants declined to report their race.  We note that several participants reported more than one of racial category.
+Participants reported their highest degrees achieved as ``Some college'' (359 participants), ``High school graduate'' (117 participants),
+``College graduate'' (7 participants), ``Some high school'' (5 participants), ``Doctorate'' (1 participant), and ``Master's degree'' (1 participant).
+A total of 482 participants reported no reading impairments, and 8 reported mild reading impairments such as mild dyslexia.  A total of 489
+participants reported having normal color vision and 1 participant reported that they were color blind.  A total of 482 participants
+reported taking no prescription medications and having no recent injuries; 4 participants reported having ADHD, 1 reported having dyslexia, 1 reported having
+allergies, 1 reported a recently torn ACL/MCL, and 1 reported a concussion from several months prior.  The participants reported consuming 0 -- 3 cups of coffee
+prior to the testing session (mean: 0.32 cups; standard deviation: 0.58 cups).  Participants reported their current level of alertness, and we converted
+their responses to numerical scores as follows: ``very sluggish'' (-2), ``a little sluggish'' (-1), ``neutral'' (0), ``a little alert'' (1), and ``very alert'' (2).
+Across all participants, the full range of alertness levels were reported (range: -2 -- 2; mean: 0.35; standard deviation: 0.89) .
+
+We dropped from our dataset the 1 participant who reported abnormal color vision, as well as 39 participants whose data
+were corrupted due to technical failures while running the experiment or during the daily database merges.  In total, this left usable data from
+452 participants, broken down by experimental condition as follows: feature rich (67 participants), reduced (61 participants), reduced (late) (41 participants), 
+reduced (early), (42 participants), category (30 participants), size (30 participants), length (30 participants), first letter (30 participants),
+color (31 participants), location (30 participants), and adaptive (60 participants).  The participant who declined to fill out their demographic
+survey participated in the location condition, and we verified verbally that they had normal color vision.
+
+
+
+
+\subsection*{Experimental design}
+
+Our experiment is a variant of the classic free recall paradigm that we term
+\textit{feature-rich free recall}. In feature-rich free recall, participants
+study 16 lists, each comprised of 16 words that vary along a number of stimulus
+dimensions: semantic category, object size, text color, text location, word
+length, and starting letter (Fig.~\ref{fig:exp}). Each list contains four
+words from each of four different semantic categories and two object sizes; all other stimulus
+features are randomized. After studying each list, the participant attempts to
+recall as many words as they can from that list, in any order they choose.
+Because each individual word is associated with several well-defined (and
+quantifiable) features, and because each list incorporates a diverse mix of
+feature values along each dimension, this allows us to evaluate participants'
+memory fingerprints in rich detail.
+
+Our experimental paradigm incorporates the Annyang and Google Cloud Speech API
+speech-to-text engines to automatically transcribe participants' verbal recalls
+into text. This allows recalls to be transcribed in real time-- a
+distinguishing feature of the experiment; in typical verbal recall experiments
+the audio data must be parsed manually. (We have run a pilot experiment to
+verify that the automatically transcribed recalls are sufficiently close to
+human-transcribed recalls to yield reliable data.) This real-time speech
+processing component of the paradigm plays an important role in Experiments
+3--5.
+
+\subsubsection*{Stimuli}
+
+\subsubsection*{Real-time speech-to-text processing}
+
+\subsubsection*{Order manipulation conditions}
+
+\paragraph{Feature dimensions.}
+
+\paragraph{Constructing feature-sorted lists.}
+
+\subsubsection*{Random conditions}
+
+\subsubsection*{Adaptive conditions}
+
+\paragraph{Online ``fingerprint'' analysis.}
+
+\paragraph{Ordering ``stabilize'' lists by an estimated fingerprint.}
+
+\paragraph{Ordering ``destabilize'' lists by an estimated fingerprint.}
+
+\subsection*{Analysis}
+
+\subsubsection*{Probability of first recall and probability of $n$\textsuperscript{th} recall}
+
+\subsubsection*{Lag conditional response probability}
+
+\subsubsection*{Computing clustering scores and memory fingerprints}
+
+\subsubsection*{Identifying event boundaries}
+
+\subsubsection*{Serial position curves and recall accuracy}
+
+\subsubsection*{Computing low-dimensional embeddings of memory fingerprints}
+
 \section*{Results}
 
 
@@ -328,111 +453,6 @@ confidence intervals.} \label{fig:clustering-scatterplots}
 % connections to prior work: context effects, priming, situation models
 
 % implications for adaptive learning, education and training
-
-
-\section*{Materials and methods} 
-
-\subsection*{Participants}
-
-We enrolled a total of 491 Dartmouth undergraduate students across 11
-experimental conditions. The conditions included two primary controls (feature
-rich, reduced), two secondary controls (reduced (early), reduced (late)), six
-order manipulation conditions (category, size, length, first letter, color, and
-locaiton), and a final adaptive condition. Each of these conditions are
-described in the \textit{Experimental design} subsection below.
-
-Participants received course credit for enrolling in our study. We asked each
-participant to fill out a demographic survey that included information about
-their self-reported age, gender, ethnicity, race, education, vision, reading
-impairments, medications or recent injuries, coffee consumption on the day of
-testing, and level of alertness at the time of testing. All components of the
-demographics survey were optional. One participant elected not to fill out any
-part of the demographic survey, and all other participants report some or all
-of their requested demographic information.
-
-We aimed to run (to completion) at least 60 participants in each of the two
-primary control conditions and in the adaptive condition. In all other
-conditions we set a target enrollment of at least 30 participants. Because our
-data collection efforts were coordinated 12 researchers and multiple testing
-rooms and computers, it was not feasible for individual experimenters to know
-how many participants had been run in each experimental condition until the
-relevant databases were synchronized at the end of each working day. We also
-over-enrolled participants for each condition to help ensure that we met our
-minimum enrollment targets even if some participants dropped out of the study
-prematurely or did not show up for their testing session. This led us to exceed
-our target enrollments for several conditions.
-
-Participants were assigned to experimental conditions based loosely on their
-date of participation. (This aspect of our procedure helped us to more easily
-synchronize the experiment databases across multiple testing computers.)
-A complete report
-
-... %STOPPED HERE
-
-
-
-
-
-\subsection*{Experimental design}
-
-Our experiment is a variant of the classic free recall paradigm that we term
-\textit{feature-rich free recall}. In feature-rich free recall, participants
-study 16 lists, each comprised of 16 words that vary along a number of stimulus
-dimensions: semantic category, object size, text color, text location, word
-length, and starting letter (Fig.~\ref{fig:exp1}). Each list contains four
-words from each of four different semantic categories; all other stimulus
-features are randomized. After studying each list, the participant attempts to
-recall as many words as they can from that list, in any order they choose.
-Because each individual word is associated with several well-defined (and
-quantifiable) features, and because each list incorporates a diverse mix of
-feature values along each dimension, this allows us to evaluate participants'
-memory fingerprints in rich detail.
-
-Our experimental paradigm incorporates the Annyang and Google Cloud Speech API
-speech-to-text engines to automatically transcribe participants' verbal recalls
-into text. This allows recalls to be transcribed in real time-- a
-distinguishing feature of the experiment; in typical verbal recall experiments
-the audio data must be parsed manually. (We have run a pilot experiment to
-verify that the automatically transcribed recalls are sufficiently close to
-human-transcribed recalls to yield reliable data.) This real-time speech
-processing component of the paradigm plays an important role in Experiments
-3--5.
-
-\subsubsection*{Stimuli}
-
-\subsubsection*{Real-time speech-to-text processing}
-
-\subsubsection*{Order manipulation conditions}
-
-\paragraph{Feature dimensions.}
-
-\paragraph{Constructing feature-sorted lists.}
-
-\subsubsection*{Random conditions}
-
-\subsubsection*{Adaptive conditions}
-
-\paragraph{Online ``fingerprint'' analysis.}
-
-\paragraph{Ordering ``stabilize'' lists by an estimated fingerprint.}
-
-\paragraph{Ordering ``destabilize'' lists by an estimated fingerprint.}
-
-\subsection*{Analysis}
-
-\subsubsection*{Probability of first recall and probability of $n$\textsuperscript{th} recall}
-
-\subsubsection*{Lag conditional response probability}
-
-\subsubsection*{Computing clustering scores and memory fingerprints}
-
-\subsubsection*{Identifying event boundaries}
-
-\subsubsection*{Serial position curves and recall accuracy}
-
-\subsubsection*{Computing low-dimensional embeddings of memory fingerprints}
-
-
 
 \bibliographystyle{apa}
 \bibliography{CDL-bibliography/cdl}
