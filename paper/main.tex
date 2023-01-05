@@ -25,7 +25,7 @@
 \linenumbers
 
 \title{Carryover effects in free recall reveal how prior experiences influence memories of new experiences}
-\author{Jeremy R. Manning\textsuperscript{1, *}, Andrew C. Heusser\textsuperscript{1, 2}, Kirsten Ziman\textsuperscript{1, 3},\\Emily Whitaker\textsuperscript{1}, and Paxton C. Fitzpatrick\textsuperscript{1}\\\textsuperscript{1}Dartmouth College\\\textsuperscript{2}Akili Interactive\\\textsuperscript{3}Princeton University\\\textsuperscript{*}Corresponding author: jeremy.r.manning@dartmouth.edu}
+\author{Jeremy R. Manning\textsuperscript{1, *}, Kirsten Ziman\textsuperscript{1, 2}, Emily Whitaker\textsuperscript{1},\\Paxton C. Fitzpatrick\textsuperscript{1}, Madeline R. Lee\textsuperscript{1}, and Andrew C. Heusser\textsuperscript{1, 3}\\\textsuperscript{1}Dartmouth College\\\textsuperscript{2}Princeton University\\\textsuperscript{3}Akili Interactive\\\textsuperscript{*}Corresponding author: jeremy.r.manning@dartmouth.edu}
 
 \date{}
 
@@ -248,7 +248,7 @@ and we converted their responses to numerical scores as follows: ``very
 sluggish'' (-2), ``a little sluggish'' (-1), ``neutral'' (0), ``a little
 alert'' (1), and ``very alert'' (2). Across all participants, the full range of
 alertness levels were reported (range: -2 -- 2; mean: 0.35; standard deviation:
-0.89) .
+0.89).
 
 We dropped from our dataset the 1 participant who reported abnormal color
 vision, as well as 39 participants whose data were corrupted due to technical
@@ -270,23 +270,35 @@ condition, and we verified verbally that they had normal color vision.
 Our experiment is a variant of the classic free recall paradigm that we term
 \textit{feature-rich free recall}. In feature-rich free recall, participants
 study 16 lists, each comprised of 16 words that vary along a number of stimulus
-dimensions: semantic category, object size, text color, text location, word
-length, and starting letter (Fig.~\ref{fig:exp}). Each list contains four words
-from each of four different semantic categories and two object sizes; all other
-stimulus features are randomized. After studying each list, the participant
-attempts to recall as many words as they can from that list, in any order they
-choose. Because each individual word is associated with several well-defined
-(and quantifiable) features, and because each list incorporates a diverse mix
-of feature values along each dimension, this allows us to evaluate
-participants' memory fingerprints in rich detail.
+dimensions (Fig.~\ref{fig:exp}). The stimulus dimensions include two semantic
+features related to the \textit{meanings} of the words (semantic category,
+referrent object size), two lexicographic features related to the
+\textit{letters} that make up the words (word length in number of letters,
+identity of the word's first letter), and two visual features that are
+independent of the words themselves (text color, presentation location). Each
+list contains four words from each of four different semantic categories and
+two object sizes; all other stimulus features are randomized. After studying
+each list, the participant attempts to recall as many words as they can from
+that list, in any order they choose. Because each individual word is associated
+with several well-defined (and quantifiable) features, and because each list
+incorporates a diverse mix of feature values along each dimension, this allows
+us to evaluate participants' memory fingerprints in rich detail.
 
-\begin{figure} 
+\begin{figure}[tp]
     \centering
-        \includegraphics[width=0.75 \textwidth]{figures/FRFR}
+        \includegraphics[width=\textwidth]{figures/FRFR}
         
-        \caption{\textbf{Feature-rich free recall.} After studying lists
-comprised of words that vary along several feature dimensions, participants
-verbally recall words in any order (microphone icon).}
+\caption{\textbf{Feature-rich free recall.} After studying lists comprised of
+words that vary along several feature dimensions, participants verbally recall
+words in any order (microphone icon). Each experimental condition manipulates
+word features and/or presentation orders within and/or across lists. The rows
+display representative (illustrated) examples of the first lists participants
+might encounter in each condition. The rectangles during the ``Presentation
+phase'' show illustrated screen captures during a series of word presentations.
+Each word appeared onscreen for 2 seconds, followed by 2 seconds of blank
+screen. The red microphone icons during the ``Recall'' phase denote the one
+minute verbal recall interval.  The labels on the right (and corresponding groupings on the left)
+denote experimental condition labels.}
 
     \label{fig:exp}
 \end{figure}
@@ -362,13 +374,22 @@ data~\citep{ZimaEtal18}. This real-time speech processing component of the
 paradigm plays an important role in the ``adaptive'' condition of the
 experiment, as described below.
 
+\subsubsection*{Random conditions}
+
+We used four ``control'' conditions to evaluate and explore participants'
+baseline behaviors. We also used performance on these control conditions to
+help interpret performance in other ``manipulation'' conditions. Two control
+conditions served as ``anchorpoints.'' In the first anchorpoint condition,
+which we call the \textit{feature rich} condition, we randomly shuffled the
+presentation order (independently for each participant) of the words on each
+list. The second anchorpoint condition 
+
+
 \subsubsection*{Order manipulation conditions}
 
-\paragraph{Feature dimensions.}
 
 \paragraph{Constructing feature-sorted lists.}
 
-\subsubsection*{Random conditions}
 
 \subsubsection*{Adaptive conditions}
 
