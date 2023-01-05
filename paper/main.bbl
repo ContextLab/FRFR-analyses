@@ -39,6 +39,12 @@ Glenberg, A.~M., Bradley, M.~M., Kraus, T.~A., and Renzaglia, G.~J. (1983).
 \newblock {\em Journal of Experimental Psychology: Learning, Memory, and
   Cognition}, 12:413--418.
 
+\bibitem[\protect\astroncite{Halpern et~al.}{2016}]{HalpEtal16}
+Halpern, Y., Hall, K.~B., Schogol, V., Riley, M., Roark, B., Skobeltsyn, G.,
+  and B{\"a}uml, M. (2016).
+\newblock Contextual prediction models for speech recognition.
+\newblock In {\em Interspeech}, pages 2338--2342.
+
 \bibitem[\protect\astroncite{Howard and Kahana}{2002}]{HowaKaha02a}
 Howard, M.~W. and Kahana, M.~J. (2002).
 \newblock A distributed representation of temporal context.
@@ -178,6 +184,13 @@ Yeshurun, Y., Swanson, S., Simony, E., Chen, J., Lazaridi, C., Honey, C.~J.,
 \newblock Same story, different story: the neural representation of
   interpretive frameworks.
 \newblock {\em Psychological Science}, 28(3):307--319.
+
+\bibitem[\protect\astroncite{Ziman et~al.}{2018}]{ZimaEtal18}
+Ziman, K., Heusser, A.~C., Fitzpatrick, P.~C., Field, C.~E., and Manning, J.~R.
+  (2018).
+\newblock Is automatic speech-to-text transcription ready for use in
+  psychological experiments?
+\newblock {\em Behavior Research Methods}, 50:2597--2605.
 
 \bibitem[\protect\astroncite{Zwaan et~al.}{1995}]{ZwaaEtal95}
 Zwaan, R.~A., Langston, M.~C., and Graesser, A.~C. (1995).
