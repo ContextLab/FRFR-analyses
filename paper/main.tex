@@ -29,8 +29,9 @@ memories of new experiences}
 
 \author{Jeremy R. Manning\textsuperscript{1, *}, Kirsten
 Ziman\textsuperscript{1, 2}, Emily Whitaker\textsuperscript{1},\\Paxton C.
-Fitzpatrick\textsuperscript{1}, Madeline R. Lee\textsuperscript{1}, Bryan J.
-Bollinger\textsuperscript{1},\\and Andrew C. Heusser\textsuperscript{1,
+Fitzpatrick\textsuperscript{1}, Madeline R. Lee\textsuperscript{1}, 
+Allison M Frantz\textsuperscript{1}, \\Bryan J.
+Bollinger\textsuperscript{1}, and Andrew C. Heusser\textsuperscript{1,
 3}\\\textsuperscript{1}Dartmouth College\\\textsuperscript{2}Princeton
 University\\\textsuperscript{3}Akili
 Interactive\\\textsuperscript{*}Corresponding author:
@@ -415,13 +416,96 @@ rows)}
 
 Each of six \textit{order manipulation} conditions used a different
 feature-based sorting procedure to order words on early lists, where each
-sorting procedure relied on one feature dimension. On late lists, the words
-were always presented in a randomized order (chosen anew for each participant).
-In all of the order manipulation conditions, we varied words' font colors and
+sorting procedure relied on one relevant feature dimension. All of the
+irrelevant features varied freely across words on early lists, in that we did
+not consider irrelevant features in ordering the early lists. However, some
+features were correlated-- for example, some semantic categories of words
+referred to objects that tended to be a particular size, which means that
+category and size are not fully independent. On late lists, the words were
+always presented in a randomized order (chosen anew for each participant). In
+all of the order manipulation conditions, we varied words' font colors and
 onscreen locations, as in the feature rich condition.
 
-\paragraph{Constructing feature-sorted lists.}
+\paragraph{Defining feature-based distances.} Sorting words according to a
+given relevant feature requires first defining a distance function for
+quantifying the dissimilarity between each pair of features. This function
+varied according to the type of features. Semantic features (category and size)
+are \textit{categorical}. For these features, we defined a binary distance
+function: two words were considered to ``match'' (i.e., have a distance of 0)
+if their labels are the same (i.e., both from the same semantic category or
+both of the same size). If two words' labels were different for a given
+feature, we defined the words to have a distance of 1 for that feature.
+Lexicographic features (length and first letter) are \textit{discrete}. For
+these features we defined a discrete distance function. Specifically, we
+defined the distance between two words as either the absolute difference
+between their lengths, or the absolute distance between their starting letters
+in the English alphabet, respectively. For example, two words that started with
+the same letter would have a ``first letter'' distance of 0, and words starting
+with `J' and `A' would have a first letter distance of 9. Because words'
+lengths and letters' positions in the alphabet are always integers, these
+discrete distances always take on integer values. Finally, the visual features
+(color and location) are \textit{continuous} and \textit{multivariate}, in that
+each ``feature'' takes on multiple (positive) real values. We defined the
+``color'' and ``location'' distances between two words as the Euclidean
+distances between their $(r, g, b)$ color or $(x, y)$ location vectors,
+respectively. Therefore the color and location distance measures always take on
+positive real values (upper bounded at 441.67 for color, or 27~in for location,
+reflecting the distances between the corresponding maximally different
+vectors).
 
+\paragraph{Constructing feature-sorted lists.} Given a list of words, a
+relevant feature, and each word's value(s) for that feature, we developed a
+stochastic algorithm for (noisily) sorting the words. First, we choose a word
+uniformly at random from the set of candidates. Next, we compute the distances
+between the chosen word's feature(s) and the corresponding feature(s) of all
+yet-to-be-presented words. Third, we convert these distances (between the
+previously presented word's feature values, $a$, and the candidate word's
+feature values, $b$) to similarity scores: \begin{equation}
+\mathrm{similarity}(a, b) = \exp\{-\tau \cdot \mathrm{distance}(a, b)\},
+\label{eqn:similarity} \end{equation} where $\tau = 1$ in our implementation.
+We note that increasing the value of $\tau$ would amplify the influence of
+similarity on order, and decreasing the value of $\tau$ would diminish the
+influence of similarity on order. Also note that this approach requires $\tau >
+0$. Finally, we computed a set of normalized similarity values by dividing the
+similarities by their sum: \begin{equation}
+\mathrm{similarity}_{\mathrm{normalized}}(a, b) = \frac{\mathrm{similarity}(a,
+b)}{\sum_{i=1}^n \mathrm{similarity}(a, i)}, \end{equation} where in the
+demoniator, $i$ takes on each of the $n$ feature values of the to-be-presented
+words. The resulting set of normalized similarity scores sums to one.
+
+\begin{figure}[tp]
+    \centering
+        \includegraphics[width=\textwidth]{figures/stick}
+        
+\caption{\textbf{Generating stochastic feature-sorted lists.} For a given
+feature dimension (e.g., color), we compute the similarity
+(Eqn.~\ref{eqn:similarity}) between the feature value(s) of the previous item,
+$x$, and all yet-to-be-presented items ($a$ -- $g$). Next, we normalize these
+similarity scores so that they sum to one. We lay in sequence a set of
+``sticks,'' one for each candidate item, whose lengths are equal to these
+normalized similarity scores. Note that the combined lengths of these sticks is
+one. To select the next to-be-presented item, we draw a random number, $r$,
+from the uniform distibution bounded between 0 and 1 (inclusive). The identity
+of the next item is given by the stick adjacent to an indicator that moves
+distance $r$ (starting from 0) along the sequence of sticks. In this case, the
+next to-be-presented item is $e$. Note that each item's chances of selection is
+proportional to its similarity to the previous item, along the given feature
+dimension.} \label{fig:stick} 
+\end{figure}
+
+As illustrated in Figure~\ref{fig:stick}, we use these normalized similarity
+scores to construct a sequence of ``sticks'' that we lay end to end in a line.
+Each of the $n$ sticks corresponds to a single to-be-presented word, and the
+stick lengths are proportional to the relative similarities between each word's
+feature value(s) and the feature value(s) of the just-presented word. We choose
+the next to-be-presented word by moving an indicator along the set of sticks,
+by a distance chosen uniformly at random on the interval $\left[0, 1\right]$.
+We select the word associated with the stick lying next to the indicator to be
+presented next. This process continues iteratively (re-computing the similarity
+scores and stochastically choosing the next to-be-presented word using the
+just-presented word) until all of the words have been presented. The result is
+an ordered list that tends to change gradually along the selected feature
+dimension.
 
 \subsubsection*{Adaptive conditions}
 
