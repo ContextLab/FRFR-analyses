@@ -557,16 +557,35 @@ lists are described next.
 
 Probability of first recall curves~\citep{AtkiShif68, PostPhil65, WelcBurn24}
 reflect the probability that an item will be recalled first, as a function of
-its serial position during encoding. To carry out this analysis, we initialized (for each participant)
-a number-of-lists (16) by number-of-words-per-list (16) matrix of zeros.
-Then, for each list, we found the index of the word that was recalled first, and we filled in that
-position in the matrix with a 1.  Finally, we averaged over the rows of the matrix to obtain a 1 by 16 array of
-probabilities, for each participant.  We used an analogous procedure to compute probabilility of $n$\textsuperscript{th}
-reacall curves for each participant.  Specifically, we filled in the corresponding matrices according to the $n$\textsuperscript{th}
-recall on each list that each participant made.  When a given participant had made fewer than $n$ recalls for a given list,
-we simply excluded that list from our analysis when computing that paritcipant's curve(s).
+its serial position during encoding. To carry out this analysis, we initialized
+(for each participant) a number-of-lists (16) by number-of-words-per-list (16)
+matrix of zeros. Then, for each list, we found the index of the word that was
+recalled first, and we filled in that position in the matrix with a 1. Finally,
+we averaged over the rows of the matrix to obtain a 1 by 16 array of
+probabilities, for each participant. We used an analogous procedure to compute
+probabilility of $n$\textsuperscript{th} reacall curves for each participant.
+Specifically, we filled in the corresponding matrices according to the
+$n$\textsuperscript{th} recall on each list that each participant made. When a
+given participant had made fewer than $n$ recalls for a given list, we simply
+excluded that list from our analysis when computing that paritcipant's
+curve(s).
 
 \subsubsection*{Lag-conditional response probability curve}
+
+The lag-conditional probability (lag-CRP) curve~\citep{Kaha96} reflects the
+probability of recalling a given item after the just-recalled item, as a
+function of their relative encoding positions (lag). In other words, a lag of 1
+indicates that a recalled item was presented immediately after the previously
+recalled item, and a lag of $−3$ indicates that a recalled item came 3 items
+before the previously recalled item. For each recall transition (following the
+first recall), we computed the lag between the just-recalled word's
+presentation position and the next-recalled word's presentation position. We
+computed the proportions of transitions (between successively recalled words)
+for each lag, normalizing for the total numbers of possible transitions. In
+carrying out this analysis, we excluded all incorrect recalls and successive
+repetitions (e.g., recalling the same word twice in a row).  This yielded, for each list,
+a 1 by number-of-lags ($-15$ to $+15$; 30 lags in total, excluding lags of 0) array of conditional probabilities.
+We averaged these probabilities across lists to obtain a single lag-CRP for each participant.
 
 
 \paragraph*{Temporal clustering score.}
