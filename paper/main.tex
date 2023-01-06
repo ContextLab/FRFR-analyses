@@ -24,8 +24,17 @@
 \doublespacing
 \linenumbers
 
-\title{Carryover effects in free recall reveal how prior experiences influence memories of new experiences}
-\author{Jeremy R. Manning\textsuperscript{1, *}, Kirsten Ziman\textsuperscript{1, 2}, Emily Whitaker\textsuperscript{1},\\Paxton C. Fitzpatrick\textsuperscript{1}, Madeline R. Lee\textsuperscript{1}, and Andrew C. Heusser\textsuperscript{1, 3}\\\textsuperscript{1}Dartmouth College\\\textsuperscript{2}Princeton University\\\textsuperscript{3}Akili Interactive\\\textsuperscript{*}Corresponding author: jeremy.r.manning@dartmouth.edu}
+\title{Carryover effects in free recall reveal how prior experiences influence
+memories of new experiences} 
+
+\author{Jeremy R. Manning\textsuperscript{1, *}, Kirsten
+Ziman\textsuperscript{1, 2}, Emily Whitaker\textsuperscript{1},\\Paxton C.
+Fitzpatrick\textsuperscript{1}, Madeline R. Lee\textsuperscript{1}, Bryan J.
+Bollinger\textsuperscript{1},\\and Andrew C. Heusser\textsuperscript{1,
+3}\\\textsuperscript{1}Dartmouth College\\\textsuperscript{2}Princeton
+University\\\textsuperscript{3}Akili
+Interactive\\\textsuperscript{*}Corresponding author:
+jeremy.r.manning@dartmouth.edu}
 
 \date{}
 
@@ -338,17 +347,17 @@ deviation: 1.15 letters) and an average word length of 6.17 letters (standard
 deviation: 0.34 letters).
 
 The above assignments of words to lists was performed once across all
-participants, such that every participant studied the same set of 16 lists. We
-randomized the study order of these lists across participants. For participants
-in some conditions, on some lists, we also randomly varied two additional
-visual features to each word: the presentation font color, and the word's
-onscreen location. These attributes were assigned independently for word (and
-for every participant) at the times the words were displayed onscreen. These
-visual features were varied for words in all lists and conditions except for
-the ``reduced'' condition (all lists), the first eight lists of the ``reduced
-(early)'' condition, and the last eight lists of the ``reduced (late)''
-condition. In these latter cases, words were all presented in black at the
-center of the experimental computer's display.
+participants, such that every participant studied the same set of 16 lists. In
+every condition we randomized the study order of these lists across
+participants. For participants in some conditions, on some lists, we also
+randomly varied two additional visual features to each word: the presentation
+font color, and the word's onscreen location. These attributes were assigned
+independently for word (and for every participant) at the times the words were
+displayed onscreen. These visual features were varied for words in all lists
+and conditions except for the ``reduced'' condition (all lists), the first
+eight lists of the ``reduced (early)'' condition, and the last eight lists of
+the ``reduced (late)'' condition. In these latter cases, words were all
+presented in black at the center of the experimental computer's display.
 
 To assign a random font color to each word, we selected three integers
 uniformly and at random between 0 and 255, corresponding to the red (r), green
@@ -358,6 +367,13 @@ random (one for the word's horizontal $x$ coordinate and the other for its
 vertical $y$ coordinate).  The bounds of these coordinates were selected to cover the entire
 visible area of the display without cutting off any part of the words.  The words were shown
 on 27~in (diagonal) Retina 5K iMac displays (resolution: 5120 $\times$ 2880 pixels).
+
+Most of the experimental manipulations we carried out entailed presenting or
+sorting the presented words differently on the first eight lists participants
+studied (which we call \textit{early} lists) versus on the final eight lists
+they studied (\textit{late} lists). Since every participant studied exactly 16
+lists, using this terminology every list was either ``early'' or ``late''
+depending on its order in the list study sequence.
 
 
 \subsubsection*{Real-time speech-to-text processing}
@@ -374,7 +390,7 @@ data~\citep{ZimaEtal18}. This real-time speech processing component of the
 paradigm plays an important role in the ``adaptive'' condition of the
 experiment, as described below.
 
-\subsubsection*{Random conditions}
+\subsubsection*{Random conditions (Fig.~\ref{fig:exp}, top four rows)}
 
 We used four ``control'' conditions to evaluate and explore participants'
 baseline behaviors. We also used performance on these control conditions to
@@ -382,11 +398,27 @@ help interpret performance in other ``manipulation'' conditions. Two control
 conditions served as ``anchorpoints.'' In the first anchorpoint condition,
 which we call the \textit{feature rich} condition, we randomly shuffled the
 presentation order (independently for each participant) of the words on each
-list. The second anchorpoint condition 
+list. In the second anchorpoint condition, which we call the \textit{reduced}
+condition, we randomized word presentations as in the feature rich condition.
+However, rather than assigning each word a random color and location, we
+instead displayed all of the words in black and at the center of the screen.
 
+In the \textit{reduced (early)} condition, we followed the ``reduced''
+procedure (presenting each word in black at the center of the screen) for early
+lists, and followed the ``feature rich'' procedure (presenting each word in a
+random color and location) for late lists. Finally, in the \textit{reduced
+(late)} condition, we followed the feature rich procedure for earlylists and
+the reduced procedure for late lists.
 
-\subsubsection*{Order manipulation conditions}
+\subsubsection*{Order manipulation conditions (Fig.~\ref{fig:exp}, middle six
+rows)}
 
+Each of six \textit{order manipulation} conditions used a different
+feature-based sorting procedure to order words on early lists, where each
+sorting procedure relied on one feature dimension. On late lists, the words
+were always presented in a randomized order (chosen anew for each participant).
+In all of the order manipulation conditions, we varied words' font colors and
+onscreen locations, as in the feature rich condition.
 
 \paragraph{Constructing feature-sorted lists.}
 
