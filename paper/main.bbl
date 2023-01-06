@@ -5,6 +5,13 @@ Anderson, J.~R. and Bower, G.~H. (1972).
 \newblock Recognition and retrieval processes in free recall.
 \newblock {\em Psychological Review}, 79(2):97--123.
 
+\bibitem[\protect\astroncite{Atkinson and Shiffrin}{1968}]{AtkiShif68}
+Atkinson, R.~C. and Shiffrin, R.~M. (1968).
+\newblock Human memory: {A} proposed system and its control processes.
+\newblock In Spence, K.~W. and Spence, J.~T., editors, {\em The Psychology of
+  Learning and Motivation}, volume~2, pages 89--105. Academic Press, New York,
+  {NY}.
+
 \bibitem[\protect\astroncite{Baldassano et~al.}{2018}]{BaldEtal18}
 Baldassano, C., Hasson, U., and Norman, K.~A. (2018).
 \newblock Representation of real-world event schemas during narrative
@@ -129,6 +136,11 @@ Polyn, S.~M., Norman, K.~A., and Kahana, M.~J. (2009).
 \newblock Task context and organization in free recall.
 \newblock {\em Neuropsychologia}, 47:2158--2163.
 
+\bibitem[\protect\astroncite{Postman and Phillips}{1965}]{PostPhil65}
+Postman, L. and Phillips, L.~W. (1965).
+\newblock Short-term temporal changes in free recall.
+\newblock {\em Quarterly Journal of Experimental Psychology}, 17:132--138.
+
 \bibitem[\protect\astroncite{Raaijmakers and Shiffrin}{1980}]{RaaiShif80}
 Raaijmakers, J. G.~W. and Shiffrin, R.~M. (1980).
 \newblock {SAM: A} theory of probabilistic search of associative memory.
@@ -171,6 +183,11 @@ Sirotin, Y.~B., Kimball, D.~R., and Kahana, M.~J. (2005).
 Smith, S.~M. and Vela, E. (2001).
 \newblock Environmental context-dependent memory: a review and meta-analysis.
 \newblock {\em Psychonomic Bulletin and Review}, 8(2):203--220.
+
+\bibitem[\protect\astroncite{Welch and Burnett}{1924}]{WelcBurn24}
+Welch, G.~B. and Burnett, C.~T. (1924).
+\newblock Is primacy a factor in association-formation.
+\newblock {\em {American} Journal of Psychology}, 35:396--401.
 
 \bibitem[\protect\astroncite{Xu et~al.}{2022}]{XuEtal22}
 Xu, X., Zhu, Z., and Manning, J.~R. (2022).

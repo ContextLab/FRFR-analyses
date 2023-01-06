@@ -543,8 +543,7 @@ participant's memory fingerprint, respectively. Our procedures for computing
 participants' memory fingerprints and ordering the stabilize and destabilize
 lists are described next.
 
-\paragraph*{Computing clustering scores and memory fingerprints.}
-
+\paragraph*{Clustering scores and memory fingerprints.}
 
 \paragraph{Online ``fingerprint'' analysis.}
 
@@ -552,19 +551,31 @@ lists are described next.
 
 \paragraph{Ordering ``destabilize'' lists by an estimated fingerprint.}
 
-\subsection*{Analysis}
+\subsection*{Analyses}
 
-\subsubsection*{Probability of first recall and probability of $n$\textsuperscript{th} recall}
+\subsubsection*{Probability of $n$\textsuperscript{th} recall curves}
 
-\subsubsection*{Lag conditional response probability}
+Probability of first recall curves~\citep{AtkiShif68, PostPhil65, WelcBurn24}
+reflect the probability that an item will be recalled first, as a function of
+its serial position during encoding. To carry out this analysis, we initialized (for each participant)
+a number-of-lists (16) by number-of-words-per-list (16) matrix of zeros.
+Then, for each list, we found the index of the word that was recalled first, and we filled in that
+position in the matrix with a 1.  Finally, we averaged over the rows of the matrix to obtain a 1 by 16 array of
+probabilities, for each participant.  We used an analogous procedure to compute probabilility of $n$\textsuperscript{th}
+reacall curves for each participant.  Specifically, we filled in the corresponding matrices according to the $n$\textsuperscript{th}
+recall on each list that each participant made.  When a given participant had made fewer than $n$ recalls for a given list,
+we simply excluded that list from our analysis when computing that paritcipant's curve(s).
 
-\paragraph{Temporal clustering score.}
+\subsubsection*{Lag-conditional response probability curve}
 
-\subsubsection*{Identifying event boundaries}
 
-\subsubsection*{Serial position curves and recall accuracy}
+\paragraph*{Temporal clustering score.}
 
 \subsubsection*{Computing low-dimensional embeddings of memory fingerprints}
+
+\subsubsection{Serial position curve}
+
+\subsubsection*{Identifying event boundaries}
 
 \section*{Results}
 
