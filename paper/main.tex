@@ -543,7 +543,11 @@ participant's memory fingerprint, respectively. Our procedures for computing
 participants' memory fingerprints and ordering the stabilize and destabilize
 lists are described next.
 
-\paragraph*{Clustering scores and memory fingerprints.}
+\paragraph*{Clustering scores (uncorrected).}
+
+\paragraph*{Permutation-corrected clustering scores.}
+
+\paragraph*{Memory fingerprints.}
 
 \paragraph{Online ``fingerprint'' analysis.}
 
@@ -591,9 +595,34 @@ across lists to obtain a single lag-CRP for each participant.
 
 \paragraph*{Temporal clustering score.}
 
+Temporal clustering describes a participant's tendency to organize their recall
+sequences by the learned items' encoding positions. For instance, if a
+participant recalled the episode events in the exact order they occurred (or in
+exact reverse order), this would yield a score of 1. If a participant recalled
+the events in random order, this would yield an expected score of 0.5. For each
+recall-event transition (and separately for each participant), we sorted all
+not-yet-recalled events according to their absolute lag (that is, distance away
+in the episode). We then computed the percentile rank of the next event the
+participant recalled. We took an average of these percentile ranks across all
+of the participant’s recalls to obtain a single (uncorrected) temporal clustering score for
+the participant.  Finally, as with the feature-based clustering scores, we applied
+our permutation correction procedure to obtain a corrected clustering score.
+
 \subsubsection*{Computing low-dimensional embeddings of memory fingerprints}
 
 \subsubsection*{Serial position curve}
+
+Serial position curves~\citep{Murd62a} reflect the proportion of participants
+who remember each item as a function of the item’s serial position during
+encoding. For each participant, we initialized a number-of-lists (16) by number-of-words-per-list
+(16) matrix of zeros. Then, for each correct recall, we identified the
+presentation position of the word and entered a 1 into that position (row:
+list; column: presentation position) in the matrix. This resulted in a matrix
+whose entries indicated whether or not the words presented at each position, on
+each list, were recalled by the participant (depending on whether the
+corresponding entires were set to one or zero). Finally, we averaged over the
+rows of the matrix to yield a 1 by 16 array representing the proportion of
+words at each position that the participant remembered.
 
 \subsubsection*{Identifying event boundaries}
 
