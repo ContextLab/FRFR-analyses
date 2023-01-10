@@ -183,17 +183,6 @@ to identify potential commonalities within and across participants in how
 people organized their memories and how those organizational tendancies affect
 overall performance.
 
-
-
-
-
-
-
-
-
-
-
-
 \section*{Materials and methods}
 
 \subsection*{Participants}
@@ -307,8 +296,8 @@ might encounter in each condition. The rectangles during the ``Presentation
 phase'' show illustrated screen captures during a series of word presentations.
 Each word appeared onscreen for 2 seconds, followed by 2 seconds of blank
 screen. The red microphone icons during the ``Recall'' phase denote the one
-minute verbal recall interval.  The labels on the right (and corresponding groupings on the left)
-denote experimental condition labels.}
+minute verbal recall interval. The labels on the right (and corresponding
+groupings on the left) denote experimental condition labels.}
 
     \label{fig:exp}
 \end{figure}
@@ -365,9 +354,10 @@ uniformly and at random between 0 and 255, corresponding to the red (r), green
 (g), and blue (b) color channels for that word. To assign random presentation
 locations to each word, we selected two floating point numbers uniformly at
 random (one for the word's horizontal $x$ coordinate and the other for its
-vertical $y$ coordinate).  The bounds of these coordinates were selected to cover the entire
-visible area of the display without cutting off any part of the words.  The words were shown
-on 27~in (diagonal) Retina 5K iMac displays (resolution: 5120 $\times$ 2880 pixels).
+vertical $y$ coordinate). The bounds of these coordinates were selected to
+cover the entire visible area of the display without cutting off any part of
+the words. The words were shown on 27~in (diagonal) Retina 5K iMac displays
+(resolution: 5120 $\times$ 2880 pixels).
 
 Most of the experimental manipulations we carried out entailed presenting or
 sorting the presented words differently on the first eight lists participants
@@ -491,6 +481,7 @@ distance $r$ (starting from 0) along the sequence of sticks. In this case, the
 next to-be-presented item is $e$. Note that each item's chances of selection is
 proportional to its similarity to the previous item, along the given feature
 dimension.} \label{fig:stick} 
+
 \end{figure}
 
 As illustrated in Figure~\ref{fig:stick}, we use these normalized similarity
@@ -548,17 +539,18 @@ lists are described next.
 Feature clustering scores describe participants' tendencies to recall similar
 presented items together in their recall sequences, where ``similarity''
 considers one given feature dimension (e.g., category, color, etc.). We base
-our main approach to computing clustering scores on analogous temporal and semantic clustering scores
-developed by~\citep{PolyEtal09}. Computing the clustering score for one feature
-dimension starts by considering those feature values from the first word the
-participant recalled on the list. Next, we sort all not-yet-recalled words in
-ascending order according to their feature-based distance to the just-recalled
-item (see \textit{Defining feature-based distances}). We then compute the
-percentile rank of the observed next recall. We averaged these percentile ranks
-across all of the participant’s recalls for the current list to obtain a single
-uncorrected clustering score for the list, for the given feature dimension. We
-repeat this process for each feature dimension in turn to obtain a single
-uncorrected clustering score for each list, for each feature dimension.
+our main approach to computing clustering scores on analogous temporal and
+semantic clustering scores developed by~\citep{PolyEtal09}. Computing the
+clustering score for one feature dimension starts by considering those feature
+values from the first word the participant recalled on the list. Next, we sort
+all not-yet-recalled words in ascending order according to their feature-based
+distance to the just-recalled item (see \textit{Defining feature-based
+distances}). We then compute the percentile rank of the observed next recall.
+We averaged these percentile ranks across all of the participant’s recalls for
+the current list to obtain a single uncorrected clustering score for the list,
+for the given feature dimension. We repeat this process for each feature
+dimension in turn to obtain a single uncorrected clustering score for each
+list, for each feature dimension.
 
 \paragraph*{Permutation-corrected feature clustering scores.}
 
@@ -578,12 +570,12 @@ recalls it becomes difficult to determine whether the participant is
 successively recalling ``large'' items because they are organizing their
 memories according to size, or (alternatively), whether they are simply
 recalling the yet-to-be-recalled items in a random order. In general, the
-precise order and blend of feature values expressed in a given list, the
-orders and numbers of correct recalls a participant makes, the number of itervening
-presentation positions between successive recalls, and so on, can all affect the
-range of clustering scores that are possible to observe for a given list.  The uncorrected
-clustering score therefore conflates participants' actual memory organization with
-other ``nuisance'' factors.
+precise order and blend of feature values expressed in a given list, the orders
+and numbers of correct recalls a participant makes, the number of itervening
+presentation positions between successive recalls, and so on, can all affect
+the range of clustering scores that are possible to observe for a given list.
+The uncorrected clustering score therefore conflates participants' actual
+memory organization with other ``nuisance'' factors.
 
 Following our prior work~\citep{HeusEtal17}, we used a permutation-correction
 procedure to help isolate the behavioral aspects of clustering that we were
@@ -595,11 +587,12 @@ approximation of the range of clustering scores one might expect to observe by
 ``chance,'' given that a hypothetical participant was \textit{not} truly
 clustering their recalls, but where the hypothetical participant studied and
 recalled exactly the same items (with the same features) as the true
-participant.  We define the permutation-corrected clustering score as the percentile rank of the
-observed uncorrected clustering score in this estimated null distribution.  In this way,
-a corrected score of 1 indicates that the observed score was greater than any clustering score
-one might expect by chance; in other words, good evidence that the participant was truly clustering their
-recalls along the given feature dimension.
+participant. We define the permutation-corrected clustering score as the
+percentile rank of the observed uncorrected clustering score in this estimated
+null distribution. In this way, a corrected score of 1 indicates that the
+observed score was greater than any clustering score one might expect by
+chance; in other words, good evidence that the participant was truly clustering
+their recalls along the given feature dimension.
 
 \paragraph*{Memory fingerprints.}
 
@@ -658,9 +651,10 @@ recall-event transition (and separately for each participant), we sorted all
 not-yet-recalled events according to their absolute lag (that is, distance away
 in the episode). We then computed the percentile rank of the next event the
 participant recalled. We took an average of these percentile ranks across all
-of the participant’s recalls to obtain a single (uncorrected) temporal clustering score for
-the participant.  Finally, as with the feature-based clustering scores, we applied
-our permutation correction procedure to obtain a corrected clustering score.
+of the participant’s recalls to obtain a single (uncorrected) temporal
+clustering score for the participant. Finally, as with the feature-based
+clustering scores, we applied our permutation correction procedure to obtain a
+corrected clustering score.
 
 \subsubsection*{Computing low-dimensional embeddings of memory fingerprints}
 
@@ -668,15 +662,15 @@ our permutation correction procedure to obtain a corrected clustering score.
 
 Serial position curves~\citep{Murd62a} reflect the proportion of participants
 who remember each item as a function of the item’s serial position during
-encoding. For each participant, we initialized a number-of-lists (16) by number-of-words-per-list
-(16) matrix of zeros. Then, for each correct recall, we identified the
-presentation position of the word and entered a 1 into that position (row:
-list; column: presentation position) in the matrix. This resulted in a matrix
-whose entries indicated whether or not the words presented at each position, on
-each list, were recalled by the participant (depending on whether the
-corresponding entires were set to one or zero). Finally, we averaged over the
-rows of the matrix to yield a 1 by 16 array representing the proportion of
-words at each position that the participant remembered.
+encoding. For each participant, we initialized a number-of-lists (16) by
+number-of-words-per-list (16) matrix of zeros. Then, for each correct recall,
+we identified the presentation position of the word and entered a 1 into that
+position (row: list; column: presentation position) in the matrix. This
+resulted in a matrix whose entries indicated whether or not the words presented
+at each position, on each list, were recalled by the participant (depending on
+whether the corresponding entires were set to one or zero). Finally, we
+averaged over the rows of the matrix to yield a 1 by 16 array representing the
+proportion of words at each position that the participant remembered.
 
 \subsubsection*{Identifying event boundaries}
 
@@ -717,15 +711,15 @@ Figure~\recallInit.
 \begin{figure}[tp] \centering
     \includegraphics[width=\textwidth]{figures/fingerprints}
     
-    \caption{\textbf{Memory ``fingerprints'' (order manipulation conditions).}
-    The across-participant distributions of clustering scores for each feature
-    type ($x$-coordinate) are displayed for each experimental condition
-    (color), separately for order manipulation (early, top) and randomly
-    ordered (late, bottom) lists. See
-    Figures~\fingerprintsRandom~and~\fingerprintsAdaptive~for analogous plots
-    for the random (control) and adaptive conditions.}
-        \label{fig:fingerprints}
-    \end{figure}
+\caption{\textbf{Memory ``fingerprints'' (order manipulation conditions).} The
+across-participant distributions of clustering scores for each feature type
+($x$-coordinate) are displayed for each experimental condition (color),
+separately for order manipulation (early, top) and randomly ordered (late,
+bottom) lists. See Figures~\fingerprintsRandom~and~\fingerprintsAdaptive~for
+analogous plots for the random (control) and adaptive conditions.}
+\label{fig:fingerprints}
+
+\end{figure}
 
 % figure: correlations between clustering scores
 Figure~\clusterCorrs.
@@ -789,24 +783,33 @@ confidence intervals.} \label{fig:clustering-scatterplots}
 \begin{figure}[tp] \centering
     \includegraphics[width=\textwidth]{figures/clustering_carryover}
     
-    \caption{\textbf{Feature clustering carryover effects.} \textbf{A.} Feature clustering scores for ordder manipulation (early) versus randomly ordered (late) lists.
-    \textbf{B.}  Accuracy differences (on early versus late lists) versus feature clustering ``carryover'' (defined as the differences between the average clustering scores on early and late lists).
-    \textbf{C.}  Temporal clustering differences (on early versus late lists) versus feature clustering carryover.  \textbf{All panels.} Each dot in the main scatterplots denotes the
-    average scores for one participant. The colored regression lines are computed
-    across participants. The inset displays condition-averaged results, where each
-    dot reflects a single condition and the regression line is computed across
-    experimental conditions. All error ribbons denote bootstrap-estimated 95\%
-    confidence intervals.} \label{fig:clustering-carryover}
-    \end{figure}
+    \caption{\textbf{Feature clustering carryover effects.} \textbf{A.} Feature
+    clustering scores for ordder manipulation (early) versus randomly ordered
+    (late) lists. \textbf{B.} Accuracy differences (on early versus late lists)
+    versus feature clustering ``carryover'' (defined as the differences between
+    the average clustering scores on early and late lists). \textbf{C.}
+    Temporal clustering differences (on early versus late lists) versus feature
+    clustering carryover. \textbf{All panels.} Each dot in the main
+    scatterplots denotes the average scores for one participant. The colored
+    regression lines are computed across participants. The inset displays
+    condition-averaged results, where each dot reflects a single condition and
+    the regression line is computed across experimental conditions. All error
+    ribbons denote bootstrap-estimated 95\% confidence intervals.}
+    \label{fig:clustering-carryover} 
+
+\end{figure}
 
 \begin{figure} 
     \centering
 
     \includegraphics[width=0.4 \textwidth]{figures/source/accuracy_adaptive}
         
-        \caption{\textbf{Recall performance (adaptive conditons).} The bars display the average probability of recall (taken across words, lists, and participants)
-        for lists from each adaptive condition.  Error bars denote bootstrap-estimated 95\% confidence intervals.  For additional details about
-        participants' behavior and performance during the adaptive conditions, see Figure~\dynamicsAdaptive.} 
+        \caption{\textbf{Recall performance (adaptive conditons).} The bars
+        display the average probability of recall (taken across words, lists,
+        and participants) for lists from each adaptive condition. Error bars
+        denote bootstrap-estimated 95\% confidence intervals. For additional
+        details about participants' behavior and performance during the
+        adaptive conditions, see Figure~\dynamicsAdaptive.}
 
     \label{fig:adaptive}
 \end{figure}
