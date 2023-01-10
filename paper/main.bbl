@@ -34,10 +34,20 @@ Bower, G.~H., Black, J.~B., and Turner, T.~J. (1979).
 \newblock Scripts in memory for text.
 \newblock {\em Cognitive Psychology}, 11(2):177--220.
 
+\bibitem[\protect\astroncite{DuBrow and Davachi}{2016}]{DuBrDava16}
+DuBrow, S. and Davachi, L. (2016).
+\newblock Temporal binding within and across events.
+\newblock {\em Neurobiology of Learning and Memory}, 134:107--114.
+
 \bibitem[\protect\astroncite{Estes}{1955}]{Este55a}
 Estes, W.~K. (1955).
 \newblock Statistical theory of spontaneous recovery and regression.
 \newblock {\em Psychological Review}, 62:145--154.
+
+\bibitem[\protect\astroncite{Ezzyat and Davachi}{2011}]{EzzyDava11}
+Ezzyat, Y. and Davachi, L. (2011).
+\newblock What constitutes an episode in episodic memory?
+\newblock {\em Psychological Science}, 22(2):243--252.
 
 \bibitem[\protect\astroncite{Glenberg et~al.}{1983}]{GlenEtal83}
 Glenberg, A.~M., Bradley, M.~M., Kraus, T.~A., and Renzaglia, G.~J. (1983).
@@ -58,6 +68,12 @@ Heusser, A.~C., Fitzpatrick, P.~C., Field, C.~E., Ziman, K., and Manning, J.~R.
 \newblock Quail: a {Python} toolbox for analyzing and plotting free recall
   data.
 \newblock {\em Journal of Open Source Software}, 10.21105/joss.00424.
+
+\bibitem[\protect\astroncite{Heusser et~al.}{2018}]{HeusEtal18a}
+Heusser, A.~C., Ziman, K., Owen, L. L.~W., and Manning, J.~R. (2018).
+\newblock {HyperTools}: a {Python} toolbox for gaining geometric insights into
+  high-dimensional data.
+\newblock {\em Journal of Machine Learning Research}, 18(152):1--6.
 
 \bibitem[\protect\astroncite{Howard and Kahana}{2002}]{HowaKaha02a}
 Howard, M.~W. and Kahana, M.~J. (2002).
@@ -89,6 +105,12 @@ Manning, J.~R. (2020).
 \newblock Context reinstatement.
 \newblock In Kahana, M.~J. and Wagner, A.~D., editors, {\em Handbook of Human
   Memory}. {Oxford} {University} Press.
+
+\bibitem[\protect\astroncite{Manning et~al.}{2016}]{MannEtal16}
+Manning, J.~R., Hulbert, J.~C., Williams, J., Piloto, L., Sahakyan, L., and
+  Norman, K.~A. (2016).
+\newblock A neural signature of contextually mediated intentional forgetting.
+\newblock {\em Psychonomic Bulletin and Review}, 23(5):1534--1542.
 
 \bibitem[\protect\astroncite{Manning and Kahana}{2012}]{MannKaha12}
 Manning, J.~R. and Kahana, M.~J. (2012).
@@ -160,6 +182,12 @@ Raaijmakers, J. G.~W. and Shiffrin, R.~M. (1980).
   Motivation: Advances in Research and Theory}, volume~14, pages 207--262.
   Academic Press, New York, {NY}.
 
+\bibitem[\protect\astroncite{Radvansky and Copeland}{2006}]{RadvCope06}
+Radvansky, G.~A. and Copeland, D.~E. (2006).
+\newblock Walking through doorways causes forgetting: situation models and
+  experienced space.
+\newblock {\em Memory and Cognition}, 34(5):1150--1156.
+
 \bibitem[\protect\astroncite{Ranganath and Ritchey}{2012}]{RangRitc12}
 Ranganath, C. and Ritchey, M. (2012).
 \newblock Two cortical systems for memory-guided behavior.
@@ -195,6 +223,17 @@ Sirotin, Y.~B., Kimball, D.~R., and Kahana, M.~J. (2005).
 Smith, S.~M. and Vela, E. (2001).
 \newblock Environmental context-dependent memory: a review and meta-analysis.
 \newblock {\em Psychonomic Bulletin and Review}, 8(2):203--220.
+
+\bibitem[\protect\astroncite{Swallow et~al.}{2011}]{SwalEtal11}
+Swallow, K.~M., Barch, D.~M., Head, D., Maley, C.~J., Holder, D., and Zacks,
+  J.~M. (2011).
+\newblock Changes in events alter how people remember recent information.
+\newblock {\em Journal of Cognitive Neuroscience}, 23(5):1052--1064.
+
+\bibitem[\protect\astroncite{Swallow et~al.}{2009}]{SwalEtal09}
+Swallow, K.~M., Zacks, J.~M., and Abrams, R.~A. (2009).
+\newblock Event boundaries in perception affect memory encoding and updating.
+\newblock {\em Journal of Experimental Psychology: General}, 138(2):236--257.
 
 \bibitem[\protect\astroncite{Welch and Burnett}{1924}]{WelcBurn24}
 Welch, G.~B. and Burnett, C.~T. (1924).

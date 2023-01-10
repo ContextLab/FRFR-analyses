@@ -9,6 +9,7 @@
 \usepackage{setspace}
 \usepackage{hyperref}
 \usepackage{lineno}
+\usepackage{amsopn}
 
 \newcommand{\argmax}{\mathop{\mathrm{argmax}}\limits}
 
@@ -552,6 +553,21 @@ for the given feature dimension. We repeat this process for each feature
 dimension in turn to obtain a single uncorrected clustering score for each
 list, for each feature dimension.
 
+\paragraph*{Temporal clustering score (uncorrected).}
+
+Temporal clustering describes a participant's tendency to organize their recall
+sequences by the learned items' encoding positions. For instance, if a
+participant recalled the episode events in the exact order they occurred (or in
+exact reverse order), this would yield a score of 1. If a participant recalled
+the events in random order, this would yield an expected score of 0.5. For each
+recall-event transition (and separately for each participant), we sorted all
+not-yet-recalled events according to their absolute lag (that is, distance away
+in the episode). We then computed the percentile rank of the next event the
+participant recalled. We took an average of these percentile ranks across all
+of the participant’s recalls to obtain a single (uncorrected) temporal
+clustering score for the participant.
+
+
 \paragraph*{Permutation-corrected feature clustering scores.}
 
 Suppose that two lists contain unequal numbers of items of each size. For
@@ -592,15 +608,97 @@ percentile rank of the observed uncorrected clustering score in this estimated
 null distribution. In this way, a corrected score of 1 indicates that the
 observed score was greater than any clustering score one might expect by
 chance; in other words, good evidence that the participant was truly clustering
-their recalls along the given feature dimension.
+their recalls along the given feature dimension.  We applied this correction procedure
+to all of the clustering scores (feature and temporal) reported in this paper.
 
 \paragraph*{Memory fingerprints.}
 
+We define each participant's \textit{memory fingerprint} as the set of their
+permutation-corrected clustering scores across all dimensions we tracked in our
+study, including their six feature-based clustering scores (category, size,
+length, first letter, color, and location) and their temporal clustering score.
+Conceptually, this memory fingerprint describes the participant's tendancies to
+order (and, presumably, organize in memory) the studied words along each
+dimension. To obtain stable estimates of these fingerprints for each
+participant, we averaged clustering scores across lists. We also tracked and
+characterized how participants' fingerprints changed across lists (e.g.,
+Figs.~\ref{fig:fingerprint-trajectories},~\fingerprintTrajectoryRandom).
+
 \paragraph{Online ``fingerprint'' analysis.}
 
-\paragraph{Ordering ``stabilize'' lists by an estimated fingerprint.}
+The presentation orders of some lists in the adaptive condition of our
+experiment (see \textit{Adaptive condition}) were sorted according to
+participants' \textit{current} memory fingerprint, estimated using all of the
+lists they had studied up to that point in the experiment. Because our
+experiment incorporated a speech-to-text component, all of the behavioral data
+for each participant could be analyzed just a few seconds after the conclusion
+of the recall intervals for each list. We used the \texttt{Quail} Python
+package~\citep{HeusEtal17} to apply speech-to-text alorithms to the just
+collected data, aggregate the data for the given participant, and estimate the
+participant's memory fingerprint using all of their available data up to that
+point in the experiment. Two aspects of our implementation are worth noting.
+First, because memory fingerprints are averaged across lists, the
+already-computed memory fingerprints for earliar lists could be cached and
+loaded as needed in future computations. This meant that our computations
+pertaining to updating our estimates of a participant's memory fingerprint only
+needed to consider data from the most recent list. Second, each element of the
+null distributions of uncorrected fingerprint scores (see
+\textit{Permutation-corrected feature clustering scores}) could be estimated
+independently from the others. This enabled us to make use of the testing
+computers' multi-core CPU archetectuers by elements of the null distributions
+in batches of eight (i.e., the number of CPU cores on each testing computer).
+Taken together, we were able to compress the fingerprint computations into just
+a few seconds of computing time. The combined processing time for the
+speech-to-text algorithm and fingerprint computations easily fit within the
+inter-list intervals, where participants typically paused before moving on to
+the next list.
 
-\paragraph{Ordering ``destabilize'' lists by an estimated fingerprint.}
+\paragraph{Ordering ``stabilize'' and ``destabilize'' lists by an estimated
+fingerprint.}
+
+In the adaptive condition of our experiment, the presentation orders for
+\textit{stabilize} and \textit{destabilize} lists were chosen to either
+maximally or minimally (respectively) comport with participants' memory
+fingerprints. Given a participant's memory fingerprint and a to-be-presented
+set of items, we designed a permutation-based procedure for ordering the items.
+First, we dropped from the participant's fingerprint the temporal clustering
+score. For the remaining feature dimensions, we arranged the clustering scores
+in the fingerprint into a template vector, $f$. Second, we computed $n = 2500$
+random permutations of the to-be-presented items. These permutations served as
+prospective presentation orders. We sought to select the specific order that
+most (or least) matched $f$. Third, for each random permutation, we computed
+the (permutation-corrected) ``fingerprint,'' treating the permutation as though
+it were a potential ``perfect'' recall sequence. (We did not include temporal
+clustering scores in these fingerprints.) This yielded a ``simulated fingerprint''
+vector, $\hat{f}_p$ for each permutation $p$.  We used these simulated fingerprints to
+select a specific permutation, $i$, that either maximized (for stabilized lists) or minimized (for destabilize lists)
+the correlation between $\hat{f}_i$ and $f$.
+
+\subsubsection*{Computing low-dimensional embeddings of memory fingerprints}
+
+Following some of our prior work~\citep{HeusEtal18a}, we use low-dimensional
+embeddings to help visualize how participants' memory fingerprints change
+across lists
+(Figs.~\ref{fig:fingerprint-trajectories}A,~\fingerprintTrajectoryRandom A). To
+compute a shared embedding space across participants and experimental
+conditions, we concatenated the full set of fingerprints (across all lists,
+participants, and experimental conditions) to create a large matrix with
+number-of-lists $\times$ number-of-participants rows and seven columns (one for
+each word feature dimension's clustering scores, plus an additional temporal
+clustering score column). We used principal components analysis to project the
+seven-dimensional observations into a two-dimensional space (using the two
+principal components that explained the most variance in the data). For two
+visualizations
+(Figs.~\ref{fig:fingerprint-trajectories}B,~and~\fingerprintTrajectoryRandom B)
+we computed an additional set of two-dimensional embeddings for participants'
+\textit{average} fingerprints (i.e., across lists within a given group of
+lists-- early or late). For those visualizations we averaged each participant's
+rows (for the given group of lists) in the combined fingerprint matrix prior to
+projecting it into the shared two-dimensional space. This yielded a single
+two-dimensional coordinate for each \textit{participant} and \textit{list
+group}, rather than for each individual list. We used these embeddings solely
+for visualization. All statistical tests were carried out in the original
+(seven-dimensional) feature spaces.
 
 \subsection*{Analyses}
 
@@ -640,23 +738,6 @@ lags of 0) array of conditional probabilities. We averaged these probabilities
 across lists to obtain a single lag-CRP for each participant.
 
 
-\paragraph*{Temporal clustering score.}
-
-Temporal clustering describes a participant's tendency to organize their recall
-sequences by the learned items' encoding positions. For instance, if a
-participant recalled the episode events in the exact order they occurred (or in
-exact reverse order), this would yield a score of 1. If a participant recalled
-the events in random order, this would yield an expected score of 0.5. For each
-recall-event transition (and separately for each participant), we sorted all
-not-yet-recalled events according to their absolute lag (that is, distance away
-in the episode). We then computed the percentile rank of the next event the
-participant recalled. We took an average of these percentile ranks across all
-of the participant’s recalls to obtain a single (uncorrected) temporal
-clustering score for the participant. Finally, as with the feature-based
-clustering scores, we applied our permutation correction procedure to obtain a
-corrected clustering score.
-
-\subsubsection*{Computing low-dimensional embeddings of memory fingerprints}
 
 \subsubsection*{Serial position curve}
 
@@ -673,6 +754,20 @@ averaged over the rows of the matrix to yield a 1 by 16 array representing the
 proportion of words at each position that the participant remembered.
 
 \subsubsection*{Identifying event boundaries}
+
+We used the distances between feature values for successively presented words
+(see \textit{Defining feature-based distances}) to estimate ``event
+boundaries'' where the feature values changed more than
+usual~\citep{EzzyDava11, MannEtal16,RadvCope06, SwalEtal09, SwalEtal11,
+DuBrDava16}. For each list, for each feature dimension, we computed the
+distribution of distances between the feature values for successively presented
+words. We defined event boundaries (e.g., Fig.~\ref{fig:recall-dynamics}B) as
+occuring between any successive pair of words whose distances along the given
+feature dimension were greater than one standard deviation above the mean for
+that list. Note that, because event boundaries are defined for each feature
+dimension, each individual list may contain several sets of event boundaries,
+each at different moments in the presentation sequence (depending on the
+feature dimension of interest).
 
 \section*{Results}
 
