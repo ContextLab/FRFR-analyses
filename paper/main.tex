@@ -543,9 +543,25 @@ participant's memory fingerprint, respectively. Our procedures for computing
 participants' memory fingerprints and ordering the stabilize and destabilize
 lists are described next.
 
-\paragraph*{Clustering scores (uncorrected).}
+\paragraph*{Feature clustering scores (uncorrected).}  
 
-\paragraph*{Permutation-corrected clustering scores.}
+Feature clustering describes a participant’s tendency to recall similar
+presented items together in their recall sequences, where ``similarity''
+considers one given feature dimension (e.g., category, color, etc.). Computing
+the clustering score for one feature dimension starts by considering those
+feature values from the first word the participant recalled on the list. Next,
+we sort all not-yet-recalled words in ascending order according to their
+feature-based distance to the just-recalled item (see \textit{Defining
+feature-based distances}). We then compute the percentile rank of the observed
+next recall. We averaged these percentile ranks across all of the participant’s
+recalls for the current list to obtain a single uncorrected clustering score
+for the list, for the given feature dimension. We repeat this process for each
+feature dimension in turn to obtain a single uncorrected clustering score for
+each list, for each feature dimension.
+
+\paragraph*{Permutation-corrected feature clustering scores.}
+
+
 
 \paragraph*{Memory fingerprints.}
 
