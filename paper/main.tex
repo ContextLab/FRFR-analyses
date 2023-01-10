@@ -545,23 +545,61 @@ lists are described next.
 
 \paragraph*{Feature clustering scores (uncorrected).}  
 
-Feature clustering describes a participant’s tendency to recall similar
+Feature clustering scores describe participants' tendencies to recall similar
 presented items together in their recall sequences, where ``similarity''
-considers one given feature dimension (e.g., category, color, etc.). Computing
-the clustering score for one feature dimension starts by considering those
-feature values from the first word the participant recalled on the list. Next,
-we sort all not-yet-recalled words in ascending order according to their
-feature-based distance to the just-recalled item (see \textit{Defining
-feature-based distances}). We then compute the percentile rank of the observed
-next recall. We averaged these percentile ranks across all of the participant’s
-recalls for the current list to obtain a single uncorrected clustering score
-for the list, for the given feature dimension. We repeat this process for each
-feature dimension in turn to obtain a single uncorrected clustering score for
-each list, for each feature dimension.
+considers one given feature dimension (e.g., category, color, etc.). We base
+our main approach to computing clustering scores on analogous temporal and semantic clustering scores
+developed by~\citep{PolyEtal09}. Computing the clustering score for one feature
+dimension starts by considering those feature values from the first word the
+participant recalled on the list. Next, we sort all not-yet-recalled words in
+ascending order according to their feature-based distance to the just-recalled
+item (see \textit{Defining feature-based distances}). We then compute the
+percentile rank of the observed next recall. We averaged these percentile ranks
+across all of the participant’s recalls for the current list to obtain a single
+uncorrected clustering score for the list, for the given feature dimension. We
+repeat this process for each feature dimension in turn to obtain a single
+uncorrected clustering score for each list, for each feature dimension.
 
 \paragraph*{Permutation-corrected feature clustering scores.}
 
+Suppose that two lists contain unequal numbers of items of each size. For
+example, suppose that list $A$ contains all ``large'' items, whereas list $B$
+contains an equal mix of ``large'' and ``small'' items. For a participant
+recalling list $A$, any correctly recalled item will necessarily match the size
+of the previous correctly recalled item. In other words, successively recalling
+several list $A$ items of the same size is essentially meaningless, since
+\textit{any} correctly recalled list $A$ word will be large. In contrast,
+successively recalling several list $B$ items \textit{could} be meaningful,
+since (early in the recall sequence) the yet-to-be-recalled items come from a
+mix of sizes. However, once all of the ``small'' items on list $B$ have been
+recalled, the best possible next matching recall will be a large item. And all
+subsequent correct recalls must also be large items-- so for those later
+recalls it becomes difficult to determine whether the participant is
+successively recalling ``large'' items because they are organizing their
+memories according to size, or (alternatively), whether they are simply
+recalling the yet-to-be-recalled items in a random order. In general, the
+precise order and blend of feature values expressed in a given list, the
+orders and numbers of correct recalls a participant makes, the number of itervening
+presentation positions between successive recalls, and so on, can all affect the
+range of clustering scores that are possible to observe for a given list.  The uncorrected
+clustering score therefore conflates participants' actual memory organization with
+other ``nuisance'' factors.
 
+Following our prior work~\citep{HeusEtal17}, we used a permutation-correction
+procedure to help isolate the behavioral aspects of clustering that we were
+most interested in. After computing the uncorrected clustering score (for the
+given list and observed recall sequence), we compute a ``null'' distribution of
+$n$ additional clustering scores after randomly shuffling the recall order (we
+use $n = 500$ in the present study). This null distribution represents an
+approximation of the range of clustering scores one might expect to observe by
+``chance,'' given that a hypothetical participant was \textit{not} truly
+clustering their recalls, but where the hypothetical participant studied and
+recalled exactly the same items (with the same features) as the true
+participant.  We define the permutation-corrected clustering score as the percentile rank of the
+observed uncorrected clustering score in this estimated null distribution.  In this way,
+a corrected score of 1 indicates that the observed score was greater than any clustering score
+one might expect by chance; in other words, good evidence that the participant was truly clustering their
+recalls along the given feature dimension.
 
 \paragraph*{Memory fingerprints.}
 
