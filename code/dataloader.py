@@ -57,24 +57,6 @@ feature_groupings = {
     }
 
 
-colors = {
-    'feature rich': '#c0673c',
-    'reduced (early)': '#f15a22',
-    'reduced (late)': '#f7996c',
-    'reduced': '#fddac5',
-    'category': '#524fa1',
-    'size': '#aca7d3',
-    'length': '#cbdb2a',
-    'first letter': '#e8eeae',
-    'color': '#00a651',
-    'location': '#9bd3ae',
-    'random': '#407b8d',
-    'stabilize': '#00addc',
-    'destabilize': '#90d7ee',
-    'init': '#d3d3d3'
-}
-
-
 def grouping(feature):
     try:
         return [k for k, v in feature_groupings.items() if feature in v][0]
