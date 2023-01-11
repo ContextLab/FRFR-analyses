@@ -12,6 +12,7 @@ from pathos.multiprocessing import ProcessingPool as Pool
 from multiprocessing import cpu_count
 from tqdm import tqdm
 from sklearn.decomposition import IncrementalPCA as PCA
+from scipy import stats
 
 from dataloader import fetch_data, get_listgroups, datadir, feature_groupings
 
@@ -127,6 +128,10 @@ def recover_fingerprint_features(order_file, results):
     return orders
 
 
+order_file = os.path.join(datadir, 'scratch', 'feature_order.pkl')
+orders = recover_fingerprint_features(order_file, results)
+
+
 def organize_by_listgroup(x, groups):
     if type(x) is dict:        
         return {k: organize_by_listgroup(v, groups[k]) if k in groups else organize_by_listgroup(v, groups) for k, v in x.items()}
@@ -146,6 +151,10 @@ def organize_by_listgroup(x, groups):
 
     return quail.FriedEgg(data=data, analysis=x.analysis, list_length=x.list_length, n_lists=x.n_lists, n_subjects=x.n_subjects,
                           position=x.position)
+
+
+results_by_list = results  # per-list results
+results = {a: organize_by_listgroup(results_by_list[a], listgroups) for a in results_by_list.keys()}  # averaged within each listgroup
 
 
 def select_conds(results, conds='all'):
@@ -555,3 +564,38 @@ def get_boundaries(n_stddev):
             pickle.dump([boundaries, accuracy_near_boundaries], f)
     
     return boundaries, accuracy_near_boundaries
+
+
+def ttest(x, y, x_col=None, y_col=None, x_lists=None, y_lists=None, independent_sample=True):
+    x = x.data
+    y = y.data
+
+    if x_lists is not None:
+        if type(x_lists) is not list:
+            x_lists = [x_lists]
+        x = x.query('List in @x_lists')
+    if y_lists is not None:
+        if type(y_lists) is not list:
+            y_lists = [y_lists]
+        y = y.query('List in @y_lists')
+    
+    x = x.groupby('Subject').mean()
+    y = y.groupby('Subject').mean()
+
+    if x_col is not None:
+        x = x[x_col]
+    if y_col is not None:
+        y = y[y_col]
+
+    if independent_sample: 
+        tfun = stats.ttest_ind
+        df = len(x) + len(y) - 2
+    else:
+        tfun = stats.ttest_rel 
+        df = len(x) - 1
+    result = tfun(x, y) 
+
+    try:
+        print(f't({df}) = {result.statistic[0]:.3f}, p = {result.pvalue[0]:.3f}')
+    except IndexError:
+        print(f't({df}) = {result.statistic:.3f}, p = {result.pvalue:.3f}')
