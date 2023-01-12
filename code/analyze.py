@@ -599,3 +599,41 @@ def ttest(x, y, x_col=None, y_col=None, x_lists=None, y_lists=None, independent_
         print(f't({df}) = {result.statistic[0]:.3f}, p = {result.pvalue[0]:.3f}')
     except IndexError:
         print(f't({df}) = {result.statistic:.3f}, p = {result.pvalue:.3f}')
+
+
+def stack_fried_eggs(*args):
+    if len(args) == 0:
+        return None
+    elif len(args) == 1:
+        return args[0]
+    
+    data = [args[0].data]
+    analysis = args[0].analysis
+    list_length = args[0].list_length
+    n_lists = args[0].n_lists
+    n_subjects = args[0].n_subjects
+    position = args[0].position
+
+    idx_vals = args[0].data.index.values
+
+    for i in range(1, len(args)):
+        next_idx_vals = args[i].data.index.values
+        next_idx_vals = [[x[0] + n_subjects, x[1]] for x in next_idx_vals]
+
+        data.append(pd.DataFrame(args[i].data.values, index=pd.MultiIndex.from_tuples(next_idx_vals, names=args[i].data.index.names), columns=args[i].data.columns))
+        n_subjects += args[i].n_subjects
+
+        assert args[i].analysis == analysis, 'Analysis must be the same for all arguments'
+        assert args[i].list_length == list_length, 'List length must be the same for all arguments'
+        assert args[i].n_lists == n_lists, 'Number of lists must be the same for all arguments'
+        assert args[i].position == position, 'Position must be the same for all arguments'
+
+    return quail.FriedEgg(data=pd.concat(data, axis=0), analysis=analysis, list_length=list_length, n_lists=n_lists, n_subjects=n_subjects, position=position)
+
+
+def merge_results(results, groups):
+    merged_results = {}
+    for g in groups.keys():
+        next_fried_eggs = [results[c] for c in groups[g]]
+        merged_results[g] = stack_fried_eggs(*next_fried_eggs)
+    return merged_results
