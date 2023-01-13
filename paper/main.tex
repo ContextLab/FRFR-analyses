@@ -935,8 +935,8 @@ recall dynamics for early (order manipulation) lists in each condition (color).
 Bottom panels display the recall dynamics for late (randomly ordered) lists.
 See Figures~\dynamicsRandom~and~\dynamicsAdaptive~for analogous plots for the
 random (control) and adaptive conditions. \textbf{B.} Proportion of event
-boundaries (see \textit{Methods}) for each condition's feature of focus,
-plotted as a function of presentation position.}
+boundaries (see \textit{Identifying event boundaries}) for each condition's
+feature of focus, plotted as a function of presentation position.}
 
     \label{fig:recall-dynamics}
 \end{figure}
@@ -988,7 +988,7 @@ reliable differences in semantic (category: $t(126) = 0.204, p = 0.839$; size:
 $t(126) = -0.093, p = 0.926$) or lexicographic (length: $t(126) = 0.714, p =
 0.476$; first letter: $t(126) = 0.820, p = 0.414$) clustering. Taken together,
 these order manipulation results suggest several broad patterns
-(Figs.~\ref{fig:recall-dynamics}, \ref{fig:fingerprints}). First, most of the
+(Figs.~\ref{fig:recall-dynamics}A, \ref{fig:fingerprints}). First, most of the
 order manipulations we carried out did \textit{not} reliably affect overall
 recall performance. Second, most of the order manipulations increased
 participants' tendencies to temporally cluster their recalls. Third, all of the
@@ -1011,6 +1011,41 @@ analogous plots for the random (control) and adaptive conditions.}
 \label{fig:fingerprints}
 
 \end{figure}
+
+When we closely examined the sequences of words participants recalled in early
+order manipulated lists (Fig.~\ref{fig:recall-dynamics}A, top panel), we
+noticed several differences from the dynamics of participants' recalls of
+randomly ordered lists (Fig.~\dynamicsRandom). One striking difference is that
+participants in the category condition (dark purple curves,
+Fig.~\ref{fig:recall-dynamics}) most often initiated recall with the
+fourth-from-last item (\textit{Recall initiation}, top left panel), whereas
+participants who recalled randomly ordered lists tended to initiate recall with
+either the first or last list items (Fig.~\dynamicsRandom, top left panel). We
+hypothesized that the participants might be ``clumping'' their recalls into
+groups of items that shared category labels. Indeed, when we compared the
+positions of feature changes in the study sequence
+(Fig.~\ref{fig:recall-dynamics}B; see \textit{Identifying event boundaries})
+with the positions of items participants recalled first, we noticed a striking
+correspondence in both semantic conditions. Specifically, on category-ordered
+lists, the category labels changed every four items on average (dark purple
+peaks in Fig.~\ref{fig:recall-dynamics}B), and participants also seemed to
+display an increased tendency (relative to other order manipulation and random
+conditions) to initiate recall of category-ordered lists with items whose study
+positions were integer multiples of four. Similarly, for size-ordered lists,
+the size labels changed every eight items on average (light purple peaks in
+Fig.~\ref{fig:recall-dynamics}B), and participants also seemed to display an
+icnreased tendancy to initiate recall of size-ordered lists with items whose
+study positions were integer multiples of eight. A second striking difference
+is that participants in the category condition exhibited a much steeper lag-CRP
+(Fig.~\ref{fig:recall-dynamics}A, top middle panel) than participants in other
+conditions. (This is another expression of participants' increased tendencies
+to temporally cluster their recalls on category-ordered lists, as we reported
+above.) Taken together, these order-specific idiosyncracies suggest a
+hierarchical set of influences on participants' memories. At longer timescales,
+``event boundaries'' (to use the term loosely) can be induced across lists by
+adding or removing irrelevant visual features. At shorter timescales, ``event
+boundaries'' can be induced across items (within a single list) by adjusting
+how item features change throughout the list.
 
 The above comparisons between memory performance on early lists in the order
 manipulation versus feature rich conditions highlight how sorted lists are
@@ -1087,6 +1122,39 @@ on late order manipulation condition lists versus late feature rich lists
 ($\|t\|$s $\leq 1.234, p$s $\geq 0.220$).
 
 
+\begin{figure}[tp] \centering
+    \includegraphics[width=\textwidth]{figures/feature_clustering_vs_accuracy_and_contiguity}
+    
+    \caption{\textbf{Interactions between feature clustering, recall probability,
+    and contiguity.} \textbf{A.} Recall probability versus feature clustering
+    scores for order manipulation (early) lists. \textbf{B.} Recall probability
+    versus feature clustering for randomly ordered (late) lists. \textbf{C.} Recall
+    probability on late lists versus feature clustering on early lists. \textbf{D.}
+    Recall probability on early lists versus feature clustering on late lists.
+    \textbf{E.} Temporal clustering scores (contiguity) versus feature clustering
+    scores on early lists. \textbf{F.} Temporal clustering scores versus feature
+    clustering scores on late lists. \textbf{G.} Temporal clustering scores on late
+    lists versus feature clustering scores on early lists. \textbf{H.} Temporal
+    clustering scores on early lists versus feature clustering scores on late
+    lists. \textbf{All panels.} Each dot in the main scatterplots denotes the
+    average scores for one participant. The colored regression lines are computed
+    across participants. The inset displays condition-averaged results, where each
+    dot reflects a single condition and the regression line is computed across
+    experimental conditions. All error ribbons denote bootstrap-estimated 95\%
+    confidence intervals.} \label{fig:clustering-scatterplots} 
+    
+\end{figure}
+
+When we examined the data at the level of individual participants
+(Fig.~\ref{fig:clustering-scatterplots}), a clearer story emerged.  
+
+
+
+
+
+
+
+
 
 % - the key: individual differences.  some participants are more affected by order manips than others.  for those participants, order manips are sticky and affect recall behavior more.
 %   - one subtlety: explain fig 5 and 7 scatterplots (and inlays)-- some *conditions* are overall more affective; pattern is more complicated than can be identified with pairwise comparisons
@@ -1132,28 +1200,7 @@ Figure~\clusterCorrs.
 
 
 % figure: feature clustering vs. accuracy, feature clustering vs. temporal clustering
-\begin{figure}[tp] \centering
-\includegraphics[width=\textwidth]{figures/feature_clustering_vs_accuracy_and_contiguity}
 
-\caption{\textbf{Interactions between feature clustering, recall probability,
-and contiguity.} \textbf{A.} Recall probability versus feature clustering
-scores for order manipulation (early) lists. \textbf{B.} Recall probability
-versus feature clustering for randomly ordered (late) lists. \textbf{C.} Recall
-probability on late lists versus feature clustering on early lists. \textbf{D.}
-Recall probability on early lists versus feature clustering on late lists.
-\textbf{E.} Temporal clustering scores (contiguity) versus feature clustering
-scores on early lists. \textbf{F.} Temporal clustering scores versus feature
-clustering scores on late lists. \textbf{G.} Temporal clustering scores on late
-lists versus feature clustering scores on early lists. \textbf{H.} Temporal
-clustering scores on early lists versus feature clustering scores on late
-lists. \textbf{All panels.} Each dot in the main scatterplots denotes the
-average scores for one participant. The colored regression lines are computed
-across participants. The inset displays condition-averaged results, where each
-dot reflects a single condition and the regression line is computed across
-experimental conditions. All error ribbons denote bootstrap-estimated 95\%
-confidence intervals.} \label{fig:clustering-scatterplots} 
-
-\end{figure}
 
 
 % figure: fingerprint trajectories
