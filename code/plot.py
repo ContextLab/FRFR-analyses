@@ -37,7 +37,9 @@ colors = {
     'random': '#407b8d',
     'stabilize': '#00addc',
     'destabilize': '#90d7ee',
-    'init': '#d3d3d3'
+    'init': '#d3d3d3',
+    'early': '#bdccd4',
+    'late': '#fdb913'
 }
 
 
@@ -555,6 +557,38 @@ def plot_boundary_density_maps(conds, bounds, behaviors, listgroups, width=3, he
 
             plot_helper(bounds[cond][feature], behaviors[cond], listgroups[cond], ax=axes[row, column], behavioral_column=behavioral_column[row], xlabel=use_xlabel, ylabel=use_ylabel, title=title, xlim=xlim, ylim=ylim, cmap=cmap)
     
+    if fname is not None:
+        fig.savefig(os.path.join(figdir, fname + '.pdf'), bbox_inches='tight')
+    
+    return fig
+
+
+def barplot_helper(clustering_results, x='Condition', y=None, hue=None, palette=None, ax=None, fname=None, width=8, height=3, ylim=None, ref=None):
+    fig = plt.figure(figsize=(width, height))
+    ax = plt.gca()
+
+    sns.barplot(data=clustering_results, x=x, y=y, hue=hue, palette=palette, ax=ax)
+
+    xlim = plt.xlim()
+    if ref is not None:
+        y = clustering_results.query('Condition == @ref')[y].mean()
+        plt.plot(xlim, [y, y], '--', color='black', linewidth=1)
+        plt.xlim(xlim)
+
+    if ylim is not None:
+        plt.ylim(ylim)
+    
+    plt.legend([],[], frameon=False)
+
+    ax.spines.right.set_visible(False)
+    ax.spines.top.set_visible(False)
+
+    xlabel = ax.get_xlabel()
+    ylabel = ax.get_ylabel()
+
+    plt.xlabel(xlabel, fontsize=14)
+    plt.ylabel(ylabel, fontsize=14)
+
     if fname is not None:
         fig.savefig(os.path.join(figdir, fname + '.pdf'), bbox_inches='tight')
     

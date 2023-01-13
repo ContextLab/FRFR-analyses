@@ -637,3 +637,33 @@ def merge_results(results, groups):
         next_fried_eggs = [results[c] for c in groups[g]]
         merged_results[g] = stack_fried_eggs(*next_fried_eggs)
     return merged_results
+
+
+def create_clustering_df(results):
+    conds = ['feature rich', 'category', 'size', 'length', 'first letter', 'color', 'location']
+    decoder = {'category': 'category', 'size': 'size', 'length': 'wordLength', 'first letter': 'firstLetter', 'color': 'color', 'location': 'location'}
+
+    dfs = []
+    
+    n_subjects = 0
+
+    for c in conds:
+        idx_vals = results['fingerprint'][c].data.index.values
+        idx_vals = [[x[0] + n_subjects, x[1]] for x in idx_vals]
+
+        x = pd.DataFrame(index=pd.MultiIndex.from_tuples(idx_vals, names=results['fingerprint'][c].data.index.names))
+        x['Condition'] = c.capitalize()
+
+        if c == 'feature rich':
+            x['Feature clustering score'] = results['fingerprint'][c].data[list(decoder.values())].mean(axis=1).values
+        else:
+            x['Feature clustering score'] = results['fingerprint'][c].data[decoder[c]].values
+        
+        x['Temporal clustering score'] = results['fingerprint'][c].data['temporal'].values
+        x['Recall probability'] = results['accuracy'][c].data.values
+
+        dfs.append(x)
+
+        n_subjects += results['accuracy'][c].n_subjects
+    
+    return pd.concat(dfs).reset_index()
