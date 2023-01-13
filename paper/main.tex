@@ -1015,7 +1015,7 @@ analogous plots for the random (control) and adaptive conditions.}
 When we closely examined the sequences of words participants recalled in early
 order manipulated lists (Fig.~\ref{fig:recall-dynamics}A, top panel), we
 noticed several differences from the dynamics of participants' recalls of
-randomly ordered lists (Fig.~\dynamicsRandom). One striking difference is that
+randomly ordered lists (Figs.~\dynamicsRandom,~\recallInit). One striking difference is that
 participants in the category condition (dark purple curves,
 Fig.~\ref{fig:recall-dynamics}) most often initiated recall with the
 fourth-from-last item (\textit{Recall initiation}, top left panel), whereas
@@ -1121,34 +1121,64 @@ manipulation lists (more than late feature rich lists; $t(126) = 2.199, p =
 on late order manipulation condition lists versus late feature rich lists
 ($\|t\|$s $\leq 1.234, p$s $\geq 0.220$).
 
+We also looked for more subtle group-level patterns. For example, perhaps
+sorting early lists by one feature dimension could affect how participants
+cluster \textit{other} features (on early and/or late lists) as well. We
+defined participants' \textit{memory fingerprints} as the set of temporal and
+feature clustering scores. A participant's memory fingerprint describes how
+they tend to retrieve memories of the studied items, perhaps searching through
+several feature spaces (or along several representational dimensions). To gain
+insights into the dynamics of how participants' clustering scores tended to
+change over time, we computed the average (across participants) fingerprint
+from each list, from each order manipulation condition
+(Fig.~\ref{fig:fingerprint-trajectories}). We projected these fingerprints into
+a two-dimensional space to help visualize the dynamics (top panels; see
+\textit{Computing low-dimensional embeddings of memory fingerprints}). We found
+that participants' average fingerprints tended to remain relatively stable on
+early lists, and exhibited a ``jump'' to another stable state on later lists.
+The sizes of these jumps varied somewhat across conditions (the Euclidean
+distances between fingerprints in their original high dimensional spaces are
+displayed in the bottom panels). We also averaged the fingerprints across early
+and late lists, respectively, for each condition
+(Fig.~\ref{fig:fingerprint-trajectories}B). We found that participants'
+fingerprints on early lists seem to be influenced by the order manipulations on
+those lists (see the locations of the circles in
+Fig.~\ref{fig:fingerprint-trajectories}B). There also seemed to be some
+consistency across different features within a broader type. For example, both
+semantic feature conditions (category and size; purple markers) diverge in a
+similar direction from the group; both lexicographic feature conditions (length
+and first letter; yellow markers) diverge in a similar direction; and both
+visiual conditions (color and location; green) also diverge in a similar
+direction. But on late lists, participants' fingerprints seem to return to a
+common state that is roughly shared across conditions (i.e., the stars in that
+panel are clumped together).
 
 \begin{figure}[tp] \centering
-    \includegraphics[width=\textwidth]{figures/feature_clustering_vs_accuracy_and_contiguity}
+    \includegraphics[width=\textwidth]{figures/fingerprint_trajectories}
     
-    \caption{\textbf{Interactions between feature clustering, recall probability,
-    and contiguity.} \textbf{A.} Recall probability versus feature clustering
-    scores for order manipulation (early) lists. \textbf{B.} Recall probability
-    versus feature clustering for randomly ordered (late) lists. \textbf{C.} Recall
-    probability on late lists versus feature clustering on early lists. \textbf{D.}
-    Recall probability on early lists versus feature clustering on late lists.
-    \textbf{E.} Temporal clustering scores (contiguity) versus feature clustering
-    scores on early lists. \textbf{F.} Temporal clustering scores versus feature
-    clustering scores on late lists. \textbf{G.} Temporal clustering scores on late
-    lists versus feature clustering scores on early lists. \textbf{H.} Temporal
-    clustering scores on early lists versus feature clustering scores on late
-    lists. \textbf{All panels.} Each dot in the main scatterplots denotes the
-    average scores for one participant. The colored regression lines are computed
-    across participants. The inset displays condition-averaged results, where each
-    dot reflects a single condition and the regression line is computed across
-    experimental conditions. All error ribbons denote bootstrap-estimated 95\%
-    confidence intervals.} \label{fig:clustering-scatterplots} 
+    \caption{\textbf{Memory fingerprint dynamics (order manipulation
+    conditions).} \textbf{A.} Each column (and color) reflects an experimental
+    condition. In the top panels, each marker displays a 2D projection of the
+    (across-participant) average memory fingerprint for one list. Order
+    manipulation (early) lists are denoted by circles and randomly ordered
+    (late) lists are denoted by stars. All of the fingerprints (across all
+    conditions and lists) are projected into a common space. The bar plots in
+    the bottom panels display the Euclidean distances of the per-list memory
+    fingerprints to the list 0 fingerprint, for each condition. Error bars
+    denote bootstrap-estimated 95\% confidence intervals. The dotted vertical
+    lines denote the boundaries between early and late lists. \textbf{B.} In
+    this panel, the fingerprints for early (circle) and late (star) lists are
+    averaged across lists and participants before projecting the fingerprints
+    into a (new) 2D space. See Figure~\fingerprintTrajectoryRandom~for
+    analogous plots for the random (control) conditions. }
+    \label{fig:fingerprint-trajectories}
     
-\end{figure}
+    \end{figure}
 
 When we examined the data at the level of individual participants
-(Fig.~\ref{fig:clustering-scatterplots}), a clearer story emerged. Within each
-order manipulation condition, participants exhibited a range of feature
-clustering scores, on both early and late lists
+(Figs.~\ref{fig:clustering-scatterplots} and \ref{fig:clustering-carryover}), a
+clearer story emerged. Within each order manipulation condition, participants
+exhibited a range of feature clustering scores, on both early and late lists
 (Fig.~\ref{fig:clustering-scatterplots}A, B). Across every order manipulation
 condition, participants who exhibited stronger feature clustering (for their
 condition's manipulated feature) recalled more words. This trend held overall
@@ -1186,7 +1216,7 @@ location: $ r(28) = 0.190, p = 0.314$; across-conditions: $r(4) = -0.036, p =
 0.945$). While less robust than the carryover associations between feature
 clustering and recall performance, we also observed some carryover associations
 between feature clustering and temporal clustering
-(Fig.~\ref{fig:clusteringfig:clustering-scatterplots}G, H). Participants who
+(Fig.~\ref{fig:clustering-scatterplots}G, H). Participants who
 showed stronger feature clustering on early lists trended towards showing
 stronger temporal clustering on later lists (overall: $r(179) = 0.301, p <
 0.001$; for individual conditions: all $r$s $\geq 0.297$, all $p$s $\leq
@@ -1195,8 +1225,97 @@ showed stronger temporal clustering on early lists trended towards showing
 stronger feature clustering on later lists (overall: $r(179) = 0.579, p <
 0.001$; all non-visual conditions: $r$s $\geq 0.323$, all $p$s $\leq 0.082$;
 visual conditions: $r$s $\geq 0.089$, all $p$s $\leq 0.632$; across conditions:
-$r(4) = 0.916, p = 0.010$).
+$r(4) = 0.916, p = 0.010$). Taken together, the results displayed in
+Figure~\ref{fig:clustering-scatterplots} show that participants who were more
+sensitive to the order manipulations (i.e., participants who showed stronger
+feature clustering for their condition's feature on early lists) remembered
+more words and showed stronger temporal clustering. These associations also
+appeared to carry over across lists, even when the items on later lists were
+presented in a random order.
 
+\begin{figure}[tp] \centering
+    \includegraphics[width=\textwidth]{figures/feature_clustering_vs_accuracy_and_contiguity}
+    
+    \caption{\textbf{Interactions between feature clustering, recall probability,
+    and contiguity.} \textbf{A.} Recall probability versus feature clustering
+    scores for order manipulation (early) lists. \textbf{B.} Recall probability
+    versus feature clustering for randomly ordered (late) lists. \textbf{C.} Recall
+    probability on late lists versus feature clustering on early lists. \textbf{D.}
+    Recall probability on early lists versus feature clustering on late lists.
+    \textbf{E.} Temporal clustering scores (contiguity) versus feature clustering
+    scores on early lists. \textbf{F.} Temporal clustering scores versus feature
+    clustering scores on late lists. \textbf{G.} Temporal clustering scores on late
+    lists versus feature clustering scores on early lists. \textbf{H.} Temporal
+    clustering scores on early lists versus feature clustering scores on late
+    lists. \textbf{All panels.} Each dot in the main scatterplots denotes the
+    average scores for one participant. The colored regression lines are computed
+    across participants. The inset displays condition-averaged results, where each
+    dot reflects a single condition and the regression line is computed across
+    experimental conditions. All error ribbons denote bootstrap-estimated 95\%
+    confidence intervals.} \label{fig:clustering-scatterplots} 
+    
+\end{figure}
+
+If participants show different sensitivities to order manipulations, how do
+their behaviors carry over to later lists? We found that participants who
+showed strong feature clustering on early lists often tended to show strong
+feature clustering on late lists (Fig.~\ref{fig:clustering-carryover}A; overall
+across participants and conditions: $r(179) = 0.592, p < 0.001$; non-visual
+feature conditions: all $r$s $\geq 0.350$, all $p$s $\leq 0.058$; color: $r(29)
+= -0.071, p = 0.704$; location: $r(28) = 0.032, p = 0.868$; across conditions:
+$r(4) = 0.934, p = 0.006$). Although participants tended to show weaker feature
+clustering on late lists (Fig.~\ref{fig:fingerprint-trajectories}) on
+\textit{average}, the associations between early and late lists for individual
+participants suggests that some influence of early order manipulations may
+linger on late lists. We found that participants who exhibited larger carryover
+in feature clustering (i.e., continued to show strong feature clustering on
+late lists) for the semantic order manipulations (but not other manipulations)
+also tended to show a larger improvement in recall
+(Fig.~\ref{fig:clustering-carryover}B; overall: $r(179) = 0.378, p < 0.001$;
+category: $r(28) = 0.419, p = 0.021$; size: $r(28) = 0.737, p < 0.001$;
+non-semantic conditions: all $r$s $\leq 0.252$, all $p$s $\geq 0.179$; across
+conditions: $r(4) = 0.773, p = 0.072$) on late lists, relative to early lists.
+Participants who exhibited larger carryover in feature clustering also tended
+to show stronger temporal clustering on late lists (relative to early lists)
+for all but the category condition (Fig.~\ref{fig:clustering-carryover}C;
+overall: $r(179) = 0.434, p < 0.001$; category: $r(28) = 0.229, p = 0.223$; all
+non-category conditions: all $r$s $\geq 0.448$, all $p$s $\leq 0.012$; across
+conditions: $r(4) = 0.598, p = 0.210$). We suggest two potential
+interpretations of these findings. First, it is possible that some participants
+are more ``maliable'' or ``adaptable'' with respect to how they organize
+incoming information. When presented with list of items sorted along
+\textit{any} feature dimension, they will simply adopt that feature as a
+dominant dimension for organizing those items and subsequent (randomly ordered)
+items. This flexibility in memory organization might afford such participants a
+memory advantage, explaining their strong recall performance. An alternative
+interpretation is that each participant comes into our study with a
+``preferred'' way of organizing incoming information. If they happen to be
+assigned to an order manipulation condition that matches their preferences,
+then they will appear to be ``sensitive'' to the order manipulation and also
+exhibit a high degree of carryover in feature clustering from early to late
+lists. These participants might demonstrate strong recall performance not
+because of their inherantly superior memory abilities, but rather because the
+specific condition they were assigned to happened to be especially easy for
+them, given their pre-experimental tendancies.
+
+\begin{figure}[tp] \centering
+    \includegraphics[width=\textwidth]{figures/clustering_carryover}
+    
+    \caption{\textbf{Feature clustering carryover effects.} \textbf{A.} Feature
+    clustering scores for ordder manipulation (early) versus randomly ordered
+    (late) lists. \textbf{B.} Accuracy differences (on early versus late lists)
+    versus feature clustering ``carryover'' (defined as the differences between
+    the average clustering scores on early and late lists). \textbf{C.}
+    Temporal clustering differences (on early versus late lists) versus feature
+    clustering carryover. \textbf{All panels.} Each dot in the main
+    scatterplots denotes the average scores for one participant. The colored
+    regression lines are computed across participants. The inset displays
+    condition-averaged results, where each dot reflects a single condition and
+    the regression line is computed across experimental conditions. All error
+    ribbons denote bootstrap-estimated 95\% confidence intervals.}
+    \label{fig:clustering-carryover} 
+
+\end{figure}
 
 
 
@@ -1251,50 +1370,13 @@ Figure~\clusterCorrs.
 
 
 % figure: fingerprint trajectories
-\begin{figure}[tp] \centering
-    \includegraphics[width=\textwidth]{figures/fingerprint_trajectories}
-    
-    \caption{\textbf{Memory fingerprint dynamics (order manipulation
-    conditions).} \textbf{A.} Each column (and color) reflects an experimental
-    condition. In the top panels, each marker displays a 2D projection of the
-    (across-participant) average memory fingerprint for one list. Order
-    manipulation (early) lists are denoted by circles and randomly ordered
-    (late) lists are denoted by stars. All of the fingerprints (across all
-    conditions and lists) are projected into a common space. The bar plots in
-    the bottom panels display the Euclidean distances of the per-list memory
-    fingerprints to the list 0 fingerprint, for each condition. Error bars
-    denote bootstrap-estimated 95\% confidence intervals. The dotted vertical
-    lines denote the boundaries between early and late lists. \textbf{B.} In
-    this panel, the fingerprints for early (circle) and late (star) lists are
-    averaged across lists and participants before projecting the fingerprints
-    into a (new) 2D space. See Figure~\fingerprintTrajectoryRandom~for
-    analogous plots for the random (control) conditions. }
-    \label{fig:fingerprint-trajectories}
-    
-    \end{figure}
+
 
 % figure: carryover effects: 
 %  - clustering early vs. clustering late
 %  - clustering carryover vs. accuracy difference
 %  - clustering carryover vs. temporal clustering differences
-\begin{figure}[tp] \centering
-    \includegraphics[width=\textwidth]{figures/clustering_carryover}
-    
-    \caption{\textbf{Feature clustering carryover effects.} \textbf{A.} Feature
-    clustering scores for ordder manipulation (early) versus randomly ordered
-    (late) lists. \textbf{B.} Accuracy differences (on early versus late lists)
-    versus feature clustering ``carryover'' (defined as the differences between
-    the average clustering scores on early and late lists). \textbf{C.}
-    Temporal clustering differences (on early versus late lists) versus feature
-    clustering carryover. \textbf{All panels.} Each dot in the main
-    scatterplots denotes the average scores for one participant. The colored
-    regression lines are computed across participants. The inset displays
-    condition-averaged results, where each dot reflects a single condition and
-    the regression line is computed across experimental conditions. All error
-    ribbons denote bootstrap-estimated 95\% confidence intervals.}
-    \label{fig:clustering-carryover} 
 
-\end{figure}
 
 \begin{figure} 
     \centering
