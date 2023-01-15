@@ -69,6 +69,12 @@ Heusser, A.~C., Fitzpatrick, P.~C., Field, C.~E., Ziman, K., and Manning, J.~R.
   data.
 \newblock {\em Journal of Open Source Software}, 10.21105/joss.00424.
 
+\bibitem[\protect\astroncite{Heusser et~al.}{2021}]{HeusEtal21}
+Heusser, A.~C., Fitzpatrick, P.~C., and Manning, J.~R. (2021).
+\newblock Geometric models reveal behavioral and neural signatures of
+  transforming naturalistic experiences into episodic memories.
+\newblock {\em Nature Human Behavior}, 5:905--919.
+
 \bibitem[\protect\astroncite{Heusser et~al.}{2018}]{HeusEtal18a}
 Heusser, A.~C., Ziman, K., Owen, L. L.~W., and Manning, J.~R. (2018).
 \newblock {HyperTools}: a {Python} toolbox for gaining geometric insights into
@@ -95,6 +101,17 @@ Kahana, M.~J. (2012).
 \newblock {\em Foundations of human memory}.
 \newblock {Oxford} {University} Press, New York, {NY}.
 
+\bibitem[\protect\astroncite{Kahana}{2020}]{Kaha20}
+Kahana, M.~J. (2020).
+\newblock Computational models of memory search.
+\newblock {\em Annual Review of Psychology}, 71:107--138.
+
+\bibitem[\protect\astroncite{Kahana et~al.}{2008}]{KahaEtal08b}
+Kahana, M.~J., Howard, M.~W., and Polyn, S.~M. (2008).
+\newblock Associative processes in episodic memory.
+\newblock In {Roediger III}, H.~L., editor, {\em Cognitive Psychology of
+  Memory}, pages 476--490. Elsevier, Oxford, {UK}.
+
 \bibitem[\protect\astroncite{Kimball et~al.}{2007}]{KimbEtal07}
 Kimball, D.~R., Smith, T.~A., and Kahana, M.~J. (2007).
 \newblock The f{SAM} model of false recall.
@@ -105,6 +122,12 @@ Manning, J.~R. (2020).
 \newblock Context reinstatement.
 \newblock In Kahana, M.~J. and Wagner, A.~D., editors, {\em Handbook of Human
   Memory}. {Oxford} {University} Press.
+
+\bibitem[\protect\astroncite{Manning}{2021}]{Mann21a}
+Manning, J.~R. (2021).
+\newblock Episodic memory: mental time travel or a quantum ``memory wave''
+  function?
+\newblock {\em Psychological Review}, 128(4):711--725.
 
 \bibitem[\protect\astroncite{Manning et~al.}{2016}]{MannEtal16}
 Manning, J.~R., Hulbert, J.~C., Williams, J., Piloto, L., Sahakyan, L., and
