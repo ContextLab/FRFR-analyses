@@ -18,6 +18,13 @@ Baldassano, C., Hasson, U., and Norman, K.~A. (2018).
   perception.
 \newblock {\em The Journal of Neuroscience}, 38(45):9689--9699.
 
+\bibitem[\protect\astroncite{Balota et~al.}{1992}]{BaloEtal92}
+Balota, D.~A., Black, S.~R., and Cheney, M. (1992).
+\newblock Automatic and attentional priming in young and older adults:
+  reevaluation of the two-process model.
+\newblock {\em Journal of Experimental Psychology: Human Perception and
+  Performance}, 18(2):485--502.
+
 \bibitem[\protect\astroncite{Beaman and Jones}{1998}]{BeamJone10}
 Beaman, C.~P. and Jones, D.~M. (1998).
 \newblock Irrelevant sound disrupts order information in free reacall as in
@@ -47,6 +54,18 @@ Chiu, Y.-C., Wang, T.~H., Beck, D.~M., Lewis-Peacock, J.~A., and Sahakyan, L.
 \newblock Separation of item and context in item-method directed forgetting.
 \newblock {\em {NeuroImage}}, 235:117983.
 
+\bibitem[\protect\astroncite{Clayton and Chattin}{1989}]{ClayChat89}
+Clayton, K. and Chattin, D. (1989).
+\newblock Spatial and semantic priming effects in tests of spatial knowledge.
+\newblock {\em Journal of Experimental Psychology: Learning, Memory, and
+  Cognition}, 15(3):495--506.
+
+\bibitem[\protect\astroncite{Donnelly}{1988}]{Donn88}
+Donnelly, R.~E. (1988).
+\newblock Priming effects in successive episodic tests.
+\newblock {\em Journal of Experimental Psychology: Learning, Memory, and
+  Cognition}, 14:256--265.
+
 \bibitem[\protect\astroncite{DuBrow and Davachi}{2016}]{DuBrDava16}
 DuBrow, S. and Davachi, L. (2016).
 \newblock Temporal binding within and across events.
@@ -62,6 +81,11 @@ Ezzyat, Y. and Davachi, L. (2011).
 \newblock What constitutes an episode in episodic memory?
 \newblock {\em Psychological Science}, 22(2):243--252.
 
+\bibitem[\protect\astroncite{Flexser and Tulving}{1982}]{FlexTulv82}
+Flexser, A.~J. and Tulving, E. (1982).
+\newblock Priming and recognition failure.
+\newblock {\em Journal of Verbal Learning and Verbal Behavior}, 21:237--248.
+
 \bibitem[\protect\astroncite{Gershman et~al.}{2013}]{GersEtal13}
 Gershman, S.~J., Schapiro, A.~C., Hupbach, A., and Norman, K.~A. (2013).
 \newblock Neural context reinstatement predicts memory misattribution.
@@ -73,6 +97,12 @@ Glenberg, A.~M., Bradley, M.~M., Kraus, T.~A., and Renzaglia, G.~J. (1983).
   guided retrieval theory.
 \newblock {\em Journal of Experimental Psychology: Learning, Memory, and
   Cognition}, 12:413--418.
+
+\bibitem[\protect\astroncite{Gotts et~al.}{2012}]{GottEtal12}
+Gotts, S.~J., Chow, C.~C., and Martin, A. (2012).
+\newblock Repetition priming and repetition suppression: A case for enhanced
+  efficiency through neural synchronization.
+\newblock {\em Cognitive Neuroscience}, 3(3-4):227--237.
 
 \bibitem[\protect\astroncite{Halpern et~al.}{2016}]{HalpEtal16}
 Halpern, Y., Hall, K.~B., Schogol, V., Riley, M., Roark, B., Skobeltsyn, G.,
@@ -103,6 +133,22 @@ Heusser, A.~C., Ziman, K., Owen, L. L.~W., and Manning, J.~R. (2018).
 Howard, M.~W. and Kahana, M.~J. (2002).
 \newblock A distributed representation of temporal context.
 \newblock {\em Journal of Mathematical Psychology}, 46:269--299.
+
+\bibitem[\protect\astroncite{Huang et~al.}{2004}]{HuanEtal04}
+Huang, L., Holcombe, A.~O., and Pashler, H. (2004).
+\newblock Repetition priming in visual search: episodic retrieval, not feature
+  priming.
+\newblock {\em Memory and Cognition}, 32:12--20.
+
+\bibitem[\protect\astroncite{Huber}{2008}]{Hube08}
+Huber, D.~E. (2008).
+\newblock Immediate priming and cognitive aftereffects.
+\newblock {\em Journal of Experimental Psychology: General}, 137(2):324--347.
+
+\bibitem[\protect\astroncite{Huber et~al.}{2001}]{HubeEtal01}
+Huber, D.~E., Shiffrin, R.~M., Lyle, K.~B., and Ruys, K.~I. (2001).
+\newblock Perception and preference in short-term word priming.
+\newblock {\em Psychological Review}, 108(1):149--182.
 
 \bibitem[\protect\astroncite{Isarida and Isarida}{2007}]{IsarIsar07}
 Isarida, T. and Isarida, T.~K. (2007).
@@ -140,6 +186,14 @@ Kahana, M.~J., Howard, M.~W., and Polyn, S.~M. (2008).
 \newblock Associative processes in episodic memory.
 \newblock In {Roediger III}, H.~L., editor, {\em Cognitive Psychology of
   Memory}, pages 476--490. Elsevier, Oxford, {UK}.
+
+\bibitem[\protect\astroncite{Katabi et~al.}{2023}]{KataEtal23}
+Katabi, N., Simon, H., Yakim, S., Ravreby, I., Ohad, T., and Yeshurun, Y.
+  (2023).
+\newblock Deeper than you think: partisanship-dependent brain responses in
+  early sensory and motor brain regions.
+\newblock {\em The Journal of Neuroscience}, pages
+  doi.org/10.1523/JNEUROSCI.0895--22.2022.
 
 \bibitem[\protect\astroncite{Kimball et~al.}{2007}]{KimbEtal07}
 Kimball, D.~R., Smith, T.~A., and Kahana, M.~J. (2007).
@@ -202,6 +256,12 @@ Mas\'{i}s-Obando, R., Norman, K.~A., and Baldassano, C. (2022).
   memory during encoding and retrieval.
 \newblock {\em {eLife}}, 11:e70445.
 
+\bibitem[\protect\astroncite{McNamara}{1994}]{McNa94}
+McNamara, T.~P. (1994).
+\newblock Theories of priming: {II}. {T}ypes of primes.
+\newblock {\em Journal of Experimental Psychology: Learning, Memory, and
+  Cognition}, 20:507--520.
+
 \bibitem[\protect\astroncite{Momennejad et~al.}{2017}]{MomeEtal17}
 Momennejad, I., Russek, E.~M., Cheong, J.~H., Botvinick, M.~M., Daw, N.~D., and
   Gershman, S.~J. (2017).
@@ -218,6 +278,12 @@ Nastase, S.~A., Goldstein, A., and Hasson, U. (2020).
 \newblock Keep it real: rethinking the primacy of experimental control in
   cognitive neuroscience.
 \newblock {\em {NeuroImage}}, 15(222):117254--117261.
+
+\bibitem[\protect\astroncite{Neely}{1977}]{Neel77}
+Neely, J.~H. (1977).
+\newblock Semantic priming and retrieval from lexical memory: roles of
+  inhibitionless spreading activation and limited-capacity attention.
+\newblock {\em Journal of Experimental Psychology: General}, 106(3):226--254.
 
 \bibitem[\protect\astroncite{Polyn and Kahana}{2008}]{PolyKaha08}
 Polyn, S.~M. and Kahana, M.~J. (2008).
@@ -240,6 +306,11 @@ Raaijmakers, J. G.~W. and Shiffrin, R.~M. (1980).
 \newblock In Bower, G.~H., editor, {\em The Psychology of Learning and
   Motivation: Advances in Research and Theory}, volume~14, pages 207--262.
   Academic Press, New York, {NY}.
+
+\bibitem[\protect\astroncite{Rabinowitz}{1986}]{Rabi86}
+Rabinowitz, J.~C. (1986).
+\newblock Priming in episodic memory.
+\newblock {\em Journal of Gerontology}, 41:204--213.
 
 \bibitem[\protect\astroncite{Radvansky and Copeland}{2006}]{RadvCope06}
 Radvansky, G.~A. and Copeland, D.~E. (2006).
@@ -301,10 +372,32 @@ Swallow, K.~M., Zacks, J.~M., and Abrams, R.~A. (2009).
 \newblock Event boundaries in perception affect memory encoding and updating.
 \newblock {\em Journal of Experimental Psychology: General}, 138(2):236--257.
 
+\bibitem[\protect\astroncite{Tipper}{1985}]{Tipp85}
+Tipper, S.~P. (1985).
+\newblock The negative priming effect: inhibitory priming by ignored objects.
+\newblock {\em The Quarterly Journal of Experimental Psychology A: Human
+  Experimental Psychology}, 37:571--590.
+
+\bibitem[\protect\astroncite{Tulving and Schacter}{1991}]{TulvScha91}
+Tulving, E. and Schacter, D.~L. (1991).
+\newblock Priming and human memory systems.
+\newblock {\em Science}, 247:301--305.
+
+\bibitem[\protect\astroncite{Watkins et~al.}{1992}]{WatkEtal92}
+Watkins, P.~C., Mathews, A., Williamson, D.~A., and Fuller, R.~D. (1992).
+\newblock Mood-congruent memory in depression: emotional priming or
+  elaboration?
+\newblock {\em Journal of Abnormal Psychology}, 101(3):581--586.
+
 \bibitem[\protect\astroncite{Welch and Burnett}{1924}]{WelcBurn24}
 Welch, G.~B. and Burnett, C.~T. (1924).
 \newblock Is primacy a factor in association-formation.
 \newblock {\em {American} Journal of Psychology}, 35:396--401.
+
+\bibitem[\protect\astroncite{Wiggs and Martin}{1998}]{WiggMart98}
+Wiggs, C.~L. and Martin, A. (1998).
+\newblock Properties and mechanisms of perceptual priming.
+\newblock {\em Current Opinion in Neurobiology}, 8(2):227--233.
 
 \bibitem[\protect\astroncite{Xu et~al.}{2022}]{XuEtal22}
 Xu, X., Zhu, Z., and Manning, J.~R. (2022).
