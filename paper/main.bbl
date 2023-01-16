@@ -18,6 +18,13 @@ Baldassano, C., Hasson, U., and Norman, K.~A. (2018).
   perception.
 \newblock {\em The Journal of Neuroscience}, 38(45):9689--9699.
 
+\bibitem[\protect\astroncite{Beaman and Jones}{1998}]{BeamJone10}
+Beaman, C.~P. and Jones, D.~M. (1998).
+\newblock Irrelevant sound disrupts order information in free reacall as in
+  serial recall.
+\newblock {\em The Quarterly Journal of Experimental Psychology Section A},
+  51(3):615--636.
+
 \bibitem[\protect\astroncite{Bousfield}{1953}]{Bous53}
 Bousfield, W.~A. (1953).
 \newblock The occurrence of clustering in the recall of randomly arranged
@@ -34,6 +41,12 @@ Bower, G.~H., Black, J.~B., and Turner, T.~J. (1979).
 \newblock Scripts in memory for text.
 \newblock {\em Cognitive Psychology}, 11(2):177--220.
 
+\bibitem[\protect\astroncite{Chiu et~al.}{2021}]{ChiuEtal21}
+Chiu, Y.-C., Wang, T.~H., Beck, D.~M., Lewis-Peacock, J.~A., and Sahakyan, L.
+  (2021).
+\newblock Separation of item and context in item-method directed forgetting.
+\newblock {\em {NeuroImage}}, 235:117983.
+
 \bibitem[\protect\astroncite{DuBrow and Davachi}{2016}]{DuBrDava16}
 DuBrow, S. and Davachi, L. (2016).
 \newblock Temporal binding within and across events.
@@ -48,6 +61,11 @@ Estes, W.~K. (1955).
 Ezzyat, Y. and Davachi, L. (2011).
 \newblock What constitutes an episode in episodic memory?
 \newblock {\em Psychological Science}, 22(2):243--252.
+
+\bibitem[\protect\astroncite{Gershman et~al.}{2013}]{GersEtal13}
+Gershman, S.~J., Schapiro, A.~C., Hupbach, A., and Norman, K.~A. (2013).
+\newblock Neural context reinstatement predicts memory misattribution.
+\newblock {\em The Journal of Neuroscience}, 33(20):8590--8595.
 
 \bibitem[\protect\astroncite{Glenberg et~al.}{1983}]{GlenEtal83}
 Glenberg, A.~M., Bradley, M.~M., Kraus, T.~A., and Renzaglia, G.~J. (1983).
@@ -86,10 +104,21 @@ Howard, M.~W. and Kahana, M.~J. (2002).
 \newblock A distributed representation of temporal context.
 \newblock {\em Journal of Mathematical Psychology}, 46:269--299.
 
+\bibitem[\protect\astroncite{Isarida and Isarida}{2007}]{IsarIsar07}
+Isarida, T. and Isarida, T.~K. (2007).
+\newblock Environmental context effects of background color in free recall.
+\newblock {\em Memory and Cognition}, 35(7):1620--1629.
+
 \bibitem[\protect\astroncite{Jenkins and Russell}{1952}]{JenkRuss52}
 Jenkins, J.~J. and Russell, W.~A. (1952).
 \newblock Associative clustering during recall.
 \newblock {\em Journal of Abnormal and Social Psychology}, 47:818--821.
+
+\bibitem[\protect\astroncite{Jones and Pyc}{2014}]{JonePyc14}
+Jones, A.~C. and Pyc, M.~A. (2014).
+\newblock The production effect: costs and benefits in free recall.
+\newblock {\em Journal of Experimental Psychology: Learning, Memory, and
+  Cognition}, 40(1):300--305.
 
 \bibitem[\protect\astroncite{Kahana}{1996}]{Kaha96}
 Kahana, M.~J. (1996).
@@ -160,6 +189,13 @@ Manning, J.~R., Sperling, M.~R., Sharan, A., Rosenberg, E.~A., and Kahana,
   predict semantic clustering during memory search.
 \newblock {\em The Journal of Neuroscience}, 32(26):8871--8878.
 
+\bibitem[\protect\astroncite{Masicampto and Sahakyan}{2014}]{MasiSaha14}
+Masicampto, E.~J. and Sahakyan, L. (2014).
+\newblock Imagining another context during encoding offsets context-dependent
+  forgetting.
+\newblock {\em Journal of Experimental Psychology: Learning, Memory, and
+  Cognition}, 40(6):1772--1777.
+
 \bibitem[\protect\astroncite{Mas\'{i}s-Obando et~al.}{2022}]{MasiEtal22}
 Mas\'{i}s-Obando, R., Norman, K.~A., and Baldassano, C. (2022).
 \newblock Scheme representations in distinct brain networks support narrative
@@ -220,6 +256,13 @@ Ranganath, C. and Ritchey, M. (2012).
 Romney, A.~K., Brewer, D.~D., and Batchelder, W.~H. (1993).
 \newblock Predicting clustering from semantic structure.
 \newblock {\em Psychological Science}, 4:28--34.
+
+\bibitem[\protect\astroncite{Sahakyan and Smith}{2014}]{SahaSmit14}
+Sahakyan, L. and Smith, J.~R. (2014).
+\newblock A long time ago, in a context far, far away: {R}etrospective time
+  estimates and internal context change.
+\newblock {\em Journal of Experimental Psychology: Learning, Memory, and
+  Cognition}, 40(1):86--93.
 
 \bibitem[\protect\astroncite{Schapiro and Turk-Browne}{2015}]{SchaTurk15}
 Schapiro, A. and Turk-Browne, N. (2015).
