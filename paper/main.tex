@@ -684,27 +684,27 @@ correlation between $\hat{f}_i$ and $f$.
 
 \subsubsection*{Computing low-dimensional embeddings of memory fingerprints}
 
-\textbf{JRM NOTE: REMINDER TO CHECK THIS PARAGRAPH AGAINST ANALYSIS CODE FOR
-ACCURACY...} Following some of our prior work~\citep{HeusEtal18a, HeusEtal21},
-we use low-dimensional embeddings to help visualize how participants' memory
+Following some of our prior work~\citep{HeusEtal18a, HeusEtal21}, we use
+low-dimensional embeddings to help visualize how participants' memory
 fingerprints change across lists
 (Figs.~\ref{fig:fingerprint-trajectories}A,~\fingerprintTrajectoryRandom A). To
 compute a shared embedding space across participants and experimental
-conditions, we concatenated the full set of fingerprints (across all lists,
-participants, and experimental conditions) to create a large matrix with
-number-of-lists $\times$ number-of-participants rows and seven columns (one for
-each feature clustering score, plus an additional temporal clustering score
-column). We used principal components analysis to project the seven-dimensional
-observations into a two-dimensional space (using the two principal components
-that explained the most variance in the data). For two visualizations
+conditions, we concatenated the full set of fingerprints (across all list
+groupings, participants, and experimental conditions) to create a large matrix
+with number-of-list-groupings $\times$ number-of-participants rows and seven
+columns (one for each feature clustering score, plus an additional temporal
+clustering score column). We used principal components analysis to project the
+seven-dimensional observations into a two-dimensional space (using the two
+principal components that explained the most variance in the data). For two
+visualizations
 (Figs.~\ref{fig:fingerprint-trajectories}B,~and~\fingerprintTrajectoryRandom B)
-we computed an additional set of two-dimensional embeddings for participants'
-\textit{average} fingerprints (i.e., across lists within a given group of
-lists-- early or late). For those visualizations we averaged across the rows
-(for each condition and group of lists) in the combined fingerprint matrix
-prior to projecting it into the shared two-dimensional space. This yielded a
-single two-dimensional coordinate for each \textit{list group}, rather than for
-each individual list. We used these embeddings solely for visualization. All
+we computed an additional set of two-dimensional embeddings for the
+\textit{average} fingerprints across lists within a given list grouping (i.e.,
+early or late). For those visualizations, we averaged across the rows (for each
+condition and group of lists) in the combined fingerprint matrix prior to
+projecting it into the shared two-dimensional space. This yielded a single
+two-dimensional coordinate for each \textit{list group}, rather than for each
+individual list. We used these embeddings solely for visualization. All
 statistical tests were carried out in the original (seven-dimensional) feature
 spaces.
 
