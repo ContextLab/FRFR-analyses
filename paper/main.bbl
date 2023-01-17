@@ -25,6 +25,11 @@ Balota, D.~A., Black, S.~R., and Cheney, M. (1992).
 \newblock {\em Journal of Experimental Psychology: Human Perception and
   Performance}, 18(2):485--502.
 
+\bibitem[\protect\astroncite{Barron et~al.}{2020}]{BarrEtal20}
+Barron, H.~C., Auksztulewicz, R., and Friston, K. (2020).
+\newblock Prediction and memory: a predictive coding account.
+\newblock {\em Progress in Neurobiology}, 192:101821--101834.
+
 \bibitem[\protect\astroncite{Beaman and Jones}{1998}]{BeamJone10}
 Beaman, C.~P. and Jones, D.~M. (1998).
 \newblock Irrelevant sound disrupts order information in free reacall as in
@@ -48,11 +53,21 @@ Bower, G.~H., Black, J.~B., and Turner, T.~J. (1979).
 \newblock Scripts in memory for text.
 \newblock {\em Cognitive Psychology}, 11(2):177--220.
 
+\bibitem[\protect\astroncite{Brigard}{2012}]{Brig12}
+Brigard, F.~D. (2012).
+\newblock Predictive memory and the surprising gap.
+\newblock {\em Frontiers in Psychology}, 3(420):1--3.
+
 \bibitem[\protect\astroncite{Chiu et~al.}{2021}]{ChiuEtal21}
 Chiu, Y.-C., Wang, T.~H., Beck, D.~M., Lewis-Peacock, J.~A., and Sahakyan, L.
   (2021).
 \newblock Separation of item and context in item-method directed forgetting.
 \newblock {\em {NeuroImage}}, 235:117983.
+
+\bibitem[\protect\astroncite{Chow et~al.}{2016}]{ChowEtal16}
+Chow, W.-Y., Momma, S., Smith, C., Lau, E., and Phillips, C. (2016).
+\newblock Prediction as memory retrieval: timing and mechanisms.
+\newblock {\em Language, Cognition and Neuroscience}, 31(5):617--627.
 
 \bibitem[\protect\astroncite{Clayton and Chattin}{1989}]{ClayChat89}
 Clayton, K. and Chattin, D. (1989).
@@ -70,6 +85,12 @@ Donnelly, R.~E. (1988).
 DuBrow, S. and Davachi, L. (2016).
 \newblock Temporal binding within and across events.
 \newblock {\em Neurobiology of Learning and Memory}, 134:107--114.
+
+\bibitem[\protect\astroncite{Eichenbaum and Fortin}{2009}]{EichFort09}
+Eichenbaum, H. and Fortin, N.~J. (2009).
+\newblock The neurobiology of memory based predictions.
+\newblock {\em Philosophical Transactions of the Royal Society of London Series
+  {B}}, 364(1521):1183--1191.
 
 \bibitem[\protect\astroncite{Estes}{1955}]{Este55a}
 Estes, W.~K. (1955).
@@ -98,11 +119,32 @@ Glenberg, A.~M., Bradley, M.~M., Kraus, T.~A., and Renzaglia, G.~J. (1983).
 \newblock {\em Journal of Experimental Psychology: Learning, Memory, and
   Cognition}, 12:413--418.
 
+\bibitem[\protect\astroncite{Gluck et~al.}{2002}]{GlucEtal02}
+Gluck, M.~A., Shohamy, D., and Myers, C.~E. (2002).
+\newblock How do people solve the ``weather prediction'' task? individual
+  variability in strategies for probabilistic category learning.
+\newblock {\em Learning and Memory}, 9:408--418.
+
+\bibitem[\protect\astroncite{Goldstein et~al.}{2021}]{GoldEtal21}
+Goldstein, A., Zada, Z., Buchnik, E., Schain, M., Price, A., Aubrey, B.,
+  Nastase, S.~A., Feder, A., Emanuel, D., Cohen, A., Jansen, A., Gazula, H.,
+  Choe, G., Rao, A., Kim, C., Casto, C., Lora, F., Flinker, A., Devore, S.,
+  Doyle, W., Dugan, P., Friedman, D., Hassidim, A., Brenner, M., Matias, Y.,
+  Norman, K.~A., Devinsky, O., and Hasson, U. (2021).
+\newblock Thinking ahead: prediction in context as a keystone of language in
+  humans and machines.
+\newblock {\em {bioRxiv}}, page doi.org/10.1101/2020.12.02.403477.
+
 \bibitem[\protect\astroncite{Gotts et~al.}{2012}]{GottEtal12}
 Gotts, S.~J., Chow, C.~C., and Martin, A. (2012).
 \newblock Repetition priming and repetition suppression: A case for enhanced
   efficiency through neural synchronization.
 \newblock {\em Cognitive Neuroscience}, 3(3-4):227--237.
+
+\bibitem[\protect\astroncite{Griffiths and Steyvers}{2003}]{GrifStey03}
+Griffiths, T.~L. and Steyvers, M. (2003).
+\newblock Prediction and semantic association.
+\newblock {\em Advances in Neural Information Processing Systems}, 15.
 
 \bibitem[\protect\astroncite{Halpern et~al.}{2016}]{HalpEtal16}
 Halpern, Y., Hall, K.~B., Schogol, V., Riley, M., Roark, B., Skobeltsyn, G.,
@@ -166,6 +208,12 @@ Jones, A.~C. and Pyc, M.~A. (2014).
 \newblock {\em Journal of Experimental Psychology: Learning, Memory, and
   Cognition}, 40(1):300--305.
 
+\bibitem[\protect\astroncite{Jones and Pashler}{2007}]{JonePash07}
+Jones, J. and Pashler, H. (2007).
+\newblock Is the mind inherently forward looking? comparing prediction and
+  retrodiction.
+\newblock {\em Psychonomic Bulletin and Review}, 14(2):295--300.
+
 \bibitem[\protect\astroncite{Kahana}{1996}]{Kaha96}
 Kahana, M.~J. (1996).
 \newblock Associative retrieval processes in free recall.
@@ -194,6 +242,12 @@ Katabi, N., Simon, H., Yakim, S., Ravreby, I., Ohad, T., and Yeshurun, Y.
   early sensory and motor brain regions.
 \newblock {\em The Journal of Neuroscience}, pages
   doi.org/10.1523/JNEUROSCI.0895--22.2022.
+
+\bibitem[\protect\astroncite{Kim et~al.}{2014}]{KimEtal14}
+Kim, G., Lewis-Peacock, J.~A., Norman, K.~A., and Turk-Browne, N.~B. (2014).
+\newblock Pruning of memories by context-based prediction error.
+\newblock {\em Proceedings of the National Academy of Sciences, {USA}}, In
+  press.
 
 \bibitem[\protect\astroncite{Kimball et~al.}{2007}]{KimbEtal07}
 Kimball, D.~R., Smith, T.~A., and Kahana, M.~J. (2007).
@@ -318,6 +372,11 @@ Radvansky, G.~A. and Copeland, D.~E. (2006).
   experienced space.
 \newblock {\em Memory and Cognition}, 34(5):1150--1156.
 
+\bibitem[\protect\astroncite{Radvansky and Zacks}{2017}]{RadvZack17}
+Radvansky, G.~A. and Zacks, J.~M. (2017).
+\newblock Event boundaries in memory and cognition.
+\newblock {\em Current Opinion in Behavioral Sciences}, 17:133--140.
+
 \bibitem[\protect\astroncite{Ranganath and Ritchey}{2012}]{RangRitc12}
 Ranganath, C. and Ritchey, M. (2012).
 \newblock Two cortical systems for memory-guided behavior.
@@ -327,6 +386,12 @@ Ranganath, C. and Ritchey, M. (2012).
 Romney, A.~K., Brewer, D.~D., and Batchelder, W.~H. (1993).
 \newblock Predicting clustering from semantic structure.
 \newblock {\em Psychological Science}, 4:28--34.
+
+\bibitem[\protect\astroncite{Sahakyan and Kelley}{2002}]{SahaKell02}
+Sahakyan, L. and Kelley, C.~M. (2002).
+\newblock A contextual change account of the directed forgetting effect.
+\newblock {\em Journal of Experimental Psychology: Learning, Memory, and
+  Cognition}, 28(6):1064--1072.
 
 \bibitem[\protect\astroncite{Sahakyan and Smith}{2014}]{SahaSmit14}
 Sahakyan, L. and Smith, J.~R. (2014).
@@ -338,7 +403,7 @@ Sahakyan, L. and Smith, J.~R. (2014).
 \bibitem[\protect\astroncite{Schapiro and Turk-Browne}{2015}]{SchaTurk15}
 Schapiro, A. and Turk-Browne, N. (2015).
 \newblock Statistical learning.
-\newblock {\em Brain Mapping: An Encyclopedic Refernce}, 3:501--506.
+\newblock {\em Brain Mapping: An Encyclopedic Reference}, 3:501--506.
 
 \bibitem[\protect\astroncite{Sederberg et~al.}{2008}]{SedeEtal08}
 Sederberg, P.~B., Howard, M.~W., and Kahana, M.~J. (2008).
@@ -372,6 +437,11 @@ Swallow, K.~M., Zacks, J.~M., and Abrams, R.~A. (2009).
 \newblock Event boundaries in perception affect memory encoding and updating.
 \newblock {\em Journal of Experimental Psychology: General}, 138(2):236--257.
 
+\bibitem[\protect\astroncite{Tamir and Thornton}{2018}]{TamiThor18}
+Tamir, D.~I. and Thornton, M.~A. (2018).
+\newblock Modeling the predictive social mind.
+\newblock {\em Trends in Cognitive Sciences}, 22(3):201--212.
+
 \bibitem[\protect\astroncite{Tipper}{1985}]{Tipp85}
 Tipper, S.~P. (1985).
 \newblock The negative priming effect: inhibitory priming by ignored objects.
@@ -399,8 +469,8 @@ Wiggs, C.~L. and Martin, A. (1998).
 \newblock Properties and mechanisms of perceptual priming.
 \newblock {\em Current Opinion in Neurobiology}, 8(2):227--233.
 
-\bibitem[\protect\astroncite{Xu et~al.}{2022}]{XuEtal22}
-Xu, X., Zhu, Z., and Manning, J.~R. (2022).
+\bibitem[\protect\astroncite{Xu et~al.}{2023}]{XuEtal23}
+Xu, X., Zhu, Z., and Manning, J.~R. (2023).
 \newblock The psychological arrow of time drives temporal asymmetries in
   retrodicting versus predicting narrative events.
 \newblock {\em {PsyArXiv}}, page doi.org/10.31234/osf.io/yp2qu.
