@@ -228,7 +228,7 @@ reported their ethnicity as ``not Hispanic or Latino,'' 39 as ``Hispanic or
 Latino,'' and nine declined to report their ethnicity. Participants reported
 their races as White (345 participants), Asian (120 participants), Black or
 African American (31 participants), American Indian or Alaska Native (11
-particiapnts), Native Hawaiian or Other Pacific Islander (four participants),
+participants), Native Hawaiian or Other Pacific Islander (four participants),
 Mixed race (three participants), Middle Eastern (one participant), and Arab
 (one participant). A total of five participants declined to report their race.
 We note that several participants reported more than one of racial category.
@@ -274,7 +274,7 @@ Our experiment is a variant of the classic free recall paradigm that we term
 study 16 lists, each comprised of 16 words that vary along a number of stimulus
 dimensions (Fig.~\ref{fig:exp}). The stimulus dimensions include two semantic
 features related to the \textit{meanings} of the words (semantic category,
-referrent object size), two lexicographic features related to the
+referent object size), two lexicographic features related to the
 \textit{letters} that make up the words (word length in number of letters,
 identity of the word's first letter), and two visual features that are
 independent of the words themselves (text color, presentation location). Each
@@ -331,7 +331,7 @@ letters; standard deviation: 2.06 letters).
 
 We assigned the categorized words into a total of 16 lists with several
 constraints. First, we required that each list contained words from exactly 4
-unique categories, each with exactly 4 examplars from each category. Second, we
+unique categories, each with exactly 4 exemplars from each category. Second, we
 required that (across all words on the list) at least one instance of both
 object sizes were represented. On average, each category was represented in
 4.27 lists (standard deviation: 1.16 lists). Aside from these two constraints,
@@ -354,7 +354,7 @@ condition. In these latter cases, words were all presented in black at the
 center of the experimental computer's display.
 
 To select a random font color for each word, we drew three integers uniformly
-and at random from the interval $\[0, 255\]$, corresponding to the red (r),
+and at random from the interval $\left[0, 255\right]$, corresponding to the red (r),
 green (g), and blue (b) color channels for that word. To assign random
 presentation locations to each word, we selected two floating point numbers
 uniformly at random (one for the word's horizontal $x$ coordinate and the other
@@ -390,10 +390,10 @@ experiment, as described below.
 We used four ``control'' conditions to evaluate and explore participants'
 baseline behaviors. We also used performance on these control conditions to
 help interpret performance in other ``manipulation'' conditions. Two control
-conditions served as ``anchorpoints.'' In the first anchorpoint condition,
+conditions served as ``anchor points.'' In the first anchor point condition,
 which we call the \textit{feature rich} condition, we randomly shuffled the
 presentation order (independently for each participant) of the words on each
-list. In the second anchorpoint condition, which we call the \textit{reduced}
+list. In the second anchor point condition, which we call the \textit{reduced}
 condition, we randomized word presentations as in the feature rich condition.
 However, rather than assigning each word a random color and location, we
 instead displayed all of the words in black and at the center of the screen.
@@ -465,7 +465,7 @@ approach requires $\tau > 0$. Finally, we computed a set of normalized
 similarity values by dividing the similarities by their sum: \begin{equation}
 \mathrm{similarity}_{\mathrm{normalized}}(a, b) = \frac{\mathrm{similarity}(a,
 b)}{\sum_{i=1}^n \mathrm{similarity}(a, i)}, \end{equation} where in the
-demoniator, $i$ takes on each of the $n$ feature values of the to-be-presented
+denominator, $i$ takes on each of the $n$ feature values of the to-be-presented
 words. The resulting set of normalized similarity scores sums to one.
 
 \begin{figure}[tp]
@@ -480,7 +480,7 @@ similarity scores so that they sum to one. We lay, in sequence, a set of
 ``sticks,'' one for each candidate item, whose lengths are equal to these
 normalized similarity scores. Note that the combined lengths of these sticks is
 one. To select the next to-be-presented item, we draw a random number, $r$,
-from the uniform distibution bounded between 0 and 1 (inclusive). The identity
+from the uniform distribution bounded between 0 and 1 (inclusive). The identity
 of the next item is given by the stick adjacent to an indicator that moves
 distance $r$ (starting from 0) along the sequence of sticks. In this case, the
 next to-be-presented item is $e$. Note that each item's chances of selection is
@@ -591,7 +591,7 @@ successively recalling large items because they are organizing their
 memories according to size, or (alternatively), whether they are simply
 recalling the yet-to-be-recalled items in a random order. In general, the
 precise order and blend of feature values expressed in a given list, the orders
-and numbers of correct recalls a participant makes, the number of itervening
+and numbers of correct recalls a participant makes, the number of intervening
 presentation positions between successive recalls, and so on, can all affect
 the range of clustering scores that are possible to observe for a given list.
 An uncorrected clustering score therefore conflates participants' actual
@@ -622,7 +622,7 @@ We define each participant's \textit{memory fingerprint} as the set of their
 permutation-corrected clustering scores across all dimensions we tracked in our
 study, including their six feature-based clustering scores (category, size,
 length, first letter, color, and location) and their temporal clustering score.
-Conceptually, a participant's memory fingerprint describes their tendancy to
+Conceptually, a participant's memory fingerprint describes their tendency to
 order in their recall sequences (and, presumably, organize in memory) the
 studied words along each dimension. To obtain stable estimates of these
 fingerprints for each participant, we averaged clustering scores across lists.
@@ -639,7 +639,7 @@ lists they had studied up to that point in the experiment. Because our
 experiment incorporated a speech-to-text component, all of the behavioral data
 for each participant could be analyzed just a few seconds after the conclusion
 of the recall intervals for each list. We used the \texttt{Quail} Python
-package~\citep{HeusEtal17} to apply speech-to-text alorithms to the
+package~\citep{HeusEtal17} to apply speech-to-text algorithms to the
 just-collected data, aggregate the data for the given participant, and estimate
 the participant's memory fingerprint using all of their available data up to
 that point in the experiment. Two aspects of our implementation are worth
@@ -720,11 +720,11 @@ matrix of zeros. Then, for each list, we found the index of the word that was
 recalled first, and we filled in that position in the matrix with a 1. Finally,
 we averaged over the rows of the matrix to obtain a 1 by 16 array of
 probabilities, for each participant. We used an analogous procedure to compute
-probabilility of $n$\textsuperscript{th} reacall curves for each participant.
+probability of $n$\textsuperscript{th} recall curves for each participant.
 Specifically, we filled in the corresponding matrices according to the
 $n$\textsuperscript{th} recall on each list that each participant made. When a
 given participant had made fewer than $n$ recalls for a given list, we simply
-excluded that list from our analysis when computing that paritcipant's
+excluded that list from our analysis when computing that participant's
 curve(s).
 
 \subsubsection*{Lag-conditional response probability curve}
@@ -770,7 +770,7 @@ usual~\citep{EzzyDava11, MannEtal16,RadvCope06, SwalEtal09, SwalEtal11,
 DuBrDava16}. For each list, for each feature dimension, we computed the
 distribution of distances between the feature values for successively presented
 words. We defined event boundaries (e.g., Fig.~\ref{fig:recall-dynamics}B) as
-occuring between any successive pair of words whose distances along the given
+occurring between any successive pair of words whose distances along the given
 feature dimension were greater than one standard deviation above the mean for
 that list. Note that, because event boundaries are defined for each feature
 dimension, each individual list may contain several sets of event boundaries,
@@ -786,7 +786,7 @@ participants' memories for the studied words. First, we added two additional
 sources of visual variation to the individual word presentations: font color
 and onscreen location. Importantly, these visual features were independent of
 the meaning or semantic content of the words (e.g., word category, size of the
-refferent, etc.) and of the lexicographic properties of the words (e.g., word length,
+referent, etc.) and of the lexicographic properties of the words (e.g., word length,
 first letter, etc.). We wondered whether this additional word-independent information
 might facilitate recall (e.g., by providing new potential ways of organizing or
 retrieving memories of the studied words) or impair recall (e.g., by
@@ -959,9 +959,9 @@ feature rich lists; $t(95) = 3.034, p = 0.003$). Participants in the
 color-ordered condition also showed a trending increase in memory performance
 on early lists (again, relative to early feature rich lists: $t(96) = 1.850, p
 = 0.067$). Participants' performance on early lists in all of the other order
-manipulation conditions was indistinguishable from performnace on the early
+manipulation conditions was indistinguishable from performance on the early
 feature rich lists ($\|t\|$s $< 1.013, p$s $> 0.314$). Participants in both of
-the semanticly ordered conditions exhibited stronger temporal clustering on
+the semantically ordered conditions exhibited stronger temporal clustering on
 early lists (versus early feature rich lists; category: $t(95) = 8.508, p <
 0.001$; size: $t(95) = 2.429, p = 0.017$). Participants in the length-ordered
 condition tended to exhibit \textit{less} temporal clustering on early lists
@@ -973,7 +973,7 @@ relative to early feature rich lists (color: $t(96) = -1.064, p = 0.290$; we
 found a trending enhancement for participants in the location-ordered
 condition: $t(95) = 1.682, p = 0.096$). We also compared feature-based
 clustering on early lists across the order manipulation and feature rich
-conditions. Since results were similar across both semantic conditoins
+conditions. Since results were similar across both semantic conditions
 (category and size), both lexicographic conditions (length and first letter),
 and both visual conditions (color and location), here we aggregate data from
 conditions that manipulated each of these three feature groupings in our
@@ -1043,13 +1043,13 @@ conditions) to initiate recall of category-ordered lists with items whose study
 positions were integer multiples of four. Similarly, for size-ordered lists,
 the size labels changed every eight items on average (light purple peaks in
 Fig.~\ref{fig:recall-dynamics}B), and participants also seemed to display an
-icnreased tendancy to initiate recall of size-ordered lists with items whose
+increased tendency to initiate recall of size-ordered lists with items whose
 study positions were integer multiples of eight. A second striking difference
 is that participants in the category condition exhibited a much steeper lag-CRP
 (Fig.~\ref{fig:recall-dynamics}A, top middle panel) than participants in other
 conditions. (This is another expression of participants' increased tendencies
 to temporally cluster their recalls on category-ordered lists, as we reported
-above.) Taken together, these order-specific idiosyncracies suggest a
+above.) Taken together, these order-specific idiosyncrasies suggest a
 hierarchical set of influences on participants' memories. At longer timescales,
 ``event boundaries'' (to use the term loosely) can be induced across lists by
 adding or removing irrelevant visual features. At shorter timescales, ``event
@@ -1157,7 +1157,7 @@ consistency across different features within a broader type. For example, both
 semantic feature conditions (category and size; purple markers) diverge in a
 similar direction from the group; both lexicographic feature conditions (length
 and first letter; yellow markers) diverge in a similar direction; and both
-visiual conditions (color and location; green) also diverge in a similar
+visual conditions (color and location; green) also diverge in a similar
 direction. But on late lists, participants' fingerprints seem to return to a
 common state that is roughly shared across conditions (i.e., the stars in that
 panel are clumped together).
@@ -1214,11 +1214,11 @@ feature clustering: $r(4) = 0.400, p = 0.432$). We also looked for associations
 between feature clustering and temporal clustering. Across every order
 manipulation condition, participants who exhibited stronger feature clustering
 also exhibited stronger temporal clustering. For early lists
-(Fig.~\ref{fig:clusteringfig:clustering-scatterplots}E), this trend held
+(Fig.~\ref{fig:clustering-scatterplots}E), this trend held
 overall ($r(179) = 0.924, p < 0.001$), for each condition individually (all
 $r$s $\geq 0.822$, all $p$s $< 0.001$), and across conditions ($r(4) = 0.964, p
 = 0.002$). For late lists
-(Fig.~\ref{fig:clusteringfig:clustering-scatterplots}F), the results were more
+(Fig.~\ref{fig:clustering-scatterplots}F), the results were more
 variable (overall: $r(179) = 0.348, p = 0.000$; all non-visual conditions: $r$s
 $\geq 0.382$, all $p$s $\leq 0.037$; color: $r(29) = 0.453, p = 0.011$;
 location: $ r(28) = 0.190, p = 0.314$; across-conditions: $r(4) = -0.036, p =
@@ -1295,7 +1295,7 @@ conditions: $r(4) = 0.598, p = 0.210$).
     \includegraphics[width=\textwidth]{figures/clustering_carryover}
     
     \caption{\textbf{Feature clustering carryover effects.} \textbf{A.} Feature
-    clustering scores for ordder manipulation (early) versus randomly ordered
+    clustering scores for order manipulation (early) versus randomly ordered
     (late) lists. \textbf{B.} Accuracy differences (on early versus late lists)
     versus feature clustering ``carryover'' (defined as the differences between
     the average clustering scores on early and late lists). \textbf{C.}
@@ -1311,7 +1311,7 @@ conditions: $r(4) = 0.598, p = 0.210$).
 \end{figure}
 
 We suggest two potential interpretations of these findings. First, it is
-possible that some participants are more ``maliable'' or ``adaptable'' with
+possible that some participants are more ``malleable'' or ``adaptable'' with
 respect to how they organize incoming information. When presented with list of
 items sorted along \textit{any} feature dimension, they will simply adopt that
 feature as a dominant dimension for organizing those items and subsequent
@@ -1323,9 +1323,9 @@ happen to be assigned to an order manipulation condition that matches their
 preferences, then they will appear to be ``sensitive'' to the order
 manipulation and also exhibit a high degree of carryover in feature clustering
 from early to late lists. These participants might demonstrate strong recall
-performance not because of their inherantly superior memory abilities, but
+performance not because of their inherently superior memory abilities, but
 rather because the specific condition they were assigned to happened to be
-especially easy for them, given their pre-experimental tendancies. To help
+especially easy for them, given their pre-experimental tendencies. To help
 distinguish between these interpretations, we designed an \textit{adaptive}
 experimental condition (see \textit{Adaptive condition}). The primary
 manipulation in the adaptive condition is that participants each experience
@@ -1466,9 +1466,9 @@ stronger visual clustering. Clustering along the unmanipulated feature
 dimensions in each of these cases was unchanged.
 
 The order manipulations we examined also appeared to induce, in some cases, a
-tendancy to ``clump'' similar words within a list. This was most apparent on
+tendency to ``clump'' similar words within a list. This was most apparent on
 semantically ordered lists, where the probability of initiating recall with a
-given word seemed to follow groupings defined by feature changepoints.
+given word seemed to follow groupings defined by feature change points.
 
 We also examined the impact of early list order manipulations on memory for
 late lists. At the group level, we found little evidence for lingering
@@ -1490,7 +1490,7 @@ on late lists. And participants who showed stronger temporal clustering on
 early lists also tended to show stronger feature clustering on late lists.
 Essentially, these order manipulations appeared to affect each participant
 differently. Some participants were sensitive to our manipulations, and those
-particpants showed stronger impacts on their memory performance for the ordered
+participants showed stronger impacts on their memory performance for the ordered
 lists as well as future (random) lists. Other participants appeared relatively
 insensitive to our manipulations, and those participants showed little
 carryover effects on late lists.
@@ -1507,7 +1507,7 @@ fingerprint). We found that when we presented words in orders that were
 consistent with participants' memory fingerprints, they remembered more words
 overall and showed stronger temporal clustering. This comports well with the
 second possibility described above. Specifically, each participant seems to
-bring into the experiment their own idiosynchratic preferences and strategies
+bring into the experiment their own idiosyncratic preferences and strategies
 for organizing the words in their memories. When we presented the words in an
 order consistent with each participant's idiosyncratic strategies, their memory
 performance improved. This might indicate that the participants were spending
@@ -1535,7 +1535,7 @@ participant's thoughts at the time they study the item. Item features can
 include semantic properties (i.e., features related to the item's meaning),
 lexicographic properties (i.e., features related to the item's letters),
 sensory properties (i.e., feature related to the item's appearance, sound,
-smell, etc.), emotional proprties (i.e., features related to how meaningful the
+smell, etc.), emotional properties (i.e., features related to how meaningful the
 item is, whether the item evokes positive or negative feelings, etc.),
 utility-related properties (e.g., features that describe how an item might be
 used or incorporated into a particular task or situation), and more.
@@ -1543,7 +1543,7 @@ Essentially any aspect of the participant's experience that can be
 characterized, measured, or otherwise described can be considered to influence
 the participant's mental context at the moment they experience that item.
 Temporally proximal features include aspects of the participant's internal or
-external experience that are \textit{not} specifically occuring at the moment
+external experience that are \textit{not} specifically occurring at the moment
 they encounter an item, but that nonetheless influence how they process the
 item. Thoughts related to percepts, goals, expectations, other experiences, and
 so on that might have been cued (directly or indirectly) by the participant's
@@ -1565,13 +1565,13 @@ task-irrelevant visual features. We also found that changing the dynamics of
 those task-irrelevant visual features (in the reduced (early) and reduced
 (late) conditions) \textit{also} affects participants' memories. This suggests
 that it is not only the contextual features themselves that affect memory, but
-also the \textit{dymamics} of context-- i.e., how the contextual features
+also the \textit{dynamics} of context-- i.e., how the contextual features
 associated with each item change over time.
 
 \subsection*{Priming effects on memory performance and organization}
 
 % explicit priming (resolve ambiguous stimuli, e.g., green eyes study)
-% negative priming: supressing previously irrelevant stimuli or features hurts participants' recall for those stimuli when they're used on subsequent lists
+% negative priming: suppressing previously irrelevant stimuli or features hurts participants' recall for those stimuli when they're used on subsequent lists
 % implicit priming (most like here): patterns in prior experiences sets expectations about what is to come, which can affect memory for upcoming stimuli
 %    - participants in the reduced ({early, late}) conditions picked up on irrelevant features in early lists and when those features changed their memories for subsequent lists were affected.
 %    - participants in the order manipulation conditions picked up on structure in temporal order on early lists, and that affected how they remembered later lists
@@ -1579,17 +1579,17 @@ associated with each item change over time.
 When our ongoing experiences are ambiguous, we can draw on our past
 experiences, expectations, and other real, perceived, or inferred cues to help
 resolve the ambiguities. We may also be overtly or covertly ``primed'' to
-influence how we are likely to resolve ambiuities. For example, before
-listening to a story with several equally plausable interpretations, providing
+influence how we are likely to resolve ambiguities. For example, before
+listening to a story with several equally plausible interpretations, providing
 participants with ``background'' information beforehand can lead them towards
 one interpretation versus another~\citep{YeshEtal17}. More broadly, our
 conscious and unconscious biases and preferences can influence not only how we
-interpret high-level ambuities, but even how we process low-level sensory
+interpret high-level ambiguities, but even how we process low-level sensory
 information~\citep{KataEtal23}.
 
 In more simplified scenarios, like list learning paradigms, the stimuli and
 tasks participants encounter before studying a given list can influence what
-and how they remember. For example, when participants are directed to supress,
+and how they remember. For example, when participants are directed to suppress,
 disregard, or ignore ``distracting'' stimuli early on in an experiment,
 participants often tend to remember those stimuli less well when they are
 re-used as to-be-remembered targets later on in the experiment~\citep{Tipp85}.
@@ -1677,7 +1677,7 @@ naturalistic stimuli are often much more engaging than the highly simplified
 list learning tasks typically employed in the psychological laboratory, perhaps
 leading participants to pay more attention, exert more effort, and stay more
 consistently motivated to perform well~\citep{NastEtal20}. Another reason is
-that the temporal unfoldings of events and occurances in naturalistic stimuli
+that the temporal unfoldings of events and occurrences in naturalistic stimuli
 tend to be much more meaningful than the temporal unfoldings of items on
 typical lists used in laboratory memory tasks. Real-world events exhibit
 important associations at a broad range of timescales. For example, an early
@@ -1696,11 +1696,11 @@ statistical structure of real-world experiences. On the other hand,
 naturalistic stimuli can be difficult to precisely characterize or model,
 making it difficult to distinguish whether specific behavioral trends follow
 from fundamental workings of our memory systems, from some aspect of the
-stimulus, or from idiosyncratic interactions or inteference between our memory
+stimulus, or from idiosyncratic interactions or interference between our memory
 systems and the stimulus. This challenge implies that, to understand the
 fundamental nature of memory in its ``pure'' form, we should study memory for
 highly simplified stimuli that can provide relatively unbiased (compared with
-real-world experiences) measures of the relevant patterns and tendancies.
+real-world experiences) measures of the relevant patterns and tendencies.
 
 The experiment we report in this paper was designed to help bridge some of the
 gap between naturalistic tasks and more traditional list learning tasks. We had
@@ -1719,7 +1719,7 @@ to show stronger feature clustering for their condition's feature dimension on
 late randomly ordered lists, etc.). We also found that participants remembered
 more words from lists that were sorted to align with their idiosyncratic
 clustering preferences. Taken together, our results suggest that our memories
-are suceptable to external influences (i.e., to the statistical structure of
+are susceptible to external influences (i.e., to the statistical structure of
 ongoing experiences), but the effects of past experiences on future memory are
 largely idiosyncratic across people.
 
@@ -1759,7 +1759,7 @@ remember.
 
 \subsection*{Concluding remarks}
 
-Our work raises deep questiong about the fundamental nature of human learning.
+Our work raises deep questions about the fundamental nature of human learning.
 What are the limits of our memory systems? How much does what we remember (and
 how we remember) depend on how we learn or experience the to-be-remembered
 content? We know that our expectations, strategies, situation models learned
@@ -1783,7 +1783,7 @@ EW, and PCF. Funding acquisition: JRM.
 All of the data analyzed in this manuscript, along with all of the code for
 carrying out the analyses may be found at
 https://github.com/ContextLab/FRFR-analyses. Code for running the non-adaptive
-expermental conditions may be found at
+experimental conditions may be found at
 https://github.com/Context\-Lab/efficient-learning-code. Code for running the
 adaptive experimental condition may be found at
 https://github.com/ContextLab/adaptiveFR. We have also released an associated
