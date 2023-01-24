@@ -81,6 +81,12 @@ Donnelly, R.~E. (1988).
 \newblock {\em Journal of Experimental Psychology: Learning, Memory, and
   Cognition}, 14:256--265.
 
+\bibitem[\protect\astroncite{DuBrow and Davachi}{2013}]{DuBrDava13}
+DuBrow, S. and Davachi, L. (2013).
+\newblock The influence of contextual boundaries on memory for the sequential
+  order of events.
+\newblock {\em Journal of Experimental Psychology: General}, 142(4):1277--1286.
+
 \bibitem[\protect\astroncite{DuBrow and Davachi}{2016}]{DuBrDava16}
 DuBrow, S. and Davachi, L. (2016).
 \newblock Temporal binding within and across events.
@@ -107,6 +113,12 @@ Flexser, A.~J. and Tulving, E. (1982).
 \newblock Priming and recognition failure.
 \newblock {\em Journal of Verbal Learning and Verbal Behavior}, 21:237--248.
 
+\bibitem[\protect\astroncite{Flores et~al.}{2017}]{FlorEtal17}
+Flores, S., Bailey, H.~R., Eisenberg, M.~L., and Zacks, J.~M. (2017).
+\newblock Event segmentation improves event memory up to one month later.
+\newblock {\em Journal of Experimental Psychology: Learning, Memory, and
+  Cognition}, 43(8):1183.
+
 \bibitem[\protect\astroncite{Gershman et~al.}{2013}]{GersEtal13}
 Gershman, S.~J., Schapiro, A.~C., Hupbach, A., and Norman, K.~A. (2013).
 \newblock Neural context reinstatement predicts memory misattribution.
@@ -124,6 +136,11 @@ Gluck, M.~A., Shohamy, D., and Myers, C.~E. (2002).
 \newblock How do people solve the ``weather prediction'' task? individual
   variability in strategies for probabilistic category learning.
 \newblock {\em Learning and Memory}, 9:408--418.
+
+\bibitem[\protect\astroncite{Gold et~al.}{2017}]{GoldEtal17}
+Gold, D.~A., Zacks, J.~M., and Flores, S. (2017).
+\newblock Effects of cues to event segmentation on subsequent memory.
+\newblock {\em Cognitive Research: Principles and Implications}, 2(1):1.
 
 \bibitem[\protect\astroncite{Goldstein et~al.}{2021}]{GoldEtal21}
 Goldstein, A., Zada, Z., Buchnik, E., Schain, M., Price, A., Aubrey, B.,
@@ -171,10 +188,15 @@ Heusser, A.~C., Ziman, K., Owen, L. L.~W., and Manning, J.~R. (2018).
   high-dimensional data.
 \newblock {\em Journal of Machine Learning Research}, 18(152):1--6.
 
-\bibitem[\protect\astroncite{Howard and Kahana}{2002}]{HowaKaha02a}
-Howard, M.~W. and Kahana, M.~J. (2002).
+\bibitem[\protect\astroncite{Howard and Kahana}{2002a}]{HowaKaha02a}
+Howard, M.~W. and Kahana, M.~J. (2002a).
 \newblock A distributed representation of temporal context.
 \newblock {\em Journal of Mathematical Psychology}, 46:269--299.
+
+\bibitem[\protect\astroncite{Howard and Kahana}{2002b}]{HowaKaha02b}
+Howard, M.~W. and Kahana, M.~J. (2002b).
+\newblock When does semantic similarity help episodic retrieval?
+\newblock {\em Journal of Memory and Language}, 46:85--98.
 
 \bibitem[\protect\astroncite{Huang et~al.}{2004}]{HuanEtal04}
 Huang, L., Holcombe, A.~O., and Pashler, H. (2004).
@@ -288,6 +310,13 @@ Manning, J.~R., Norman, K.~A., and Kahana, M.~J. (2015).
 \newblock In Gazzaniga, M., editor, {\em The Cognitive Neurosciences}, pages
   557--566. {MIT} Press.
 
+\bibitem[\protect\astroncite{Manning et~al.}{2022}]{MannEtal22}
+Manning, J.~R., Notaro, G.~M., Chen, E., and Fitzpatrick, P.~C. (2022).
+\newblock Fitness tracking reveals task-specific associations between memory,
+  mental health, and physical activity.
+\newblock {\em Scientific Reports},
+  12(13822):doi.org/10.1038/s41598--022--17781--0.
+
 \bibitem[\protect\astroncite{Manning et~al.}{2011}]{MannEtal11}
 Manning, J.~R., Polyn, S.~M., Baltuch, G., Litt, B., and Kahana, M.~J. (2011).
 \newblock Oscillatory patterns in temporal lobe reveal context reinstatement
@@ -344,6 +373,18 @@ Neely, J.~H. (1977).
   inhibitionless spreading activation and limited-capacity attention.
 \newblock {\em Journal of Experimental Psychology: General}, 106(3):226--254.
 
+\bibitem[\protect\astroncite{Oberauer and Lewandowsky}{2008}]{OberLewa08}
+Oberauer, K. and Lewandowsky, S. (2008).
+\newblock Forgetting in immediate serial recall: decay, temporal
+  distinctiveness, or interference?
+\newblock {\em Psychological Review}, 115(3):544--576.
+
+\bibitem[\protect\astroncite{Pettijohn et~al.}{2016}]{PettEtal16}
+Pettijohn, K.~A., Thompson, A.~N., Tamplin, A.~K., Krawietz, S.~A., and
+  Radvansky, G.~A. (2016).
+\newblock Event boundaries and memory improvement.
+\newblock {\em Cognition}, 148:136--144.
+
 \bibitem[\protect\astroncite{Polyn and Kahana}{2008}]{PolyKaha08}
 Polyn, S.~M. and Kahana, M.~J. (2008).
 \newblock Memory search and the neural representation of context.
@@ -386,6 +427,11 @@ Radvansky, G.~A. and Zacks, J.~M. (2017).
 Ranganath, C. and Ritchey, M. (2012).
 \newblock Two cortical systems for memory-guided behavior.
 \newblock {\em Nature Reviews Neuroscience}, 13:713--726.
+
+\bibitem[\protect\astroncite{Rissman et~al.}{2003}]{RissEtal03}
+Rissman, J., Eliassen, J.~C., and Blumstein, S.~E. (2003).
+\newblock An event-related {fMRI} investigation of implicit semantic priming.
+\newblock {\em Journal of Cognitive Neuroscience}, 15(8):1160--1175.
 
 \bibitem[\protect\astroncite{Romney et~al.}{1993}]{RomnEtal93}
 Romney, A.~K., Brewer, D.~D., and Batchelder, W.~H. (1993).
@@ -452,6 +498,12 @@ Tipper, S.~P. (1985).
 \newblock The negative priming effect: inhibitory priming by ignored objects.
 \newblock {\em The Quarterly Journal of Experimental Psychology A: Human
   Experimental Psychology}, 37:571--590.
+
+\bibitem[\protect\astroncite{Tse et~al.}{2007}]{TseEtal07}
+Tse, D., Langston, R.~F., Kakeyama, M., Bethus, I., Spooner, P.~A., Wood,
+  E.~R., Witter, M.~P., and Morris, R. G.~M. (2007).
+\newblock Schemas and memory consolidation.
+\newblock {\em Science}, 316(5821):76--82.
 
 \bibitem[\protect\astroncite{Tulving and Schacter}{1991}]{TulvScha91}
 Tulving, E. and Schacter, D.~L. (1991).
