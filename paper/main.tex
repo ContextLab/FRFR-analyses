@@ -153,9 +153,9 @@ word lists. On one hand, both situation models and clustering effects reflect
 statistical regularities in ongoing experiences. Our memory systems exploit
 these regularities when generating inferences about the unobserved past and
 yet-to-be-experienced future~\citep{XuEtal23, SchaTurk15, RangRitc12,
-BoweEtal79, MomeEtal17}. On the other hand, the rich structure of real-world
+BoweEtal79, MomeEtal17}. On the other hand, the rich structures of real-world
 experiences and other naturalistic stimuli that enable people to form deep and
-meaningful situation models and schemas have no obvious analog in simple word
+meaningful situation models and schemas have no obvious analogs in simple word
 lists. Often, lists in free recall studies are explicitly \textit{designed} to
 be devoid of exploitable temporal structure, for example, by sorting the words
 in a random order~\citep{Kaha12}.
@@ -169,24 +169,24 @@ participants to study and freely recall a series of word lists
 (Fig.~\ref{fig:exp}). In the different conditions in our experiment, we varied
 the lists' appearances and presentation orders in different ways. The studied
 items (words) were designed to vary along three general dimensions: semantic
-(word \textit{category}, and physical \textit{size} of the referent),
+(word \textit{category} and physical \textit{size} of the referent),
 lexicographic (word \textit{length} and \textit{first letter}), and visual
 (font \textit{color} and the onscreen \textit{location} of each word). We used
 two control conditions as a baseline; in these control conditions all of the
 lists were sorted randomly, but we manipulated the presence or absence of the
 visual features. In two conditions, we manipulated whether the words'
-appearances were fixed or variable within each list. In six manipulation
-conditions, we asked participants to first study and recall eight lists whose
-items were sorted by a target feature (e.g., word category), and then study and
-recall an additional eight lists whose items had the same features, but that
-were sorted in a random temporal order. We were interested in how these
-manipulations affected participants' recall behaviors on early (manipulated)
-lists, as well as how order manipulations on early lists affected recall
-behaviors on later (randomly ordered) lists. Finally, in an \textit{adaptive}
-experimental condition we used participants' recall behaviors on early lists to
-manipulate, in real-time, the presentation orders of subsequent lists. In this
-adaptive condition, we varied the agreement between how participants preferred
-to organize their memories of the studied items versus the orders in which the
+appearances were fixed or variable within each list. In six conditions, we
+asked participants to first study and recall eight lists whose items were
+sorted by a target feature (e.g., word category), and then study and recall an
+additional eight lists whose items had the same features, but that were sorted
+in a random temporal order. We were interested in how these manipulations
+affected participants' recall behaviors on early (manipulated) lists, as well
+as how order manipulations on early lists affected recall behaviors on later
+(randomly ordered) lists. Finally, in an \textit{adaptive} experimental
+condition we used participants' recall behaviors on early lists to manipulate,
+in real-time, the presentation orders of subsequent lists. In this adaptive
+condition, we varied the agreement between how participants preferred to
+organize their memories of the studied items versus the orders in which the
 items were presented.
 
 \section*{Materials and methods}
@@ -194,7 +194,7 @@ items were presented.
 \subsection*{Participants}
 
 We enrolled a total of 491 members of the Dartmouth College community across 11
-experimental conditions. The conditions included two controls (feature rich,
+experimental conditions. The conditions included two controls (feature rich and
 reduced), two visual manipulation conditions [reduced (early) and reduced
 (late)], six order manipulation conditions (category, size, length, first
 letter, color, and location), and a final adaptive condition. Each of these
@@ -261,7 +261,7 @@ color vision, as well as 38 participants whose data were corrupted due to
 technical failures while running the experiment or during the daily database
 merges. In total, this left usable data from 452 participants, broken down by
 experimental condition as follows: feature rich (67 participants), reduced (61
-participants), reduced (early), (42 participants), reduced (late) (41
+participants), reduced (early) (42 participants), reduced (late) (41
 participants), category (30 participants), size (30 participants), length (30
 participants), first letter (30 participants), color (31 participants),
 location (30 participants), and adaptive (60 participants). The participant who
@@ -641,9 +641,9 @@ length, first letter, color, and location) and their temporal clustering score.
 Conceptually, a participant's memory fingerprint describes their tendency to
 order in their recall sequences (and, presumably, organize in memory) the
 studied words along each dimension. To obtain stable estimates of these
-fingerprints for each participant, we averaged clustering scores across lists.
-We also tracked and characterized how participants' fingerprints changed across
-lists (e.g.,
+fingerprints for each participant, we averaged their clustering scores across
+lists. We also tracked and characterized how participants' fingerprints changed
+across lists (e.g.,
 Figs.~\ref{fig:fingerprint-trajectories},~\fingerprintTrajectoryRandom).
 
 \paragraph{Online ``fingerprint'' analysis.}
@@ -656,7 +656,7 @@ experiment incorporated a speech-to-text component, all of the behavioral data
 for each participant could be analyzed just a few seconds after the conclusion
 of the recall intervals for each list. We used the \texttt{Quail} Python
 package~\citep{HeusEtal17} to apply speech-to-text algorithms to the
-just-collected data, aggregate the data for the given participant, and estimate
+just-collected audio data, aggregate the data for the given participant, and estimate
 the participant's memory fingerprint using all of their available data up to
 that point in the experiment. Two aspects of our implementation are worth
 noting. First, because memory fingerprints are computed independently for each
@@ -692,7 +692,8 @@ candidate presentation orders. We sought to select the specific order that most
 (or least) closely matched $f$. Third, for each random permutation, we computed
 the (permutation-corrected) ``fingerprint,'' treating the permutation as though
 it were a potential ``perfect'' recall sequence. (We did not include temporal
-clustering scores in these fingerprints.) This yielded a ``simulated
+clustering scores in these fingerprints, since the temporal clustering score
+for every permutation is always equal to 1.) This yielded a ``simulated
 fingerprint'' vector, $\hat{f}_p$ for each permutation $p$. We used these
 simulated fingerprints to select a specific permutation, $i$, that either
 maximized (for stabilize lists) or minimized (for destabilize lists) the
@@ -875,33 +876,33 @@ tendencies for early versus late lists.
 With these differences in mind, we next compared participants' memories on
 early versus late lists for two additional experimental conditions (see
 \textit{Random conditions}, Fig.~\dynamicsRandom). In a \textit{reduced
-(early)} condition, we held the irrelevant visual features constant on early
-lists, but allowed them to vary randomly on late lists. In a \textit{reduced
-(late)} condition, we allowed the irrelevant visual features to vary randomly
-on early lists, but held them constant on late lists. Given our above findings
-that (a) participants tended to remember more words and exhibit stronger
-clustering effects on feature rich (versus reduced) lists, and (b) participants
-tended to remember more words and exhibit stronger clustering effects on early
-(versus late) lists, we expected these early versus late differences to be
-enhanced in the reduced (early) condition and diminished in the reduced (late)
-condition. However, to our surprise, participants in \textit{neither} condition
-exhibited reliable early versus late differences in accuracy (reduced (early):
-$t(41) = 1.499, p = 0.141$; reduced (late): $t(40) = 1.462, p = 0.152$),
-temporal clustering (reduced (early): $t(41) = 0.998, p = 0.324$; reduced
-(late): $t(40) = 1.099, p = 0.278$), nor feature-based clustering (reduced
-(early), category: $t(41) = 0.753, p = 0.456$; reduced (early), size: $t(41) =
-0.721, p = 0.475$; reduced (early), length: $t(41) = 0.493, p = 0.625$; reduced
-(early), first letter: $t(41) = 0.780, p = 0.440$; reduced (late), category:
-$t(40) = -0.086, p = 0.932$; reduced (late), size: $t(40) = 0.746, p = 0.460$;
-reduced (late), length: $t(40) = 1.476, p = 0.148$; reduced (late), first
-letter: $t(40) = 0.966, p = 0.340$). We hypothesized that adding or removing
-the irrelevant features was acting as a sort of ``event boundary'' between
-early and late lists. In prior work, we (and others) have found that memories
-formed just after event boundaries can be enhanced~\citep[e.g., due to less
-contextual interference between pre- and post-boundary items;][]{MannEtal16,
-PettEtal16, GoldEtal17, FlorEtal17}.
+(early)} condition, we held the visual features constant on early lists, but
+allowed them to vary randomly on late lists. In a \textit{reduced (late)}
+condition, we allowed the visual features to vary randomly on early lists, but
+held them constant on late lists. Given our above findings that (a)
+participants tended to remember more words and exhibit stronger clustering
+effects on feature rich (versus reduced) lists, and (b) participants tended to
+remember more words and exhibit stronger clustering effects on early (versus
+late) lists, we expected these early versus late differences to be enhanced in
+the reduced (early) condition and diminished in the reduced (late) condition.
+However, to our surprise, participants in \textit{neither} condition exhibited
+reliable early versus late differences in accuracy (reduced (early): $t(41) =
+1.499, p = 0.141$; reduced (late): $t(40) = 1.462, p = 0.152$), temporal
+clustering (reduced (early): $t(41) = 0.998, p = 0.324$; reduced (late): $t(40)
+= 1.099, p = 0.278$), nor feature-based clustering (reduced (early), category:
+$t(41) = 0.753, p = 0.456$; reduced (early), size: $t(41) = 0.721, p = 0.475$;
+reduced (early), length: $t(41) = 0.493, p = 0.625$; reduced (early), first
+letter: $t(41) = 0.780, p = 0.440$; reduced (late), category: $t(40) = -0.086,
+p = 0.932$; reduced (late), size: $t(40) = 0.746, p = 0.460$; reduced (late),
+length: $t(40) = 1.476, p = 0.148$; reduced (late), first letter: $t(40) =
+0.966, p = 0.340$). We hypothesized that adding or removing the variability in
+the visual features was acting as a sort of ``event boundary'' between early
+and late lists. In prior work, we (and others) have found that memories formed
+just after event boundaries can be enhanced~\citep[e.g., due to less contextual
+interference between pre- and post-boundary items;][]{MannEtal16, PettEtal16,
+GoldEtal17, FlorEtal17}.
 
-We found that \textit{adding} irrelevant visual features on later lists that
+We found that \textit{adding} incidental visual features on later lists that
 had not been present on early lists (as in the reduced (early) condition)
 served to enhance recall performance relative to conditions where all lists had
 the same blends of features (accuracy for feature rich versus reduced (early):
@@ -915,7 +916,7 @@ recall performance (accuracy for feature rich versus reduced (late): $t(106) =
 component: accuracy is affected differently by removing features later
 that had been present earlier versus adding features later that had
 \textit{not} been present earlier. In contrast, we found that participants
-exhibited more temporal and feature-based clustering when we added irrelevant
+exhibited more temporal and feature-based clustering when we added incidental
 visual features to \textit{any} lists (comparisons of clustering on feature
 rich versus reduced lists are reported above; temporal clustering in reduced
 versus reduced (early) and reduced versus reduced (late) conditions: $t$s $\leq
@@ -936,18 +937,17 @@ features that vary from moment to moment approximates the ``richness'' of
 participants' experiences, our findings suggest that participants remember
 ``richer'' stimuli better and organize richer stimuli more reliably in their
 memories. Next, we turn to examine the memory effects of varying the temporal
-ordering of different stimulus features while holding the features themselves
-constant. We hypothesized that changing the orders in which participants were
-exposed to the words on a given list might enhance (or diminish) the relative
-influence of different features. For example, presenting a set of words
-alphabetically might enhance participants' attention to the studied items'
-first letters, whereas sorting the same list of words by semantic category
-might instead enhance participants' attention to the words' semantic
-attributes. Importantly, we expected these order manipulations to hold even
-when the variation in the total set of features (across words) was held
-constant across lists (e.g., unlike in the reduced (early) and reduced (late)
-conditions, where variations in visual features were added or removed from a
-subset of the lists participants studied).
+ordering of different stimulus features. We hypothesized that changing the
+orders in which participants were exposed to the words on a given list might
+enhance (or diminish) the relative influence of different features. For
+example, presenting a set of words alphabetically might enhance participants'
+attention to the studied items' first letters, whereas sorting the same list of
+words by semantic category might instead enhance participants' attention to the
+words' semantic attributes. Importantly, we expected these order manipulations
+to hold even when the variation in the total set of features (across words) was
+held constant across lists (e.g., unlike in the reduced (early) and reduced
+(late) conditions, where variations in visual features were added or removed
+from a subset of the lists participants studied).
 
 \begin{figure}[tp] \centering
 \includegraphics[width=\textwidth]{figures/recall_dynamics}
@@ -1073,7 +1073,7 @@ to temporally cluster their recalls on category-ordered lists, as we reported
 above.) Taken together, these order-specific idiosyncrasies suggest a
 hierarchical set of influences on participants' memories. At longer timescales,
 ``event boundaries'' (to use the term loosely) can be induced across lists by
-adding or removing irrelevant visual features. At shorter timescales, ``event
+adding or removing incidental visual features. At shorter timescales, ``event
 boundaries'' can be induced across items (within a single list) by adjusting
 how item features change throughout the list.
 
@@ -1096,8 +1096,8 @@ semantically sorted lists than lexicographically (category: $t(118) = 3.492, p
 = 0.001$, size: $t(118) = 3.972, p < 0.001$) or visually (category: $t(119) =
 2.702, p = 0.008$, size: $t(119) = 4.230, p < 0.001$) sorted lists; more
 lexicographic clustering on lexicographically sorted lists than semantically
-(length: $t(118) = 3.112, p = 0.002$; first letter: $t(118) = 3.686, p =
-0.000$) or visually (length: $t(119) = 3.024, p = 0.003$; first letter: $t(119)
+(length: $t(118) = 3.112, p = 0.002$; first letter: $t(118) = 3.686, p <
+0.001$) or visually (length: $t(119) = 3.024, p = 0.003$; first letter: $t(119)
 = 2.644, p = 0.009$) sorted lists; and more visual clustering on visually
 sorted lists than semantically (color: $t(119) = -2.659, p = 0.009$; location:
 $t(119) = -4.604, p < 0.001$) or lexicographically (color: $t(119) = -2.366, p
@@ -1156,15 +1156,15 @@ cluster \textit{other} features (on early and/or late lists) as well. We
 defined participants' \textit{memory fingerprints} as the set of their temporal
 and feature clustering scores (see \textit{Memory fingerprints}). A
 participant's memory fingerprint describes how they tend to retrieve memories
-of the studied items, perhaps searching through several feature spaces (or
-along several representational dimensions). To gain insights into the dynamics
-of how participants' clustering scores tended to change over time, we computed
-the average (across participants) fingerprint from each list, from each order
-manipulation condition (Fig.~\ref{fig:fingerprint-trajectories}). We projected
-these fingerprints into a two-dimensional space to help visualize the dynamics
-(top panels; see \textit{Computing low-dimensional embeddings of memory
-fingerprints}). We found that participants' average fingerprints tended to
-remain relatively stable on early lists, and exhibited a ``jump'' to another
+of the studied items, perhaps searching in parallel through several feature
+spaces (or along several representational dimensions). To gain insights into
+the dynamics of how participants' clustering scores tended to change over time,
+we computed the average (across participants) fingerprint from each list, from
+each order manipulation condition (Fig.~\ref{fig:fingerprint-trajectories}). We
+projected these fingerprints into a two-dimensional space to help visualize the
+dynamics (top panels; see \textit{Computing low-dimensional embeddings of
+memory fingerprints}). We found that participants' average fingerprints tended
+to remain relatively stable on early lists, and exhibited a ``jump'' to another
 stable state on later lists. The sizes of these jumps varied somewhat across
 conditions (the Euclidean distances between fingerprints in their original high
 dimensional spaces are displayed in the bottom panels). We also averaged the
@@ -1461,7 +1461,7 @@ lists, they also showed stronger clustering for early versus late lists.
 However, when we \textit{varied} participants' visual experiences across lists
 (in the ``reduced (early)'' and ``reduced (late)'' conditions), these early
 versus late accuracy and clustering differences disappeared. Abruptly changing
-how irrelevant visual features varied across words seemed to act as a sort of
+how incidental visual features varied across words seemed to act as a sort of
 ``event boundary'' that partially reset how participants processed and
 remembered post-boundary lists. Within-list clustering also increased in these
 manipulations, suggesting that the ``within-event'' words were being more tightly
@@ -1679,12 +1679,12 @@ those later lists. One potential explanation is that participants perceive an
 ``event boundary'' to have occurred when they encounter the first ``late''
 list. According to contextual change accounts of memory across event
 boundaries~\citep[e.g.,][]{SahaKell02, PettEtal16, GoldEtal17, FlorEtal17},
-this could help to explain why participants in the reduced (early) and reduced
-(late) conditions exhibited better overall memory performance. Specifically,
-their memory for late list items could benefit from less interference from
-early list items, and the contextual features associated with late list items
-(after the ``event boundary'') might serve as more specific recall cues for
-those late items (relative to if the boundary had not occurred).
+this could help to explain why participants in the reduced (early) condition
+exhibited better overall memory performance. Specifically, their memory for
+late list items could benefit from less interference from early list items, and
+the contextual features associated with late list items (after the ``event
+boundary'') might serve as more specific recall cues for those late items
+(relative to if the boundary had not occurred).
 
 % implications for:
 %     - theory: flexibility in how we organize information, bridge between "classic" and naturalistic experiments
