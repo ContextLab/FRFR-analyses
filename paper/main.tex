@@ -27,7 +27,7 @@
 
 \title{\Large Feature and order manipulations in a free recall task affect memory for current and future lists}
 
-\author{Jeremy R. Manning\textsuperscript{1, *}, Emily
+\author{Jeremy R. Manning\textsuperscript{1, *}, Emily C.
 Whitaker\textsuperscript{1}, Paxton C. Fitzpatrick\textsuperscript{1},
 \\Madeline R. Lee\textsuperscript{1}, Allison M. Frantz\textsuperscript{1},
 Bryan J. Bollinger\textsuperscript{1},\\Darya Romanova\textsuperscript{1},
@@ -98,7 +98,7 @@ lists~\citep{Kaha12, Kaha20}. In free recall, participants study lists of items
 and are instructed to recall the items in any order they choose. The orders in
 which words come to mind can provide insights into how participants have
 organized their memories of the studied words. Because random word lists are
-unstructured by design, it is not clear if or how non-trivial situation models
+unstructured by design, it is not clear if, or how, non-trivial situation models
 might apply to these stimuli. Nevertheless, there are \textit{some}
 commonalities between memory for word lists and memory for real-world
 experiences.
@@ -118,26 +118,26 @@ general processes might be said to describe how real-world contexts evolve
 during natural experiences. However, this is still an open area of
 study~\citep{Mann20, Mann21a}.
 
-Over the past half-century, context-based models have enjoyed impressive
-success at explaining many stereotyped behaviors observed during free recall
-and other list-learning tasks~\citep{Este55a, RaaiShif80, GlenEtal83,
-HowaKaha02a, SiroEtal05, KimbEtal07, PolyKaha08, SedeEtal08, PolyEtal09,
-ShanHowa12}. These phenomena include the well-known recency and primacy effects
-(superior recall of items from the end and, to a lesser extent, from the
-beginning of the study list), as well as semantic and temporal clustering
-effects~\citep{KahaEtal08b}. The contiguity effect is an example of temporal
-clustering, which is perhaps the dominant form of organization in free recall.
-This effect can be seen in the tendency for people to successively recall items
-that occupied neighboring positions in the studied list~\citep{Kaha96}. There
-are also striking effects of semantic clustering~\citep{RomnEtal93, Bous53,
-BousEtal54, JenkRuss52, MannKaha12}, whereby the recall of a given item is more
-likely to be followed by recall of a similar or related item than a dissimilar
-or unrelated one. In general, people organize memories for words along a wide
-variety of stimulus dimensions. As formalized by models like the
-\textit{Context Maintenance and Retrieval Model}~\citep{PolyEtal09}, the
-stimulus features associated with each word (e.g.\ the word's meaning, font
-size, font color, location on the screen, size of the object the word
-represents, etc.) are incorporated into the participant's mental context
+Over the past half-century, context-based models have had impressive success at
+explaining many stereotyped behaviors observed during free recall and other
+list-learning tasks~\citep{Este55a, RaaiShif80, GlenEtal83, HowaKaha02a,
+SiroEtal05, KimbEtal07, PolyKaha08, SedeEtal08, PolyEtal09, ShanHowa12}. These
+phenomena include the well-known recency and primacy effects (superior recall
+of items from the end and, to a lesser extent, from the beginning of the study
+list), as well as semantic and temporal clustering effects~\citep{KahaEtal08b}.
+The contiguity effect is an example of temporal clustering, which is perhaps
+the dominant form of organization in free recall. This effect can be seen in
+the tendency for people to successively recall items that occupied neighboring
+positions in the studied list~\citep{Kaha96}. There are also striking effects
+of semantic clustering~\citep{RomnEtal93, Bous53, BousEtal54, JenkRuss52,
+MannKaha12}, whereby the recall of a given item is more likely to be followed
+by recall of a similar or related item than a dissimilar or unrelated one. In
+general, people organize memories for words along a wide variety of stimulus
+dimensions. As formalized by models like the \textit{Context Maintenance and
+Retrieval Model}~\citep{PolyEtal09}, the stimulus features associated with each
+word (e.g.\ the word's meaning, size of the object the word represents, the
+letters that make up the word, font size, font color, location on the screen,
+etc.) are incorporated into the participant's mental context
 representation~\citep{SmitVela01, MannEtal15, Mann20, MannEtal11, MannEtal12}.
 During a memory test, any of these features may serve as a memory cue, which in
 turn leads the participant to recall in succession words that share stimulus
@@ -198,14 +198,14 @@ reduced), two visual manipulation conditions (reduced (early) and reduced
 letter, color, and location), and a final adaptive condition. Each of these
 conditions is described in the \textit{Experimental design} subsection below.
 
-Participants received course credit for enrolling in our study. We asked each
-participant to fill out a demographic survey that included questions about
-their age, gender, ethnicity, race, education, vision, reading
-impairments, medications or recent injuries, coffee consumption on the day of
-testing, and level of alertness at the time of testing. All components of the
-demographics survey were optional. One participant elected not to fill out any
-part of the demographic survey, and all other participants answered some or all
-of the survey questions.
+Participants either received course credit or a one-time \$10 payment for
+enrolling in our study. We asked each participant to fill out a demographic
+survey that included questions about their age, gender, ethnicity, race,
+education, vision, reading impairments, medications or recent injuries, coffee
+consumption on the day of testing, and level of alertness at the time of
+testing. All components of the demographics survey were optional. One
+participant elected not to fill out any part of the demographic survey, and all
+other participants answered some or all of the survey questions.
 
 We aimed to run (to completion) at least 60 participants in each of the two
 primary control conditions and in the adaptive condition. In all of the other
@@ -456,7 +456,7 @@ relevant feature, and each word's value(s) for that feature, we developed a
 stochastic algorithm for (noisily) sorting the words. The stochastic aspect of
 our sorting procedure enabled us to obtain unique orderings for each
 participant. First, we choose a word uniformly and at random from the set of
-candidates. Next, we compute the distances between the chosen word's feature(s)
+candidates. Second, we compute the distances between the chosen word's feature(s)
 and the corresponding feature(s) of all yet-to-be-presented words. Third, we
 convert these distances (between the previously presented word's feature
 values, $a$, and the candidate word's feature values, $b$) to similarity
@@ -596,13 +596,13 @@ successively recalling several list $B$ items of the same size \textit{could}
 be meaningful, since (early in the recall sequence) the yet-to-be-recalled
 items come from a mix of sizes. However, once all of the small items on list
 $B$ have been recalled, the best possible next matching recall will be a large
-item. And all subsequent correct recalls must also be large items-- so for
+item. All subsequent correct recalls must also be large items-- so for
 those later recalls it becomes difficult to determine whether the participant
 is successively recalling large items because they are organizing their
 memories according to size, or (alternatively), whether they are simply
 recalling the yet-to-be-recalled items in a random order. In general, the
-precise order and blend of feature values expressed in a given list, the orders
-and numbers of correct recalls a participant makes, the number of intervening
+precise order and blend of feature values expressed in a given list, the order
+and number of correct recalls a participant makes, the number of intervening
 presentation positions between successive recalls, and so on, can all affect
 the range of clustering scores that are possible to observe for a given list.
 An uncorrected clustering score therefore conflates participants' actual memory
@@ -905,9 +905,9 @@ early lists (as in the reduced (late) condition) did not appear to impact
 recall performance (accuracy for feature rich versus reduced (late): $t(106) =
 -0.638, p = 0.525$; reduced versus reduced (late): $t(100) = -0.407, p =
 0.685$). These comparisons suggest that recall accuracy has a directional
-component (i.e., accuracy is affected differently by removing features later
+component: accuracy is affected differently by removing features later
 that had been present earlier versus adding features later that had
-\textit{not} been present earlier). In contrast, we found that participants
+\textit{not} been present earlier. In contrast, we found that participants
 exhibited more temporal and feature-based clustering when we added irrelevant
 visual features to \textit{any} lists (comparisons of clustering on feature
 rich anversusd reduced lists are reported above; temporal clustering in reduced
@@ -1096,7 +1096,7 @@ sorted lists than semantically (color: $t(119) = -2.659, p = 0.009$; location:
 $t(119) = -4.604, p < 0.001$) or lexicographically (color: $t(119) = -2.366, p
 = 0.020$; location: $t(119) = -4.265, p < 0.001$) sorted lists. In summary,
 sorting lists by different features appeared to have slightly different effects
-on overall memory performance and temporal clustering, and people tended to
+on overall memory performance and temporal clustering.  Participants also tended to
 cluster their recalls along a given feature dimension more when the studied
 lists were (versus were not) sorted along that dimension.
 
@@ -1788,10 +1788,10 @@ that experience, and also how we remember, process, or perceive
 \subsection*{Author contributions}
 
 Conceptualization: JRM and ACH. Methodology: JRM and ACH. Software: JRM, PCF,
-CEF, and ACH. Analysis: JRM, PCF, and ACH. Data collection: EW, PCF, MRL, AMF,
-BJB, DR, and CEF. Data curation and management: EW, PCF, MRL, ACH. Writing
-(original draft): JRM. Writing (review and editing): EW, PCF, MRL, AMF, BJB,
-DR, CEF, and ACH. Supervision: JRM and ACH. Project administration: EW, and
+CEF, and ACH. Analysis: JRM, PCF, and ACH. Data collection: ECW, PCF, MRL, AMF,
+BJB, DR, and CEF. Data curation and management: ECW, PCF, MRL, and ACH. Writing
+(original draft): JRM. Writing (review and editing): ECW, PCF, MRL, AMF, BJB,
+DR, CEF, and ACH. Supervision: JRM and ACH. Project administration: ECW and
 PCF. Funding acquisition: JRM.
 
 \subsection*{Data and code availability}
