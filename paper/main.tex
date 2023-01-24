@@ -41,7 +41,7 @@ jeremy.r.manning@dartmouth.edu}
 \begin{document}
 \maketitle
 
-\begin{abstract} \footnotesize{We perceive, interpet, and remember ongoing
+\begin{abstract} \footnotesize{We perceive, interpret, and remember ongoing
 experiences through the lens of our prior experiences. Inferring that we are in
 one type of situation versus another can lead us to interpret the same physical
 experience differently. In turn, this can affect how we focus our attention,
@@ -67,7 +67,7 @@ our current experiences and unrelated subsequent experiences.
 
 Experience is subjective: different people who encounter identical physical
 experiences can take away very different meanings and memories. One reason is
-that our subjective experiences in the moment are shaped in part the
+that our subjective experiences in the moment are shaped in part by the
 idiosyncratic prior experiences, memories, goals, thoughts, expectations, and
 emotions that we bring with us into the present moment. These factors
 collectively define a \textit{context} for our experiences~\citep{Mann20}. 
@@ -154,9 +154,9 @@ these regularities when generating inferences about the unobserved past and
 yet-to-be-experienced future~\citep{XuEtal23, SchaTurk15, RangRitc12,
 BoweEtal79, MomeEtal17}. On the other hand, the rich structure of real-world
 experiences and other naturalistic stimuli that enable people to form deep and meaningful
-situation models and schemas have no obvious analog in simple word lists.  Often lists
+situation models and schemas have no obvious analog in simple word lists.  Often, lists
 in free recall studies are explicitly \textit{designed} to be devoid of exploitable
-temporal structure, for example by sorting the words in a random order~\citep{Kaha12}.
+temporal structure, for example, by sorting the words in a random order~\citep{Kaha12}.
 
 % feature-rich free recall, basic manipulation conditions, preview of findings
 We designed an experimental paradigm to explore how people organize their
@@ -183,7 +183,7 @@ in these control conditions all of the lists were sorted randomly, but we
 manipulated the presence or absence of the visual features. Finally, in an
 \textit{adaptive} experimental condition we used participants' recall behaviors
 on early lists to manipulate, in real-time, the presentation orders of
-subsequent lists. In this adaptive condition we varied the agreement between
+subsequent lists. In this adaptive condition, we varied the agreement between
 how participants preferred to organize their memories of the studied items
 versus the orders in which the items were presented.
 
@@ -196,7 +196,7 @@ experimental conditions. The conditions included two controls (feature rich,
 reduced), two visual manipulation conditions (reduced (early) and reduced
 (late)), six order manipulation conditions (category, size, length, first
 letter, color, and location), and a final adaptive condition. Each of these
-conditions are described in the \textit{Experimental design} subsection below.
+conditions is described in the \textit{Experimental design} subsection below.
 
 Participants received course credit for enrolling in our study. We asked each
 participant to fill out a demographic survey that included questions about
@@ -209,7 +209,7 @@ of the survey questions.
 
 We aimed to run (to completion) at least 60 participants in each of the two
 primary control conditions and in the adaptive condition. In all of the other
-conditions we set a target enrollment of at least 30 participants. Because our
+conditions, we set a target enrollment of at least 30 participants. Because our
 data collection procedures entailed the coordinated efforts of 12 researchers
 and multiple testing rooms and computers, it was not feasible for individual
 experimenters to know how many participants had been run in each experimental
@@ -446,7 +446,7 @@ features (color and location) are \textit{continuous} and
 \textit{multivariate}, in that each ``feature'' takes on multiple (positive)
 real values. We defined the ``color'' and ``location'' distances between two
 words as the Euclidean distances between their $(r, g, b)$ color or $(x, y)$
-location vectors, respectively. Therefore the color and location distance
+location vectors, respectively. Therefore, the color and location distance
 measures always take on non-negative real values (upper-bounded at 441.67 for
 color, or 27~in for location, reflecting the distances between the
 corresponding maximally different vectors).
@@ -460,17 +460,25 @@ candidates. Next, we compute the distances between the chosen word's feature(s)
 and the corresponding feature(s) of all yet-to-be-presented words. Third, we
 convert these distances (between the previously presented word's feature
 values, $a$, and the candidate word's feature values, $b$) to similarity
-scores: \begin{equation} \mathrm{similarity}(a, b) = \exp\{-\tau \cdot
-\mathrm{distance}(a, b)\}, \label{eqn:similarity} \end{equation} where $\tau =
-1$ in our implementation. We note that increasing the value of $\tau$ would
-amplify the influence of similarity on order, and decreasing the value of
-$\tau$ would diminish the influence of similarity on order. Also note that this
-approach requires $\tau > 0$. Finally, we computed a set of normalized
-similarity values by dividing the similarities by their sum: \begin{equation}
+scores: 
+
+\begin{equation}
+ \mathrm{similarity}(a, b) = \exp\{-\tau \cdot
+\mathrm{distance}(a, b)\}, \label{eqn:similarity} 
+\end{equation} 
+where $\tau = 1$ in our implementation. We note that increasing the value of
+$\tau$ would amplify the influence of similarity on order, and decreasing the
+value of $\tau$ would diminish the influence of similarity on order. Also note
+that this approach requires $\tau > 0$. Finally, we computed a set of
+normalized similarity values by dividing the similarities by their sum:
+
+\begin{equation}
 \mathrm{similarity}_{\mathrm{normalized}}(a, b) = \frac{\mathrm{similarity}(a,
-b)}{\sum_{i=1}^n \mathrm{similarity}(a, i)}, \end{equation} where in the
-denominator, $i$ takes on each of the $n$ feature values of the to-be-presented
-words. The resulting set of normalized similarity scores sums to 1.
+b)}{\sum_{i=1}^n \mathrm{similarity}(a, i)}, 
+\end{equation} 
+where in the denominator, $i$ takes on each of the $n$ feature values of the
+to-be-presented words. The resulting set of normalized similarity scores sums
+to 1.
 
 \begin{figure}[tp]
     \centering
@@ -1098,7 +1106,7 @@ is happening to us now can also affect how we process and remember
 early lists are sorted along different feature dimensions, might this affect
 how people remember later (random) lists? In exploring this question, we
 considered both group-level effects (i.e., effects that tended to be common
-across individuals) and participant-level effects (i.e., effect that were
+across individuals) and participant-level effects (i.e., effects that were
 idiosyncratic across individuals).
 
 \begin{figure}[tp] \centering
@@ -1465,9 +1473,9 @@ semantically (by word category) enhanced participants' memories for those
 lists, but the effects on performance of sorting along other feature dimensions
 were inconclusive. However, each order manipulation substantially affected how
 participants \textit{organized} their memories of words from the ordered lists.
-When we sorted lists semantically participants displayed stronger semantic
-clustering; when we sorted lists lexicographically they displayed stronger
-lexicographic clustering; and when we sorted lists visually they displayed
+When we sorted lists semantically, participants displayed stronger semantic
+clustering; when we sorted lists lexicographically, they displayed stronger
+lexicographic clustering; and when we sorted lists visually, they displayed
 stronger visual clustering. Clustering along the unmanipulated feature
 dimensions in each of these cases was unchanged.
 
@@ -1630,8 +1638,8 @@ GoldEtal21, GrifStey03, JonePash07, KimEtal14, TamiThor18, XuEtal23}.
 
 When our expectations are violated, such as when our observations disagree with
 our predictions, we may perceive the ``rules'' or ``situation'' to have
-changed. \textit{Event boundaries} denote abrupts change in the state of our
-experience, for example when we transition from one situation to
+changed. \textit{Event boundaries} denote abrupt changes in the state of our
+experience, for example, when we transition from one situation to
 another~\citep{RadvZack17, ZwaaRadv98}. Crossing an event boundary can impair
 our memory for pre-boundary information and enhance our memory for
 post-boundary information~\citep{RadvCope06, SahaKell02, MannEtal16}. Event
