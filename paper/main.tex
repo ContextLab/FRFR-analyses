@@ -134,7 +134,7 @@ striking effects of semantic clustering~\citep{RomnEtal93, Bous53, BousEtal54,
 JenkRuss52, MannKaha12}, whereby the recall of a given item is more likely to
 be followed by recall of a similar or related item than a dissimilar or
 unrelated one. In general, people organize memories for words along a wide
-variety of stimulus dimensions. As formalized by models like the
+variety of stimulus dimensions. According to models like the
 \textit{Context Maintenance and Retrieval Model}~\citep{PolyEtal09}, the
 stimulus features associated with each word (e.g.\ the word's meaning, size of
 the object the word represents, the letters that make up the word, font size,
@@ -450,10 +450,10 @@ visual features (color and location) are \textit{continuous} and
 \textit{multivariate}, in that each ``feature'' is defined by multiple
 (positive) real values. We defined the ``color'' and ``location'' distances
 between two words as the Euclidean distances between their $(r, g, b)$ color or
-$(x, y)$ location vectors, respectively. Therefore, the color and location
-distance measures always take on non-negative real values (upper-bounded at
-441.67 for color, or 27~in for location, reflecting the distances between the
-corresponding maximally different vectors).
+$(x, y)$ location vectors (specified in inches), respectively. Therefore, the
+color and location distance measures always take on non-negative real values
+(upper-bounded at 441.67 for color, or 27~in for location, reflecting the
+distances between the corresponding maximally different vectors).
 
 \paragraph{Constructing feature-sorted lists.} Given a list of words, a
 relevant feature, and each word's value(s) for that feature, we developed a
@@ -758,12 +758,13 @@ word's presentation position and the next-recalled word's presentation
 position. We computed the proportions of transitions (between successively
 recalled words) for each lag, normalizing for the total numbers of possible
 transitions. In carrying out this analysis, we excluded all incorrect recalls
-and successive repetitions (i.e., recalling the same word twice in a row). This
-yielded, for each list, a 1 by number-of-lags ($-15$ to $+15$; 30 lags in
-total, excluding lags of 0) array of conditional probabilities. We averaged
-these probabilities across lists to obtain a single lag-CRP for each
-participant. Because transitions at large absolute lags are rare, these curves
-are typically displayed using range restrictions~\citep{Kaha12}.
+and repetitions (i.e., recalling a word that had already appeared previously in
+the current recall sequence). This yielded, for each list, a 1 by
+number-of-lags ($-15$ to $+15$; 30 lags in total, excluding lags of 0) array of
+conditional probabilities. We averaged these probabilities across lists to
+obtain a single lag-CRP for each participant. Because transitions at large
+absolute lags are rare, these curves are typically displayed using range
+restrictions~\citep{Kaha12}.
 
 
 
@@ -885,20 +886,20 @@ early versus late lists for two additional experimental conditions (see
 allowed them to vary randomly on late lists. In a \textit{reduced (late)}
 condition, we allowed the visual features to vary randomly on early lists, but
 held them constant on late lists. Given our above findings that (a)
-participants tended to remember more words and exhibit stronger clustering
-effects on feature rich (versus reduced) lists, and (b) participants tended to
-remember more words and exhibit stronger clustering effects on early (versus
-late) lists, we expected these early versus late differences to be enhanced in
-the reduced (early) condition and diminished in the reduced (late) condition.
-However, to our surprise, participants in \textit{neither} condition exhibited
-reliable early versus late differences in accuracy (reduced (early): $t(41) =
-1.499, p = 0.141$; reduced (late): $t(40) = 1.462, p = 0.152$), temporal
-clustering (reduced (early): $t(41) = 0.998, p = 0.324$; reduced (late): $t(40)
-= 1.099, p = 0.278$), nor feature-based clustering (reduced (early), category:
-$t(41) = 0.753, p = 0.456$; reduced (early), size: $t(41) = 0.721, p = 0.475$;
-reduced (early), length: $t(41) = 0.493, p = 0.625$; reduced (early), first
-letter: $t(41) = 0.780, p = 0.440$; reduced (late), category: $t(40) = -0.086,
-p = 0.932$; reduced (late), size: $t(40) = 0.746, p = 0.460$; reduced (late),
+participants tended to exhibit stronger clustering effects on feature rich
+(versus reduced) lists, and (b) participants tended to remember more words and
+exhibit stronger clustering effects on early (versus late) lists, we expected
+these early versus late differences to be enhanced in the reduced (early)
+condition and diminished in the reduced (late) condition. However, to our
+surprise, participants in \textit{neither} condition exhibited reliable early
+versus late differences in accuracy (reduced (early): $t(41) = 1.499, p =
+0.141$; reduced (late): $t(40) = 1.462, p = 0.152$), temporal clustering
+(reduced (early): $t(41) = 0.998, p = 0.324$; reduced (late): $t(40) = 1.099, p
+= 0.278$), nor feature-based clustering (reduced (early), category: $t(41) =
+0.753, p = 0.456$; reduced (early), size: $t(41) = 0.721, p = 0.475$; reduced
+(early), length: $t(41) = 0.493, p = 0.625$; reduced (early), first letter:
+$t(41) = 0.780, p = 0.440$; reduced (late), category: $t(40) = -0.086, p =
+0.932$; reduced (late), size: $t(40) = 0.746, p = 0.460$; reduced (late),
 length: $t(40) = 1.476, p = 0.148$; reduced (late), first letter: $t(40) =
 0.966, p = 0.340$). We hypothesized that adding or removing the variability in
 the visual features was acting as a sort of ``event boundary'' between early
@@ -1303,7 +1304,7 @@ participants suggests that some influence of early order manipulations may
 linger on late lists. We found that participants who exhibited larger carryover
 in feature clustering (i.e., continued to show strong feature clustering on
 late lists) for the semantic order manipulations (but not other manipulations)
-also tended to show a larger improvement in recall
+also tended to show a smaller decrease in recall on early versus late lists
 (Fig.~\ref{fig:clustering-carryover}B; overall: $r(179) = 0.378, p < 0.001$;
 category: $r(28) = 0.419, p = 0.021$; size: $r(28) = 0.737, p < 0.001$;
 non-semantic conditions: all $r$s $\leq 0.252$, all $p$s $\geq 0.179$; across
