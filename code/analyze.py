@@ -106,7 +106,21 @@ def analyze_data(analyses=['fingerprint', 'pfr', 'lagcrp', 'spc', 'accuracy'], d
     return results, analyses, listgroups
 
 
+# update PFR and SPC curves to use 1-indexing instead of 0-indexing, per reviewer request
+def increment_presentation_positions(r):
+    if type(r) is dict:
+        return {k + 1 if type(k) is int else k: increment_presentation_positions(v) for k, v in r.items()}
+    
+    x = r.get_data().copy()
+    if type(x.columns) is pd.RangeIndex:
+        x.columns = pd.RangeIndex(start=x.columns.start + 1, stop=x.columns.stop + 1, step=x.columns.step)
+    
+    r.data = x
+    return r
+
+
 results, analyses, listgroups = analyze_data(savefile=results_file)
+results = {k: increment_presentation_positions(v) if k in ['pfr', 'spc', 'pnr'] else v for k, v in results.items()}
 
 
 # hack for recovering fingerprint features (feature tags are lost in the pickling process)
@@ -155,7 +169,6 @@ def organize_by_listgroup(x, groups):
 
 results_by_list = results  # per-list results
 results = {a: organize_by_listgroup(results_by_list[a], listgroups) for a in results_by_list.keys()}  # averaged within each listgroup
-
 
 def select_conds(results, conds='all'):
     return {k: v for k, v in results.items() if conds == 'all' or k in conds}
@@ -265,7 +278,7 @@ def stack_diffs(diffs, include_conds='all'):
 
 
 def pnr_matrix(pnr_results, include_conds='all', include_lists='all'):
-    positions = range(16)
+    positions = range(1, 17)
 
     if type(include_conds) is str:
         include_conds = [include_conds]

@@ -126,7 +126,7 @@ def combo_fingerprint_plot(x, include_conds='all', include_lists='all', fname=No
                    x='Dimension', y='Clustering score',
                    hue='Condition',
                    order=['Category', 'Size', 'Length', 'First letter', 'Color', 'Location'],
-                   palette=palette, linewidth=1, inner='quartile', scale='width')
+                   palette=palette, linewidth=1, inner='quartile', scale='width', cut=0)
     
     if ylim is not None:
         plt.ylim(ylim)
@@ -199,7 +199,7 @@ def plot_heatmaps(results, include_conds='all', include_lists='all', contrasts=N
                 ax = axes[r, column]
             except IndexError:
                 ax = axes[max([r, column])]
-            heatmap(results[cond][k] - results[cond][v], '', dvmin, dvmax, ax, showx=(len(include_lists) + i + 1) == n_rows, showy=column == 0, cmap='mako', yprepend=f'{k.capitalize()} $-$ {v.lower()}\n')
+            heatmap(results[cond][k] - results[cond][v], '', dvmin, dvmax, ax, showx=(len(include_lists) + i + 1) == n_rows, showy=column == 0, cmap='vlag', center=0, yprepend=f'{k.capitalize()} $-$ {v.lower()}\n')
     
     plt.tight_layout()
 
@@ -208,12 +208,16 @@ def plot_heatmaps(results, include_conds='all', include_lists='all', contrasts=N
     return fig
 
 
-def accuracy_by_list(x, xlim=[0, 15], ylim=[0, 1], fname=None):
+def accuracy_by_list(x, xlim=[1, 16], ylim=[0, 1], fname=None):
     _, inds = np.unique(x['Condition'], return_index=True)
     conds = [x['Condition'][i] for i in sorted(inds)]
     
     palette = [colors[c] for c in conds]
     fig = plt.figure(figsize=(5.5, 2.5))
+
+    # convert lists to 1-indexed
+    x['List'] += 1
+    
     sns.lineplot(data=x, x='List', y='Accuracy', hue='Condition', palette=palette, legend=False)
     plt.xlabel('List number', fontsize=12)
     plt.ylabel('Recall probability', fontsize=12)
@@ -358,7 +362,7 @@ def plot_trajectories(fingerprints, include_conds='all', fname=None, xlim=None, 
 
     if xlim is not None:
         if type(xlim[0]) is not list:
-            xlim = [xlim, [-0.5, 15.5]]
+            xlim = [xlim, [0.5, 16.5]]
     if ylim is not None:
         if type(ylim[0]) is not list:
             ylim = [ylim, [0.4, 1.1]]
@@ -393,12 +397,13 @@ def plot_trajectories(fingerprints, include_conds='all', fname=None, xlim=None, 
         
         # plot distances
         dists = get_dists(fingerprints[c].data).reset_index().melt(id_vars='Subject', var_name='List', value_name='Distance')
+        dists['List'] += 1 # convert from 0-indexed to 1-indexed
         sns.barplot(data=dists, x='List', y='Distance', ax=ax[1, i], color=colors[c])
         ax[1, i].plot([7.5, 7.5], [0, 1.2], 'k--', linewidth=2)
 
         ax[1, i].set_xlabel('List', fontsize=14)
         if i == 0:
-            ax[1, i].set_ylabel('Distance from\nlist 0 fingerprint', fontsize=14)
+            ax[1, i].set_ylabel('Distance from\nlist 1 fingerprint', fontsize=14)
         else:
             ax[1, i].set_yticklabels([])
             ax[1, i].set_ylabel('')
@@ -408,7 +413,7 @@ def plot_trajectories(fingerprints, include_conds='all', fname=None, xlim=None, 
         if ylim is not None:
             ax[1, i].set_ylim(ylim[1])
         
-        ax[1, i].set_xticks(list(range(0, 15, 2)))
+        ax[1, i].set_xticks(list(range(1, 16, 2)))
 
     if fname is not None:
         fig.savefig(os.path.join(figdir, fname + '.pdf'), bbox_inches='tight')
