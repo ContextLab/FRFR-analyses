@@ -13,6 +13,7 @@ from multiprocessing import cpu_count
 from tqdm import tqdm
 from sklearn.decomposition import IncrementalPCA as PCA
 from scipy import stats
+from copy import deepcopy
 
 from dataloader import fetch_data, get_listgroups, datadir, feature_groupings
 
@@ -680,3 +681,110 @@ def create_clustering_df(results):
         n_subjects += results['accuracy'][c].n_subjects
     
     return pd.concat(dfs).reset_index()
+
+
+# temporal correction procedure for fingerprints
+def compute_temporally_corrected_fingerprints(results, results_by_list, listgroups, data=None):
+    def same_item(pres, rec):
+        return all([pres[k] == rec[k] for k in pres.keys() if k in rec]) and all([rec[k] == pres[k] for k in rec.keys() if k in pres])
+
+    def get_position(x, presentations):
+        if x is None:
+            return []
+        elif type(x) is pd.Series:
+            return pd.Series([get_position(x.iloc[i], presentations) for i in range(len(x))], index=x.index)
+        elif type(x) is pd.DataFrame:
+            return pd.DataFrame([get_position(x.iloc[i], presentations.iloc[i]) for i in range(x.shape[0])], index=x.index, columns=x.columns)
+        elif type(x) is dict:
+            for i, p in enumerate(presentations):
+                if same_item(p, x):
+                    return i
+        
+        return -1
+    
+    def circshift(x):
+        # circularly shift the values in x by a random amount
+        if x is None:
+            return []
+        elif type(x) is pd.DataFrame:
+            return pd.DataFrame([circshift(x.iloc[i]) for i in range(x.shape[0])], index=x.index, columns=x.columns)
+        elif type(x) is pd.Series:
+            if len(x) <= 1:
+                return x
+            else:
+                shift = np.random.randint(0, len(x))
+                return pd.Series(list(np.roll(x, shift)), index=x.index)
+
+    def get_recalls(positions, presentations):
+        if type(positions) is pd.Series:
+            return pd.Series([np.nan if p == -1 else presentations[p] for p in positions], index=positions.index)
+        elif type(positions) is pd.DataFrame:
+            return pd.DataFrame([get_recalls(positions.iloc[i], presentations.iloc[i]) for i in range(positions.shape[0])], index=positions.index, columns=positions.columns)
+    
+    def temporally_corrected_fingerprints(x, n=500, savefile=None):
+        if savefile is not None and os.path.exists(savefile):
+            with open(savefile, 'rb') as f:
+                observed, shuffled = pickle.load(f)
+        else:
+            pres = x.pres
+            rec = x.rec
+            
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
+                observed = x.analyze('fingerprint', permute=False)
+            
+            positions = get_position(rec, pres)
+
+            shuffled = []
+            for _ in tqdm(range(n)):
+                next_x = deepcopy(x)
+                next_x.rec = get_recalls(positions, circshift(pres))
+
+                with warnings.catch_warnings():
+                    warnings.simplefilter("ignore")
+                    shuffled.append(next_x.analyze('fingerprint', permute=False))
+            
+            if savefile is not None:
+                with open(savefile, 'wb') as f:
+                    pickle.dump([observed, shuffled], f)
+        
+        shuffled_stack = np.stack([s.data.values for s in shuffled], axis=2)
+        observed_stack = np.stack([observed.data.values for _ in range(shuffled_stack.shape[2])], axis=2)
+        
+        x = pd.DataFrame(np.sum(observed_stack > shuffled_stack, axis=2) / shuffled_stack.shape[2],
+                        index=observed.data.index, columns=observed.data.columns)
+        
+        corrected = deepcopy(observed)
+        corrected.data = x
+        return corrected
+    
+    def get_savefile(cond):
+        scratch_dir = os.path.join(datadir, 'scratch')
+        if not os.path.exists(scratch_dir):
+            os.makedirs(scratch_dir)
+        
+        return os.path.join(scratch_dir, f'{cond}_shuffled_fingerprints.pkl')
+
+    precomputed = True
+    for k in results['fingerprint'].keys():
+        if not os.path.exists(get_savefile(k)):
+            precomputed = False
+            break
+    
+    if not precomputed:
+        data = fetch_data()
+        for k in data.keys():
+            temporally_corrected_fingerprints(data[k], savefile=get_savefile(k))
+    
+    for k in results['fingerprint'].keys():
+        if 'corrected fingerprint' not in results:
+            results['corrected fingerprint'] = {}
+        if 'corrected fingerprint' not in results_by_list:
+            results_by_list['corrected fingerprint'] = {}
+
+        results_by_list['corrected fingerprint'][k] = temporally_corrected_fingerprints({}, savefile=get_savefile(k))
+        results['corrected fingerprint'][k] = organize_by_listgroup(results_by_list['corrected fingerprint'][k], listgroups[k])
+    
+    return results, results_by_list
+
+results, results_by_list = compute_temporally_corrected_fingerprints(results, results_by_list, listgroups)
