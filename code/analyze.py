@@ -670,8 +670,10 @@ def create_clustering_df(results):
 
         if c == 'feature rich':
             x['Feature clustering score'] = results['fingerprint'][c].data[list(decoder.values())].mean(axis=1).values
+            x['Corrected feature clustering score'] = results['corrected fingerprint'][c].data[list(decoder.values())].mean(axis=1).values
         else:
             x['Feature clustering score'] = results['fingerprint'][c].data[decoder[c]].values
+            x['Corrected feature clustering score'] = results['corrected fingerprint'][c].data[decoder[c]].values
         
         x['Temporal clustering score'] = results['fingerprint'][c].data['temporal'].values
         x['Recall probability'] = results['accuracy'][c].data.values

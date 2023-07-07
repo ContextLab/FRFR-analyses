@@ -229,13 +229,13 @@ def accuracy_by_list(x, xlim=[1, 16], ylim=[0, 1], fname=None):
     return fig
 
 
-def fingerprint_scatterplot_by_category(results, include_conds='all', include_lists='all', x_lists=None, y_lists=None, y='accuracy', average=False, fname=None, xlabel=None, ylabel=None, xlim=None, ylim=None):
+def fingerprint_scatterplot_by_category(results, include_conds='all', include_lists='all', x_lists=None, y_lists=None, x='fingerprint', y='accuracy', average=False, fname=None, xlabel=None, ylabel=None, xlim=None, ylim=None):
     if x_lists is None:
         x_lists = include_lists
     if y_lists is None:
         y_lists = include_lists
 
-    fingerprints, conds, x_lists = filter(results['fingerprint'], include_conds, x_lists)
+    fingerprints, conds, x_lists = filter(results[x], include_conds, x_lists)
     y_data, tmp_conds, y_lists = filter(results[y], include_conds, y_lists)
 
     assert all([c in conds for c in tmp_conds]) and all([c in tmp_conds for c in conds]), 'condition mismatch!'
@@ -254,7 +254,7 @@ def fingerprint_scatterplot_by_category(results, include_conds='all', include_li
     for c in conds:
         clustering = rename_features(fingerprints[c])[c].reset_index().drop('List', axis=1).set_index('Subject')
 
-        if y == 'fingerprint':
+        if y == 'fingerprint' or y == 'corrected fingerprint':
             next_y = rename_features(y_data[c])[c].reset_index().drop('List', axis=1).set_index('Subject')
         else:
             next_y = y_data[c].data.reset_index().drop('List', axis=1).set_index('Subject')
@@ -263,7 +263,7 @@ def fingerprint_scatterplot_by_category(results, include_conds='all', include_li
             clustering = pd.DataFrame(clustering.mean(axis=0)).T
             next_y = pd.DataFrame(next_y.mean(axis=0)).T
                 
-        if y == 'fingerprint':            
+        if y == 'fingerprint' or y == 'corrected fingerprint':
             clustering = clustering.rename({c: xlabel}, axis=1)
             next_y = next_y.rename({c: ylabel}, axis=1)
             df = pd.concat([clustering, next_y], axis=1)
