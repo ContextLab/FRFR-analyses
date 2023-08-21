@@ -13,6 +13,7 @@ from tqdm import tqdm
 from matplotlib import pyplot as plt
 from matplotlib.ticker import MaxNLocator
 from sklearn.decomposition import IncrementalPCA as PCA
+import statannot
 
 
 figdir = os.path.join(os.path.split(os.getcwd())[0], 'paper', 'figures', 'source')
@@ -568,7 +569,7 @@ def plot_boundary_density_maps(conds, bounds, behaviors, listgroups, width=3, he
     return fig
 
 
-def barplot_helper(clustering_results, x='Condition', y=None, hue=None, palette=None, ax=None, fname=None, width=8, height=3, ylim=None, ref=None):
+def barplot_helper(clustering_results, x='Condition', y=None, hue=None, palette=None, ax=None, fname=None, width=8, height=3, ylim=None, ref=None, ylabel=None):
     fig = plt.figure(figsize=(width, height))
     ax = plt.gca()
 
@@ -576,9 +577,24 @@ def barplot_helper(clustering_results, x='Condition', y=None, hue=None, palette=
 
     xlim = plt.xlim()
     if ref is not None:
-        y = clustering_results.query('Condition == @ref')[y].mean()
-        plt.plot(xlim, [y, y], '--', color='black', linewidth=1)
+        y_ref = clustering_results.query('Condition == @ref')[y].mean()
+        plt.plot(xlim, [y_ref, y_ref], '--', color='black', linewidth=1)
         plt.xlim(xlim)
+
+        pairs = [((ref, 'Early'), (c, 'Early')) for c in clustering_results['Condition'].unique() if c != ref]
+        pairs.extend([((ref, 'Late'), (c, 'Late')) for c in clustering_results['Condition'].unique() if c != ref])
+        pairs.extend([((c, 'Early'), (c, 'Late')) for c in clustering_results['Condition'].unique()])
+
+        statannot.add_stat_annotation(
+            ax,
+            data=clustering_results,
+            x=x,
+            y=y,
+            box_pairs=pairs,
+            test='t-test_paired',
+            text_format='star',
+            loc='outside',
+        )
 
     if ylim is not None:
         plt.ylim(ylim)
@@ -589,10 +605,14 @@ def barplot_helper(clustering_results, x='Condition', y=None, hue=None, palette=
     ax.spines.top.set_visible(False)
 
     xlabel = ax.get_xlabel()
-    ylabel = ax.get_ylabel()
+
+    if ylabel is None:
+        ylabel = ax.get_ylabel()
 
     plt.xlabel(xlabel, fontsize=14)
     plt.ylabel(ylabel, fontsize=14)
+
+    
 
     if fname is not None:
         fig.savefig(os.path.join(figdir, fname + '.pdf'), bbox_inches='tight')
