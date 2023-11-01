@@ -13,7 +13,7 @@ from tqdm import tqdm
 from matplotlib import pyplot as plt
 from matplotlib.ticker import MaxNLocator
 from sklearn.decomposition import IncrementalPCA as PCA
-import statannot
+from statannotations.Annotator import Annotator 
 
 
 figdir = os.path.join(os.path.split(os.getcwd())[0], 'paper', 'figures', 'source')
@@ -123,11 +123,11 @@ def combo_fingerprint_plot(x, include_conds='all', include_lists='all', fname=No
             palette.append(colors[c])
             order.append(c)
     
-    sns.violinplot(data=reorder_df(pd.concat(fingerprints, axis=0), 'Condition', order),
-                   x='Dimension', y='Clustering score',
-                   hue='Condition',
-                   order=['Category', 'Size', 'Length', 'First letter', 'Color', 'Location'],
-                   palette=palette, linewidth=1, inner='quartile', scale='width', cut=0)
+    sns.barplot(data=reorder_df(pd.concat(fingerprints, axis=0), 'Condition', order),
+                x='Dimension', y='Clustering score',
+                hue='Condition',
+                order=['Category', 'Size', 'Length', 'First letter', 'Color', 'Location'],
+                palette=palette, linewidth=1)
     
     if ylim is not None:
         plt.ylim(ylim)
@@ -580,21 +580,14 @@ def barplot_helper(clustering_results, x='Condition', y=None, hue=None, palette=
         y_ref = clustering_results.query('Condition == @ref')[y].mean()
         plt.plot(xlim, [y_ref, y_ref], '--', color='black', linewidth=1)
         plt.xlim(xlim)
-
-        pairs = [((ref, 'Early'), (c, 'Early')) for c in clustering_results['Condition'].unique() if c != ref]
+        
+        pairs = [((c, 'Early'), (c, 'Late')) for c in clustering_results['Condition'].unique()]
+        pairs.extend([((ref, 'Early'), (c, 'Early')) for c in clustering_results['Condition'].unique() if c != ref])
         pairs.extend([((ref, 'Late'), (c, 'Late')) for c in clustering_results['Condition'].unique() if c != ref])
-        pairs.extend([((c, 'Early'), (c, 'Late')) for c in clustering_results['Condition'].unique()])
 
-        statannot.add_stat_annotation(
-            ax,
-            data=clustering_results,
-            x=x,
-            y=y,
-            box_pairs=pairs,
-            test='t-test_paired',
-            text_format='star',
-            loc='outside',
-        )
+        annotator = Annotator(ax, pairs, data=clustering_results, x=x, y=y, hue=hue, order=clustering_results['Condition'].unique(), hue_order=['Early', 'Late'])
+        annotator.configure(test='t-test_ind', text_format='star', loc='outside', comparisons_correction='fdr_bh', hide_non_significant=True, line_height=0)
+        annotator.apply_and_annotate()
 
     if ylim is not None:
         plt.ylim(ylim)
