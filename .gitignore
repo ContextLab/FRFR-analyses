@@ -15,3 +15,5 @@ code/__pycache__/dataloader.cpython-310.pyc
 *.log
 *.out
 *.synctex.gz
+data/eggs/backup/*
+data/eggs/scratch/backup/*
