@@ -81,11 +81,13 @@ def analyze_data(analyses=['fingerprint', 'pfr', 'lagcrp', 'spc', 'accuracy'], d
             tmpfile = f'{a}.pkl'
 
         # save out temp files
-        if a not in ['pfr', 'pnr']:
-            with Pool(min([cpu_count(), len(data)])) as p:
-                p.map(apply_wrapper, [[a, x, d, tmpfile, kwargs] for x, d in data.items()])
-        else:
-            [apply_wrapper([a, x, d, tmpfile, kwargs]) for x, d in data.items()]
+        # if a not in ['pfr', 'pnr']:
+        #     for x, d in data.items():
+        #         apply_wrapper()
+        #     with Pool(min([cpu_count(), len(data)])) as p:
+        #         p.map(apply_wrapper, [[a, x, d, tmpfile, kwargs] for x, d in data.items()])
+        # else:
+        [apply_wrapper([a, x, d, tmpfile, kwargs]) for x, d in data.items()]
         
         # load in temp files and update results
         for x in data.keys():
