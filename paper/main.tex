@@ -10,6 +10,7 @@
 \usepackage{hyperref}
 \usepackage{lineno}
 \usepackage{amsopn}
+\usepackage{rotating}
 
 \newcommand{\argmax}{\mathop{\mathrm{argmax}}\limits}
 
@@ -767,10 +768,11 @@ set of items is equal (on average) to the temporal clustering score for the
 original recalls. However, we can then re-compute the feature clustering score
 for those new items. Finally, we can compute a ``temporally corrected'' feature
 clustering score by computing the average percentile rank of the observed (raw)
-feature clustering score within the distribution of circularly shifted feature
-clustering scores. This new temporally corrected score provides an estimate of
-the observed degree of feature clustering over and above what could be
-accounted for by temporal clustering alone.
+feature clustering score within the distributions of circularly shifted feature
+clustering scores, across $N = 500$ repetitions of this procedure. This new
+temporally corrected score provides an estimate of the observed degree of
+feature clustering over and above what could be accounted for by temporal
+clustering alone.
 
 While these temporally corrected clustering scores are useful for identifying
 when feature clustering cannot be accounted for by temporal clustering alone,
@@ -1049,55 +1051,66 @@ showed an increase in memory performance on early lists (accuracy, relative to
 early feature rich lists; $t(95) = 3.034, p = 0.003$). Participants in the
 color-ordered condition also showed a trending increase in memory performance
 on early lists (again, relative to early feature rich lists: $t(96) = 1.850, p
-= 0.067$). Participants' performances on early lists in all of the other order
-manipulation conditions were indistinguishable from performance on the early
-feature rich lists ($\|t\|$s $< 1.013, p$s $> 0.314$). Participants in both of
-the semantically ordered conditions exhibited stronger temporal clustering on
-early lists (versus early feature rich lists; category: $t(95) = 8.508, p <
-0.001$; size: $t(95) = 2.429, p = 0.017$). Participants in the length-ordered
-condition tended to exhibit \textit{less} temporal clustering on early lists
-relative to early feature rich lists ($t(95) = -1.666, p = 0.099$), whereas
-participants in the first letter-ordered condition exhibited stronger temporal
-clustering on early lists ($t(95) = 2.587, p = 0.011$). Participants in the
-visually ordered conditions exhibited more similar performance on early lists,
-relative to early feature rich lists (color: $t(96) = -1.064, p = 0.290$; we
-found a trending enhancement for participants in the location-ordered
-condition: $t(95) = 1.682, p = 0.096$). We also compared feature-based
-clustering on early lists across the order manipulation and feature rich
-conditions. Since these results were similar across both semantic conditions
-(category and size), both lexicographic conditions (length and first letter),
-and both visual conditions (color and location), here we aggregate data from
-conditions that manipulated each of these three feature groupings in our
-comparisons, to simplify the presentation. On early lists, participants in the
-semantically ordered conditions exhibited stronger semantic clustering relative
-to participants in the feature rich condition (category: $t(125) = 2.524, p =
-0.013$; size: $t(125) = 3.510, p = 0.001$), but showed no reliable differences
-in lexicographic (length: $t(125) = 0.539, p = 0.591$; first letter: $t(125) =
--0.587, p = 0.558$) or visual (color: $t(125) = -0.579, p = 0.564$; location:
-$t(125) = -0.346, p = 0.730$) clustering. Similarly, participants in the
-lexicographically ordered conditions exhibited stronger (relative to feature
-rich participants) lexicographic clustering (length: $t(125) = 3.426, p =
-0.001$; first letter: $t(125) = 3.236, p = 0.002$) on early lists, but showed
-no reliable differences in semantic (category: $t(125) = -1.078, p = 0.283$;
-size: $t(125) = -0.310, p = 0.757$) or visual (color: $t(125) = -0.209, p =
-0.835$; location: $t(125) = -0.004, p = 0.997$) clustering. And participants in
-the visually ordered conditions exhibited stronger visual clustering (again,
-relative to feature rich participants, and on early lists; color: $t(126) =
-2.099, p = 0.038$; location: $t(126) = 4.392, p < 0.001$), but showed no
-reliable differences in semantic (category: $t(126) = 0.204, p = 0.839$; size:
-$t(126) = -0.093, p = 0.926$) or lexicographic (length: $t(126) = 0.714, p =
-0.476$; first letter: $t(126) = 0.820, p = 0.414$) clustering. Taken together,
-these order manipulation results suggest several broad patterns
-(Figs.~\ref{fig:recall-dynamics}A, \ref{fig:fingerprints}). First, most of the
-order manipulations we carried out did \textit{not} reliably affect overall
-recall performance. Second, most of the order manipulations increased
-participants' tendencies to temporally cluster their recalls. Third, all of the
-order manipulations enhanced participants' clustering of each condition's
-target feature (i.e., semantic manipulations enhanced semantic clustering,
-lexicographic manipulations enhanced lexicographic clustering, and visual
-manipulations enhanced visual clustering) while leaving clustering along other
+= 0.067$; Fig.~\ref{fig:barplots}A). Participants' performances on early lists
+in all of the other order manipulation conditions were indistinguishable from
+performance on the early feature rich lists ($\|t\|$s $< 1.013, p$s $> 0.314$).
+Participants in both of the semantically ordered conditions exhibited stronger
+temporal clustering on early lists (versus early feature rich lists; category:
+$t(95) = 8.508, p < 0.001$; size: $t(95) = 2.429, p = 0.017$;
+Fig.~\ref{fig:barplots}B). Participants in the length-ordered condition tended
+to exhibit \textit{less} temporal clustering on early lists relative to early
+feature rich lists ($t(95) = -1.666, p = 0.099$), whereas participants in the
+first letter-ordered condition exhibited stronger temporal clustering on early
+lists ($t(95) = 2.587, p = 0.011$). Participants in the visually ordered
+conditions exhibited more similar performance on early lists, relative to early
+feature rich lists (color: $t(96) = -1.064, p = 0.290$; we found a trending
+enhancement for participants in the location-ordered condition: $t(95) = 1.682,
+p = 0.096$). We also compared feature-based clustering on early lists across
+the order manipulation and feature rich conditions. Since these results were
+similar across both semantic conditions (category and size), both lexicographic
+conditions (length and first letter), and both visual conditions (color and
+location), here we aggregate data from conditions that manipulated each of
+these three feature groupings in our comparisons, to simplify the presentation.
+On early lists, participants in the semantically ordered conditions exhibited
+stronger semantic clustering relative to participants in the feature rich
+condition (category: $t(125) = 2.524, p = 0.013$; size: $t(125) = 3.510, p =
+0.001$), but showed no reliable differences in lexicographic (length: $t(125) =
+0.539, p = 0.591$; first letter: $t(125) = -0.587, p = 0.558$) or visual
+(color: $t(125) = -0.579, p = 0.564$; location: $t(125) = -0.346, p = 0.730$)
+clustering. Similarly, participants in the lexicographically ordered conditions
+exhibited stronger (relative to feature rich participants) lexicographic
+clustering (length: $t(125) = 3.426, p = 0.001$; first letter: $t(125) = 3.236,
+p = 0.002$) on early lists, but showed no reliable differences in semantic
+(category: $t(125) = -1.078, p = 0.283$; size: $t(125) = -0.310, p = 0.757$) or
+visual (color: $t(125) = -0.209, p = 0.835$; location: $t(125) = -0.004, p =
+0.997$) clustering. And participants in the visually ordered conditions
+exhibited stronger visual clustering (again, relative to feature rich
+participants, and on early lists; color: $t(126) = 2.099, p = 0.038$; location:
+$t(126) = 4.392, p < 0.001$), but showed no reliable differences in semantic
+(category: $t(126) = 0.204, p = 0.839$; size: $t(126) = -0.093, p = 0.926$) or
+lexicographic (length: $t(126) = 0.714, p = 0.476$; first letter: $t(126) =
+0.820, p = 0.414$) clustering. Taken together, these order manipulation results
+suggest several broad patterns (Figs.~\ref{fig:recall-dynamics}A,
+\ref{fig:fingerprints}). First, most of the order manipulations we carried out
+did \textit{not} reliably affect overall recall performance. Second, most of
+the order manipulations increased participants' tendencies to temporally
+cluster their recalls. Third, all of the order manipulations enhanced
+participants' clustering of each condition's target feature (i.e., semantic
+manipulations enhanced semantic clustering, lexicographic manipulations
+enhanced lexicographic clustering, and visual manipulations enhanced visual
+clustering; Fig.~\ref{fig:barplots}C) while leaving clustering along other
 feature dimensions roughly unchanged (i.e., semantic manipulations did not
-affect lexicographic or visual clustering, and so on).
+affect lexicographic or visual clustering, and so on). Although it is not
+possible to fully separate feature versus temporal clustering when considering
+sorted lists, we used a permutation-based procedure to identify the degree of
+feature clustering over and above what could be accounted for by temporal
+clustering alone (see \textit{Factoring out the effects of temporal
+clustering}). When we carried out this analysis (Fig.~\ref{fig:barplots}D), we
+found that participants exhibited more semantic clustering on semantically
+sorted lists than on randomly ordered lists (category: $t(XXX) = XXX, p = XXX$;
+size: $t(XXX) = XXX, p = XXX$), but the effects of the other order
+manipulations could not reliably be separated from temporal clustering alone
+($t$s $> XXX, p$s $> XXX$).
 
 \begin{figure}[tp] \centering
     \includegraphics[width=\textwidth]{figures/fingerprints}
@@ -1186,7 +1199,9 @@ considered both group-level effects (i.e., effects that tended to be common
 across individuals) and participant-level effects (i.e., effects that were
 idiosyncratic across individuals).
 
-\begin{figure}[tp] \centering
+\begin{sidewaysfigure}[p]
+    
+    \centering
     \includegraphics[width=\textwidth]{figures/memory_perf_barchart_compare}
     
 \caption{\textbf{Recall probability and clustering scores on early and late
@@ -1195,17 +1210,17 @@ probabilities (\textbf{A.}), temporal clustering scores (\textbf{B.}), feature
 clustering scores (\textbf{C.}), and residual feature clustering scores (after
 factoring out temporal clustering effects; \textbf{D.}) for early (gray) and
 late (gold) lists. For the feature rich bars (left), the feature clustering
-scores are averaged across features. For the order manipulation conditions,
-feature clustering scores are displayed for the focused-on feature for each
-condition (e.g., category clustering scores are displayed for the category
-condition, and so on). All panels: error bars denote bootstrap-estimated 95\%
-confidence intervals. The horizontal dotted lines denote the average values
-(across all lists and participants) for the feature rich condition. The bars
-denote $t$-tests between the corresponding bars, and the asterisks denote the
-Benjamini-Hochberg-corrected $p$-values. Comparisons for which corrected $p
-\geq 0.05$ are not shown.} \label{fig:barplots}
+scores are averaged across all feature dimensions. For the order manipulation
+conditions, feature clustering scores are displayed for the focused-on feature
+for each condition (e.g., category clustering scores are displayed for the
+category condition, and so on). All panels: error bars denote
+bootstrap-estimated 95\% confidence intervals. The horizontal dotted lines
+denote the average values (across all lists and participants) for the feature
+rich condition. The bars denote $t$-tests between the corresponding bars, and
+the asterisks denote the Benjamini-Hochberg-corrected $p$-values. Comparisons
+for which corrected $p \geq 0.05$ are not shown.} \label{fig:barplots}
 
-\end{figure}
+\end{sidewaysfigure}
 
 At the group level, there seemed to be almost no lingering impact of sorting
 early lists on memory for later lists. To simplify the presentation, we report
