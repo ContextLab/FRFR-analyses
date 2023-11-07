@@ -18,3 +18,4 @@ code/__pycache__/dataloader.cpython-310.pyc
 data/eggs/backup/*
 data/eggs/scratch/backup/*
 data/eggs/scratch/*-10.pkl
+data/eggs/analyzed_10_iter.pkl

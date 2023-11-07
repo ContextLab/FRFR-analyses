@@ -743,6 +743,46 @@ rather than for each individual list. We used these embeddings solely for
 visualization. All statistical tests were carried out in the original
 (seven-dimensional) feature spaces.
 
+\subsubsection*{Factoring out the effects of temporal clustering}
+
+For a given list of words, if the values along two feature dimensions (e.g.,
+category and size) are correlated, then the clustering scores for those two
+dimensions will also be correlated. When lists are sorted along a given feature
+dimension, the sorted feature values will also tend to be correlated with the
+serial positions of the words in the list. This means that the temporal
+clustering score will \textit{also} tend to be correlated with the clustering
+scores for the sorted feature dimension. These correlations mean that it can be
+difficult to specifically identify when participants are using one feature
+versus another (or a manipulated feature versus temporal information) to
+organize or search their memories.
+
+We developed a permutation-based procedure to factor out the effects of
+temporal clustering from the clustering scores for each feature dimension. For
+a given set of recalled items (whose presentation positions are given by $x_1,
+x_2, x_3, …, x_N$), we circularly shift the presentation positions by a
+randomly chosen amount (between 1 and the list length) to obtain a new set of
+items. Since the new set of items will have the same (average) temporal
+distances between successive recalls, the temporal clustering score for the new
+set of items is equal (on average) to the temporal clustering score for the
+original recalls. However, we can then re-compute the feature clustering score
+for those new items. Finally, we can compute a ``temporally corrected'' feature
+clustering score by computing the average percentile rank of the observed (raw)
+feature clustering score within the distribution of circularly shifted feature
+clustering scores. This new temporally corrected score provides an estimate of
+the observed degree of feature clustering over and above what could be
+accounted for by temporal clustering alone.
+
+While these temporally corrected clustering scores are useful for identifying
+when feature clustering cannot be accounted for by temporal clustering alone,
+they are \textit{not} necessarily valid estimates of the ``true'' degree to
+which participants are organizing their memories along a given feature
+dimension. For example, on a list where the presentation order and feature
+values (along the given feature dimension) are perfectly correlated, the
+temporally corrected score will have an expected value of 0.5 no matter which
+words (or in what order) are recalled. Therefore these temporally corrected
+clustering scores are interpretable only to the extent that presentation order
+and feature values are decoupled.
+
 \subsection*{Analyses}
 
 \subsubsection*{Probability of $n$\textsuperscript{th} recall curves}
@@ -1589,8 +1629,28 @@ appearances are varied) than ``reduced'' lists (where words' appearances are
 held constant) only when those feature rich lists are presented \textit{after}
 reduced lists suggests that some factors that influence the richness or depth
 of encoding may be relative, rather than absolute. In other words,
-\textit{changes} in richness may be more important than the overall complexity
-or numbers of features.
+\textit{increases} in richness (e.g., relative to a recency-weighted baseline)
+may be more important than the overall complexity or numbers of features.
+
+Some prior studies have suggested that people can ``cue'' their memories using
+different ``strategies'' or ``pathways'' for searching for the target
+information. For example, modern accounts of free recall typically posit that
+memory search typically begins by matching the current state of mental context
+with the contexts associated with other items in memory~\citep{Kaha20}. Since
+context is the defining hallmark of episodic memory~\citep{Tulv83},
+context-based search can be described as an ``episodic'' pathway to recall.
+When episodic cueing fails to elicit a match, participants may then search for
+items that are similar to the current mental context or mental state along
+other dimensions, such as semantic similarity~\citep{DavaEtal03, SochEtal09}.
+These multiple pathways accounts of memory search also provide a potential
+explanation of why participants might have an easier time remembering richer
+stimuli (or experiences): richer stimuli and experiences might have more
+features that could be used to cue memory search. Our work suggests that there
+may be some additional factors at play with respect to the \textit{dynamics} of
+these processes. In particular, we only observed memory benefits for ``richer''
+stimuli when they were encountered after more ``impoverished'' stimuli (in the
+reduced (early) condition). This suggests that the pathways available to recall
+a given item may also depend on recent prior experiences.
 
 We did \textit{not} find any evidence that changing words' appearances
 \textit{harmed} memory performance, e.g., by distracting them with irrelevant
@@ -1599,11 +1659,10 @@ any evidence that \textit{changes} in the presence of potentially
 ``distracting'' features adversely affected memory. For example, when we
 increased or decreased the variability in words' appearances on late versus
 early lists (as in the reduced (early) and reduced (late) conditions), we found
-no evidence that this harmed participants' memories.
-
-% add something about multiple pathways to recall (for different feature dimensions)
-
-
+no evidence that this harmed participants' memories. One potential
+interpretation under the ``multiple pathways to recall'' framework is that the
+availability of multiple pathways to recall do not appear to specifically
+interfere with each other.
 
 \subsection*{Context effects on memory performance and organization}
 

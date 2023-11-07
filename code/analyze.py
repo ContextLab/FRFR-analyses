@@ -17,7 +17,9 @@ from copy import deepcopy
 
 from dataloader import fetch_data, get_listgroups, datadir, feature_groupings
 
-results_file = 'analyzed_500_iter.pkl'
+N_ITER = 500
+
+results_file = f'analyzed_{N_ITER}_iter.pkl'
 
 random = ['feature rich', 'reduced (early)', 'reduced (late)', 'reduced']
 adaptive = ['adaptive']
@@ -73,7 +75,7 @@ def analyze_data(analyses=['fingerprint', 'pfr', 'lagcrp', 'spc', 'accuracy'], d
 
         if a == 'fingerprint':
             kwargs['permute'] = True
-            kwargs['n_perms'] = 500
+            kwargs['n_perms'] = N_ITER
             tmpfile = f'{a}-{kwargs["permute"]}-{kwargs["n_perms"]}.pkl'
         else:
             if a == 'pfr':
@@ -544,7 +546,7 @@ def filter_egg(data, g, listgroups):
     return p, r
 
 
-def recall_accuracy_near_boundaries(data, bounds, listgroups, maxlag=10):    
+def recall_accuracy_near_boundaries(data, bounds, listgroups, maxlag=10):
     results = {}
     for g in np.unique(listgroups):
         p, r = filter_egg(data, g, listgroups)
@@ -725,7 +727,7 @@ def compute_temporally_corrected_fingerprints(results, results_by_list, listgrou
         elif type(positions) is pd.DataFrame:
             return pd.DataFrame([get_recalls(positions.iloc[i], presentations.iloc[i]) for i in range(positions.shape[0])], index=positions.index, columns=positions.columns)
     
-    def temporally_corrected_fingerprints(x, n=500, savefile=None):
+    def temporally_corrected_fingerprints(x, n=N_ITER, savefile=None):
         if savefile is not None and os.path.exists(savefile):
             with open(savefile, 'rb') as f:
                 observed, shuffled = pickle.load(f)
