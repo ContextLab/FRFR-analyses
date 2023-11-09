@@ -35,6 +35,11 @@ Bonin, P., Thiebaut, G., Bugaiska, A., and M\'{e}ot, A. (2022).
 \newblock Mixed evidence for a richness-of-encoding account of animacy effects in memory from the generation-of-ideas paradigm.
 \newblock {\em Current Psychology}, 41:1653--1662.
 
+\bibitem[\protect\astroncite{Borges and Mangler}{1972}]{BorgMang72}
+Borges, M.~A. and Mangler, G. (1972).
+\newblock Effect of within-category spacing on free recall.
+\newblock {\em Journal of Experimental Psychology}, 92(2):207--214.
+
 \bibitem[\protect\astroncite{Bousfield}{1953}]{Bous53}
 Bousfield, W.~A. (1953).
 \newblock The occurrence of clustering in the recall of randomly arranged associates.
@@ -49,6 +54,11 @@ Bousfield, W.~A., Sedgewick, C.~H., and Cohen, B.~H. (1954).
 Bower, G.~H., Black, J.~B., and Turner, T.~J. (1979).
 \newblock Scripts in memory for text.
 \newblock {\em Cognitive Psychology}, 11(2):177--220.
+
+\bibitem[\protect\astroncite{Bower et~al.}{1969}]{BoweEtal69}
+Bower, G.~H., Lesgold, A.~M., and Tieman, D. (1969).
+\newblock Grouping operations in free recall.
+\newblock {\em Journal of Verbal Learning and Verbal Behavior}, 8(4):481--493.
 
 \bibitem[\protect\astroncite{Brigard}{2012}]{Brig12}
 Brigard, F.~D. (2012).
@@ -74,6 +84,21 @@ Clayton, K. and Chattin, D. (1989).
 Clewett, D., DuBrow, S., and Davachi, L. (2019).
 \newblock Transcending time in the brain: how event memories are constructed from experience.
 \newblock {\em Hippocampus}, 29(3):162--183.
+
+\bibitem[\protect\astroncite{Cofer et~al.}{1966}]{CofeEtal66}
+Cofer, C.~N., Bruce, D.~R., and Reicher, G.~M. (1966).
+\newblock Clustering in free recall as a function of certain methodological variations.
+\newblock {\em Journal of Experimental Psychology: General}, 71:858--866.
+
+\bibitem[\protect\astroncite{D'{A}gostino}{1969}]{DAgo69}
+D'{A}gostino, P.~R. (1969).
+\newblock The blocked-random effect in recall and recognition.
+\newblock {\em Journal of Verbal Learning and Verbal Behavior}, 8:815--820.
+
+\bibitem[\protect\astroncite{Dallett}{1964}]{Dall64}
+Dallett, K.~M. (1964).
+\newblock Number of categories and category information in free recall.
+\newblock {\em Journal of Experimental Psychology}, 68:1--12.
 
 \bibitem[\protect\astroncite{Darley and Murdock}{1971}]{DarlMurd71}
 Darley, C.~F. and Murdock, B.~B. (1971).
@@ -104,6 +129,11 @@ DuBrow, S. and Davachi, L. (2013).
 DuBrow, S. and Davachi, L. (2016).
 \newblock Temporal binding within and across events.
 \newblock {\em Neurobiology of Learning and Memory}, 134:107--114.
+
+\bibitem[\protect\astroncite{DuBrow et~al.}{2017}]{DuBrEtal17}
+DuBrow, S., Rouhani, N., Niv, Y., and Norman, K.~A. (2017).
+\newblock Does mental context drift or shift?
+\newblock {\em Current Opinion in Behavioral Sciences}, 17:141--146.
 
 \bibitem[\protect\astroncite{Eichenbaum and Fortin}{2009}]{EichFort09}
 Eichenbaum, H. and Fortin, N.~J. (2009).
@@ -270,6 +300,11 @@ Kimball, D.~R., Smith, T.~A., and Kahana, M.~J. (2007).
 \newblock The f{SAM} model of false recall.
 \newblock {\em Psychological Review}, 114(4):954--993.
 
+\bibitem[\protect\astroncite{Kintsch}{1970}]{Kint70}
+Kintsch (1970).
+\newblock {\em Learning, memory, and conceptual processes}.
+\newblock Wiley.
+
 \bibitem[\protect\astroncite{Lange}{2005}]{Lang05}
 Lange, E.~B. (2005).
 \newblock Disruption of attention by irrelevant stimuli in serial recall.
@@ -284,6 +319,11 @@ Lee, H., Bellana, B., and Chen, J. (2020).
 Lohnas, L.~J., Polyn, S.~M., and Kahana, M.~J. (2010).
 \newblock Modeling intralist and interlist effects in free recall.
 \newblock In {\em Psychonomic Society}, Saint Louis, {MO}.
+
+\bibitem[\protect\astroncite{Luek et~al.}{1971}]{LuekEtal71}
+Luek, S.~P., Mclaughlin, J.~P., and Cicala, G.~A. (1971).
+\newblock Effects of blocking of input and blocking of retrieval cues on free recall learning.
+\newblock {\em Journal of Experimental Psychology}, 91(1):159--161.
 
 \bibitem[\protect\astroncite{Madan}{2021}]{Mada21}
 Madan, C.~R. (2021).
@@ -469,6 +509,11 @@ Sederberg, P.~B., Howard, M.~W., and Kahana, M.~J. (2008).
 Shankar, K.~H. and Howard, M.~W. (2012).
 \newblock A scale-invariant internal representation of time.
 \newblock {\em Neural Computation}, 24:134--193.
+
+\bibitem[\protect\astroncite{Shapiro}{1970}]{Shap70}
+Shapiro, S.~I. (1970).
+\newblock Isolation effects, free recall, and organization.
+\newblock {\em Journal of Psychology}, 24:178--183.
 
 \bibitem[\protect\astroncite{Sirotin et~al.}{2005}]{SiroEtal05}
 Sirotin, Y.~B., Kimball, D.~R., and Kahana, M.~J. (2005).
