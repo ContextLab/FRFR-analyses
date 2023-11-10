@@ -145,12 +145,14 @@ def combo_fingerprint_plot(x, include_conds='all', include_lists='all', fname=No
     return fig
 
 
-def plot_heatmaps(results, include_conds='all', include_lists='all', contrasts=None, fname=None, vmin=0, vmax=1.0, dvmin=-1.0, dvmax=1.0, fontsize=12, width=2.5, height=2, xlabel='', ylabel=''):
+def plot_heatmaps(results, include_conds='all', include_lists='all', contrasts=None, fname=None, vmin=0, vmax=1.0, dvmin=-1.0, dvmax=1.0, fontsize=12, width=2.5, height=2, xlabel='', ylabel='', rotx=None):
     def heatmap(m, title, vmn, vmx, ax, showx=False, showy=False, show_title=False, yprepend='', **kwargs):
         sns.heatmap(m, vmin=vmn, vmax=vmx, ax=ax, cbar=False, **kwargs)
 
         if showx:
             ax.set_xlabel(xlabel, fontsize=fontsize)
+            if rotx is not None:
+                ax.set_xticklabels(ax.get_xticklabels(), rotation=rotx)
         if showy:
             ax.set_ylabel(yprepend + ylabel, fontsize=fontsize)
         if show_title:
@@ -397,14 +399,14 @@ def plot_trajectories(fingerprints, include_conds='all', fname=None, xlim=None, 
             ax[0, i].set_ylim(ylim[0])
         
         # plot distances
-        dists = get_dists(fingerprints[c].data).reset_index().melt(id_vars='Subject', var_name='List', value_name='Distance')
+        dists = get_dists(fingerprints[c].data, ref='mean').reset_index().melt(id_vars='Subject', var_name='List', value_name='Distance')
         dists['List'] += 1 # convert from 0-indexed to 1-indexed
         sns.barplot(data=dists, x='List', y='Distance', ax=ax[1, i], color=colors[c])
         ax[1, i].plot([7.5, 7.5], [0, 1.2], 'k--', linewidth=2)
 
         ax[1, i].set_xlabel('List', fontsize=14)
         if i == 0:
-            ax[1, i].set_ylabel('Distance from\nlist 1 fingerprint', fontsize=14)
+            ax[1, i].set_ylabel('Distance from previous\naverage fingerprint', fontsize=14)
         else:
             ax[1, i].set_yticklabels([])
             ax[1, i].set_ylabel('')

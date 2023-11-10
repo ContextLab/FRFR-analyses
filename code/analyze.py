@@ -426,7 +426,7 @@ def trajectorize(x, n_dims=2, model=PCA, average=False):
     return {c: pd.DataFrame(m.transform(x), index=x.index) for c, x in data.items()}
 
 
-def get_dists(fingerprints):
+def get_dists(fingerprints, ref=0):
     if type(fingerprints) is dict:
         return {c: get_dists(x.data) for c, x in fingerprints.items()}
     elif type(fingerprints) is pd.DataFrame:
@@ -434,7 +434,7 @@ def get_dists(fingerprints):
         subjs = fingerprints.index.get_level_values('Subject').unique().tolist()
 
         for s in subjs:
-            by_subj.append(get_dists(fingerprints.query('Subject == @s').values))
+            by_subj.append(get_dists(fingerprints.query('Subject == @s').values, ref=ref))
         
         df = pd.DataFrame(pd.concat(by_subj, axis=0, ignore_index=True))
         df['Subject'] = subjs
@@ -442,7 +442,10 @@ def get_dists(fingerprints):
 
     dists = []
     for i in range(fingerprints.shape[0]):
-        dists.append(np.linalg.norm(fingerprints[0, :] - fingerprints[i, :]))
+        if i == 0 or str(ref).isnumeric():
+            dists.append(np.linalg.norm(fingerprints[0, :] - fingerprints[i, :]))
+        elif ref == 'mean':
+            dists.append(np.linalg.norm(fingerprints[:i, :].mean(axis=0) - fingerprints[i, :]))
     return pd.DataFrame(dists).T
 
 
