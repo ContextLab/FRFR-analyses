@@ -584,7 +584,7 @@ def get_boundaries(n_stddev):
     return boundaries, accuracy_near_boundaries
 
 
-def ttest(x, y, x_col=None, y_col=None, x_lists=None, y_lists=None, independent_sample=True):
+def ttest(x, y, x_col=None, y_col=None, x_lists=None, y_lists=None, independent_sample=True, n_iter=1000, alpha=0.05):
     x = x.data
     y = y.data
 
@@ -607,17 +607,53 @@ def ttest(x, y, x_col=None, y_col=None, x_lists=None, y_lists=None, independent_
 
     if independent_sample: 
         tfun = stats.ttest_ind
-        df = len(x) + len(y) - 2
+        df = len(x) + len(y) - 2        
     else:
         tfun = stats.ttest_rel 
         df = len(x) - 1
-    result = tfun(x, y) 
+    result = tfun(x, y)
+
+    # cohen's d
+    x_mean = np.mean(x, axis=0)
+    y_mean = np.mean(y, axis=0)
+    x_var = np.var(x, ddof=1, axis=0)
+    y_var = np.var(y, ddof=1, axis=0)
+    pooled_sd = np.sqrt(((len(x) - 1) * x_var + (len(y) - 1) * y_var) / df)
+    d = (x_mean - y_mean) / pooled_sd
 
     try:
-        print(f't({df}) = {result.statistic[0]:.3f}, p = {result.pvalue[0]:.3f}')
-    except IndexError:
-        print(f't({df}) = {result.statistic:.3f}, p = {result.pvalue:.3f}')
+        d = d[0]
+    except:
+        pass
+    
+    # bootstrap-estimated 95% confidence interval for t-statistic
+    t_dist = np.zeros([n_iter])
+    for i in range(n_iter):
+        if independent_sample:
+            x_sample = x.sample(n=len(x), replace=True)
+            y_sample = y.sample(n=len(y), replace=True)
+            t_dist[i] = stats.ttest_ind(x_sample, y_sample)[0]
+        else:
+            inds = np.random.choice(len(x), size=len(x), replace=True)
+            x_sample = x.iloc[inds]
+            y_sample = y.iloc[inds]
+            t_dist[i] = stats.ttest_rel(x_sample, y_sample)[0]
+    low_conf, high_conf = np.percentile(t_dist, [alpha * 50, 100 - (alpha * 50)])
 
+    try:
+        t = result.statistic[0]
+        p = result.pvalue[0]
+    except IndexError:
+        t = result.statistic
+        p = result.pvalue
+    
+    if p < 0.001:
+        p_string = 'p < 0.001'
+    else:
+        p_string = f'p = {p:.3f}'
+
+    print(f't({df}) = {t:.3f}, {p_string}, d = {d:.3f}, CI = [{low_conf:.3f}, {high_conf:.3f}]')
+    
 
 def stack_fried_eggs(*args):
     if len(args) == 0:
