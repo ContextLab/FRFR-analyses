@@ -449,40 +449,42 @@ def get_dists(fingerprints, ref=0):
     return pd.DataFrame(dists).T
 
 
-def get_event_boundaries(data, focus=None, n_stddev=2):
-    discrete_features = ['category', 'size', 'length']
-    continuous_features = ['color', 'location', 'first letter']
-    features = discrete_features + continuous_features
+discrete_features = ['category', 'size']
+continuous_features = ['color', 'location', 'length', 'first letter']
+features = discrete_features + continuous_features
 
+
+def field2feature(x):
     rename = {'firstLetter': 'first letter', 'first_letter': 'first letter', 'wordLength': 'length', 'pos': 'location'}
-
-    def field2feature(x):
-        if type(x) is list:
-            return [field2feature(y) for y in x]
-        
-        if x in rename:
-            return rename[x]
-        else:
-            return x
-
-    def rename_dict(d):
-        return {field2feature(k): v for k, v in d.items()}
+    if type(x) is list:
+        return [field2feature(y) for y in x]
     
-    def get_dists(y1, y2, focus=None):    
-        if focus is None or focus in continuous_features:
-            return [np.linalg.norm(np.array(a) - np.array(b)) for a, b in zip(y1.values, y2.values)]
-        else:
-            return [int(a != b) for a, b in zip(y1.values, y2.values)]
+    if x in rename:
+        return rename[x]
+    else:
+        return x
 
+
+def rename_dict(d):
+    return {field2feature(k): v for k, v in d.items()}
+
+
+def get_dists(y1, y2, focus=None):    
+    if focus is None or focus in continuous_features:
+        return [np.linalg.norm(np.array(a) - np.array(b)) for a, b in zip(y1.values, y2.values)]
+    else:
+        return [int(a != b) for a, b in zip(y1.values, y2.values)]
+
+
+def get_event_boundaries(data, focus=None, n_stddev=2):    
     if type(data) is dict:
         x = {}
         for k in data.keys():
             try:
                 x[k] = get_event_boundaries(data[k])
             except:
-                print('problem with', k, 'in get_event_boundaries')
+                print(f'problem with {k} in get_event_boundaries')
         return x
-        #return {k: get_event_boundaries(data[c]) for c in data.keys()}
     elif type(data) is quail.Egg:
         x = data.get_pres_features().applymap(lambda v: rename_dict(v))
         return {f: get_event_boundaries(x, focus=f) for f in features}
