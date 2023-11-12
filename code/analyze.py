@@ -469,7 +469,7 @@ def rename_dict(d):
     return {field2feature(k): v for k, v in d.items()}
 
 
-def get_dists(y1, y2, focus=None):    
+def feature_dists(y1, y2, focus=None):    
     if focus is None or focus in continuous_features:
         return [np.linalg.norm(np.array(a) - np.array(b)) for a, b in zip(y1.values, y2.values)]
     else:
@@ -481,13 +481,13 @@ def get_event_boundaries(data, focus=None, n_stddev=2):
         x = {}
         for k in data.keys():
             try:
-                x[k] = get_event_boundaries(data[k])
+                x[k] = get_event_boundaries(data[k], n_stddev=n_stddev)
             except:
                 print(f'problem with {k} in get_event_boundaries')
         return x
     elif type(data) is quail.Egg:
         x = data.get_pres_features().applymap(lambda v: rename_dict(v))
-        return {f: get_event_boundaries(x, focus=f) for f in features}
+        return {f: get_event_boundaries(x, focus=f, n_stddev=n_stddev) for f in features}
     elif type(data) is pd.DataFrame:
         if focus != 'first letter':
             x = data.applymap(lambda v: v[focus])
@@ -499,15 +499,19 @@ def get_event_boundaries(data, focus=None, n_stddev=2):
             y1 = x[i]
             y2 = x[i + 1]
 
-            dists[i + 1] = get_dists(y1, y2, focus=focus)
+            dists[i + 1] = feature_dists(y1, y2, focus=focus)
         
-        if focus in discrete_features:
-            return dists.astype(int)
+        if np.char.isnumeric(str(n_stddev)):
+            if focus in discrete_features:
+                return dists.astype(int)
+            else:
+                # compute a threshold (add an n_stddev param to function definition)
+                # binarize the distances as being above vs. below the threshold
+            
+                thresh = np.mean(dists.values) + n_stddev * np.std(dists.values)
+                return (dists > thresh).astype(int)
         else:
-            # compute a threshold (add an n_stddev param to function definition)
-            # binarize the distances as being above vs. below the threshold
-            thresh = np.mean(dists.values) + n_stddev * np.std(dists.values)
-            return (dists > thresh).astype(int)
+            return dists
     
 
 def shift(x, n):
@@ -578,10 +582,11 @@ def get_boundaries(n_stddev):
         boundaries = {c: get_event_boundaries(data[c], n_stddev=n_stddev) for c in data.keys()}
 
         accuracy_near_boundaries = {}
-        for cond in tqdm(non_adaptive_exclude_random):
-            accuracy_near_boundaries[cond] = {}
-            for feature in tqdm(non_adaptive_exclude_random):
-                accuracy_near_boundaries[cond][feature] = recall_accuracy_near_boundaries(data[cond], boundaries[cond][feature], listgroups[cond], maxlag=15)
+        if np.char.isnumeric(str(n_stddev)):
+            for cond in tqdm(non_adaptive_exclude_random):
+                accuracy_near_boundaries[cond] = {}
+                for feature in tqdm(non_adaptive_exclude_random):
+                    accuracy_near_boundaries[cond][feature] = recall_accuracy_near_boundaries(data[cond], boundaries[cond][feature], listgroups[cond], maxlag=15)
 
         with open(boundary_fname, 'wb') as f:
             pickle.dump([boundaries, accuracy_near_boundaries], f)

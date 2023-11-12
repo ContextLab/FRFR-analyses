@@ -147,8 +147,8 @@ def combo_fingerprint_plot(x, include_conds='all', include_lists='all', fname=No
 
 def plot_heatmaps(results, include_conds='all', include_lists='all', contrasts=None, fname=None, vmin=0, vmax=1.0, dvmin=-1.0, dvmax=1.0, fontsize=12, width=2.5, height=2, xlabel='', ylabel='', rotx=None):
     def heatmap(m, title, vmn, vmx, ax, showx=False, showy=False, show_title=False, yprepend='', **kwargs):
-        sns.heatmap(m, vmin=vmn, vmax=vmx, ax=ax, cbar=False, **kwargs)
-
+        sns.heatmap(m, vmin=vmn, vmax=vmx, ax=ax, cbar=False, square=True, **kwargs)
+        
         if showx:
             ax.set_xlabel(xlabel, fontsize=fontsize)
             if rotx is not None:
