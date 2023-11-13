@@ -140,7 +140,10 @@ def combo_fingerprint_plot(x, include_conds='all', include_lists='all', fname=No
                         order=['Category', 'Size', 'Length', 'First letter', 'Color', 'Location'],
                         palette=palette, linewidth=1)
 
-    ylim = ax.get_ylim()
+    if ylim is not None:
+        plt.ylim(ylim)
+    else:
+        ylim = ax.get_ylim()
 
     # Annotate each bar
     for p in bplot.patches:
@@ -150,8 +153,8 @@ def combo_fingerprint_plot(x, include_conds='all', include_lists='all', fname=No
         ax.text(p.get_x() + p.get_width() / 2. + 0.01, ylim[0] + 0.05, f'{height:.2f}',
                 ha='center', va='bottom', color=text_color, fontsize=8, rotation=90)
     
-    if ylim is not None:
-        plt.ylim(ylim)
+    plt.ylim(ylim)
+    
     plt.xlabel(xlabel, fontsize=14)
     plt.ylabel(ylabel, fontsize=14)
 
