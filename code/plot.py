@@ -11,6 +11,7 @@ import string
 
 from tqdm import tqdm
 from matplotlib import pyplot as plt
+import matplotlib.colors as mcolors
 from matplotlib.ticker import MaxNLocator
 from sklearn.decomposition import IncrementalPCA as PCA
 from statannotations.Annotator import Annotator 
@@ -83,6 +84,16 @@ def combo_lineplot(x, include_conds='all', include_lists='all', fname=None, xlab
     return fig
 
 
+def is_light_color(color):
+    # Convert color to RGB and then to HSV
+    rgb = mcolors.to_rgb(color)
+    hsv = mcolors.rgb_to_hsv(rgb)
+    # Use the Value component to determine brightness
+    brightness = hsv[2]
+    # If brightness is high, use black color, else white
+    return brightness > 0.5
+
+
 def combo_fingerprint_plot(x, include_conds='all', include_lists='all', fname=None, ylim=None, palette=None, xlabel='Dimension', ylabel='Clustering score', figsize=(15, 2.5)):
     def melt_by_list(x, cond='-'):
         x = rename_features(x).reset_index()
@@ -123,11 +134,21 @@ def combo_fingerprint_plot(x, include_conds='all', include_lists='all', fname=No
             palette.append(colors[c])
             order.append(c)
     
-    sns.barplot(data=reorder_df(pd.concat(fingerprints, axis=0), 'Condition', order),
-                x='Dimension', y='Clustering score',
-                hue='Condition',
-                order=['Category', 'Size', 'Length', 'First letter', 'Color', 'Location'],
-                palette=palette, linewidth=1)
+    bplot = sns.barplot(data=reorder_df(pd.concat(fingerprints, axis=0), 'Condition', order),
+                        x='Dimension', y='Clustering score',
+                        hue='Condition',
+                        order=['Category', 'Size', 'Length', 'First letter', 'Color', 'Location'],
+                        palette=palette, linewidth=1)
+
+    ylim = ax.get_ylim()
+
+    # Annotate each bar
+    for p in bplot.patches:
+        height = p.get_height()
+        # Decide text color based on bar color
+        text_color = 'black' if is_light_color(p.get_facecolor()) else 'white'
+        ax.text(p.get_x() + p.get_width() / 2. + 0.01, ylim[0] + 0.05, f'{height:.2f}',
+                ha='center', va='bottom', color=text_color, fontsize=8, rotation=90)
     
     if ylim is not None:
         plt.ylim(ylim)
