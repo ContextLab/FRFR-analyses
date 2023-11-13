@@ -150,6 +150,16 @@ Ezzyat, Y. and Davachi, L. (2011).
 \newblock What constitutes an episode in episodic memory?
 \newblock {\em Psychological Science}, 22(2):243--252.
 
+\bibitem[\protect\astroncite{Farrell}{2010}]{Farr10}
+Farrell, S. (2010).
+\newblock Dissociating conditional recency in immediate and delayed free recall: a challenge for unitary models of recency.
+\newblock {\em Journal of Experimental Psychology: Learning, Memory, and Cognition}, 36:324--347.
+
+\bibitem[\protect\astroncite{Farrell}{2014}]{Farr14}
+Farrell, S. (2014).
+\newblock Correcting the correction of conditional recency slopes.
+\newblock {\em Psychonomic Bulletin and Review}, 21:1174--1179.
+
 \bibitem[\protect\astroncite{Flexser and Tulving}{1982}]{FlexTulv82}
 Flexser, A.~J. and Tulving, E. (1982).
 \newblock Priming and recognition failure.
@@ -219,6 +229,11 @@ Heusser, A.~C., Fitzpatrick, P.~C., and Manning, J.~R. (2021).
 Heusser, A.~C., Ziman, K., Owen, L. L.~W., and Manning, J.~R. (2018).
 \newblock {HyperTools}: a {Python} toolbox for gaining geometric insights into high-dimensional data.
 \newblock {\em Journal of Machine Learning Research}, 18(152):1--6.
+
+\bibitem[\protect\astroncite{Howard and Kahana}{1999}]{HowaKaha99}
+Howard, M.~W. and Kahana, M.~J. (1999).
+\newblock Contextual variability and serial position effects in free recall.
+\newblock {\em Journal of Experimental Psychology: Learning, Memory, and Cognition}, 25:923--941.
 
 \bibitem[\protect\astroncite{Howard and Kahana}{2002a}]{HowaKaha02a}
 Howard, M.~W. and Kahana, M.~J. (2002a).
@@ -404,6 +419,11 @@ Meinhardt, M.~J., Bell, R., Buchner, A., and R\"{o}er, J.~P. (2020).
 Momennejad, I., Russek, E.~M., Cheong, J.~H., Botvinick, M.~M., Daw, N.~D., and Gershman, S.~J. (2017).
 \newblock The successor representation in human reinforcement learning.
 \newblock {\em Nature Human Behavior}, 1:680--692.
+
+\bibitem[\protect\astroncite{Moran and Goshen-Gottstein}{2014}]{MoraGosh14}
+Moran, R. and Goshen-Gottstein, Y. (2014).
+\newblock The conditional-recency dissociation is confounded with nominal recency: should unitary models of memory still be devaluated?
+\newblock {\em Psychonomic Bulletin and Review}, 21:332--343.
 
 \bibitem[\protect\astroncite{Murdock}{1962}]{Murd62a}
 Murdock, B.~B. (1962).
@@ -604,6 +624,11 @@ Xu, X., Zhu, Z., and Manning, J.~R. (2023).
 Yeshurun, Y., Swanson, S., Simony, E., Chen, J., Lazaridi, C., Honey, C.~J., and Hasson, U. (2017).
 \newblock Same story, different story: the neural representation of interpretive frameworks.
 \newblock {\em Psychological Science}, 28(3):307--319.
+
+\bibitem[\protect\astroncite{Zhang et~al.}{2023}]{ZhanEtal23}
+Zhang, Q., Griffiths, T.~L., and Norman, K.~A. (2023).
+\newblock Optimal policies for free recall.
+\newblock {\em Psychological Review}, 130(4):1104--1125.
 
 \bibitem[\protect\astroncite{Ziman et~al.}{2018}]{ZimaEtal18}
 Ziman, K., Heusser, A.~C., Fitzpatrick, P.~C., Field, C.~E., and Manning, J.~R. (2018).
