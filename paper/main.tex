@@ -793,19 +793,20 @@ Probability of first recall curves~\citep{AtkiShif68, PostPhil65, WelcBurn24}
 reflect the probability that an item will be recalled first, as a function of
 its serial position during encoding. We used an analogous approach to compute
 the proportion of trials on which each item (as a function of its presentation
-position) was recalled at output position $n$~\citep{HowaKaha99, PolyEtal09,
-ZhanEtal23}. To carry out this analysis, we initialized (for each participant)
-a number-of-lists (16) by number-of-words-per-list (16) matrix of 0s. Then, for
-each list, we found the index of the word that was recalled first, and we
-filled in that position in the matrix with a 1. Finally, we averaged over the
-rows of the matrix to obtain a 1 by 16 array of probabilities, for each
-participant. We used an analogous procedure to compute probability of
-$n$\textsuperscript{th} recall curves for each participant. Specifically, we
-filled in the corresponding matrices according to the $n$\textsuperscript{th}
-recall on each list that each participant made. When a given participant had
-made fewer than $n$ recalls for a given list, we simply excluded that list from
-our analysis when computing that participant's curve(s). The probability of
-first recall curve corresponds to a special case where $n = 1$.
+position) was recalled at output position $n$~\citep{Hoga75, HowaKaha99,
+PolyEtal09, ZhanEtal23}. To carry out this analysis, we initialized (for each
+participant) a number-of-lists (16) by number-of-words-per-list (16) matrix of
+0s. Then, for each list, we found the index of the word that was recalled
+first, and we filled in that position in the matrix with a 1. Finally, we
+averaged over the rows of the matrix to obtain a 1 by 16 array of
+probabilities, for each participant. We used an analogous procedure to compute
+probability of $n$\textsuperscript{th} recall curves for each participant.
+Specifically, we filled in the corresponding matrices according to the
+$n$\textsuperscript{th} recall on each list that each participant made. When a
+given participant had made fewer than $n$ recalls for a given list, we simply
+excluded that list from our analysis when computing that participant's
+curve(s). The probability of first recall curve corresponds to a special case
+where $n = 1$.
 
 We note that several other studies have used a slightly different approach to
 compute these curves, by correcting for the ``availability'' of a given word to
@@ -1938,6 +1939,48 @@ late list items could benefit from less interference from early list items, and
 the contextual features associated with late list items (after the ``event
 boundary'') might serve as more specific recall cues for those late items
 (relative to if the boundary had not occurred).
+
+\subsection*{How do different types of clustering relate to each other, and to memory performance?}
+
+When the words on a studied list are presented in a random order, different types
+of clustering in participants' recalls often tend to be negatively correlated.
+For example, words that occur nearby on the list will not (on average)
+tend to be semantically related, and vice versa. Therefore a participant who
+shows a strong tendency to temporally cluster their recalls will tend to show weaker
+semantic clustering, and so on~\citep{HealUitv19, HowaKaha02b, SedeEtal10}.  Further,
+there is some evidence that temporal clustering is positively correlated with
+memory performance, whereas semantic clustering is negatively correlated with
+memory performance~\citep{SedeEtal10}.
+
+The notion of ``multiple pathways to recall'' discussed above (see
+\textit{Memory consequences of feature variability}) suggests one potential
+explanation for these patterns. For example, temporal clustering has been
+proposed to reflect reliance on contextual cues in an ``episodic'' pathway to
+search memory, whereas semantic clustering reflects a relies on specific item
+features. These two pathways may ``compete'' with each other during
+recall~\citep{SochEtal09}. Meanwhile, extra-list intrusion errors (i.e., false
+``recalls'' of items that were never encountered on the list) often tend to
+share semantic features with recently recalled items~\citep{ZaroEtal06} and
+also often lead the participant to stop recalling additional
+items~\citep{MillEtal12a}. Speculatively, over-reliance on semantic cues may lead to
+more intrusion errors, which in turn may lead to fewer recalls overall.
+
+Our findings extend these prior results to consider lists that are \textit{not}
+ordered randomly. Because ordering the words on a list along a particular
+feature dimension removes the ``conflict'' between temporal and feature
+clustering, the order manipulation conditions in our study represent an ``edge
+case'' whereby different pathways to recall are not necessarily in conflict
+with each other. For example, the same participants who exhibit strong feature
+clustering \textit{also} show strong temporal clustering on ordered lists
+(Fig.~\ref{fig:clustering-scatterplots}E). This is presumably at least partly
+due to an inability to separate temporal and feature clustering on ordered
+lists (also see \textit{Factoring out the effects of temporal clustering}).
+However, features that change gradually with time (i.e., presentation position)
+could also serve to strengthen the episodic (contextual) cues associated with
+each item. In other words, participants might essentially combine multiple
+noisy measures of change to form a more stable internal representation of
+temporal context.
+
 
 % implications for:
 %     - theory: flexibility in how we organize information, bridge between "classic" and naturalistic experiments

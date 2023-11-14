@@ -215,6 +215,11 @@ Hargreaves, I.~S., Pexman, P.~M., Johnson, J.~C., and Zdrazilova, L. (2012).
 \newblock Richer concepts are better remembered: number of features effects in free recall.
 \newblock {\em Frontiers in Human Neuroscience}, 6:doi.org/10.3389/fnhum.2012.00073.
 
+\bibitem[\protect\astroncite{Healey and Uitvlugt}{2019}]{HealUitv19}
+Healey, M.~K. and Uitvlugt, M.~G. (2019).
+\newblock The role of control processes in temporal and semantic contiguity.
+\newblock {\em Memory and Cognition}, 47:719--737.
+
 \bibitem[\protect\astroncite{Heusser et~al.}{2017}]{HeusEtal17}
 Heusser, A.~C., Fitzpatrick, P.~C., Field, C.~E., Ziman, K., and Manning, J.~R. (2017).
 \newblock Quail: a {Python} toolbox for analyzing and plotting free recall data.
@@ -229,6 +234,11 @@ Heusser, A.~C., Fitzpatrick, P.~C., and Manning, J.~R. (2021).
 Heusser, A.~C., Ziman, K., Owen, L. L.~W., and Manning, J.~R. (2018).
 \newblock {HyperTools}: a {Python} toolbox for gaining geometric insights into high-dimensional data.
 \newblock {\em Journal of Machine Learning Research}, 18(152):1--6.
+
+\bibitem[\protect\astroncite{Hogan}{1975}]{Hoga75}
+Hogan, R.~M. (1975).
+\newblock Interitem encoding and directed search in free recall.
+\newblock {\em Memory and Cognition}, 3:197--209.
 
 \bibitem[\protect\astroncite{Howard and Kahana}{1999}]{HowaKaha99}
 Howard, M.~W. and Kahana, M.~J. (1999).
@@ -415,6 +425,11 @@ Meinhardt, M.~J., Bell, R., Buchner, A., and R\"{o}er, J.~P. (2020).
 \newblock Adaptive memory: is the animacy effect on memory due to richness of encoding?
 \newblock {\em Journal of Experimental Psychology: Learning, Memory, and Cognition}, 46(3):416--426.
 
+\bibitem[\protect\astroncite{Miller et~al.}{2012}]{MillEtal12a}
+Miller, J.~F., Kahana, M.~J., and Weidemann, C.~T. (2012).
+\newblock Recall termination in free recall.
+\newblock {\em Memory and Cognition}, 40(4):540--550.
+
 \bibitem[\protect\astroncite{Momennejad et~al.}{2017}]{MomeEtal17}
 Momennejad, I., Russek, E.~M., Cheong, J.~H., Botvinick, M.~M., Daw, N.~D., and Gershman, S.~J. (2017).
 \newblock The successor representation in human reinforcement learning.
@@ -530,6 +545,11 @@ Sederberg, P.~B., Howard, M.~W., and Kahana, M.~J. (2008).
 \newblock A context-based theory of recency and contiguity in free recall.
 \newblock {\em Psychological Review}, 115(4):893--912.
 
+\bibitem[\protect\astroncite{Sederberg et~al.}{2010}]{SedeEtal10}
+Sederberg, P.~B., Miller, J.~F., Howard, W.~H., and Kahana, M.~J. (2010).
+\newblock The temporal contiguity effect predicts episodic memory performance.
+\newblock {\em Memory and Cognition}, 38(6):689--699.
+
 \bibitem[\protect\astroncite{Shankar and Howard}{2012}]{ShanHowa12}
 Shankar, K.~H. and Howard, M.~W. (2012).
 \newblock A scale-invariant internal representation of time.
@@ -624,6 +644,11 @@ Xu, X., Zhu, Z., and Manning, J.~R. (2023).
 Yeshurun, Y., Swanson, S., Simony, E., Chen, J., Lazaridi, C., Honey, C.~J., and Hasson, U. (2017).
 \newblock Same story, different story: the neural representation of interpretive frameworks.
 \newblock {\em Psychological Science}, 28(3):307--319.
+
+\bibitem[\protect\astroncite{Zaromb et~al.}{2006}]{ZaroEtal06}
+Zaromb, F.~M., Howard, M.~W., Dolan, E.~D., Sirotin, Y.~B., Tully, M., Wingfield, A., and Kahana, M.~J. (2006).
+\newblock Temporal associations and prior-list intrusions in free recall.
+\newblock {\em Journal of Experimental Psychology: Learning, Memory, and Cognition}, 32(4):792--804.
 
 \bibitem[\protect\astroncite{Zhang et~al.}{2023}]{ZhanEtal23}
 Zhang, Q., Griffiths, T.~L., and Norman, K.~A. (2023).
