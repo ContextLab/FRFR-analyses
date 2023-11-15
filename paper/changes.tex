@@ -1,7 +1,7 @@
 \documentclass[11pt]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL old.tex    Tue Nov 14 21:41:53 2023
-%DIF ADD main.tex   Tue Nov 14 21:38:54 2023
+%DIF ADD main.tex   Tue Nov 14 23:13:20 2023
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage[font=small,labelfont=bf]{caption}
@@ -743,7 +743,11 @@ indicates that the observed score was greater than any clustering score one
 might expect by chance---in other words, good evidence that the participant was
 truly clustering their recalls along the given feature dimension. We applied
 this correction procedure to all of the clustering scores (feature and
-temporal) reported in this paper.
+temporal) reported in this paper. \DIFaddbegin \DIFadd{In Figure~\clusterCorrs~we report how
+participants' clustering scores along different feature dimensions (in the
+order manipulation conditions) are correlated, and how clustering scores change
+across lists.
+}\DIFaddend 
 
 \paragraph*{Memory fingerprints.}
 
@@ -858,17 +862,17 @@ temporal clustering from the clustering scores for each feature dimension. For
 a given set of recalled items (whose presentation positions are given by $x_1,
 x_2, x_3, …, x_N$), we circularly shift the presentation positions by a
 randomly chosen amount (between 1 and the list length) to obtain a new set of
-items. Since the new set of items will have the same (average) temporal
-distances between successive recalls, the temporal clustering score for the new
-set of items is equal (on average) to the temporal clustering score for the
-original recalls. However, we can then re-compute the feature clustering score
-for those new items. Finally, we can compute a ``temporally corrected'' feature
-clustering score by computing the average percentile rank of the observed (raw)
-feature clustering score within the distributions of circularly shifted feature
-clustering scores, across $N = 500$ repetitions of this procedure. This new
-temporally corrected score provides an estimate of the observed degree of
-feature clustering over and above what could be accounted for by temporal
-clustering alone.
+items at the (now altered) positions of the original recalls. Since the new
+set of items will have the same (average) temporal distances between successive
+recalls, the temporal clustering score for the new set of items is equal (on
+average) to the temporal clustering score for the original recalls. However, we
+can then re-compute the feature clustering score for those new items. Finally,
+we can compute a ``temporally corrected'' feature clustering score by computing
+the average percentile rank of the observed (raw) feature clustering score
+within the distributions of circularly shifted feature clustering scores,
+across $N = 500$ repetitions of this procedure. This new temporally corrected
+score provides an estimate of the observed degree of feature clustering over
+and above what could be accounted for by temporal clustering alone.
 }
 
 \DIFadd{While these temporally corrected clustering scores are useful for identifying
@@ -1053,25 +1057,26 @@ uninformative features were distracting (in terms of their impact on memory
 performance), but they did affect participants' recall dynamics (measured via
 their clustering scores).
 
-\DIFaddbegin \DIFadd{A core assumption of our approach is that each participant organizes
-their memories in a unique way. We defined each participant's }\textit{\DIFadd{memory
+\DIFdelbegin \DIFdel{We also wondered }\DIFdelend \DIFaddbegin \DIFadd{A core assumption of our approach is that each participant organizes their
+memories in a unique way. We defined each participant's }\textit{\DIFadd{memory
 fingerprint}} \DIFadd{as the set of their permutation-corrected clustering scores across
 all dimensions we tracked in our study, including their six feature-based
 clustering scores (category, size, length, first letter, color, and location)
 and their temporal clustering score. Conceptually, a participant's memory
-fingerprint describes their tendency to order in their recall sequences (and,
-presumably, organize in memory) the studied words along each dimension. If
+fingerprint describes their tendency to order, in their recall sequences (and,
+presumably, organize in memory), the studied words along each dimension. If
 these memory fingerprints are truly unique to each participant, then we would
 expect that the estimated fingerprints computed for a given participant, on
-different lists, should be more similar than the estimated fingerprints computed
-for different participants. We reasoned that the feature rich condition would
-provide the best opportunity to test this assumption, since the clustering
-scores would not be potentially confounded by order manipulations. To test our
-``unique memory fingerprint'' assumption, we compared the similarity
-(correlation) between the fingerprint from a single list (from one participant)
-and (a) the average fingerprint from all other lists from the same participant
-versus (b) the average fingerprint from each other participant (across all of
-their lists). We found that participants' fingerprints on a held-out list are
+different lists, should be more similar than the estimated fingerprints
+computed for different participants. We reasoned that the feature rich
+condition would provide the best opportunity to test this assumption, since the
+clustering scores would not be potentially confounded by order manipulations.
+To test our ``unique memory fingerprint'' assumption, we compared the
+similarity (correlation) between the fingerprint from a single list (from one
+participant) and (a) the average fingerprint from all other lists from the same
+participant versus (b) the average fingerprint from each other participant
+(across all of their lists). Repeating this procedure for all lists and
+participants, we found that participants' fingerprints on a held-out list are
 reliably more similar to the same participant's fingerprints on other lists
 than to other participants' fingerprints ($t(70280) = 5.077, p < 0.001, d =
 0.162, \mathrm{CI} = [3.086, 6.895]$). This suggests that participants'
@@ -1079,7 +1084,7 @@ fingerprints are stable across lists, and that each participant's fingerprint
 is unique to them.
 }
 
-\DIFaddend We also wondered whether adding these incidental visual features to later lists
+\DIFadd{We next asked }\DIFaddend whether adding these incidental visual features to later lists
 (after the participants had already studied impoverished lists), or removing
 the visual features from later lists (after the participants had already
 studied visually diverse lists) might affect memory performance. In other
@@ -1107,8 +1112,8 @@ lists (feature rich, category: \DIFdelbegin \DIFdel{$t(66) = 3.805, p < 0.001$}\
 the reduced (but not feature rich) conditions \DIFdelbegin \DIFdel{exhibited }\DIFdelend \DIFaddbegin \DIFadd{tended to exhibit }\DIFaddend more
 lexicographic clustering on early versus late lists (feature rich, word length:
 \DIFdelbegin \DIFdel{$t(66) = 0.161, p = 0.872$}\DIFdelend \DIFaddbegin \DIFadd{$t(66) = -0.100, p = 0.921, d = -0.010, \mathrm{CI} = [-2.217, 1.899]$}\DIFaddend ; feature
-rich, first letter: \DIFdelbegin \DIFdel{$t(66) = 0.410, p = 0.683$}\DIFdelend \DIFaddbegin \DIFadd{$t(66) = -0.412, p = 0.681, d = -0.045, \mathrm{CI} =
-[-2.461, 1.645]$}\DIFaddend ; reduced, word length: \DIFdelbegin \DIFdel{$t(60) = 3.528, p = 0.001$}\DIFdelend \DIFaddbegin \DIFadd{$t(60) = 3.762, p < 0.001, d = 0.261,
+rich, first letter: \DIFdelbegin \DIFdel{$t(66) = 0.410, p = 0.683$}\DIFdelend \DIFaddbegin \DIFadd{$t(66) = 0.412, p = 0.681, d = 0.045, \mathrm{CI} =
+[-1.645, 2.461]$}\DIFaddend ; reduced, word length: \DIFdelbegin \DIFdel{$t(60) = 3.528, p = 0.001$}\DIFdelend \DIFaddbegin \DIFadd{$t(60) = 3.762, p < 0.001, d = 0.261,
 \mathrm{CI} = [1.604, 6.821]$}\DIFaddend ; reduced, first letter: \DIFdelbegin \DIFdel{$t(60) = 2.275, p = 0.026$}\DIFdelend \DIFaddbegin \DIFadd{$t(60) = 1.721, p =
 0.090, d = 0.175, \mathrm{CI} = [-0.138, 4.098]$}\DIFaddend ). Taken together, these
 comparisons suggest that even when the presence or absence of incidental visual
@@ -1143,12 +1148,12 @@ reduced (early), size: \DIFdelbegin \DIFdel{$t(41) = 0.721, p = 0.475$}\DIFdelen
 0.060, \mathrm{CI} = [-1.545, 2.462]$}\DIFaddend ; reduced (early), first letter: \DIFdelbegin \DIFdel{$t(41) = 0.780, p = 0.440$}\DIFdelend \DIFaddbegin \DIFadd{$t(41) =
 0.781, p = 0.439, d = 0.101, \mathrm{CI} = [-1.039, 2.881]$}\DIFaddend ; reduced (late),
 category: \DIFdelbegin \DIFdel{$t(40) = -0.086,
-p = 0.932$}\DIFdelend \DIFaddbegin \DIFadd{$t(40) = -0.101, p = 0.920, d = -0.009, \mathrm{CI} = [-2.307,
-1.776]$}\DIFaddend ; reduced (late), size: \DIFdelbegin \DIFdel{$t(40) = 0.746, p = 0.460$}\DIFdelend \DIFaddbegin \DIFadd{$t(40) = 0.555, p = 0.582, d = 0.058,
-\mathrm{CI} = [-1.444, 2.274] $}\DIFaddend ; reduced (late), length: \DIFdelbegin \DIFdel{$t(40) = 1.476, p = 0.148$}\DIFdelend \DIFaddbegin \DIFadd{$t(40) = 1.482, p =
-0.146, d = 0.126, \mathrm{CI} = [-0.444, 3.743]$}\DIFaddend ; reduced (late), first letter:
-\DIFdelbegin \DIFdel{$t(40) =
-0.966, p = 0.340$}\DIFdelend \DIFaddbegin \DIFadd{$t(40) = -0.143, p = 0.887, d = -0.017, \mathrm{CI} = [-2.204, 1.830] $}\DIFaddend ). We
+p = 0.932$}\DIFdelend \DIFaddbegin \DIFadd{$t(40) = 0.101, p = 0.920, d = 0.009, \mathrm{CI} = [-1.776, 2.307]$}\DIFaddend ;
+reduced (late), size: \DIFdelbegin \DIFdel{$t(40) = 0.746, p = 0.460$}\DIFdelend \DIFaddbegin \DIFadd{$t(40) = 0.555, p = 0.582, d = 0.058, \mathrm{CI} =
+[-1.444, 2.274] $}\DIFaddend ; reduced (late), length: \DIFdelbegin \DIFdel{$t(40) = 1.476, p = 0.148$}\DIFdelend \DIFaddbegin \DIFadd{$t(40) = 1.482, p = 0.146, d =
+0.126, \mathrm{CI} = [-0.444, 3.743]$}\DIFaddend ; reduced (late), first letter: \DIFdelbegin \DIFdel{$t(40) =
+0.966, p = 0.340$}\DIFdelend \DIFaddbegin \DIFadd{$t(40) =
+-0.143, p = 0.887, d = -0.017, \mathrm{CI} = [-2.204, 1.830] $}\DIFaddend ). We
 hypothesized that adding or removing the variability in the visual features was
 acting as a sort of ``event boundary'' between early and late
 lists\DIFaddbegin \DIFadd{~\mbox{%DIFAUXCMD
@@ -1249,8 +1254,9 @@ early feature rich lists: \DIFdelbegin \DIFdel{$t(96) = 1.850, p
 = 0.067$}\DIFdelend \DIFaddbegin \DIFadd{$t(96) = 1.850, p = 0.067, d = 0.402, \mathrm{CI} =
 [-0.010, 3.712]$; Fig.~\ref{fig:barplots}A}\DIFaddend ). Participants' performances on
 early lists in all of the other order manipulation conditions were
-indistinguishable from performance on the early feature rich lists ($\|t\|$s
-\DIFdelbegin \DIFdel{$< 1.013, p$s $> 0.314$}\DIFdelend \DIFaddbegin \DIFadd{$\leq 1.013, p$s $\geq 0.314$}\DIFaddend ). Participants in both of the semantically
+indistinguishable from performance on the early feature rich lists (\DIFdelbegin \DIFdel{$\|t\|$s
+$< 1.013, p$s $> 0.314$}\DIFdelend \DIFaddbegin \DIFadd{$|t|$s
+$\leq 1.013, p$s $\geq 0.314$}\DIFaddend ). Participants in both of the semantically
 ordered conditions exhibited stronger temporal clustering on early lists
 (versus early feature rich lists; category: \DIFdelbegin \DIFdel{$t(95) = 8.508, p <
 0.001$}\DIFdelend \DIFaddbegin \DIFadd{$t(95) = 8.813, p < 0.001, d =
@@ -1359,16 +1365,16 @@ either the first or last list items (Fig.~\dynamicsRandom, top left panel). We
 hypothesized that the participants might be ``clumping'' their recalls into
 groups of items that shared category labels. Indeed, when we compared the
 positions of feature changes in the study sequence
-(Fig.~\ref{fig:recall-dynamics}B; see \textit{Identifying event boundaries})
+(Fig.~\ref{fig:recall-dynamics}\DIFdelbegin \DIFdel{B}\DIFdelend \DIFaddbegin \DIFadd{C}\DIFaddend ; see \textit{Identifying event boundaries})
 with the positions of items participants recalled first, we noticed a striking
 correspondence in both semantic conditions. Specifically, on category-ordered
 lists, the category labels changed every four items on average (dark purple
-peaks in Fig.~\ref{fig:recall-dynamics}B), and participants also seemed to
+peaks in \DIFdelbegin \DIFdel{Fig}\DIFdelend \DIFaddbegin \DIFadd{Figs}\DIFaddend .~\ref{fig:recall-dynamics}B\DIFaddbegin \DIFadd{, C}\DIFaddend ), and participants also seemed to
 display an increased tendency (relative to other order manipulation and random
 conditions) to initiate recall of category-ordered lists with items whose study
 positions were integer multiples of four. Similarly, for size-ordered lists,
 the size labels changed every eight items on average (light purple peaks in
-Fig.~\ref{fig:recall-dynamics}B), and participants also seemed to display an
+\DIFdelbegin \DIFdel{Fig}\DIFdelend \DIFaddbegin \DIFadd{Figs}\DIFaddend .~\ref{fig:recall-dynamics}B\DIFaddbegin \DIFadd{, C}\DIFaddend ), and participants also seemed to display an
 increased tendency to initiate recall of size-ordered lists with items whose
 study positions were integer multiples of eight. A second striking difference
 is that participants in the category condition exhibited a much steeper lag-CRP
@@ -1489,7 +1495,7 @@ feature rich lists; \DIFdelbegin \DIFdel{$t(126) = 2.199, p =
 0.030$}\DIFdelend \DIFaddbegin \DIFadd{$t(126) = 2.005, p = 0.047, d = 0.355, \mathrm{CI} =
 [0.211, 3.722]$}\DIFaddend ), we observed no reliable differences in any type of feature
 clustering on late order manipulation condition lists versus late feature rich
-lists ($\|t\|$s \DIFdelbegin \DIFdel{$\leq 1.234, p$s $\geq 0.220$}\DIFdelend \DIFaddbegin \DIFadd{$\leq 1.124, p$s $\geq 0.263$}\DIFaddend ).
+lists (\DIFdelbegin \DIFdel{$\|t\|$s $\leq 1.234, p$s $\geq 0.220$}\DIFdelend \DIFaddbegin \DIFadd{$|t|$s $\leq 1.124, p$s $\geq 0.263$}\DIFaddend ).
 
 We also looked for more subtle group-level patterns. For example, perhaps
 sorting early lists by one feature dimension could affect how participants
@@ -1499,12 +1505,12 @@ defined participants' }\textit{\DIFdel{memory fingerprints}} %DIFAUXCMD
 and feature clustering scores (see }\textit{\DIFdel{Memory fingerprints}}%DIFAUXCMD
 \DIFdel{). A
 }\DIFdelend \DIFaddbegin \DIFadd{As
-described above, a }\DIFaddend participant's memory fingerprint describes how they tend to
-retrieve memories of the studied items, perhaps searching in parallel through
-several feature spaces (or along several representational dimensions). To gain
-insights into the dynamics of how participants' clustering scores tended to
-change over time, we computed the average (across participants) fingerprint
-from each list, from each order manipulation condition
+described above, a }\DIFaddend participant's memory fingerprint \DIFdelbegin \DIFdel{describes }\DIFdelend \DIFaddbegin \DIFadd{characterizes }\DIFaddend how they tend
+to retrieve memories of the studied items, perhaps searching in parallel
+through several feature spaces (or along several representational dimensions).
+To gain insights into the dynamics of how participants' clustering scores
+tended to change over time, we computed the average (across participants)
+fingerprint from each list, from each order manipulation condition
 (Fig.~\ref{fig:fingerprint-trajectories}). We projected these fingerprints into
 a two-dimensional space to help visualize the dynamics (top panels; see
 \textit{Computing low-dimensional embeddings of memory fingerprints}). We found
@@ -1538,14 +1544,14 @@ panel are clumped together).
     (late) lists are denoted by stars. All of the fingerprints (across all
     conditions and lists) are projected into a common space. The bar plots in
     the bottom panels display the Euclidean distances of the per-list memory
-    fingerprints to the list 0 fingerprint, for each condition. Error bars
-    denote bootstrap-estimated 95\% confidence intervals. The dotted vertical
-    lines denote the boundaries between early and late lists. \textbf{B.} In
-    this panel, the fingerprints for early (circle) and late (star) lists are
-    averaged across lists and participants before projecting the fingerprints
-    into a (new) 2D space. See Figure~\fingerprintTrajectoryRandom~for
-    analogous plots for the random conditions. }
-    \label{fig:fingerprint-trajectories}
+    fingerprints to the \DIFdelbeginFL \DIFdelFL{list 0 }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{average }\DIFaddendFL fingerprint \DIFaddbeginFL \DIFaddFL{across all prior lists}\DIFaddendFL , for each
+    condition. Error bars denote bootstrap-estimated 95\% confidence intervals.
+    The dotted vertical lines denote the boundaries between early and late
+    lists. \textbf{B.} In this panel, the fingerprints for early (circle) and
+    late (star) lists are averaged across lists and participants before
+    projecting the fingerprints into a (new) 2D space. See
+    Figure~\fingerprintTrajectoryRandom~for analogous plots for the random
+    conditions. } \label{fig:fingerprint-trajectories}
 
     \end{figure}
 
@@ -1570,23 +1576,30 @@ p = 0.623$}\DIFdelend \DIFaddbegin \DIFadd{$r(4) = -0.304, p = 0.559, \mathrm{CI
 Fig.~\ref{fig:clustering-scatterplots}A and B). We observed carryover
 associations between feature clustering and recall performance
 (Fig.~\ref{fig:clustering-scatterplots}C, D). Participants who showed stronger
-feature clustering on early lists tended to recall more items on late lists
-(across conditions: $r(179) = 0.492, p < 0.001$; all conditions individually:
-$r$s $\geq 0.462$, all $p$s $\leq 0.010$). Participants who recalled more items
-on early lists also tended to show stronger feature clustering on late lists
-(across conditions: $r(179) = 0.280, p < 0.001$; all non-visual conditions:
-$r$s $\geq 0.445$, all $p$s $\leq 0.014$; color: $r(29) = 0.298, p = 0.103$;
-location: $r(28) = 0.354, p = 0.055$). Neither of these effects showed
-condition-level trends (early feature clustering versus late recall
-probability: $r(4) = -0.299, p = 0.565$; early recall probability versus late
-feature clustering: $r(4) = 0.400, p = 0.432$). We also looked for associations
-between feature clustering and temporal clustering. Across every order
-manipulation condition, participants who exhibited stronger feature clustering
-also exhibited stronger temporal clustering. For early lists
-(Fig.~\ref{fig:clustering-scatterplots}E), this trend held overall ($r(179) =
-0.924, p < 0.001$), for each condition individually (all $r$s $\geq 0.822$, all
-$p$s $< 0.001$), and across conditions ($r(4) = 0.964, p = 0.002$). For late
-lists (Fig.~\ref{fig:clustering-scatterplots}F), the results were more variable
+feature clustering on early lists \DIFaddbegin \DIFadd{in the non-visual conditions }\DIFaddend tended to recall
+more items on late lists (across conditions: \DIFdelbegin \DIFdel{$r(179) = 0.492, p < 0.001$; all }\DIFdelend \DIFaddbegin \DIFadd{$r(179) = 0.230, p = 0.002,
+\mathrm{CI} = [0.072, 0.372]$; all non-visual }\DIFaddend conditions individually: $r$s
+\DIFdelbegin \DIFdel{$\geq 0.462$}\DIFdelend \DIFaddbegin \DIFadd{$\geq 0.405$}\DIFaddend , all $p$s \DIFdelbegin \DIFdel{$\leq 0.010$}\DIFdelend \DIFaddbegin \DIFadd{$\leq 0.027$; color: $r(29) = 0.212, p = 0.251,
+\mathrm{CI} = [-0.164, 0.532]$; location: $r(28) = 0.320, p = 0.085,
+\mathrm{CI} = [0.011, 0.584]$}\DIFaddend ). Participants who recalled more items on early
+lists also tended to show stronger feature clustering on late lists (across
+conditions: \DIFdelbegin \DIFdel{$r(179) = 0.280, p < 0.001$;
+}\DIFdelend \DIFaddbegin \DIFadd{$r(179) = 0.464, p < 0.001, \mathrm{CI} = [0.321, 0.582]$;
+individual conditions: }\DIFaddend all \DIFdelbegin \DIFdel{non-visual conditions: }\DIFdelend $r$s \DIFdelbegin \DIFdel{$\geq 0.445$}\DIFdelend \DIFaddbegin \DIFadd{$\geq 0.377$}\DIFaddend , all $p$s \DIFdelbegin \DIFdel{$\leq 0.014$; color: $r(29)
+= 0.298, p = 0.103$; location: $r(28) = 0.354, p = 0.055$}\DIFdelend \DIFaddbegin \DIFadd{$\leq 0.040$}\DIFaddend ). Neither
+of these effects showed condition-level trends (early feature clustering versus
+late recall probability: \DIFdelbegin \DIFdel{$r(4) = -0.299, p = 0.565$}\DIFdelend \DIFaddbegin \DIFadd{$r(4) = -0.338, p = 0.512, \mathrm{CI} = [-0.971,
+0.634]$}\DIFaddend ; early recall probability versus late feature clustering: \DIFdelbegin \DIFdel{$r(4) = 0.400, p = 0.432$}\DIFdelend \DIFaddbegin \DIFadd{$r(4) =
+0.451, p = 0.369, \mathrm{CI} = [-0.986, 0.998]$}\DIFaddend ). We also looked for
+associations between feature clustering and temporal clustering. Across every
+order manipulation condition, participants who exhibited stronger feature
+clustering also exhibited stronger temporal clustering. For early lists
+(Fig.~\ref{fig:clustering-scatterplots}E), this trend held overall (\DIFdelbegin \DIFdel{$r(179) =
+0.924, p < 0.001$}\DIFdelend \DIFaddbegin \DIFadd{$r(179) =
+0.916, p < 0.001, \mathrm{CI} = [0.893, 0.936]$}\DIFaddend ), for each condition
+individually (all $r$s $\geq 0.822$, all $p$s $< 0.001$), and across conditions
+($r(4) = 0.964, p = 0.002$). For late lists
+(Fig.~\ref{fig:clustering-scatterplots}F), the results were more variable
 (overall: $r(179) = 0.348, p < 0.001$; all non-visual conditions: $r$s $\geq
 0.382$, all $p$s $\leq 0.037$; color: $r(29) = 0.453, p = 0.011$; location: $
 r(28) = 0.190, p = 0.314$; across-conditions: $r(4) = -0.036, p = 0.945$).
@@ -1594,7 +1607,7 @@ While less robust than the carryover associations between feature clustering
 and recall performance, we also observed some carryover associations between
 feature clustering and temporal clustering
 (Fig.~\ref{fig:clustering-scatterplots}G, H). Participants who showed stronger
-feature clustering on early lists trended towards showing stronger temporal
+feature clustering on early lists \DIFdelbegin \DIFdel{trended towards showing }\DIFdelend \DIFaddbegin \DIFadd{showed }\DIFaddend stronger temporal
 clustering on later lists (overall: \DIFdelbegin \DIFdel{$r(179) = 0.301, p < 0.001$}\DIFdelend \DIFaddbegin \DIFadd{$r(179) = 0.464, p < 0.001, \mathrm{CI} =
 [0.321, 0.582]$}\DIFaddend ; for individual conditions: all $r$s \DIFdelbegin \DIFdel{$\geq 0.297$}\DIFdelend \DIFaddbegin \DIFadd{$\geq 0.377$}\DIFaddend , all $p$s
 \DIFdelbegin \DIFdel{$\leq 0.111$}\DIFdelend \DIFaddbegin \DIFadd{$\leq 0.040$}\DIFaddend ; across conditions: \DIFdelbegin \DIFdel{$
@@ -1670,10 +1683,11 @@ $r(29) = 0.155, p = 0.406, \mathrm{CI} = [-0.174, 0.541]$; location: $r(28) =
 0.635, p = 0.176, \mathrm{CI} = [-0.924, 0.981]$}\DIFaddend . Participants who exhibited
 larger carryover in feature clustering also tended to show stronger temporal
 clustering on late lists (relative to early lists) for all but the category
-condition (Fig.~\ref{fig:clustering-carryover}C; overall: $r(179) = 0.434, p <
-0.001$; category: $r(28) = 0.229, p = 0.223$; all non-category conditions: all
-$r$s $\geq 0.448$, all $p$s $\leq 0.012$; across conditions: $r(4) = 0.598, p =
-0.210$).
+condition (Fig.~\ref{fig:clustering-carryover}C; overall: \DIFdelbegin \DIFdel{$r(179) = 0.434, p < 0.001$}\DIFdelend \DIFaddbegin \DIFadd{$r(179) = 0.426, p <
+0.001, \mathrm{CI} = [0.285, 0.544]$}\DIFaddend ; category: \DIFdelbegin \DIFdel{$r(28) = 0.229, p = 0.223$}\DIFdelend \DIFaddbegin \DIFadd{$r(28) = 0.110, p = 0.564,
+\mathrm{CI} = [-0.284, 0.442]$}\DIFaddend ; all non-category conditions: all $r$s \DIFdelbegin \DIFdel{$\geq 0.448$}\DIFdelend \DIFaddbegin \DIFadd{$\geq
+0.406$}\DIFaddend , all $p$s \DIFdelbegin \DIFdel{$\leq 0.012$}\DIFdelend \DIFaddbegin \DIFadd{$\leq 0.023$}\DIFaddend ; across conditions: \DIFdelbegin \DIFdel{$r(4) = 0.598, p = 0.210$}\DIFdelend \DIFaddbegin \DIFadd{$r(4) = 0.649, p = 0.163,
+\mathrm{CI} = [-0.856, 0.988]$}\DIFaddend ).
 
 \begin{figure}[tp] \centering
     \includegraphics[width=\textwidth]{figures/clustering_carryover}
