@@ -799,11 +799,11 @@ Probability of first recall curves~\citep{AtkiShif68, PostPhil65, WelcBurn24}
 reflect the probability that an item will be recalled first, as a function of
 its serial position during encoding. We used an analogous approach to compute
 the proportion of trials on which each item (as a function of its presentation
-position) was recalled at output position $n$~\citep{Hoga75, HowaKaha99,
+position) was recalled at each output position $n$~\citep{Hoga75, HowaKaha99,
 PolyEtal09, ZhanEtal23}. To carry out this analysis, we initialized (for each
 participant) a number-of-lists (16) by number-of-words-per-list (16) matrix of
-0s. Then, for each list, we found the index of the word that was recalled
-first, and we filled in that position in the matrix with a 1. Finally, we
+0s. Then, for each list, we found the presentation index of the word that was recalled
+first, and filled in that position in the matrix with a 1. Finally, we
 averaged over the rows of the matrix to obtain a 1 by 16 array of
 probabilities, for each participant. We used an analogous procedure to compute
 probability of $n$\textsuperscript{th} recall curves for each participant.
@@ -829,16 +829,16 @@ discussion of this issue in other work~\citep{MoraGosh14, Farr14}.
 
 The lag-conditional response probability (lag-CRP) curve~\citep{Kaha96}
 reflects the probability of recalling a given item after the just-recalled
-item, as a function of their relative encoding positions (lag). In other words,
+item, as a function of the items' relative encoding positions (lag). In other words,
 a lag of 1 indicates that a recalled item was presented immediately after the
 previously recalled item, and a lag of $-3$ indicates that a recalled item came
 three items before the previously recalled item. For each recall transition
-(following the first recall), we computed the lag between the just-recalled
-word's presentation position and the next-recalled word's presentation
-position. We computed the proportions of transitions (between successively
+(following the first recall), we computed the lag between the presentation positions
+of the just-recalled word and the next-recalled word. 
+We then computed the proportions of transitions (between successively
 recalled words) for each lag, normalizing for the total numbers of possible
 transitions. In carrying out this analysis, we excluded all incorrect recalls
-and repetitions (i.e., recalling a word that had already appeared previously in
+and repetitions (i.e., recalling a word that had already appeared in
 the current recall sequence). This yielded, for each list, a 1 by
 number-of-lags ($-15$ to $+15$; 30 lags in total, excluding lags of 0) array of
 conditional probabilities. We averaged these probabilities across lists to
@@ -881,7 +881,14 @@ feature dimension of interest).
 \subsection*{Data and code availability}
 
 All of the data analyzed in this manuscript, along with all of the code for
-carrying out the analyses may be found at https://github.com/ContextLab/FRFR-analyses.
+carrying out the analyses, may be found at https://github.com/ContextLab/FRFR-analyses.
+Code for running the non-adaptive
+experimental conditions may be found at
+https://github.com/Con\-text\-Lab/efficient-learning-code. Code for running the
+adaptive experimental condition may be found at
+https://github.com/ContextLab/adaptiveFR. We have also released an associated
+Python toolbox for analyzing free recall data, which may be found at
+https://cdl-quail.read\-the\-docs.io/\-en/\-latest.
 
 \section*{Results}
 
@@ -2175,9 +2182,10 @@ https://github.com/Con\-text\-Lab/efficient-learning-code. Code for running the
 adaptive experimental condition may be found at
 https://github.com/ContextLab/adaptiveFR. We have also released an associated
 Python toolbox for analyzing free recall data, which may be found at
-https://cdl-quail.read\-the\-docs.io/\-en/\-latest/.  Note that this study was not
+https://cdl-quail.read\-the\-docs.io/\-en/\-latest.  Note that this study was not
 preregistered.  Some of the ideas and data presented in this manuscript
-were also presented at the Annual Meeting of the Society for Neuroscience (2017).
+were also presented at the Annual Meeting of the Society for Neuroscience (2017)
+and the Context and Episodic Memory Symposium (2017).
 
 \subsection*{Acknowledgements}
 
