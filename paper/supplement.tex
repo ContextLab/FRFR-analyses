@@ -28,7 +28,7 @@ Whitaker\textsuperscript{1}, Paxton C. Fitzpatrick\textsuperscript{1},
 Bryan J. Bollinger\textsuperscript{1},\\Darya Romanova\textsuperscript{1},
 Campbell E. Field\textsuperscript{1}, and Andrew C. Heusser\textsuperscript{1,
 2}\\\textsuperscript{1}Dartmouth College\\\textsuperscript{2}Akili
-Interactive\\\textsuperscript{*}Corresponding author:
+Interactive Labs\\\textsuperscript{*}Corresponding author:
 jeremy.r.manning@dartmouth.edu}
 
 \date{}
@@ -58,16 +58,16 @@ jeremy.r.manning@dartmouth.edu}
 \begin{figure}[p] \centering
 \includegraphics[width=\textwidth]{figures/recall_dynamics_random}
 
-\caption{\textbf{Recall dynamics in feature rich free recall (random conditions).} \textbf{Left panels.} The probabilities of
+\caption{\textbf{Recall dynamics in feature-rich free recall (random conditions).} \textbf{Left panels.} The probabilities of
 initiating recall with each word are plotted as a function of presentation
 position. \textbf{Middle panels.} The conditional probabilities of recalling
-each word are plotted as a function of the relative position (Lag) to the words
+each word are plotted as a function of the relative position (lag) to the word
 recalled just-prior. \textbf{Right panels.} The overall probabilities of
 recalling each word are plotted as a function of presentation position.
 \textbf{All panels.} Error ribbons denote bootstrap-estimated 95\% confidence
 intervals (calculated across participants). Top panels display the recall
-dynamics for early (order manipulation) lists in each condition (color). Bottom
-panels display the recall dynamics for late (randomly ordered) lists.}
+dynamics for early lists in each condition, and bottom
+panels display the recall dynamics for late lists.}
 
     \label{fig:recall-dynamics-random}
 \end{figure}
@@ -75,14 +75,14 @@ panels display the recall dynamics for late (randomly ordered) lists.}
 \begin{figure}[p] \centering
     \includegraphics[width=\textwidth]{figures/recall_dynamics_adaptive}
     
-    \caption{\textbf{Recall dynamics in feature rich free recall (adaptive conditions).} \textbf{Left panel.} The probabilities of
+    \caption{\textbf{Recall dynamics in feature-rich free recall (adaptive condition).} \textbf{Left panel.} The probabilities of
     initiating recall with each word are plotted as a function of presentation
     position. \textbf{Middle panel.} The conditional probabilities of recalling
-    each word are plotted as a function of the relative position (Lag) to the words
+    each word are plotted as a function of the relative position (lag) to the word
     recalled just-prior. \textbf{Right panel.} The overall probabilities of
     recalling each word are plotted as a function of presentation position.
     \textbf{All panels.} Error ribbons denote bootstrap-estimated 95\% confidence
-    intervals (calculated across participants). Condition is denoted by color.}
+    intervals (calculated across participants). Word-sorting policy (batch) is denoted by color.}
     
         \label{fig:recall-dynamics-adaptive}
     \end{figure}
@@ -94,12 +94,12 @@ panels display the recall dynamics for late (randomly ordered) lists.}
 \caption{\textbf{Recall accuracy by study list number.} Each panel displays the
 average recall accuracy (across participants) as a function of the number of
 studied lists for the random conditions (\textbf{A.}), order manipulation
-conditions (\textbf{B.}), and adaptive conditions (\textbf{C.}). The conditions
-are denoted by color. Note that the first four lists in all of the ``adaptive''
-conditions were ordered randomly to compute a baseline fingerprint for each
+conditions (\textbf{B.}), and word-sorting policy (batch) in the adaptive condition (\textbf{C.}). The conditions (or batches)
+are denoted by color. Note that words in the first four lists of the ``adaptive''
+condition were ordered randomly to compute a baseline fingerprint for each
 participant prior to initiating the adaptive ordering procedure. \textbf{All
-panels.} All error ribbons denote bootstrap-estimated 95\% confidence
-intervals, calculated across participants.} 
+panels.} Error ribbons denote bootstrap-estimated 95\% confidence
+intervals (calculated across participants).} 
 \label{fig:accuracy-by-list}
 
 \end{figure}
@@ -110,7 +110,7 @@ intervals, calculated across participants.}
     
     \caption{\textbf{Correlations between feature clustering scores (order manipulation conditions).}  Each column reflects one experimental condition.  The matrices in the top and middle
     rows display across-participant correlations between clustering scores for each feature dimension (top: order manipulation lists; middle: randomly ordered lists).  The matrices
-    in the bottom rows display the differences between the top and middle rows.}
+    in the bottom row display the differences between the top and middle rows.}
         \label{fig:clustering-correlations}
 \end{figure}
 
@@ -119,7 +119,7 @@ intervals, calculated across participants.}
     \includegraphics[width=\textwidth]{figures/fingerprints_random}
     
 \caption{\textbf{Memory ``fingerprints'' (random conditions).} The
-across-participant clustering scores for each feature type ($x$-axis) are
+across-participant average clustering scores for each feature type ($x$-axis) are
 displayed for each experimental condition (color), separately for early (top)
 and late (bottom) lists. Error bars denote bootstrap-estimated 95\% confidence
 intervals.}
@@ -129,9 +129,9 @@ intervals.}
 \begin{figure}[tp] \centering
     \includegraphics[width=\textwidth]{figures/fingerprints_adaptive}
     
-\caption{\textbf{Memory ``fingerprints'' (adaptive conditions).} The
-across-participant clustering scores for each feature type ($x$-axis) are
-displayed for each experimental condition (color). Error bars denote
+\caption{\textbf{Memory ``fingerprints'' (adaptive condition).} The
+across-participant average clustering scores for each feature type ($x$-axis) are
+displayed for each batch of lists in the adaptive condition (color). Error bars denote
 bootstrap-estimated 95\% confidence intervals.}
 
 \label{fig:fingerprints-adaptive} \end{figure}
@@ -141,19 +141,20 @@ bootstrap-estimated 95\% confidence intervals.}
     \includegraphics[width=\textwidth]{figures/pnr_matrices}
 
     \caption{\textbf{Probability of $n$\textsuperscript{th} recall matrices.}
-    Each sub-panel displays the average probability of recalling the given word
-    (Presentation position, matrix column) at the given output position (matrix
+    Each sub-panel displays the average probability of recalling the word with the given 
+    presentation position (matrix column) at the given output position (matrix
     row); color denotes the probability. \textbf{A. Random conditions.} The top
-    rows of matrices display data from early (order manipulation) lists, the
-    middle rows of matrices display data from late (randomly ordered) lists,
-    and the bottom rows of matrices display the differences between the
+    row of matrices displays data from early lists, the
+    middle row of matrices displays data from late lists,
+    and the bottom row of matrices displays the differences between the
     matrices in the top and middle rows. Panel columns denote experimental
     conditions. \textbf{B. Order manipulation conditions.} The matrices are
-    displayed in the same format as those in Panel A. Panel columns are
-    organized by feature type (semantic, lexicographic, or visual). \textbf{C.
-    Adaptive conditions.} The sub-panels are displayed in the same formats as
-    Panels A and B, but here the matrices and contrasts (indicated in $y$-axis
-    labels) reflect different list manipulation conditions.}
+    displayed in the same format as those in Panel A. In these conditions, word order 
+    was manipulated in early lists (top row) and randomized in late lists (middle row). Panel columns are
+    grouped by feature type (semantic, lexicographic, or visual). \textbf{C.
+    Adaptive condition.} The sub-panels are displayed in the same formats as
+    Panels A and B, but here the matrices and contrasts (indicated by $y$-axis
+    labels) reflect different word-sorting policies (batches).}
 
     \label{fig:pnr}
 \end{sidewaysfigure}
@@ -164,11 +165,11 @@ bootstrap-estimated 95\% confidence intervals.}
     \caption{\textbf{Memory fingerprint dynamics (random conditions).}
     \textbf{A.} Each column (and color) reflects an experimental condition. In
     the top panels, each marker displays a 2D projection of the
-    (across-participant) average memory fingerprint for one list. Early lists
+    (across-participant) average memory fingerprint for a single list. Early lists
     are denoted by circles and late lists are denoted by stars. All of the
     fingerprints (across all conditions and lists) are projected into a common
     space. The bar plots in the bottom panels display the Euclidean distances
-    of the per-list memory fingerprints to the average fingerprint across all
+    between each per-list memory fingerprint and the average fingerprint across all
     prior lists, for each condition. Error bars denote bootstrap-estimated 95\%
     confidence intervals. The dotted vertical lines denote the boundaries
     between early and late lists. \textbf{B.} In this panel, the fingerprints
@@ -179,13 +180,13 @@ bootstrap-estimated 95\% confidence intervals.}
     \end{figure}
 
     \begin{figure}[tp] \centering
-        \includegraphics[width=0.6\textwidth]{figures/feature_correlations}
+        \includegraphics[width=0.7\textwidth]{figures/feature_correlations}
         
         \caption{\textbf{Correlations between features.} Within each list, for each participant, we
         computed the set of distances between each pair of words, along each feature dimension.  We
         then combined these pairwise distances across all lists and participants, and computed the
         Spearman correlation between the distances for each pair of feature dimensions.  The correlation
-        coefficients are displayed in the heatmap, annotated with each cell's value.} \label{fig:feature-correlations}
+        coefficients are displayed in their corresponding cells of the heatmap.} \label{fig:feature-correlations}
         
         \end{figure}
 
