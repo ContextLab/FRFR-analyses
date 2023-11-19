@@ -21,7 +21,7 @@ N_ITER = 500
 
 results_file = f'analyzed_{N_ITER}_iter.pkl'
 
-random = ['feature rich', 'reduced (early)', 'reduced (late)', 'reduced']
+random = ['feature-rich', 'reduced (early)', 'reduced (late)', 'reduced']
 adaptive = ['adaptive']
 non_adaptive_exclude_random = ['category', 'size', 'length', 'first letter', 'color', 'location']
 
@@ -704,7 +704,7 @@ def merge_results(results, groups):
 
 
 def create_clustering_df(results):
-    conds = ['feature rich', 'category', 'size', 'length', 'first letter', 'color', 'location']
+    conds = ['feature-rich', 'category', 'size', 'length', 'first letter', 'color', 'location']
     decoder = {'category': 'category', 'size': 'size', 'length': 'wordLength', 'first letter': 'firstLetter', 'color': 'color', 'location': 'location'}
 
     dfs = []
@@ -718,7 +718,7 @@ def create_clustering_df(results):
         x = pd.DataFrame(index=pd.MultiIndex.from_tuples(idx_vals, names=results['fingerprint'][c].data.index.names))
         x['Condition'] = c.capitalize()
 
-        if c == 'feature rich':
+        if c == 'feature-rich':
             x['Feature clustering score'] = results['fingerprint'][c].data[list(decoder.values())].mean(axis=1).values
             x['Corrected feature clustering score'] = results['corrected fingerprint'][c].data[list(decoder.values())].mean(axis=1).values
         else:

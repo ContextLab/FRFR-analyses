@@ -26,7 +26,7 @@ from analyze import analyze_data, filter, reorder_df, rename_features, mini_filt
 
 
 colors = {
-    'feature rich': '#c0673c',
+    'feature-rich': '#c0673c',
     'reduced (early)': '#f15a22',
     'reduced (late)': '#f7996c',
     'reduced': '#fddac5',
@@ -116,7 +116,7 @@ def combo_fingerprint_plot(x, include_conds='all', include_lists='all', fname=No
     fig = plt.figure(figsize=figsize)
     ax = plt.gca()
     
-    force_order = ['feature rich', 'reduced (early)', 'reduced (late)', 'reduced',
+    force_order = ['feature-rich', 'reduced (early)', 'reduced (late)', 'reduced',
                    'category', 'size', 'length', 'first letter', 'color', 'location',
                    'adaptive', 'random', 'stabilize', 'destabilize']        
 

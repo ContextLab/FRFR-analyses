@@ -34,7 +34,7 @@ urls = {
 
 
 descriptions = {
-    'exp1': 'feature rich',
+    'exp1': 'feature-rich',
     'exp2': 'category',
     'exp3': 'color',
     'exp4': 'length',
@@ -49,7 +49,7 @@ descriptions = {
 
 
 feature_groupings = {
-    'random': ['feature rich', 'reduced (early)', 'reduced (late)', 'reduced'],
+    'random': ['feature-rich', 'reduced (early)', 'reduced (late)', 'reduced'],
     'semantic': ['category', 'size'],
     'lexicographic': ['length', 'first letter'],
     'visual': ['color', 'location'],
