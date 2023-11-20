@@ -11,6 +11,7 @@
 \usepackage{hyperref}
 \usepackage{placeins}
 \usepackage{rotating}
+\usepackage{booktabs}
 
 \doublespacing
 
@@ -50,10 +51,20 @@ jeremy.r.manning@dartmouth.edu}
 \makeatletter
 \renewcommand{\theequation}{S\arabic{equation}}
 \renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\bibnumfmt}[1]{[S#1]}
 \renewcommand{\citenumfont}[1]{S#1}
 
 \maketitle
+
+\begin{table}[p]
+    \centering
+    \input{tables/abbreviations.tex}
+    
+    \caption{\textbf{List of abbreviations.} Used in tables in the main text.}
+    
+    \label{tab:abbreviations}
+\end{table}
 
 \begin{figure}[p] \centering
 \includegraphics[width=\textwidth]{figures/recall_dynamics_random}

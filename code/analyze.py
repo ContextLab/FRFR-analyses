@@ -663,6 +663,7 @@ def ttest(x, y, x_col=None, y_col=None, x_lists=None, y_lists=None, independent_
         p_string = f'p = {p:.3f}'
 
     print(f't({df}) = {t:.3f},~{p_string},~d = {d:.3f},~' + '\mathrm{CI}' + f' = [{low_conf:.3f},~{high_conf:.3f}]')
+    return t, df, d, p, low_conf, high_conf
     
 
 def stack_fried_eggs(*args):
