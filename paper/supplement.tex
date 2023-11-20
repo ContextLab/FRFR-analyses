@@ -35,7 +35,7 @@ jeremy.r.manning@dartmouth.edu}
 
 \begin{document}
 
-\renewcommand{\figurename}{Supplementary Figure}
+%\renewcommand{\figurename}{Supplementary Figure}
 
 %\begin{titlepage}
 %  \maketitle
@@ -58,16 +58,16 @@ jeremy.r.manning@dartmouth.edu}
 \begin{figure}[p] \centering
 \includegraphics[width=\textwidth]{figures/recall_dynamics_random}
 
-\caption{\textbf{Recall dynamics in feature-rich free recall (random conditions).} \textbf{Left panels.} The probabilities of
-initiating recall with each word are plotted as a function of presentation
-position. \textbf{Middle panels.} The conditional probabilities of recalling
-each word are plotted as a function of the relative position (lag) to the word
-recalled just-prior. \textbf{Right panels.} The overall probabilities of
-recalling each word are plotted as a function of presentation position.
-\textbf{All panels.} Error ribbons denote bootstrap-estimated 95\% confidence
-intervals (calculated across participants). Top panels display the recall
-dynamics for early lists in each condition, and bottom
-panels display the recall dynamics for late lists.}
+\caption{\textbf{Recall dynamics in feature-rich free recall (random
+conditions).} \textbf{Left panels.} The probabilities of initiating recall with
+each word are plotted as a function of presentation position. \textbf{Middle
+panels.} The conditional probabilities of recalling each word are plotted as a
+function of the relative position (lag) to the word recalled just-prior.
+\textbf{Right panels.} The overall probabilities of recalling each word are
+plotted as a function of presentation position. \textbf{All panels.} Error
+ribbons denote bootstrap-estimated 95\% confidence intervals (calculated across
+participants). Top panels display the recall dynamics for early lists in each
+condition, and bottom panels display the recall dynamics for late lists.}
 
     \label{fig:recall-dynamics-random}
 \end{figure}
@@ -146,7 +146,7 @@ bootstrap-estimated 95\% confidence intervals.}
     row); color denotes the probability. \textbf{A. Random conditions.} The top
     row of matrices displays data from early lists, the
     middle row of matrices displays data from late lists,
-    and the bottom row of matrices displays the differences between the
+    and the bottom row of matrices displays the differences between the 
     matrices in the top and middle rows. Panel columns denote experimental
     conditions. \textbf{B. Order manipulation conditions.} The matrices are
     displayed in the same format as those in Panel A. In these conditions, word order 
@@ -165,16 +165,17 @@ bootstrap-estimated 95\% confidence intervals.}
     \caption{\textbf{Memory fingerprint dynamics (random conditions).}
     \textbf{A.} Each column (and color) reflects an experimental condition. In
     the top panels, each marker displays a 2D projection of the
-    (across-participant) average memory fingerprint for a single list. Early lists
-    are denoted by circles and late lists are denoted by stars. All of the
-    fingerprints (across all conditions and lists) are projected into a common
-    space. The bar plots in the bottom panels display the Euclidean distances
-    between each per-list memory fingerprint and the average fingerprint across all
-    prior lists, for each condition. Error bars denote bootstrap-estimated 95\%
-    confidence intervals. The dotted vertical lines denote the boundaries
-    between early and late lists. \textbf{B.} In this panel, the fingerprints
-    for early (circle) and late (star) lists are averaged across lists and
-    participants before projecting the fingerprints into a (new) 2D space.}
+    (across-participant) average memory fingerprint for a single list. Early
+    lists are denoted by circles and late lists are denoted by stars. Lines
+    connect successive lists. All of the fingerprints (across all conditions
+    and lists) are projected into a common space. The bar plots in the bottom
+    panels display the Euclidean distances between each per-list memory
+    fingerprint and the average fingerprint across all prior lists, for each
+    condition. Error bars denote bootstrap-estimated 95\% confidence intervals.
+    The dotted vertical lines denote the boundaries between early and late
+    lists. \textbf{B.} In this panel, the fingerprints for early (circle) and
+    late (star) lists are averaged across lists and participants before
+    projecting the fingerprints into a (new) 2D space.}
     \label{fig:fingerprint-trajectories-random}
     
     \end{figure}
@@ -182,11 +183,15 @@ bootstrap-estimated 95\% confidence intervals.}
     \begin{figure}[tp] \centering
         \includegraphics[width=0.7\textwidth]{figures/feature_correlations}
         
-        \caption{\textbf{Correlations between features.} Within each list, for each participant, we
-        computed the set of distances between each pair of words, along each feature dimension.  We
-        then combined these pairwise distances across all lists and participants, and computed the
-        Spearman correlation between the distances for each pair of feature dimensions.  The correlation
-        coefficients are displayed in their corresponding cells of the heatmap.} \label{fig:feature-correlations}
+        \caption{\textbf{Correlations between features.} Within each list, for
+        each participant, we computed the set of distances between each pair of
+        words, along each feature dimension. We then combined these pairwise
+        distances across all lists and participants, and computed the Spearman
+        correlation coefficient ($\rho$) between the distances for each pair of
+        feature dimensions. The correlation coefficients are displayed in their
+        corresponding cells of the heatmap in the lower triangle, and the
+        corresponding $p$-values are displayed in the upper triangle.}
+        \label{fig:feature-correlations}
         
         \end{figure}
 
