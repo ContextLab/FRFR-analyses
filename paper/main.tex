@@ -493,8 +493,8 @@ stochastic algorithm for (noisily) sorting the words. The stochastic aspect of
 our sorting procedure enabled us to obtain unique orderings for each
 participant. First, we choose a word uniformly and at random from the set of
 words on the to-be-presented list. Second, we compute the distances between the
-chosen word's feature(s) value(s) and the corresponding feature(s) value(s) of
-all yet-to-be-presented words. Third, we convert these distances (between the
+chosen word's feature value(s) and the corresponding feature value(s) of all
+yet-to-be-presented words. Third, we convert these distances (between the
 previously presented word's feature values, $a$, and each of the $W$
 yet-to-be-presented candidate words' feature values, $b_{i \in 1...W}$) to
 similarity scores:
@@ -511,7 +511,7 @@ normalized similarity values by dividing the similarities by their sum:
 
 \begin{equation}
 \mathrm{similarity}_{\mathrm{normalized}}(a, b_i) = \frac{\mathrm{similarity}(a,
-b)}{\sum_{j=1}^W \mathrm{similarity}(a, b_j)},
+b_i)}{\sum_{j=1}^W \mathrm{similarity}(a, b_j)},
 \end{equation}
 where in the denominator, $b_j$ takes on the feature value of each of the $W$
 to-be-presented words. The resulting set of normalized similarity scores sums
@@ -745,8 +745,8 @@ participants' memory fingerprints change across lists
 compute a shared embedding space across participants and experimental
 conditions, we concatenated the full set of across-participant average
 fingerprints (for all lists and experimental conditions) to create a large
-matrix with number-of-lists (16) by number-of-conditions (10, including the
-adaptive condition) rows and seven columns (one for each feature clustering
+matrix with number-of-lists (16) $\times$ number-of-conditions (10, excluding
+the adaptive condition) rows and seven columns (one for each feature clustering
 score, plus an additional temporal clustering score column). We used principal
 components analysis to project the seven-dimensional observations into a
 two-dimensional space (using the two principal components that explained the
@@ -766,14 +766,14 @@ visualization; all statistical tests were carried out in the original
 
 For a given list of words, if the values along two feature dimensions (e.g.,
 category and size) are correlated, then the clustering scores for those two
-dimensions will also be correlated. When lists are sorted along a given feature
-dimension, the sorted feature values will also tend to be correlated with the
-serial positions of the words in the list. This means that the temporal
-clustering score will \textit{also} tend to be correlated with the clustering
-scores for the sorted feature dimension. These correlations mean that it can be
-difficult to specifically identify when participants are using one feature
-versus another (or a manipulated feature versus temporal information) to
-organize or search their memories.
+dimensions will also be correlated (Figs.~\clusterCorrs,~\featureCorrs). When
+lists are sorted along a given feature dimension, the sorted feature values
+will also tend to be correlated with the serial positions of the words in the
+list. This means that the temporal clustering score will \textit{also} tend to
+be correlated with the clustering scores for the sorted feature dimension.
+These correlations mean that it can be difficult to specifically identify when
+participants are using one feature versus another (or a manipulated feature
+versus temporal information) to organize or search their memories.
 
 We developed a permutation-based procedure to factor out the effects of
 temporal clustering from the clustering scores for each feature dimension. For
@@ -885,7 +885,7 @@ DuBrDava16}. For each list, for each feature dimension, we computed the
 distribution of distances between the feature values for successively presented
 words. We defined event boundaries (e.g., Fig.~\ref{fig:recall-dynamics}B) as
 occurring between any successive pair of words whose distances along the given
-feature dimension were greater than one standard deviation above the mean for
+feature dimension were greater than two standard deviations above the mean for
 that list. Note that, because event boundaries are defined for each feature
 dimension, each individual list may contain several sets of event boundaries,
 each at different moments in the presentation sequence (depending on the
@@ -918,7 +918,7 @@ word-independent information might facilitate recall~\citep[e.g., by providing
 new or richer potential ways of organizing or retrieving memories of the
 studied words;][]{HargEtal12, Mada21, MeinEtal20, DavaEtal03, SlamBarl79,
 DrewMurd80, SochEtal09} or impair recall~\citep[e.g., by distracting or
-confusing participants with irrelevant information][]{MarsEtal15, MarsEtal12,
+confusing participants with irrelevant information;][]{MarsEtal15, MarsEtal12,
 Lang05, ReinEtal92}. Second, we manipulated the orders in which words were
 studied (and how those orderings changed over time). We wondered whether
 presenting the same list of words with different appearances (e.g., by
@@ -989,9 +989,9 @@ participants, we found that participants' fingerprints for a held-out list were
 reliably more similar to their fingerprints for other lists than they were to
 other participants' fingerprints ($t(70280) = 5.077,~p < 0.001,~d =
 0.162,~\mathrm{CI} = [3.086,~6.895]$). That within-participant fingerprint
-similarity was greater than between-participant fingerprint similarity suggests
-that participants' memory fingerprints are relatively stable across lists, and
-that each participant's fingerprint is unique to them.
+similarity (across lists) was greater than across-participant fingerprint
+similarity suggests that participants' memory fingerprints are relatively
+stable across lists, and that each participant's fingerprint is unique to them.
 
 \begin{table}[tp]
 \centering
@@ -1293,24 +1293,19 @@ lists in each of these conditions to their memories for early lists in the
 feature-rich condition
 (Tab.~\ref{tab:order-manip-vs-feature-rich-accuracy-early}), we found that
 participants in the category-ordered condition remembered more words than
-participants in the feature-rich condition. Participants in the Participants in
-the color-ordered condition also showed a trending increase in memory
-performance on early lists. Participants' performances on early lists in all of
-the other order manipulation conditions were indistinguishable from performance
-on the early feature-rich lists. We also compared participants' temporal
-clustering on early lists in each of these conditions to their temporal
-clustering on early lists in the feature-rich condition
+participants in the feature-rich condition. Participants' performances on early
+lists in all of the other order manipulation conditions were indistinguishable
+from performance on the early feature-rich lists. We also compared
+participants' temporal clustering on early lists in each of these conditions to
+their temporal clustering on early lists in the feature-rich condition
 (Tab.~\ref{tab:order-manip-vs-feature-rich-temporal-early}). Participants in
-both of the semantically ordered conditions exhibited stronger temporal
-clustering on early lists (vs.~early feature-rich lists). Participants in the
-length-ordered condition tended to exhibit \textit{less} temporal clustering on
-early lists relative to early feature-rich lists, whereas participants in the
-first letter-ordered condition exhibited stronger temporal clustering on early
-lists. Participants in the visually ordered conditions showed similar temporal
-clustering on early lists relative to early feature-rich lists. We also also
-compared feature-based clustering on early lists across the order manipulation
-and feature-rich conditions. Since these results were similar across both
-semantic conditions (category and size;
+both of the semantically ordered conditions and the first letter-ordered
+condition all exhibited stronger temporal clustering on early lists (vs.~early
+feature-rich lists). Participants in the other order manipulation conditions
+all showed similar temporal clustering on early lists relative to early
+feature-rich lists. We also also compared feature-based clustering on early
+lists across the order manipulation and feature-rich conditions. Since these
+results were similar across both semantic conditions (category and size;
 Tab.~\ref{tab:semantic-vs-feature-rich-feature-early}), both lexicographic
 conditions (length and first letter;
 Tab.~\ref{tab:lexicographic-vs-feature-rich-feature-early}), and both visual
@@ -1446,13 +1441,12 @@ manipulation and feature-rich conditions highlight how sorted lists are
 remembered differently from random lists. We also wondered how sorting lists
 along each feature dimension influenced memory relative to sorting lists along
 the other feature dimensions (accuracy:
-Tab.~\ref{tab:order-manip-vs-feature-rich-accuracy-early}; temporal clustering:
-Tab.~\ref{tab:order-manip-vs-feature-rich-temporal-early}; feature-based
+Tab.~\ref{tab:order-accuracy-comparisons-early}; temporal clustering:
+Tab.~\ref{tab:order-temporal-comparisons-early}; feature-based
 clustering: Tab~\ref{tab:feature-comparisons-early}). Participants trended
-towards remembering early lists that were sorted semantically better than those
-sorted lexicographically. Participants also remembered visually sorted lists
+towards remembering early lists that were sorted visually
 better than lexicographically sorted lists. However, participants showed no
-reliable differences in recall for semantically versus visually sorted lists.
+reliable differences in recall for semantically versus lexicographically or visually sorted lists.
 Participants temporally clustered semantically sorted lists more strongly than
 lists sorted either lexicographically or visually, but did not show reliable
 differences in temporal clustering on lexicographically versus visually sorted
@@ -1694,7 +1688,7 @@ $\leq 0.040$; across conditions: $ r(4) = 0.451,~p = 0.369,~\mathrm{CI} =
 early lists trended towards showing stronger feature clustering on later lists
 (overall: $r(179) = 0.266,~p < 0.001,~\mathrm{CI} = [0.129, 0.396]$; for
 individual conditions: all $r$s $\geq 0.298$, all $p$s $\leq 0.110$; across
-conditions: $r(4) = 0.064,~p = 0.903,~\mathrm{CI} = [-0.972,$). Taken together,
+conditions: $r(4) = 0.064,~p = 0.903,~\mathrm{CI} = [-0.972,~0.965$). Taken together,
 the results displayed in Figure~\ref{fig:clustering-scatterplots} show that
 participants who were more sensitive to the order manipulations (i.e.,
 participants who showed stronger feature clustering for their condition's
@@ -1738,13 +1732,13 @@ $r(28) = 0.202,~p = 0.284,~\mathrm{CI} = [-0.273,~0.620]$; color: $r(29) =
 = 0.870,~\mathrm{CI} = [-0.240,~0.296]$; across conditions: $r(4) = 0.942,~p =
 0.005,~\mathrm{CI} = [0.442,~1.000]$). Although participants tended to show
 weaker feature clustering on late lists
-(Fig.~\ref{fig:fingerprint-trajectories}) on \textit{average}, the associations
-between early and late lists for individual participants suggests that some
-influence of early order manipulations may linger on late lists. We found that
-participants who exhibited larger carryover in feature clustering (i.e.,
-continued to show strong feature clustering on late lists) for the semantic
-order manipulations (but not other manipulations) also tended to show a smaller
-decrease in recall on early versus late lists
+(Figs.~\ref{fig:fingerprints},~\ref{fig:barplots}) on \textit{average}, the
+associations between early and late lists for individual participants suggests
+that some influence of early order manipulations may linger on late lists. We
+found that participants who exhibited larger carryover in feature clustering
+(i.e., continued to show strong feature clustering on late lists) for the
+semantic order manipulations (but not other manipulations) also tended to show
+a smaller decrease in recall on early versus late lists
 (Fig.~\ref{fig:clustering-carryover}B; overall: $r(179) = 0.307,~p < 0.001,
 \mathrm{CI} = [0.148,~0.469]$; category: $r(28) = 0.350,~p = 0.058,~\mathrm{CI}
 = [0.050,~0.642]$; size: $r(28) = 0.708,~p < 0.001,~\mathrm{CI} = [0.472,~
@@ -1810,10 +1804,10 @@ participant's memory fingerprint (see \textit{Ordering ``stabilize'' and
 participants experienced each type of list were counterbalanced across
 participants to help reduce the influence of potential list-order effects.
 Because the presentation orders on stabilize and destabilize lists are adjusted
-to best match each participant's (potentially unique) memory fingerprint, the
-adaptive condition removes uncertainty about whether participants' assigned
-conditions might just ``happen'' to match their preferred ways of organizing
-their memories.
+to best match each participant's personal memory fingerprint, the adaptive
+condition removes uncertainty about whether participants' assigned conditions
+might just ``happen'' to match their preferred ways of organizing their
+memories.
 
 \begin{figure}
     \centering
@@ -1890,7 +1884,7 @@ Table~\abbreviations.}
 
 We note that the multivariate aspect of the adaptive condition (i.e., sorting
 lists simultaneously along multiple feature dimensions) provides an important
-contrast with the order order manipulation conditions, where we sort lists
+contrast with the other order manipulation conditions, where we sort lists
 along only a single feature dimension in each condition. We found that
 participants ``naturally'' clustered their recalls along multiple feature
 dimensions, even when the lists they studied were not sorted along those
@@ -1905,7 +1899,10 @@ participant has a mean that is reliably different from a chance value of 0.5.
 We carried out these tests for each set of ranked scores, and found that
 participants in the feature-rich condition reliably cluster their recalls along
 at least three dimensions, including temporal clustering (which was often
-ranked highest; Tab.~\ref{tab:ranked-clustering}).
+ranked highest; Tab.~\ref{tab:ranked-clustering}). That the clustering scores
+ranked in the top three dimensions were reliably greater than chance suggests
+that participants organize their memories along at least three feature
+dimensions, even when the words are studied in a random order.
 
 \section*{Discussion}
 
@@ -2047,11 +2044,12 @@ held constant) only when those feature-rich lists are presented \textit{after}
 reduced lists suggests that some factors that influence the richness or depth
 of encoding may be relative, rather than absolute. In other words,
 \textit{increases} in richness (e.g., relative to a recency-weighted baseline)
-may be more important than the overall complexity or numbers of features.
+may be more important than the absolute complexity or numbers of meaningful
+features.
 
 Some prior studies have suggested that people can ``cue'' their memories using
 different ``strategies'' or ``pathways'' for searching for the target
-information. For example, modern accounts of free recall typically posit that
+information. For example, modern accounts of free recall often posit that
 memory search typically begins by matching the current state of mental context
 with the contexts associated with other items in memory~\citep{Kaha20}. Since
 context is the defining hallmark of episodic memory~\citep{Tulv83},
@@ -2083,7 +2081,7 @@ interfere with each other.
 
 \subsection*{Context effects on memory performance and organization}
 
-In real-world experience, each moment's unique blend of contextual features
+In real-world experiences, each moment's unique blend of contextual features
 (where we are, who we are with, what else we are thinking of at the time, what
 else we experience nearby in time, etc.) plays an important role in how we
 interpret, experience, and remember that moment, and how we relate it to our
@@ -2097,8 +2095,8 @@ participant's thoughts at the time they study the item. Item features can
 include semantic properties (i.e., features related to the item's meaning),
 lexicographic properties (i.e., features related to the item's letters),
 sensory properties (i.e., feature related to the item's appearance, sound,
-smell, etc.), emotional properties (i.e., features related to how meaningful the
-item is, whether the item evokes positive or negative feelings, etc.),
+smell, etc.), emotional properties (i.e., features related to how meaningful
+the item is, whether the item evokes positive or negative feelings, etc.),
 utility-related properties (e.g., features that describe how an item might be
 used or incorporated into a particular task or situation), and more.
 Essentially any aspect of the participant's experience that can be
