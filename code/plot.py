@@ -11,8 +11,10 @@ import string
 
 from tqdm import tqdm
 from matplotlib import pyplot as plt
+import matplotlib.colors as mcolors
 from matplotlib.ticker import MaxNLocator
 from sklearn.decomposition import IncrementalPCA as PCA
+from statannotations.Annotator import Annotator 
 
 
 figdir = os.path.join(os.path.split(os.getcwd())[0], 'paper', 'figures', 'source')
@@ -24,7 +26,7 @@ from analyze import analyze_data, filter, reorder_df, rename_features, mini_filt
 
 
 colors = {
-    'feature rich': '#c0673c',
+    'feature-rich': '#c0673c',
     'reduced (early)': '#f15a22',
     'reduced (late)': '#f7996c',
     'reduced': '#fddac5',
@@ -82,6 +84,16 @@ def combo_lineplot(x, include_conds='all', include_lists='all', fname=None, xlab
     return fig
 
 
+def is_light_color(color):
+    # Convert color to RGB and then to HSV
+    rgb = mcolors.to_rgb(color)
+    hsv = mcolors.rgb_to_hsv(rgb)
+    # Use the Value component to determine brightness
+    brightness = hsv[2]
+    # If brightness is high, use black color, else white
+    return brightness > 0.5
+
+
 def combo_fingerprint_plot(x, include_conds='all', include_lists='all', fname=None, ylim=None, palette=None, xlabel='Dimension', ylabel='Clustering score', figsize=(15, 2.5)):
     def melt_by_list(x, cond='-'):
         x = rename_features(x).reset_index()
@@ -104,7 +116,7 @@ def combo_fingerprint_plot(x, include_conds='all', include_lists='all', fname=No
     fig = plt.figure(figsize=figsize)
     ax = plt.gca()
     
-    force_order = ['feature rich', 'reduced (early)', 'reduced (late)', 'reduced',
+    force_order = ['feature-rich', 'reduced (early)', 'reduced (late)', 'reduced',
                    'category', 'size', 'length', 'first letter', 'color', 'location',
                    'adaptive', 'random', 'stabilize', 'destabilize']        
 
@@ -122,14 +134,27 @@ def combo_fingerprint_plot(x, include_conds='all', include_lists='all', fname=No
             palette.append(colors[c])
             order.append(c)
     
-    sns.violinplot(data=reorder_df(pd.concat(fingerprints, axis=0), 'Condition', order),
-                   x='Dimension', y='Clustering score',
-                   hue='Condition',
-                   order=['Category', 'Size', 'Length', 'First letter', 'Color', 'Location'],
-                   palette=palette, linewidth=1, inner='quartile', scale='width')
-    
+    bplot = sns.barplot(data=reorder_df(pd.concat(fingerprints, axis=0), 'Condition', order),
+                        x='Dimension', y='Clustering score',
+                        hue='Condition',
+                        order=['Category', 'Size', 'Length', 'First letter', 'Color', 'Location'],
+                        palette=palette, linewidth=1)
+
     if ylim is not None:
         plt.ylim(ylim)
+    else:
+        ylim = ax.get_ylim()
+
+    # Annotate each bar
+    for p in bplot.patches:
+        height = p.get_height()
+        # Decide text color based on bar color
+        text_color = 'black' if is_light_color(p.get_facecolor()) else 'white'
+        ax.text(p.get_x() + p.get_width() / 2. + 0.01, ylim[0] + 0.05, f'{height:.2f}',
+                ha='center', va='bottom', color=text_color, fontsize=8, rotation=90)
+    
+    plt.ylim(ylim)
+    
     plt.xlabel(xlabel, fontsize=14)
     plt.ylabel(ylabel, fontsize=14)
 
@@ -144,12 +169,14 @@ def combo_fingerprint_plot(x, include_conds='all', include_lists='all', fname=No
     return fig
 
 
-def plot_heatmaps(results, include_conds='all', include_lists='all', contrasts=None, fname=None, vmin=0, vmax=1.0, dvmin=-1.0, dvmax=1.0, fontsize=12, width=2.5, height=2, xlabel='', ylabel=''):
+def plot_heatmaps(results, include_conds='all', include_lists='all', contrasts=None, fname=None, vmin=0, vmax=1.0, dvmin=-1.0, dvmax=1.0, fontsize=12, width=2.5, height=2, xlabel='', ylabel='', rotx=None):
     def heatmap(m, title, vmn, vmx, ax, showx=False, showy=False, show_title=False, yprepend='', **kwargs):
-        sns.heatmap(m, vmin=vmn, vmax=vmx, ax=ax, cbar=False, **kwargs)
-
+        sns.heatmap(m, vmin=vmn, vmax=vmx, ax=ax, cbar=False, square=True, **kwargs)
+        
         if showx:
             ax.set_xlabel(xlabel, fontsize=fontsize)
+            if rotx is not None:
+                ax.set_xticklabels(ax.get_xticklabels(), rotation=rotx)
         if showy:
             ax.set_ylabel(yprepend + ylabel, fontsize=fontsize)
         if show_title:
@@ -199,7 +226,7 @@ def plot_heatmaps(results, include_conds='all', include_lists='all', contrasts=N
                 ax = axes[r, column]
             except IndexError:
                 ax = axes[max([r, column])]
-            heatmap(results[cond][k] - results[cond][v], '', dvmin, dvmax, ax, showx=(len(include_lists) + i + 1) == n_rows, showy=column == 0, cmap='mako', yprepend=f'{k.capitalize()} $-$ {v.lower()}\n')
+            heatmap(results[cond][k] - results[cond][v], '', dvmin, dvmax, ax, showx=(len(include_lists) + i + 1) == n_rows, showy=column == 0, cmap='vlag', center=0, yprepend=f'{k.capitalize()} $-$ {v.lower()}\n')
     
     plt.tight_layout()
 
@@ -208,12 +235,16 @@ def plot_heatmaps(results, include_conds='all', include_lists='all', contrasts=N
     return fig
 
 
-def accuracy_by_list(x, xlim=[0, 15], ylim=[0, 1], fname=None):
+def accuracy_by_list(x, xlim=[1, 16], ylim=[0, 1], fname=None):
     _, inds = np.unique(x['Condition'], return_index=True)
     conds = [x['Condition'][i] for i in sorted(inds)]
     
     palette = [colors[c] for c in conds]
     fig = plt.figure(figsize=(5.5, 2.5))
+
+    # convert lists to 1-indexed
+    x['List'] += 1
+    
     sns.lineplot(data=x, x='List', y='Accuracy', hue='Condition', palette=palette, legend=False)
     plt.xlabel('List number', fontsize=12)
     plt.ylabel('Recall probability', fontsize=12)
@@ -225,13 +256,13 @@ def accuracy_by_list(x, xlim=[0, 15], ylim=[0, 1], fname=None):
     return fig
 
 
-def fingerprint_scatterplot_by_category(results, include_conds='all', include_lists='all', x_lists=None, y_lists=None, y='accuracy', average=False, fname=None, xlabel=None, ylabel=None, xlim=None, ylim=None):
+def fingerprint_scatterplot_by_category(results, include_conds='all', include_lists='all', x_lists=None, y_lists=None, x='fingerprint', y='accuracy', average=False, fname=None, xlabel=None, ylabel=None, xlim=None, ylim=None):
     if x_lists is None:
         x_lists = include_lists
     if y_lists is None:
         y_lists = include_lists
 
-    fingerprints, conds, x_lists = filter(results['fingerprint'], include_conds, x_lists)
+    fingerprints, conds, x_lists = filter(results[x], include_conds, x_lists)
     y_data, tmp_conds, y_lists = filter(results[y], include_conds, y_lists)
 
     assert all([c in conds for c in tmp_conds]) and all([c in tmp_conds for c in conds]), 'condition mismatch!'
@@ -250,7 +281,7 @@ def fingerprint_scatterplot_by_category(results, include_conds='all', include_li
     for c in conds:
         clustering = rename_features(fingerprints[c])[c].reset_index().drop('List', axis=1).set_index('Subject')
 
-        if y == 'fingerprint':
+        if y == 'fingerprint' or y == 'corrected fingerprint':
             next_y = rename_features(y_data[c])[c].reset_index().drop('List', axis=1).set_index('Subject')
         else:
             next_y = y_data[c].data.reset_index().drop('List', axis=1).set_index('Subject')
@@ -259,7 +290,7 @@ def fingerprint_scatterplot_by_category(results, include_conds='all', include_li
             clustering = pd.DataFrame(clustering.mean(axis=0)).T
             next_y = pd.DataFrame(next_y.mean(axis=0)).T
                 
-        if y == 'fingerprint':            
+        if y == 'fingerprint' or y == 'corrected fingerprint':
             clustering = clustering.rename({c: xlabel}, axis=1)
             next_y = next_y.rename({c: ylabel}, axis=1)
             df = pd.concat([clustering, next_y], axis=1)
@@ -358,7 +389,7 @@ def plot_trajectories(fingerprints, include_conds='all', fname=None, xlim=None, 
 
     if xlim is not None:
         if type(xlim[0]) is not list:
-            xlim = [xlim, [-0.5, 15.5]]
+            xlim = [xlim, [0.5, 16.5]]
     if ylim is not None:
         if type(ylim[0]) is not list:
             ylim = [ylim, [0.4, 1.1]]
@@ -392,13 +423,14 @@ def plot_trajectories(fingerprints, include_conds='all', fname=None, xlim=None, 
             ax[0, i].set_ylim(ylim[0])
         
         # plot distances
-        dists = get_dists(fingerprints[c].data).reset_index().melt(id_vars='Subject', var_name='List', value_name='Distance')
+        dists = get_dists(fingerprints[c].data, ref='mean').reset_index().melt(id_vars='Subject', var_name='List', value_name='Distance')
+        dists['List'] += 1 # convert from 0-indexed to 1-indexed
         sns.barplot(data=dists, x='List', y='Distance', ax=ax[1, i], color=colors[c])
         ax[1, i].plot([7.5, 7.5], [0, 1.2], 'k--', linewidth=2)
 
         ax[1, i].set_xlabel('List', fontsize=14)
         if i == 0:
-            ax[1, i].set_ylabel('Distance from\nlist 0 fingerprint', fontsize=14)
+            ax[1, i].set_ylabel('Distance from previous\naverage fingerprint', fontsize=14)
         else:
             ax[1, i].set_yticklabels([])
             ax[1, i].set_ylabel('')
@@ -408,7 +440,7 @@ def plot_trajectories(fingerprints, include_conds='all', fname=None, xlim=None, 
         if ylim is not None:
             ax[1, i].set_ylim(ylim[1])
         
-        ax[1, i].set_xticks(list(range(0, 15, 2)))
+        ax[1, i].set_xticks(list(range(1, 16, 2)))
 
     if fname is not None:
         fig.savefig(os.path.join(figdir, fname + '.pdf'), bbox_inches='tight')
@@ -563,7 +595,7 @@ def plot_boundary_density_maps(conds, bounds, behaviors, listgroups, width=3, he
     return fig
 
 
-def barplot_helper(clustering_results, x='Condition', y=None, hue=None, palette=None, ax=None, fname=None, width=8, height=3, ylim=None, ref=None):
+def barplot_helper(clustering_results, x='Condition', y=None, hue=None, palette=None, ax=None, fname=None, width=8, height=3, ylim=None, ref=None, ylabel=None):
     fig = plt.figure(figsize=(width, height))
     ax = plt.gca()
 
@@ -571,9 +603,17 @@ def barplot_helper(clustering_results, x='Condition', y=None, hue=None, palette=
 
     xlim = plt.xlim()
     if ref is not None:
-        y = clustering_results.query('Condition == @ref')[y].mean()
-        plt.plot(xlim, [y, y], '--', color='black', linewidth=1)
+        y_ref = clustering_results.query('Condition == @ref')[y].mean()
+        plt.plot(xlim, [y_ref, y_ref], '--', color='black', linewidth=1)
         plt.xlim(xlim)
+        
+        pairs = [((c, 'Early'), (c, 'Late')) for c in clustering_results['Condition'].unique()]
+        pairs.extend([((ref, 'Early'), (c, 'Early')) for c in clustering_results['Condition'].unique() if c != ref])
+        pairs.extend([((ref, 'Late'), (c, 'Late')) for c in clustering_results['Condition'].unique() if c != ref])
+
+        annotator = Annotator(ax, pairs, data=clustering_results, x=x, y=y, hue=hue, order=clustering_results['Condition'].unique(), hue_order=['Early', 'Late'])
+        annotator.configure(test='t-test_ind', text_format='star', loc='outside', comparisons_correction='fdr_bh', hide_non_significant=True, line_height=0)
+        annotator.apply_and_annotate()
 
     if ylim is not None:
         plt.ylim(ylim)
@@ -584,10 +624,14 @@ def barplot_helper(clustering_results, x='Condition', y=None, hue=None, palette=
     ax.spines.top.set_visible(False)
 
     xlabel = ax.get_xlabel()
-    ylabel = ax.get_ylabel()
+
+    if ylabel is None:
+        ylabel = ax.get_ylabel()
 
     plt.xlabel(xlabel, fontsize=14)
     plt.ylabel(ylabel, fontsize=14)
+
+    
 
     if fname is not None:
         fig.savefig(os.path.join(figdir, fname + '.pdf'), bbox_inches='tight')

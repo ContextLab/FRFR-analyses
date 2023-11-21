@@ -13,12 +13,15 @@ from multiprocessing import cpu_count
 from tqdm import tqdm
 from sklearn.decomposition import IncrementalPCA as PCA
 from scipy import stats
+from copy import deepcopy
 
 from dataloader import fetch_data, get_listgroups, datadir, feature_groupings
 
-results_file = 'analyzed_500_iter.pkl'
+N_ITER = 500
 
-random = ['feature rich', 'reduced (early)', 'reduced (late)', 'reduced']
+results_file = f'analyzed_{N_ITER}_iter.pkl'
+
+random = ['feature-rich', 'reduced (early)', 'reduced (late)', 'reduced']
 adaptive = ['adaptive']
 non_adaptive_exclude_random = ['category', 'size', 'length', 'first letter', 'color', 'location']
 
@@ -72,7 +75,7 @@ def analyze_data(analyses=['fingerprint', 'pfr', 'lagcrp', 'spc', 'accuracy'], d
 
         if a == 'fingerprint':
             kwargs['permute'] = True
-            kwargs['n_perms'] = 500
+            kwargs['n_perms'] = N_ITER
             tmpfile = f'{a}-{kwargs["permute"]}-{kwargs["n_perms"]}.pkl'
         else:
             if a == 'pfr':
@@ -80,11 +83,13 @@ def analyze_data(analyses=['fingerprint', 'pfr', 'lagcrp', 'spc', 'accuracy'], d
             tmpfile = f'{a}.pkl'
 
         # save out temp files
-        if a not in ['pfr', 'pnr']:
-            with Pool(min([cpu_count(), len(data)])) as p:
-                p.map(apply_wrapper, [[a, x, d, tmpfile, kwargs] for x, d in data.items()])
-        else:
-            [apply_wrapper([a, x, d, tmpfile, kwargs]) for x, d in data.items()]
+        # if a not in ['pfr', 'pnr']:
+        #     for x, d in data.items():
+        #         apply_wrapper()
+        #     with Pool(min([cpu_count(), len(data)])) as p:
+        #         p.map(apply_wrapper, [[a, x, d, tmpfile, kwargs] for x, d in data.items()])
+        # else:
+        [apply_wrapper([a, x, d, tmpfile, kwargs]) for x, d in data.items()]
         
         # load in temp files and update results
         for x in data.keys():
@@ -106,7 +111,21 @@ def analyze_data(analyses=['fingerprint', 'pfr', 'lagcrp', 'spc', 'accuracy'], d
     return results, analyses, listgroups
 
 
+# update PFR and SPC curves to use 1-indexing instead of 0-indexing, per reviewer request
+def increment_presentation_positions(r):
+    if type(r) is dict:
+        return {k + 1 if type(k) is int else k: increment_presentation_positions(v) for k, v in r.items()}
+    
+    x = r.get_data().copy()
+    if type(x.columns) is pd.RangeIndex:
+        x.columns = pd.RangeIndex(start=x.columns.start + 1, stop=x.columns.stop + 1, step=x.columns.step)
+    
+    r.data = x
+    return r
+
+
 results, analyses, listgroups = analyze_data(savefile=results_file)
+results = {k: increment_presentation_positions(v) if k in ['pfr', 'spc', 'pnr'] else v for k, v in results.items()}
 
 
 # hack for recovering fingerprint features (feature tags are lost in the pickling process)
@@ -155,7 +174,6 @@ def organize_by_listgroup(x, groups):
 
 results_by_list = results  # per-list results
 results = {a: organize_by_listgroup(results_by_list[a], listgroups) for a in results_by_list.keys()}  # averaged within each listgroup
-
 
 def select_conds(results, conds='all'):
     return {k: v for k, v in results.items() if conds == 'all' or k in conds}
@@ -265,7 +283,7 @@ def stack_diffs(diffs, include_conds='all'):
 
 
 def pnr_matrix(pnr_results, include_conds='all', include_lists='all'):
-    positions = range(16)
+    positions = range(1, 17)
 
     if type(include_conds) is str:
         include_conds = [include_conds]
@@ -408,7 +426,7 @@ def trajectorize(x, n_dims=2, model=PCA, average=False):
     return {c: pd.DataFrame(m.transform(x), index=x.index) for c, x in data.items()}
 
 
-def get_dists(fingerprints):
+def get_dists(fingerprints, ref=0):
     if type(fingerprints) is dict:
         return {c: get_dists(x.data) for c, x in fingerprints.items()}
     elif type(fingerprints) is pd.DataFrame:
@@ -416,7 +434,7 @@ def get_dists(fingerprints):
         subjs = fingerprints.index.get_level_values('Subject').unique().tolist()
 
         for s in subjs:
-            by_subj.append(get_dists(fingerprints.query('Subject == @s').values))
+            by_subj.append(get_dists(fingerprints.query('Subject == @s').values, ref=ref))
         
         df = pd.DataFrame(pd.concat(by_subj, axis=0, ignore_index=True))
         df['Subject'] = subjs
@@ -424,47 +442,52 @@ def get_dists(fingerprints):
 
     dists = []
     for i in range(fingerprints.shape[0]):
-        dists.append(np.linalg.norm(fingerprints[0, :] - fingerprints[i, :]))
+        if i == 0 or str(ref).isnumeric():
+            dists.append(np.linalg.norm(fingerprints[0, :] - fingerprints[i, :]))
+        elif ref == 'mean':
+            dists.append(np.linalg.norm(fingerprints[:i, :].mean(axis=0) - fingerprints[i, :]))
     return pd.DataFrame(dists).T
 
 
-def get_event_boundaries(data, focus=None, n_stddev=2):
-    discrete_features = ['category', 'size', 'length']
-    continuous_features = ['color', 'location', 'first letter']
-    features = discrete_features + continuous_features
+discrete_features = ['category', 'size']
+continuous_features = ['color', 'location', 'length', 'first letter']
+features = discrete_features + continuous_features
 
+
+def field2feature(x):
     rename = {'firstLetter': 'first letter', 'first_letter': 'first letter', 'wordLength': 'length', 'pos': 'location'}
-
-    def field2feature(x):
-        if type(x) is list:
-            return [field2feature(y) for y in x]
-        
-        if x in rename:
-            return rename[x]
-        else:
-            return x
-
-    def rename_dict(d):
-        return {field2feature(k): v for k, v in d.items()}
+    if type(x) is list:
+        return [field2feature(y) for y in x]
     
-    def get_dists(y1, y2, focus=None):    
-        if focus is None or focus in continuous_features:
-            return [np.linalg.norm(np.array(a) - np.array(b)) for a, b in zip(y1.values, y2.values)]
-        else:
-            return [int(a != b) for a, b in zip(y1.values, y2.values)]
+    if x in rename:
+        return rename[x]
+    else:
+        return x
 
+
+def rename_dict(d):
+    return {field2feature(k): v for k, v in d.items()}
+
+
+def feature_dists(y1, y2, focus=None):    
+    if focus is None or focus in continuous_features:
+        return [np.linalg.norm(np.array(a) - np.array(b)) for a, b in zip(y1.values, y2.values)]
+    else:
+        return [int(a != b) for a, b in zip(y1.values, y2.values)]
+
+
+def get_event_boundaries(data, focus=None, n_stddev=2):    
     if type(data) is dict:
         x = {}
         for k in data.keys():
             try:
-                x[k] = get_event_boundaries(data[k])
+                x[k] = get_event_boundaries(data[k], n_stddev=n_stddev)
             except:
-                print('problem with', k, 'in get_event_boundaries')
+                print(f'problem with {k} in get_event_boundaries')
         return x
-        #return {k: get_event_boundaries(data[c]) for c in data.keys()}
     elif type(data) is quail.Egg:
         x = data.get_pres_features().applymap(lambda v: rename_dict(v))
-        return {f: get_event_boundaries(x, focus=f) for f in features}
+        return {f: get_event_boundaries(x, focus=f, n_stddev=n_stddev) for f in features}
     elif type(data) is pd.DataFrame:
         if focus != 'first letter':
             x = data.applymap(lambda v: v[focus])
@@ -476,15 +499,19 @@ def get_event_boundaries(data, focus=None, n_stddev=2):
             y1 = x[i]
             y2 = x[i + 1]
 
-            dists[i + 1] = get_dists(y1, y2, focus=focus)
+            dists[i + 1] = feature_dists(y1, y2, focus=focus)
         
-        if focus in discrete_features:
-            return dists.astype(int)
+        if np.char.isnumeric(str(n_stddev)):
+            if focus in discrete_features:
+                return dists.astype(int)
+            else:
+                # compute a threshold (add an n_stddev param to function definition)
+                # binarize the distances as being above vs. below the threshold
+            
+                thresh = np.mean(dists.values) + n_stddev * np.std(dists.values)
+                return (dists > thresh).astype(int)
         else:
-            # compute a threshold (add an n_stddev param to function definition)
-            # binarize the distances as being above vs. below the threshold
-            thresh = np.mean(dists.values) + n_stddev * np.std(dists.values)
-            return (dists > thresh).astype(int)
+            return dists
     
 
 def shift(x, n):
@@ -528,7 +555,7 @@ def filter_egg(data, g, listgroups):
     return p, r
 
 
-def recall_accuracy_near_boundaries(data, bounds, listgroups, maxlag=10):    
+def recall_accuracy_near_boundaries(data, bounds, listgroups, maxlag=10):
     results = {}
     for g in np.unique(listgroups):
         p, r = filter_egg(data, g, listgroups)
@@ -555,10 +582,11 @@ def get_boundaries(n_stddev):
         boundaries = {c: get_event_boundaries(data[c], n_stddev=n_stddev) for c in data.keys()}
 
         accuracy_near_boundaries = {}
-        for cond in tqdm(non_adaptive_exclude_random):
-            accuracy_near_boundaries[cond] = {}
-            for feature in tqdm(non_adaptive_exclude_random):
-                accuracy_near_boundaries[cond][feature] = recall_accuracy_near_boundaries(data[cond], boundaries[cond][feature], listgroups[cond], maxlag=15)
+        if np.char.isnumeric(str(n_stddev)):
+            for cond in tqdm(non_adaptive_exclude_random):
+                accuracy_near_boundaries[cond] = {}
+                for feature in tqdm(non_adaptive_exclude_random):
+                    accuracy_near_boundaries[cond][feature] = recall_accuracy_near_boundaries(data[cond], boundaries[cond][feature], listgroups[cond], maxlag=15)
 
         with open(boundary_fname, 'wb') as f:
             pickle.dump([boundaries, accuracy_near_boundaries], f)
@@ -566,7 +594,7 @@ def get_boundaries(n_stddev):
     return boundaries, accuracy_near_boundaries
 
 
-def ttest(x, y, x_col=None, y_col=None, x_lists=None, y_lists=None, independent_sample=True):
+def ttest(x, y, x_col=None, y_col=None, x_lists=None, y_lists=None, independent_sample=True, n_iter=1000, alpha=0.05):
     x = x.data
     y = y.data
 
@@ -589,17 +617,54 @@ def ttest(x, y, x_col=None, y_col=None, x_lists=None, y_lists=None, independent_
 
     if independent_sample: 
         tfun = stats.ttest_ind
-        df = len(x) + len(y) - 2
+        df = len(x) + len(y) - 2        
     else:
         tfun = stats.ttest_rel 
         df = len(x) - 1
-    result = tfun(x, y) 
+    result = tfun(x, y)
+
+    # cohen's d
+    x_mean = np.mean(x, axis=0)
+    y_mean = np.mean(y, axis=0)
+    x_var = np.var(x, ddof=1, axis=0)
+    y_var = np.var(y, ddof=1, axis=0)
+    pooled_sd = np.sqrt(((len(x) - 1) * x_var + (len(y) - 1) * y_var) / df)
+    d = (x_mean - y_mean) / pooled_sd
 
     try:
-        print(f't({df}) = {result.statistic[0]:.3f}, p = {result.pvalue[0]:.3f}')
-    except IndexError:
-        print(f't({df}) = {result.statistic:.3f}, p = {result.pvalue:.3f}')
+        d = d[0]
+    except:
+        pass
+    
+    # bootstrap-estimated 95% confidence interval for t-statistic
+    t_dist = np.zeros([n_iter])
+    for i in range(n_iter):
+        if independent_sample:
+            x_sample = x.sample(n=len(x), replace=True)
+            y_sample = y.sample(n=len(y), replace=True)
+            t_dist[i] = stats.ttest_ind(x_sample, y_sample)[0]
+        else:
+            inds = np.random.choice(len(x), size=len(x), replace=True)
+            x_sample = x.iloc[inds]
+            y_sample = y.iloc[inds]
+            t_dist[i] = stats.ttest_rel(x_sample, y_sample)[0]
+    low_conf, high_conf = np.percentile(t_dist, [alpha * 50, 100 - (alpha * 50)])
 
+    try:
+        t = result.statistic[0]
+        p = result.pvalue[0]
+    except IndexError:
+        t = result.statistic
+        p = result.pvalue
+    
+    if p < 0.001:
+        p_string = 'p < 0.001'
+    else:
+        p_string = f'p = {p:.3f}'
+
+    print(f't({df}) = {t:.3f},~{p_string},~d = {d:.3f},~' + '\mathrm{CI}' + f' = [{low_conf:.3f},~{high_conf:.3f}]')
+    return t, df, d, p, low_conf, high_conf
+    
 
 def stack_fried_eggs(*args):
     if len(args) == 0:
@@ -640,7 +705,7 @@ def merge_results(results, groups):
 
 
 def create_clustering_df(results):
-    conds = ['feature rich', 'category', 'size', 'length', 'first letter', 'color', 'location']
+    conds = ['feature-rich', 'category', 'size', 'length', 'first letter', 'color', 'location']
     decoder = {'category': 'category', 'size': 'size', 'length': 'wordLength', 'first letter': 'firstLetter', 'color': 'color', 'location': 'location'}
 
     dfs = []
@@ -654,10 +719,12 @@ def create_clustering_df(results):
         x = pd.DataFrame(index=pd.MultiIndex.from_tuples(idx_vals, names=results['fingerprint'][c].data.index.names))
         x['Condition'] = c.capitalize()
 
-        if c == 'feature rich':
+        if c == 'feature-rich':
             x['Feature clustering score'] = results['fingerprint'][c].data[list(decoder.values())].mean(axis=1).values
+            x['Corrected feature clustering score'] = results['corrected fingerprint'][c].data[list(decoder.values())].mean(axis=1).values
         else:
             x['Feature clustering score'] = results['fingerprint'][c].data[decoder[c]].values
+            x['Corrected feature clustering score'] = results['corrected fingerprint'][c].data[decoder[c]].values
         
         x['Temporal clustering score'] = results['fingerprint'][c].data['temporal'].values
         x['Recall probability'] = results['accuracy'][c].data.values
@@ -667,3 +734,110 @@ def create_clustering_df(results):
         n_subjects += results['accuracy'][c].n_subjects
     
     return pd.concat(dfs).reset_index()
+
+
+# temporal correction procedure for fingerprints
+def compute_temporally_corrected_fingerprints(results, results_by_list, listgroups, data=None):
+    def same_item(pres, rec):
+        return all([pres[k] == rec[k] for k in pres.keys() if k in rec]) and all([rec[k] == pres[k] for k in rec.keys() if k in pres])
+
+    def get_position(x, presentations):
+        if x is None:
+            return []
+        elif type(x) is pd.Series:
+            return pd.Series([get_position(x.iloc[i], presentations) for i in range(len(x))], index=x.index)
+        elif type(x) is pd.DataFrame:
+            return pd.DataFrame([get_position(x.iloc[i], presentations.iloc[i]) for i in range(x.shape[0])], index=x.index, columns=x.columns)
+        elif type(x) is dict:
+            for i, p in enumerate(presentations):
+                if same_item(p, x):
+                    return i
+        
+        return -1
+    
+    def circshift(x):
+        # circularly shift the values in x by a random amount
+        if x is None:
+            return []
+        elif type(x) is pd.DataFrame:
+            return pd.DataFrame([circshift(x.iloc[i]) for i in range(x.shape[0])], index=x.index, columns=x.columns)
+        elif type(x) is pd.Series:
+            if len(x) <= 1:
+                return x
+            else:
+                shift = np.random.randint(0, len(x))
+                return pd.Series(list(np.roll(x, shift)), index=x.index)
+
+    def get_recalls(positions, presentations):
+        if type(positions) is pd.Series:
+            return pd.Series([np.nan if p == -1 else presentations[p] for p in positions], index=positions.index)
+        elif type(positions) is pd.DataFrame:
+            return pd.DataFrame([get_recalls(positions.iloc[i], presentations.iloc[i]) for i in range(positions.shape[0])], index=positions.index, columns=positions.columns)
+    
+    def temporally_corrected_fingerprints(x, n=N_ITER, savefile=None):
+        if savefile is not None and os.path.exists(savefile):
+            with open(savefile, 'rb') as f:
+                observed, shuffled = pickle.load(f)
+        else:
+            pres = x.pres
+            rec = x.rec
+            
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
+                observed = x.analyze('fingerprint', permute=False)
+            
+            positions = get_position(rec, pres)
+
+            shuffled = []
+            for _ in tqdm(range(n)):
+                next_x = deepcopy(x)
+                next_x.rec = get_recalls(positions, circshift(pres))
+
+                with warnings.catch_warnings():
+                    warnings.simplefilter("ignore")
+                    shuffled.append(next_x.analyze('fingerprint', permute=False))
+            
+            if savefile is not None:
+                with open(savefile, 'wb') as f:
+                    pickle.dump([observed, shuffled], f)
+        
+        shuffled_stack = np.stack([s.data.values for s in shuffled], axis=2)
+        observed_stack = np.stack([observed.data.values for _ in range(shuffled_stack.shape[2])], axis=2)
+        
+        x = pd.DataFrame(np.sum(observed_stack > shuffled_stack, axis=2) / shuffled_stack.shape[2],
+                        index=observed.data.index, columns=observed.data.columns)
+        
+        corrected = deepcopy(observed)
+        corrected.data = x
+        return corrected
+    
+    def get_savefile(cond):
+        scratch_dir = os.path.join(datadir, 'scratch')
+        if not os.path.exists(scratch_dir):
+            os.makedirs(scratch_dir)
+        
+        return os.path.join(scratch_dir, f'{cond}_shuffled_fingerprints.pkl')
+
+    precomputed = True
+    for k in results['fingerprint'].keys():
+        if not os.path.exists(get_savefile(k)):
+            precomputed = False
+            break
+    
+    if not precomputed:
+        data = fetch_data()
+        for k in data.keys():
+            temporally_corrected_fingerprints(data[k], savefile=get_savefile(k))
+    
+    for k in results['fingerprint'].keys():
+        if 'corrected fingerprint' not in results:
+            results['corrected fingerprint'] = {}
+        if 'corrected fingerprint' not in results_by_list:
+            results_by_list['corrected fingerprint'] = {}
+
+        results_by_list['corrected fingerprint'][k] = temporally_corrected_fingerprints({}, savefile=get_savefile(k))
+        results['corrected fingerprint'][k] = organize_by_listgroup(results_by_list['corrected fingerprint'][k], listgroups[k])
+    
+    return results, results_by_list
+
+results, results_by_list = compute_temporally_corrected_fingerprints(results, results_by_list, listgroups)
