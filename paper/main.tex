@@ -480,11 +480,11 @@ Finally, the visual features (color and location) are \textit{continuous} and
 \textit{multivariate}, in that each ``feature'' is defined by multiple
 (positive) real values. We defined the ``color'' and ``location'' distances
 between two words as the Euclidean distances between their $(r, g, b)$ color
-vectors and $(x, y)$ location vectors (specified as percentages of screen width
-and height), respectively. Therefore, the color and location distance measures
-always take on non-negative real values (upper-bounded at 439.94 for color, or
-124.52 for location, reflecting the distances between the corresponding
-maximally different vectors).
+vectors and $(x, y)$ location vectors (specified as a percentage of the
+viewable display's width), respectively. Therefore, the color and location
+distance measures always take on non-negative real values (upper-bounded at
+439.94 for color, or 124.52 for location, reflecting the distances between the
+corresponding maximally different vectors).
 
 \paragraph{Constructing feature-sorted lists.} Given a list of words, a
 relevant feature, and each word's value(s) for that feature, we developed a
@@ -777,8 +777,8 @@ versus temporal information) to organize or search their memories.
 We developed a permutation-based procedure to factor out the effects of
 temporal clustering from the clustering scores for each feature dimension. For
 a given set of recalled items (whose presentation positions are given by $x_1,
-x_2, x_3, …, x_N$), we circularly shifted the presentation positions by a
-randomly chosen amount (between 1 and the list length) to obtain a new set of
+x_2, x_3, …, x_L$), we circularly shifted the presentation positions by a
+randomly chosen amount (between 1 and the list length, $L$) to obtain a new set of
 items at the (now altered) positions of the original recalls. Since the new set
 of items will have the same (average) temporal distances between successive
 recalls, the temporal clustering score for the new set of items will be equal
@@ -787,7 +787,7 @@ However, we can then re-compute the feature clustering score for those new
 items. Finally, we can compute a ``temporally corrected'' feature clustering
 score by computing the average percentile rank of the observed (raw) feature
 clustering score within the distributions of circularly shifted feature
-clustering scores, across $N = 500$ repetitions of this procedure. This new
+clustering scores, across $n = 500$ repetitions of this procedure. This new
 temporally corrected score provides an estimate of the observed degree of
 feature clustering over and above what could be accounted for by temporal
 clustering alone.
@@ -893,8 +893,8 @@ feature dimension of interest).
 \subsection*{Transparency and openness}
 
 All of the data analyzed in this manuscript, along with all of the code for
-carrying out the analyses, may be found at https://github.com/ContextLab/FRFR-analyses.
-Code for running the non-adaptive
+carrying out the analyses, may be found at
+https://github.com/ContextLab/FRFR-analyses. Code for running the non-adaptive
 experimental conditions may be found at
 https://github.com/Con\-text\-Lab/efficient-learning-code. Code for running the
 adaptive experimental condition may be found at
@@ -935,7 +935,7 @@ DarlMurd71}.
 \input{tables/feature_rich_vs_reduced.tex}
 
 \caption{\textbf{Comparing memory in the feature-rich versus reduced conditions
-(all lists).} The $t$-tests reported in the table were carried out
+(all lists).} The independent samples $t$-tests reported in the table were carried out
 across-participants, and reflect data aggregated across all lists from each
 participant. Abbreviations used in this table are defined in
 Table~\abbreviations.}
@@ -998,8 +998,8 @@ stable across lists, and that each participant's fingerprint is unique to them.
 \input{tables/early_vs_late_fr.tex}
 
 \caption{\textbf{Comparing memory for early versus late lists in the
-feature-rich condition.} The $t$-tests reported in the table were carried out
-across-participants. Abbreviations used in this table are defined in
+feature-rich condition.} The paired $t$-tests reported in the table were
+carried out within-participant. Abbreviations used in this table are defined in
 Table~\abbreviations.}
 
 \label{tab:early-vs-late-feature-rich} 
@@ -1010,9 +1010,9 @@ Table~\abbreviations.}
 \tiny
 \input{tables/early_vs_late_r.tex}
 
-\caption{\textbf{Comparing memory for early versus late lists in the
-reduced condition.} The $t$-tests reported in the table were carried out
-across-participants. Abbreviations used in this table are defined in
+\caption{\textbf{Comparing memory for early versus late lists in the reduced
+condition.} The paired $t$-tests reported in the table were carried out
+within-participant. Abbreviations used in this table are defined in
 Table~\abbreviations.}
 
 \label{tab:early-vs-late-reduced}
@@ -1023,9 +1023,9 @@ Table~\abbreviations.}
 \tiny
 \input{tables/early_vs_late_early.tex}
 
-\caption{\textbf{Comparing memory for early versus late lists in the
-reduced (early) condition.} The $t$-tests reported in the table were carried out
-across-participants. Abbreviations used in this table are defined in
+\caption{\textbf{Comparing memory for early versus late lists in the reduced
+(early) condition.} The paired $t$-tests reported in the table were carried out
+within-participant. Abbreviations used in this table are defined in
 Table~\abbreviations.}
 
 \label{tab:early-vs-late-early}
@@ -1036,9 +1036,9 @@ Table~\abbreviations.}
 \tiny
 \input{tables/early_vs_late_late.tex}
 
-\caption{\textbf{Comparing memory for early versus late lists in the
-reduced (late) condition.} The $t$-tests reported in the table were carried out
-across-participants. Abbreviations used in this table are defined in
+\caption{\textbf{Comparing memory for early versus late lists in the reduced
+(late) condition.} The paired $t$-tests reported in the table were carried out
+within-participant. Abbreviations used in this table are defined in
 Table~\abbreviations.}
 
 \label{tab:early-vs-late-late}
@@ -1095,10 +1095,10 @@ post-boundary items;][]{MannEtal16, PettEtal16, GoldEtal17, FlorEtal17}.
 \input{tables/feature_rich_vs_reduced_early.tex}
 
 \caption{\textbf{Comparing memory in the feature-rich versus reduced (early)
-conditions (all lists).} The $t$-tests reported in the table were carried out
-across-participants, and reflect data aggregated across all lists from each
-participant. Abbreviations used in this table are defined in
-Table~\abbreviations.}
+conditions (all lists).} The independent samples $t$-tests reported in the
+table were carried out across-participants, and reflect data aggregated across
+all lists from each participant. Abbreviations used in this table are defined
+in Table~\abbreviations.}
 
 \label{tab:feature-rich-vs-reduced-early}
 \end{table}
@@ -1109,10 +1109,10 @@ Table~\abbreviations.}
 \input{tables/reduced_vs_reduced_early.tex}
 
 \caption{\textbf{Comparing memory in the reduced versus reduced (early)
-conditions (all lists).} The $t$-tests reported in the table were carried out
-across-participants, and reflect data aggregated across all lists from each
-participant. Abbreviations used in this table are defined in
-Table~\abbreviations.}
+conditions (all lists).} The independent samples $t$-tests reported in the
+table were carried out across-participants, and reflect data aggregated across
+all lists from each participant. Abbreviations used in this table are defined
+in Table~\abbreviations.}
 
 \label{tab:reduced-vs-reduced-early}
 \end{table}
@@ -1123,10 +1123,10 @@ Table~\abbreviations.}
 \input{tables/feature_rich_vs_reduced_late.tex}
 
 \caption{\textbf{Comparing memory in the feature-rich versus reduced (late)
-conditions (all lists).} The $t$-tests reported in the table were carried out
-across-participants, and reflect data aggregated across all lists from each
-participant. Abbreviations used in this table are defined in
-Table~\abbreviations.}
+conditions (all lists).} The independent samples $t$-tests reported in the
+table were carried out across-participants, and reflect data aggregated across
+all lists from each participant. Abbreviations used in this table are defined
+in Table~\abbreviations.}
 
 \label{tab:feature-rich-vs-reduced-late}
 \end{table}
@@ -1137,10 +1137,10 @@ Table~\abbreviations.}
 \input{tables/reduced_vs_reduced_late.tex}
 
 \caption{\textbf{Comparing memory in the reduced versus reduced (late)
-conditions (all lists).} The $t$-tests reported in the table were carried out
-across-participants, and reflect data aggregated across all lists from each
-participant. Abbreviations used in this table are defined in
-Table~\abbreviations.}
+conditions (all lists).} The independent samples $t$-tests reported in the
+table were carried out across-participants, and reflect data aggregated across
+all lists from each participant. Abbreviations used in this table are defined
+in Table~\abbreviations.}
 
 \label{tab:reduced-vs-reduced-late}
 \end{table}
@@ -1220,10 +1220,10 @@ participants in Panel A, and across lists in Panels B and C).}
 \input{tables/order_manip_vs_feature_rich_accuracy_early.tex}
 
 \caption{\textbf{Comparing accuracy on early lists in the order manipulation
-versus feature-rich conditions.} The $t$-tests reported in the table were
-carried out across-participants, and reflect data aggregated across all early lists
-from each participant. Abbreviations used in this table are defined in
-Table~\abbreviations.}
+versus feature-rich conditions.} The independent samples $t$-tests reported in
+the table were carried out across-participants, and reflect data aggregated
+across all early lists from each participant. Abbreviations used in this table
+are defined in Table~\abbreviations.}
 
 \label{tab:order-manip-vs-feature-rich-accuracy-early}
 \end{table}
@@ -1233,11 +1233,11 @@ Table~\abbreviations.}
 \tiny
 \input{tables/order_manip_vs_feature_rich_temporal_early.tex}
     
-\caption{\textbf{Comparing temporal clustering on early lists in the order manipulation
-versus feature-rich conditions.} The $t$-tests reported in the table were
-carried out across-participants, and reflect data aggregated across all early lists
-from each participant. Abbreviations used in this table are defined in
-Table~\abbreviations.}
+\caption{\textbf{Comparing temporal clustering on early lists in the order
+manipulation versus feature-rich conditions.} The independent samples $t$-tests
+reported in the table were carried out across-participants, and reflect data
+aggregated across all early lists from each participant. Abbreviations used in
+this table are defined in Table~\abbreviations.}
 
 \label{tab:order-manip-vs-feature-rich-temporal-early}
 \end{table}
@@ -1247,11 +1247,11 @@ Table~\abbreviations.}
 \tiny
 \input{tables/semantic_vs_feature_rich_feature_early.tex}
     
-\caption{\textbf{Comparing feature-based clustering on early lists in the semantic order manipulation
-versus feature-rich conditions.} The $t$-tests reported in the table were
-carried out across-participants, and reflect data aggregated across all early lists
-from each participant. Abbreviations used in this table are defined in
-Table~\abbreviations.}
+\caption{\textbf{Comparing feature-based clustering on early lists in the
+semantic order manipulation versus feature-rich conditions.} The independent
+samples $t$-tests reported in the table were carried out across-participants,
+and reflect data aggregated across all early lists from each participant.
+Abbreviations used in this table are defined in Table~\abbreviations.}
 
 \label{tab:semantic-vs-feature-rich-feature-early}
 \end{table}
@@ -1261,10 +1261,11 @@ Table~\abbreviations.}
 \tiny
 \input{tables/lexicographic_vs_feature_rich_feature_early.tex}
     
-\caption{\textbf{Comparing feature-based clustering on early lists in the lexicographic order manipulation
-versus feature-rich conditions.} The $t$-tests reported in the table were
-carried out across-participants, and reflect data aggregated across all early lists
-from each participant. Abbreviations used in this table are defined in
+\caption{\textbf{Comparing feature-based clustering on early lists in the
+lexicographic order manipulation versus feature-rich conditions.} The
+independent samples $t$-tests reported in the table were carried out
+across-participants, and reflect data aggregated across all early lists from
+each participant. Abbreviations used in this table are defined in
 Table~\abbreviations.}
 
 \label{tab:lexicographic-vs-feature-rich-feature-early}
@@ -1275,11 +1276,11 @@ Table~\abbreviations.}
 \tiny
 \input{tables/visual_vs_feature_rich_feature_early.tex}
     
-\caption{\textbf{Comparing feature-based clustering on early lists in the visual order manipulation
-versus feature-rich conditions.} The $t$-tests reported in the table were
-carried out across-participants, and reflect data aggregated across all early lists
-from each participant. Abbreviations used in this table are defined in
-Table~\abbreviations.}
+\caption{\textbf{Comparing feature-based clustering on early lists in the
+visual order manipulation versus feature-rich conditions.} The independent
+samples $t$-tests reported in the table were carried out across-participants,
+and reflect data aggregated across all early lists from each participant.
+Abbreviations used in this table are defined in Table~\abbreviations.}
 
 \label{tab:visual-vs-feature-rich-feature-early}
 \end{table}
@@ -1395,11 +1396,11 @@ how item features change throughout the list.
 \tiny
 \input{tables/order_accuracy_comparisons_early.tex}
     
-\caption{\textbf{Comparing accuracy on early lists in different order manipulation
-conditions.} The $t$-tests reported in the table were
-carried out across-participants, and reflect data aggregated across all early lists
-from each participant. Abbreviations used in this table are defined in
-Table~\abbreviations.}
+\caption{\textbf{Comparing accuracy on early lists in different order
+manipulation conditions.} The independent samples $t$-tests reported in the
+table were carried out across-participants, and reflect data aggregated across
+all early lists from each participant. Abbreviations used in this table are
+defined in Table~\abbreviations.}
 
 \label{tab:order-accuracy-comparisons-early}
 \end{table}
@@ -1409,11 +1410,11 @@ Table~\abbreviations.}
 \tiny
 \input{tables/order_temporal_comparisons_early.tex}
     
-\caption{\textbf{Comparing temporal clustering on early lists in different order manipulation
-conditions.} The $t$-tests reported in the table were
-carried out across-participants, and reflect data aggregated across all early lists
-from each participant. Abbreviations used in this table are defined in
-Table~\abbreviations.}
+\caption{\textbf{Comparing temporal clustering on early lists in different
+order manipulation conditions.} The independent samples $t$-tests reported in
+the table were carried out across-participants, and reflect data aggregated
+across all early lists from each participant. Abbreviations used in this table
+are defined in Table~\abbreviations.}
 
 \label{tab:order-temporal-comparisons-early}
 \end{table}
@@ -1423,12 +1424,13 @@ Table~\abbreviations.}
 \tiny
 \input{tables/feature_comparisons_early.tex}
     
-\caption{\textbf{Comparing feature-based clustering on early lists in different order manipulation
-conditions.} The $t$-tests reported in the table were
-carried out across-participants, and reflect data aggregated across all early lists
-from each participant. The feature used to compute clustering is shown before the colon in each row, and the
-conditions being compared are shown after the colon.  Abbreviations used in this table are defined in
-Table~\abbreviations.}
+\caption{\textbf{Comparing feature-based clustering on early lists in different
+order manipulation conditions.} The independent samples $t$-tests reported in
+the table were carried out across-participants, and reflect data aggregated
+across all early lists from each participant. The feature used to compute
+clustering is shown before the colon in each row, and the conditions being
+compared are shown after the colon. Abbreviations used in this table are
+defined in Table~\abbreviations.}
 
 \label{tab:feature-comparisons-early}
 \end{table}
@@ -1497,11 +1499,11 @@ for which corrected $p \geq 0.05$ are not shown.} \label{fig:barplots}
 \tiny
 \input{tables/carryover_accuracy.tex}
 
-\caption{\textbf{Comparing accuracy on late lists in order-manipulation
-versus feature-rich conditions.} The $t$-tests reported in the table were
-carried out across-participants, and reflect data aggregated across all late
-lists from each participant. Abbreviations used in this table are defined in
-Table~\abbreviations.}
+\caption{\textbf{Comparing accuracy on late lists in order-manipulation versus
+feature-rich conditions.} The independent samples $t$-tests reported in the
+table were carried out across-participants, and reflect data aggregated across
+all late lists from each participant. Abbreviations used in this table are
+defined in Table~\abbreviations.}
 
 \label{tab:accuracy-carryover}
 \end{table}
@@ -1511,11 +1513,11 @@ Table~\abbreviations.}
 \tiny
 \input{tables/carryover_temporal_clustering.tex}
 
-\caption{\textbf{Comparing temporal clustering on late lists in order-manipulation
-versus feature-rich conditions.} The $t$-tests reported in the table were
-carried out across-participants, and reflect data aggregated across all late
-lists from each participant. Abbreviations used in this table are defined in
-Table~\abbreviations.}
+\caption{\textbf{Comparing temporal clustering on late lists in
+order-manipulation versus feature-rich conditions.} The independent samples
+$t$-tests reported in the table were carried out across-participants, and
+reflect data aggregated across all late lists from each participant.
+Abbreviations used in this table are defined in Table~\abbreviations.}
 
 \label{tab:temporal-carryover}
 \end{table}
@@ -1525,11 +1527,11 @@ Table~\abbreviations.}
 \tiny
 \input{tables/semantic_carryover_feature_clustering.tex}
 
-\caption{\textbf{Comparing feature-based clustering on late lists in semantic order-manipulation
-versus feature-rich conditions.} The $t$-tests reported in the table were
-carried out across-participants, and reflect data aggregated across all late
-lists from each participant. Abbreviations used in this table are defined in
-Table~\abbreviations.}
+\caption{\textbf{Comparing feature-based clustering on late lists in semantic
+order-manipulation versus feature-rich conditions.} The independent samples
+$t$-tests reported in the table were carried out across-participants, and
+reflect data aggregated across all late lists from each participant.
+Abbreviations used in this table are defined in Table~\abbreviations.}
 
 \label{tab:semantic-feature-carryover}
 \end{table}
@@ -1541,9 +1543,10 @@ Table~\abbreviations.}
 
 \caption{\textbf{Comparing feature-based clustering on late lists in
 lexicographic order-manipulation versus feature-rich conditions.} The
-$t$-tests reported in the table were carried out across-participants, and
-reflect data aggregated across all late lists from each participant.
-Abbreviations used in this table are defined in Table~\abbreviations.}
+independent samples $t$-tests reported in the table were carried out
+across-participants, and reflect data aggregated across all late lists from
+each participant. Abbreviations used in this table are defined in
+Table~\abbreviations.}
 
 \label{tab:lexicographic-feature-carryover}
 \end{table}
@@ -1553,11 +1556,11 @@ Abbreviations used in this table are defined in Table~\abbreviations.}
 \tiny
 \input{tables/visual_carryover_feature_clustering.tex}
 
-\caption{\textbf{Comparing feature-based clustering on late lists in visual order-manipulation
-versus feature-rich conditions.} The $t$-tests reported in the table were
-carried out across-participants, and reflect data aggregated across all late
-lists from each participant. Abbreviations used in this table are defined in
-Table~\abbreviations.}
+\caption{\textbf{Comparing feature-based clustering on late lists in visual
+order-manipulation versus feature-rich conditions.} The independent samples
+$t$-tests reported in the table were carried out across-participants, and
+reflect data aggregated across all late lists from each participant.
+Abbreviations used in this table are defined in Table~\abbreviations.}
 
 \label{tab:visual-feature-carryover}
 \end{table}
@@ -1679,21 +1682,21 @@ While less robust than the carryover associations between feature clustering
 and recall performance, we also observed some carryover associations between
 feature clustering and temporal clustering
 (Fig.~\ref{fig:clustering-scatterplots}G, H). Participants who showed stronger
-feature clustering on early lists showed stronger temporal
-clustering on later lists (overall: $r(179) = 0.464,~p < 0.001,~\mathrm{CI} =
-[0.321, 0.582]$; for individual conditions: all $r$s $\geq 0.377$, all $p$s
-$\leq 0.040$; across conditions: $ r(4) = 0.451,~p = 0.369,~\mathrm{CI} =
-[-0.986, 0.998]$). And participants who showed stronger temporal clustering on
-early lists trended towards showing stronger feature clustering on later lists
-(overall: $r(179) = 0.266,~p < 0.001,~\mathrm{CI} = [0.129, 0.396]$; for
-individual conditions: all $r$s $\geq 0.298$, all $p$s $\leq 0.110$; across
-conditions: $r(4) = 0.064,~p = 0.903,~\mathrm{CI} = [-0.972,~0.965$). Taken together,
-the results displayed in Figure~\ref{fig:clustering-scatterplots} show that
-participants who were more sensitive to the order manipulations (i.e.,
-participants who showed stronger feature clustering for their condition's
-feature on early lists) remembered more words and showed stronger temporal
-clustering. These associations also appeared to carry over across lists, even
-when the items on later lists were presented in a random order.
+feature clustering on early lists showed stronger temporal clustering on later
+lists (overall: $r(179) = 0.464,~p < 0.001,~\mathrm{CI} = [0.321, 0.582]$; for
+individual conditions: all $r$s $\geq 0.377$, all $p$s $\leq 0.040$; across
+conditions: $ r(4) = 0.451,~p = 0.369,~\mathrm{CI} = [-0.986, 0.998]$). And
+participants who showed stronger temporal clustering on early lists trended
+towards showing stronger feature clustering on later lists (overall: $r(179) =
+0.266,~p < 0.001,~\mathrm{CI} = [0.129, 0.396]$; for individual conditions: all
+$r$s $\geq 0.298$, all $p$s $\leq 0.110$; across conditions: $r(4) = 0.064,~p =
+0.903,~\mathrm{CI} = [-0.972,~0.965$). Taken together, the results displayed in
+Figure~\ref{fig:clustering-scatterplots} show that participants who were more
+sensitive to the order manipulations (i.e., participants who showed stronger
+feature clustering for their condition's feature on early lists) remembered
+more words and showed stronger temporal clustering. These associations also
+appeared to carry over to later lists, even when the items on those later lists
+were presented in a random order.
 
 \begin{figure}[tp] \centering
     \includegraphics[width=\textwidth]{figures/feature_clustering_vs_accuracy_and_contiguity}
@@ -1745,7 +1748,7 @@ a smaller decrease in recall on early versus late lists
 first letter: $r(28) = 0.081,~p = 0.672,~\mathrm{CI} = [-0.433,~0.597]$; color:
 $r(29) = 0.155,~p = 0.406,~\mathrm{CI} = [-0.174,~0.541]$; location: $r(28) =
 0.052,~p = 0.787,~\mathrm{CI} = [-0.307,~0.360]$; across conditions: $r(4) =
-0.635,~p = 0.176,~\mathrm{CI} = [-0.924,~0.981]$. Participants who exhibited
+0.635,~p = 0.176,~\mathrm{CI} = [-0.924,~0.981]$). Participants who exhibited
 larger carryover in feature clustering also tended to show stronger temporal
 clustering on late lists (relative to early lists) for all but the category
 condition (Fig.~\ref{fig:clustering-carryover}C; overall: $r(179) = 0.426,~p <
